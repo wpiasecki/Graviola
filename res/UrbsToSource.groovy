@@ -2,16 +2,29 @@ import java.text.SimpleDateFormat
 
 def horariosOnibus = new XmlSlurper().parse(new File("linhasUrbs_1342304988292.xml"))
 
+def code = ''
+
+/*
+ * geração das constantes com o nome de cada onibus
+ */
+horariosOnibus.Onibus.each { onibus ->
+	code += """
+		public static final String ONIBUS${onibus.codigo} = "${onibus.nome}";"""
+}
+println code
+
+
+
 /*
  * Geração do método com a listagem de linhas
  */
-def code = """
+code = """
 	public static Vector getLinhasOnibus() {
 		Vector linhasOnibus = new Vector();
 """ 
 horariosOnibus.Onibus.each { onibus ->
 	code += """
-		linhasOnibus.addElement("$onibus.nome");"""
+		linhasOnibus.addElement(ONIBUS${onibus.codigo});"""
 }
 
 code += """	
@@ -19,6 +32,7 @@ code += """
 	} """
 
 println code 
+
 
 
 /*
@@ -29,10 +43,7 @@ code = """
 
 horariosOnibus.Onibus.each { onibus ->
 	code += """
-		if (nome.equals("$onibus.nome")) {
-			return Onibus${onibus.codigo}.create();
-		}
-	"""
+		if (nome == ONIBUS${onibus.codigo}) return Onibus${onibus.codigo}.create();"""
 	
 }
 code += """
@@ -43,21 +54,28 @@ println code
 
 
 
+
 /*
  * Geração dos objetos de modelo
  */
+println "--> escrevendo arquivos de código fonte em 5 segundos..."; Thread.sleep(5000); println "escrevendo..."
+ 
 def dateParse = new SimpleDateFormat('yyyy-MM-dd HH:mm:sss')
 def dateFormat = new SimpleDateFormat('dd/MM/yyyy')
+def replaceQuote = { s -> print s; def replaced = s.toString().replaceAll('"', '\"'); println "; replaced=$replaced"; replaced }
 
 horariosOnibus.Onibus.each { onibus ->
 	
 	def j2meCode = """
 	package br.will.graviola.model.onibus;
 	
-	import br.will.graviola.model.Onibus;
-	import br.will.graviola.model.Ponto;
-	import br.will.graviola.model.TipoDia;
+	import br.will.graviola.model.*;
 	
+	/**
+	 * Código gerado automaticamente
+	 * 
+	 * @author will
+	 */
 	public class Onibus${onibus.codigo} {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
@@ -70,7 +88,7 @@ horariosOnibus.Onibus.each { onibus ->
 	
 		j2meCode += """
 		Ponto ponto$i = new Ponto();
-		ponto${i}.setNome("${ponto.nome}");
+		ponto${i}.setNome("${replaceQuote( ponto.nome )}");
 		ponto${i}.setTipoDia(TipoDia.getTipoDia("${ponto.tipoDia}"));
 		ponto${i}.setValidoAPartirDe("${dateFormat.format( dateParse.parse( ponto.validoAPartirDe.text() ) )}");
 		onibus.getPontos().addElement(ponto${i});"""

@@ -14,6 +14,7 @@ import javax.microedition.lcdui.TextField;
 import javax.microedition.midlet.MIDlet;
 import javax.microedition.midlet.MIDletStateChangeException;
 
+import br.will.graviola.model.DisplayableAlert;
 import br.will.graviola.model.Onibus;
 import br.will.graviola.service.HorarioOnibusService;
 import br.will.graviola.ui.HorarioCanvas;
@@ -22,15 +23,7 @@ import br.will.graviola.ui.HorarioCanvas;
 /**
  * Graviola MIDlet. 
  * 
- * Recursos:
- * - Sábado, 14/07/2012, das 13h as 23h, duas horas de pausa
- * - Domingo, 15/07/2012, das 8h30 às 17h, duas horas de pausa
- * - Quantidade de linhas de código: 160.091, domingo, 17h18
- * 
- * TODO: scroll suave da tabela de horarios
- * 
  * @author will
- * 
  */
 public class Graviola extends MIDlet implements CommandListener
 {
@@ -61,66 +54,51 @@ public class Graviola extends MIDlet implements CommandListener
 	
 	protected void startApp() throws MIDletStateChangeException
 	{
-		Displayable d = iniciarListaOnibus();
-		d.setCommandListener( this );
-		display.setCurrent( d );
+		DisplayableAlert da = criarTelaListaOnibus();
+		da.getDisplayable().setCommandListener( this );
+		display.setCurrent( da.getDisplayable() );
 	}
 	
 	
+	/**
+	 * Controla o fluxo de telas de acordo com os comandos que o usuário 
+	 * fizer. 
+	 * Se continuar horrivel desse jeito vai ter que ir para uma classe à 
+	 * parte.
+	 */
 	public void commandAction(Command command, Displayable displayable)
 	{
-		Displayable d = null;
-		boolean setDisplayable = true;
+		DisplayableAlert novoDisplay = null;
 		
 		if (command == sobre) // sobre o software
 		{
-			d = iniciarTelaAbout();
+			novoDisplay = criarTelaAbout();
 		} 
 		else if (command == sair) // sair da aplicação
 		{
-			destroyApp(false);
+			destroyApp( false );
 		} 
 		else if (command == voltar) // voltar para listagem de onibus
 		{
-			d = iniciarListaOnibus();
+			novoDisplay = criarTelaListaOnibus();
 		} 
 		else if (command == selecionar || command.getLabel().equals("")) // selecionar linha de onibus usando o comando ou o botão OK
 		{
 			selectedIndex = list.getSelectedIndex();
 			String onibusSelecionado = list.getString( selectedIndex );
 			list = null;
-			d = iniciarTelaHorario( onibusSelecionado );
+			novoDisplay = criarTelaHorario( onibusSelecionado );
 		} 
 		else if (command == procurar) // ir para tela de pesquisa de linhas
 		{
-			d = iniciarPesquisaLinha();
+			novoDisplay = criarTelaPesquisaLinha();
 		} 
 		else if (command == pesquisar) // pesquisar por linhas na lista de onibus
 		{
 			Form form = (Form) displayable;
 			String pesquisadoPeloUsuario = ( (TextField) form.get(0) ).getString();
-			int indiceEncontrado = HorarioOnibusService.findIndiceByNome( pesquisadoPeloUsuario );
 			
-			d = iniciarListaOnibus();
-			
-			/*
-			 * tratamento para quando não encontramos linha com os parâmetros
-			 * inseridos pelo usuário
-			 */
-			if (indiceEncontrado == -1) 
-			{
-				String mensagemAlerta = "Nenhuma linha encontrada para o texto '"+pesquisadoPeloUsuario+"'. \n" +
-					"Atenção: o sistema considera acentuação.";
-				setDisplayable = false;
-				display.setCurrent(
-						new Alert("Nenhuma linha encontrada", mensagemAlerta, null, AlertType.ERROR), d);
-			}
-			else
-			{
-				List list = (List) d;
-				list.setSelectedIndex(indiceEncontrado, true);
-			}
-			
+			novoDisplay = criarTelaResultadoPesquisaLinha( pesquisadoPeloUsuario );
 		}
 		
 		
@@ -128,26 +106,42 @@ public class Graviola extends MIDlet implements CommandListener
 		 * cada método "iniciar...()" retorna um displayable. Aqui setamos o
 		 * command listener como esta classe e o Displayable como atual no
 		 * display. 
-		 * 
-		 * Caso uma pesquisa não tenha sido bem-sucedida, esta condição vai 
-		 * alertar o usuário e, portanto, vai se encarregar de configurar o 
-		 * Displayable no display.
 		 */
-		if (d != null) 	d.setCommandListener(this);
-		
-		if (setDisplayable) display.setCurrent(d);
+		if (novoDisplay != null) 
+		{
+			novoDisplay.getDisplayable().setCommandListener(this); 
+			
+			if (novoDisplay.getAlert() != null) {
+				display.setCurrent(novoDisplay.getAlert(), novoDisplay.getDisplayable());
+			} else {
+				display.setCurrent(novoDisplay.getDisplayable());
+			}
+		}
 	}
 	
-	
-	private Displayable iniciarTelaHorario(String nome) {
+
+	/**
+	 * Cria canvas com o horário do onibus selecionado
+	 * 
+	 * tempo para realizar a busca usando '==': 2799 2732 2998 = 2843
+	 * tempo para realizar a busca usando 'equals()': 3158 3121 3172 = 3150
+	 * @param nome
+	 * @return
+	 */
+	private DisplayableAlert criarTelaHorario(String nome) {
 		Onibus onibus = HorarioOnibusService.getByNome(nome);
 		HorarioCanvas canvas = new HorarioCanvas(onibus);
 		canvas.addCommand(voltar);
-		return canvas;
+		return new DisplayableAlert(canvas);
 	}
 	
 	
-	private Displayable iniciarTelaAbout() {
+	/**
+	 * Cria tela com o about
+	 * 
+	 * @return
+	 */
+	private DisplayableAlert criarTelaAbout() {
 		Form form = new Form("");
 		form.append("-- Graviola --\n");
 		form.append("Aplicativo para visualização offline dos horários de");
@@ -158,11 +152,16 @@ public class Graviola extends MIDlet implements CommandListener
 		form.append("---------------\n");
 		form.append("Curitiba/PR - 2012");
 		form.addCommand(voltar);
-		return form;
+		return new DisplayableAlert(form);
 	}
 	
 	
-	private Displayable iniciarListaOnibus() {
+	/**
+	 * Cria lista com todas as linhas de onibus
+	 * 
+	 * @return list
+	 */
+	private DisplayableAlert criarTelaListaOnibus() {
 		list = new List("Linha de Ônibus", List.IMPLICIT);
 		Vector linhas = HorarioOnibusService.getLinhasOnibus();
 		for (int i = 0 ; i < linhas.size(); i++) {
@@ -175,20 +174,69 @@ public class Graviola extends MIDlet implements CommandListener
 		list.addCommand(sobre);
 		list.addCommand(sair);
 		
-		return list;
+		return new DisplayableAlert(list);
 	}
 	
 	
-	public Displayable iniciarPesquisaLinha() {
+	/**
+	 * Cria o formulário de pesquisa
+	 * 
+	 * @return form
+	 */
+	public DisplayableAlert criarTelaPesquisaLinha() {
 		TextField text = new TextField("Pesquisar por linhas cujo nome começa com:", "", 100, TextField.ANY);
-		
 		Form form = new Form("Pesquisar linha");
 		form.addCommand(voltar);
 		form.addCommand(pesquisar);
 		form.append(text);
-		
-		return form;
+		return new DisplayableAlert(form);
 	}
+	
+	
+	/**
+	 * Cria uma tela com o resultado da pesquisa feita pelo usuário
+	 * 
+	 * @param pesquisadoPeloUsuario string de busca do usuário
+	 * @return se não houverem resultados, volta para a própria list,
+	 * com todas as linhas, junto com um alert informando de que não
+	 * foram encontradas linhas. Senão, retorna um list com as novas
+	 * linhas.
+	 */
+	private DisplayableAlert criarTelaResultadoPesquisaLinha(String pesquisadoPeloUsuario) 
+	{
+		Vector linhasEncontradas = HorarioOnibusService.findLinhasByNome( pesquisadoPeloUsuario );
+		
+		DisplayableAlert da = null;
+		
+		/*
+		 * tratamento para quando não encontramos linha com os parâmetros
+		 * inseridos pelo usuário
+		 */
+		if (linhasEncontradas.size() == 0) 
+		{
+			String mensagemAlerta = "Nenhuma linha encontrada para o texto '"+pesquisadoPeloUsuario+"'. \n" +
+				"Atenção: o sistema considera acentuação.";
+			Alert alert = new Alert("Nenhuma linha encontrada", mensagemAlerta, null, AlertType.INFO);
+			
+			da = new DisplayableAlert(list, alert);
+		}
+		else
+		{
+			list = new List("Resultado da Pesquisa", List.IMPLICIT);
+			da = new DisplayableAlert(list);
+			
+			for (int i = 0 ; i < linhasEncontradas.size(); i++) {
+				list.append((String) linhasEncontradas.elementAt(i), null);
+			}
+			
+			list.addCommand(selecionar);
+			list.addCommand(voltar);
+		}
+		
+		return da;
+	}
+	
+	
 	
 	
 	protected void destroyApp(boolean arg0) {

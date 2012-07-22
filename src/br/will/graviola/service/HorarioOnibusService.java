@@ -7,2674 +7,1630 @@ import br.will.graviola.model.onibus.*;
 
 public class HorarioOnibusService
 {
-	public static int findIndiceByNome(String nome)
+	public static Vector findLinhasByNome(String nome)
 	{
-		return findIndiceByNome(nome, getLinhasOnibus());
+		return findLinhasByNome(nome, getLinhasOnibus());
 	}
 	
 	
-	public static int findIndiceByNome(String nome, Vector linhas) 
+	public static Vector findLinhasByNome(String nome, Vector linhas) 
 	{
+		Vector linhasEncontradas = new Vector();
 		String nomeUpper = nome.toUpperCase();
 		for (int i = 0; i < linhas.size(); i++) 
 		{
 			String linha = (String) linhas.elementAt(i);
-			if (linha.startsWith(nomeUpper)) {
-				return i;
+			
+			/*
+			 * o '+1' é para considerar que o substring pega o último índice exclusive.
+			 */
+			for (int inicioLinha = 0; inicioLinha < linha.length() - nomeUpper.length() + 1; inicioLinha++) 
+			{
+				int fimSubstring = inicioLinha + nomeUpper.length();
+				String substring = linha.substring(inicioLinha, fimSubstring);
+				if (nomeUpper.equals(substring)) {
+					linhasEncontradas.addElement(linha);
+					break;
+				}
 			}
 		}
-		return -1;
+		return linhasEncontradas;
 	}
 	
 	
+	public static final String ONIBUSG12 = "A. BRANCA / FAZ. RIO GRANDE";
+	public static final String ONIBUS464 = "A. MUNHOZ / J. BOTÂNICO";
+	public static final String ONIBUS226 = "ABAETÉ";
+	public static final String ONIBUS182 = "ABRANCHES";
+	public static final String ONIBUS332 = "ACRÓPOLE";
+	public static final String ONIBUS208 = "AEROPORTO";
+	public static final String ONIBUS334 = "AGRÍCOLA";
+	public static final String ONIBUSC13 = "ÁGUA CLARA";
+	public static final String ONIBUS180 = "ÁGUA VERDE/ ABRANCHES";
+	public static final String ONIBUSI21 = "AGUDOS DO SUL";
+	public static final String ONIBUS265 = "AHÚ / LOS ANGELES";
+	public static final String ONIBUS560 = "ALFERES POLI";
+	public static final String ONIBUS232 = "ALIANÇA";
+	public static final String ONIBUS629 = "ALTO BOQUEIRÃO";
+	public static final String ONIBUS373 = "ALTO TARUMÃ";
+	public static final String ONIBUSB15 = "ANA TERRA / ADRIANE";
+	public static final String ONIBUSH20 = "ANGÉLICA / C. RASO";
+	public static final String ONIBUSH21 = "ANGÉLICA / CIC";
+	public static final String ONIBUS311 = "ARAGUAIA";
+	public static final String ONIBUSI32 = "ARAUCARIA / CAMPO LARGO";
+	public static final String ONIBUSH11 = "ARAUCÁRIA / PINHEIRINHO";
+	public static final String ONIBUSH12 = "ARAUCÁRIA / PORTÃO";
+	public static final String ONIBUS823 = "AUGUSTA";
+	public static final String ONIBUS361 = "AUGUSTO STRESSER";
+	public static final String ONIBUS313 = "AVENIDA IRAÍ / C. IMBUIA";
+	public static final String ONIBUS342 = "B. ALTO / BOA VISTA";
+	public static final String ONIBUSC41 = "B. ALTO / E. PERNETA";
+	public static final String ONIBUS341 = "B. ALTO / STA. CÂNDIDA";
+	public static final String ONIBUS307 = "B. ALTO / STA. FELICIDADE";
+	public static final String ONIBUS506 = "BAIRRO NOVO";
+	public static final String ONIBUS541 = "BAIRRO NOVO A";
+	public static final String ONIBUS542 = "BAIRRO NOVO B";
+	public static final String ONIBUS547 = "BAIRRO NOVO C";
+	public static final String ONIBUS231 = "BANESTADO / CALIFÓRNIA";
+	public static final String ONIBUS205 = "BARREIRINHA";
+	public static final String ONIBUS206 = "BARREIRINHA / SÃO JOSÉ";
+	public static final String ONIBUS875 = "BIGORRILHO";
+	public static final String ONIBUS225 = "BOA VISTA / BARREIRINHA";
+	public static final String ONIBUSB33 = "BOCAIÚVA DO SUL";
+	public static final String ONIBUS922 = "BOM PASTOR";
+	public static final String ONIBUS175 = "BOM RETIRO / PUC";
+	public static final String ONIBUS503 = "BOQUEIRÃO";
+	public static final String ONIBUS505 = "BOQUEIRÃO / C. CÍVICO";
+	public static final String ONIBUS540 = "BOQUEIRAO / KRAFT";
+	public static final String ONIBUSO71 = "BORDA DO CAMPO";
+	public static final String ONIBUS627 = "BOSCH";
+	public static final String ONIBUS170 = "BRACATINGA";
+	public static final String ONIBUSO75 = "BRITANITE";
+	public static final String ONIBUS913 = "BUTIATUVINHA";
+	public static final String ONIBUS516 = "C. BELEM / S. FILHO";
+	public static final String ONIBUS828 = "C. COMPRIDO / C. RASO";
+	public static final String ONIBUS826 = "C. COMPRIDO / CIC";
+	public static final String ONIBUS393 = "C. IMBUIA / PQ. BARIGUI";
+	public static final String ONIBUSI30 = "C. LARGO / BALSA NOVA";
+	public static final String ONIBUS150 = "C. MÚSICA / V. ALEGRE";
+	public static final String ONIBUS658 = "C. RASO / CAIUÁ";
+	public static final String ONIBUS024 = "C. RASO / CAMP. SIQUEIRA";
+	public static final String ONIBUS201 = "CABRAL / BOM RETIRO";
+	public static final String ONIBUS215 = "CABRAL / CACHOEIRA";
+	public static final String ONIBUSB02 = "CABRAL / MARACANÃ";
+	public static final String ONIBUS207 = "CABRAL / OSÓRIO";
+	public static final String ONIBUS216 = "CABRAL / PORTÃO";
+	public static final String ONIBUS647 = "CACHIMBA";
+	public static final String ONIBUS659 = "CACHIMBA / OLARIA";
+	public static final String ONIBUS703 = "CAIUÁ";
+	public static final String ONIBUS732 = "CAIUA / C.COMPRIDO";
+	public static final String ONIBUS386 = "CAJURU";
+	public static final String ONIBUS322 = "CAMARGO";
+	public static final String ONIBUS801 = "CAMP. SIQUEIRA / BATEL";
+	public static final String ONIBUS654 = "CAMPO ALEGRE";
+	public static final String ONIBUSJ15 = "CAMPO LARGO";
+	public static final String ONIBUS923 = "CAMPO MAGRO";
+	public static final String ONIBUS475 = "CANAL BELÉM";
+	public static final String ONIBUS628 = "CARBOMAFRA";
+	public static final String ONIBUS776 = "CARMELA DUTRA";
+	public static final String ONIBUS668 = "CASA DE CUSTÓDIA";
+	public static final String ONIBUS224 = "CASSIOPÉIA";
+	public static final String ONIBUS305 = "CENTENÁRIO";
+	public static final String ONIBUS335 = "CENTENÁRIO / BOQUEIRÃO";
+	public static final String ONIBUS303 = "CENTENÁRIO / C. COMPRIDO";
+	public static final String ONIBUS338 = "CENTENÁRIO / HAUER";
+	public static final String ONIBUS302 = "CENTENÁRIO / RUI BARBOSA";
+	public static final String ONIBUS469 = "CENTRO POLITÉCNICO";
+	public static final String ONIBUS601 = "CIC / TIRADENTES";
+	public static final String ONIBUS002 = "CIRCULAR CENTRO (ANTI-HORÁRIO)";
+	public static final String ONIBUS001 = "CIRCULAR CENTRO (HORÁRIO)";
+	public static final String ONIBUS602 = "CIRCULAR SUL  (ANTI-HORÁRIO)";
+	public static final String ONIBUS502 = "CIRCULAR SUL (HORÁRIO)";
+	public static final String ONIBUS211 = "COLINA VERDE";
+	public static final String ONIBUSI31 = "COLOMBO / ANG. CARON";
+	public static final String ONIBUS607 = "COLOMBO / CIC";
+	public static final String ONIBUSI20 = "COLOMBO / SÃO JOSÉ";
+	public static final String ONIBUSB24 = "COLÔNIA FARIA";
+	public static final String ONIBUS778 = "COTOLENGO";
+	public static final String ONIBUS385 = "CRISTO REI";
+	public static final String ONIBUSC72 = "CTBA  / V. PALMITAL";
+	public static final String ONIBUSE02 = "CTBA / APOLO";
+	public static final String ONIBUS606 = "CTBA / ARAUCÁRIA";
+	public static final String ONIBUSH01 = "CTBA / ARAUCÁRIA";
+	public static final String ONIBUSG72 = "CTBA / AREIA BRANCA";
+	public static final String ONIBUSP63 = "CTBA / BATEIAS";
+	public static final String ONIBUSE67 = "CTBA / BRAGA";
+	public static final String ONIBUSN70 = "CTBA / C. GDE  SUL (RAPIDO)";
+	public static final String ONIBUSN71 = "CTBA / C. GRANDE DO SUL";
+	public static final String ONIBUSJ62 = "CTBA / C. LARGO";
+	public static final String ONIBUSG73 = "CTBA / CAMP. DOS PAULAS";
+	public static final String ONIBUS805 = "CTBA / CAMPO LARGO";
+	public static final String ONIBUSB61 = "CTBA / CAP. DO ATUBA";
+	public static final String ONIBUSP64 = "CTBA / CERNE";
+	public static final String ONIBUSB80 = "CTBA / COLOMBO (CAMBARÁ)";
+	public static final String ONIBUSB81 = "CTBA / COLOMBO (GUARACI)";
+	public static final String ONIBUSB72 = "CTBA / COLOMBO (ROD. UVA)";
+	public static final String ONIBUSC63 = "CTBA / CONJ. ATUBA";
+	public static final String ONIBUSR71 = "CTBA / CONTENDA";
+	public static final String ONIBUSN72 = "CTBA / EUGÊNIA MARIA";
+	public static final String ONIBUS605 = "CTBA / FAZ. RIO GRANDE";
+	public static final String ONIBUSE77 = "CTBA / GUATUPÊ";
+	public static final String ONIBUSE66 = "CTBA / INDEPENDÊNCIA";
+	public static final String ONIBUSK71 = "CTBA / ITAPERUÇU";
+	public static final String ONIBUSB82 = "CTBA / JD. ANA ROSA";
+	public static final String ONIBUSB75 = "CTBA / JD. ARAPONGAS";
+	public static final String ONIBUSB74 = "CTBA / JD. CÉSAR AUGUSTO";
+	public static final String ONIBUSE75 = "CTBA / JD. CRISTAL";
+	public static final String ONIBUSE73 = "CTBA / JD. CRUZEIRO";
+	public static final String ONIBUSB77 = "CTBA / JD. CURITIBA";
+	public static final String ONIBUSE71 = "CTBA / JD. IPÊ";
+	public static final String ONIBUSE72 = "CTBA / JD. IZAURA";
+	public static final String ONIBUSA73 = "CTBA / JD. MARROCOS";
+	public static final String ONIBUSB73 = "CTBA / JD. OSASCO";
+	public static final String ONIBUSA72 = "CTBA / JD. PARAÍSO";
+	public static final String ONIBUSB78 = "CTBA / JD. SÃO GABRIEL";
+	public static final String ONIBUSG71 = "CTBA / MANDIRITUBA";
+	public static final String ONIBUSB01 = "CTBA / MARACANÃ";
+	public static final String ONIBUSE62 = "CTBA / PEDRO MORO";
+	public static final String ONIBUSD61 = "CTBA / PIRAQUARA";
+	public static final String ONIBUSD66 = "CTBA / PIRAQUARA (DIRETO)";
+	public static final String ONIBUSE76 = "CTBA / POSTO PARIS";
+	public static final String ONIBUSO72 = "CTBA / POUSADA";
+	public static final String ONIBUSE70 = "CTBA / PUC";
+	public static final String ONIBUSO74 = "CTBA / Q. BARRAS (BR 116)";
+	public static final String ONIBUSO73 = "CTBA / Q. BARRAS (GRACIOSA)";
+	public static final String ONIBUSE68 = "CTBA / QUISISANA";
+	public static final String ONIBUSL71 = "CTBA / R. BCO. DO SUL";
+	public static final String ONIBUSB79 = "CTBA / ROÇA GRANDE";
+	public static final String ONIBUSE78 = "CTBA / ROSEIRA";
+	public static final String ONIBUSE05 = "CTBA / SÃO JOSÉ";
+	public static final String ONIBUSB76 = "CTBA / SÃO SEBASTIÃO";
+	public static final String ONIBUSB83 = "CTBA / STA. TEREZA";
+	public static final String ONIBUSA01 = "CTBA / TAMANDARÉ";
+	public static final String ONIBUSA07 = "CTBA / TAMANDARÉ (LAMENHA)";
+	public static final String ONIBUSA06 = "CTBA / TAMANDARÉ (MINÉRIOS)";
+	public static final String ONIBUSA77 = "CTBA / TANGUÁ";
+	public static final String ONIBUSP65 = "CTBA / TERRA BOA";
+	public static final String ONIBUSN73 = "CTBA / TIMBÚ";
+	public static final String ONIBUSE01 = "CTBA / URANO";
+	public static final String ONIBUSA78 = "CTBA / V.  MARTA";
+	public static final String ONIBUSC66 = "CTBA / V. ZUMBI";
+	public static final String ONIBUSE65 = "CTBA / XINGU";
+	public static final String ONIBUSB06 = "CTBA/GUARAITUBA(VIA MARACANA)";
+	public static final String ONIBUSO76 = "CTBA/Q.BARRAS(RAPIDO)";
+	public static final String ONIBUS681 = "DALAGASSA";
+	public static final String ONIBUS380 = "DETRAN / VIC. MACHADO";
+	public static final String ONIBUSC05 = "DIRETO C. IMBUIA";
+	public static final String ONIBUSB31 = "DIRETO CABRAL";
+	public static final String ONIBUS662 = "DOM ÁTICO";
+	public static final String ONIBUS699 = "E. E. ALCINDO FANAYA 1";
+	public static final String ONIBUS795 = "E. E. ALCINDO FANAYA 2";
+	public static final String ONIBUS799 = "E. E. ALI BARK 1";
+	public static final String ONIBUS798 = "E. E. ALI BARK 2";
+	public static final String ONIBUS695 = "E. E. ALTO BOQUEIRÃO";
+	public static final String ONIBUS399 = "E. E. APAE 1";
+	public static final String ONIBUS596 = "E. E. APAE 2";
+	public static final String ONIBUS598 = "E. E. APAE 3";
+	public static final String ONIBUS396 = "E. E. APAE 6";
+	public static final String ONIBUS694 = "E. E. BAIRRO NOVO";
+	public static final String ONIBUS398 = "E. E. C. IMBUIA";
+	public static final String ONIBUS397 = "E. E. CAJURU";
+	public static final String ONIBUS394 = "E. E. CENTRAU 1";
+	public static final String ONIBUS899 = "E. E. CIC";
+	public static final String ONIBUS697 = "E. E. ECUMÊNICA 1";
+	public static final String ONIBUS897 = "E. E. ECUMÊNICA 2";
+	public static final String ONIBUS599 = "E. E. HELENA ANTIPOFF 1";
+	public static final String ONIBUS497 = "E. E. HELENA ANTIPOFF 2";
+	public static final String ONIBUS499 = "E. E. HELENA ANTIPOFF 4";
+	public static final String ONIBUS698 = "E. E. NOSSA SRA. DA LUZ";
+	public static final String ONIBUS495 = "E. E. PINHAIS 1";
+	public static final String ONIBUS498 = "E. E. PINHAIS 2";
+	public static final String ONIBUS696 = "E. E. PINHEIRINHO";
+	public static final String ONIBUS597 = "E. E. SÍTIO CERCADO";
+	public static final String ONIBUS796 = "E. E. STA. HELENA";
+	public static final String ONIBUS797 = "E. E. STA. QUITÉRIA";
+	public static final String ONIBUS895 = "E. E. TATUQUARA";
+	public static final String ONIBUS693 = "E. E. THOMAZ EDISON 1";
+	public static final String ONIBUS893 = "E. E. TOMAZ EDISON 2";
+	public static final String ONIBUS691 = "E. E. TOMAZ EDISON 3";
+	public static final String ONIBUS392 = "E. E. TOMAZ EDISON 4";
+	public static final String ONIBUS692 = "E. E. TOMAZ EDISON 5";
+	public static final String ONIBUS998 = "E. E. VIVIAN MARCAL 1";
+	public static final String ONIBUS894 = "E. E. 29 DE MARÇO 1";
+	public static final String ONIBUS533 = "E. VERÍSSIMO / PANTANAL";
+	public static final String ONIBUSC23 = "EMILIANO PERNETA";
+	public static final String ONIBUS465 = "ERASTO  GAERTNER";
+	public static final String ONIBUSX12 = "ESPECIAL BOQUEIRAO";
+	public static final String ONIBUSX19 = "ESPECIAL HASDRUBAL BELLEGARD";
+	public static final String ONIBUSX18 = "ESPECIAL PAUL GARFUNKEL";
+	public static final String ONIBUS968 = "ESPECIAL TROMBINI";
+	public static final String ONIBUSF13 = "ESTADOS";
+	public static final String ONIBUS266 = "ESTRIBO AHÚ";
+	public static final String ONIBUS466 = "ESTUDANTES";
+	public static final String ONIBUSF17 = "EUCALIPTOS";
+	public static final String ONIBUSF24 = "EUCALIPTOS II";
+	public static final String ONIBUSF27 = "EUCALIPTOS III / PIONEIROS";
+	public static final String ONIBUSE64 = "EXECUTIVO / AEROPORTO";
+	public static final String ONIBUS621 = "FANNY";
+	public static final String ONIBUSF73 = "FAZ. RIO GRANDE / A. BRANCA";
+	public static final String ONIBUSF72 = "FAZ. RIO GRANDE / MANDIRITUBA";
+	public static final String ONIBUS719 = "FAZEND. / CAIUÁ-FRIGORÍF.";
+	public static final String ONIBUSF05 = "FAZENDA / CIC";
+	public static final String ONIBUSF01 = "FAZENDA / PINHEIRINHO";
+	public static final String ONIBUSF03 = "FAZENDA (DIRETO)";
+	public static final String ONIBUS701 = "FAZENDINHA";
+	public static final String ONIBUS720 = "FAZENDINHA / C. COMPRIDO";
+	public static final String ONIBUS831 = "FAZENDINHA / C.RASO";
+	public static final String ONIBUS611 = "FAZENDINHA / PORTÃO";
+	public static final String ONIBUS614 = "FAZENDINHA / PUC";
+	public static final String ONIBUS702 = "FAZENDINHA / TAMANDARÉ";
+	public static final String ONIBUS270 = "FERNANDO DE NORONHA";
+	public static final String ONIBUS821 = "FERNÃO DIAS";
+	public static final String ONIBUS673 = "FORMOSA";
+	public static final String ONIBUS167 = "FREDOLIN WOLF";
+	public static final String ONIBUS639 = "FUTURAMA";
+	public static final String ONIBUS683 = "FUTURAMA / S. CERCADO";
+	public static final String ONIBUS822 = "GABINETO";
+	public static final String ONIBUS642 = "GANCHINHO";
+	public static final String ONIBUSA16 = "GIANNINI";
+	public static final String ONIBUSF15 = "GRALHA AZUL";
+	public static final String ONIBUS625 = "GRAMADOS";
+	public static final String ONIBUS470 = "GUABIROTUBA";
+	public static final String ONIBUSB23 = "GUARAITUBA";
+	public static final String ONIBUSB05 = "GUARAITUBA / CABRAL";
+	public static final String ONIBUSB20 = "GUARAITUBA / CABRAL";
+	public static final String ONIBUSB34 = "GUARAITUBA / MARACANA";
+	public static final String ONIBUSD22 = "GUARITUBA";
+	public static final String ONIBUS561 = "GUILHERMINA";
+	public static final String ONIBUS513 = "HAUER / BOQUEIRÃO";
+	public static final String ONIBUS371 = "HIGIENÓPOLIS";
+	public static final String ONIBUS374 = "HUGO LANGE";
+	public static final String ONIBUSF12 = "IGUAÇU I";
+	public static final String ONIBUSF21 = "IGUAÇU II";
+	public static final String ONIBUS523 = "IGUAPE I";
+	public static final String ONIBUS515 = "IGUAPE II";
+	public static final String ONIBUSD13 = "INTEGRAR  PIRAQUARA";
+	public static final String ONIBUS023 = "INTER 2 ( ANTI-HORÁRIO)";
+	public static final String ONIBUS022 = "INTER 2 (HORÁRIO)";
+	public static final String ONIBUS011 = "INTERBAIRROS I (ANTI-HORÁRIO)";
+	public static final String ONIBUS010 = "INTERBAIRROS I (HORÁRIO)";
+	public static final String ONIBUS021 = "INTERBAIRROS II (ANTI-HORÁRIO)";
+	public static final String ONIBUS020 = "INTERBAIRROS II (HORÁRIO)";
+	public static final String ONIBUS030 = "INTERBAIRROS III";
+	public static final String ONIBUS040 = "INTERBAIRROS IV";
+	public static final String ONIBUS050 = "INTERBAIRROS V";
+	public static final String ONIBUS060 = "INTERBAIRROS VI";
+	public static final String ONIBUS378 = "INTERHOSPITAIS";
+	public static final String ONIBUS512 = "ITAMARATI";
+	public static final String ONIBUSI71 = "ITAPERUÇU / CAIC";
+	public static final String ONIBUSK11 = "ITAPERUÇU / TAMANDARÉ";
+	public static final String ONIBUS711 = "ITATIAIA";
+	public static final String ONIBUS366 = "ITUPAVA / HOSP. MILITAR";
+	public static final String ONIBUSC28 = "JACOB MACANHAN";
+	public static final String ONIBUSD31 = "JD. BELA VISTA";
+	public static final String ONIBUS914 = "JD. BOA VISTA";
+	public static final String ONIBUS468 = "JD. CENTAURO";
+	public static final String ONIBUS183 = "JD. CHAPARRAL";
+	public static final String ONIBUSC20 = "JD. CLÁUDIA";
+	public static final String ONIBUSB13 = "JD. DAS GRAÇAS";
+	public static final String ONIBUS244 = "JD. DO ARROIO";
+	public static final String ONIBUS865 = "JD. ESPLANADA";
+	public static final String ONIBUSB26 = "JD. EUCALIPTOS";
+	public static final String ONIBUSA14 = "JD. GRAMADOS";
+	public static final String ONIBUSA31 = "JD. GRAZIELA";
+	public static final String ONIBUSC11 = "JD. HOLANDÊS";
+	public static final String ONIBUS712 = "JD. INDEPENDÊNCIA / CIC";
+	public static final String ONIBUS917 = "JD. IPÊ";
+	public static final String ONIBUSC16 = "JD. IRAÍ";
+	public static final String ONIBUS972 = "JD. ITÁLIA";
+	public static final String ONIBUS474 = "JD. ITIBERÊ";
+	public static final String ONIBUS169 = "JD. KOSMOS";
+	public static final String ONIBUS617 = "JD. LUDOVICA";
+	public static final String ONIBUS160 = "JD. MERCÊS / GUANABARA";
+	public static final String ONIBUSA13 = "JD. MONTE SANTO";
+	public static final String ONIBUS655 = "JD. ORDEM";
+	public static final String ONIBUSA21 = "JD. PARAÍSO / TAMANDARÉ";
+	public static final String ONIBUS532 = "JD. PARANAENSE";
+	public static final String ONIBUS921 = "JD. PIONEIRO";
+	public static final String ONIBUS365 = "JD. SOCIAL / BATEL";
+	public static final String ONIBUSD21 = "JD. STA. MÔNICA";
+	public static final String ONIBUSC18 = "JD. TROPICAL";
+	public static final String ONIBUSF25 = "JD. VENEZA";
+	public static final String ONIBUSC27 = "JOAQUINA";
+	public static final String ONIBUS912 = "JOSÉ CULPI";
+	public static final String ONIBUS967 = "JÚLIO GRAF";
+	public static final String ONIBUS285 = "JUVEVÊ / ÁGUA VERDE";
+	public static final String ONIBUS656 = "KAMYR";
+	public static final String ONIBUS271 = "LARANJEIRAS";
+	public static final String ONIBUS520 = "LD OSTERNACK / S. CERCADO";
+	public static final String ONIBUSG13 = "LG. FERREIRAS / PINHEIRINHO";
+	public static final String ONIBUS550 = "LIGEIRÃO - PINHEIRINHO / C. GOMES";
+	public static final String ONIBUS500 = "LIGEIRAO BOQUEIRAO";
+	public static final String ONIBUS661 = "LINDÓIA";
+	public static final String ONIBUS635 = "LONDRINA";
+	public static final String ONIBUS641 = "LUIZ NICHELE";
+	public static final String ONIBUS189 = "MAD. ABRANCHES";
+	public static final String ONIBUS549 = "MAD. BAIRRO NOVO";
+	public static final String ONIBUS509 = "MAD. BOQUEIRÃO";
+	public static final String ONIBUS789 = "MAD. CAIUÁ";
+	public static final String ONIBUS802 = "MAD. CAMPO COMPRIDO";
+	public static final String ONIBUS809 = "MAD. CAMPO COMPRIDO";
+	public static final String ONIBUS309 = "MAD. CENTENÁRIO";
+	public static final String ONIBUS308 = "MAD. CENTENÁRIO / RUI BARBOSA";
+	public static final String ONIBUS609 = "MAD. CIC";
+	public static final String ONIBUSC64 = "MAD. CTBA / PINHAIS";
+	public static final String ONIBUSD69 = "MAD. CTBA / PIRAQUARA";
+	public static final String ONIBUSB69 = "MAD. CTBA / SÃO DIMAS";
+	public static final String ONIBUSE69 = "MAD. CTBA / SÃO JOSÉ";
+	public static final String ONIBUSA05 = "MAD. CTBA / TAMANDARÉ";
+	public static final String ONIBUSF09 = "MAD. FAZ. RIO GRANDE";
+	public static final String ONIBUSJ19 = "MAD. FERRARIA";
+	public static final String ONIBUS289 = "MAD. JD. GRAZIELA";
+	public static final String ONIBUS229 = "MAD. PENHA / F. NORONHA";
+	public static final String ONIBUS489 = "MAD. PETRÓPOLIS / SOLITUDE";
+	public static final String ONIBUS188 = "MAD. PILARZINHO / UBERABA";
+	public static final String ONIBUS608 = "MAD. PINHEIRINHO";
+	public static final String ONIBUS209 = "MAD. S. CÂNDIDA / C. RASO";
+	public static final String ONIBUS519 = "MAD. S. FRANCISCO / IGUAPE";
+	public static final String ONIBUS689 = "MAD. S. PEDRO / R. NEGRO";
+	public static final String ONIBUS889 = "MAD. SÃO BRÁZ";
+	public static final String ONIBUS989 = "MAD. STA. FELICIDADE";
+	public static final String ONIBUS389 = "MAD. TARUMÃ / AUGUSTA";
+	public static final String ONIBUS679 = "MAD. TATUQUARA";
+	public static final String ONIBUS788 = "MAD. V. VELHA";
+	public static final String ONIBUS260 = "MAL. HERMES / STA. EFIGÊNIA";
+	public static final String ONIBUSB25 = "MARACANÃ / B. ALTO";
+	public static final String ONIBUSB41 = "MARACANÃ / C. IMBUIA";
+	public static final String ONIBUSB42 = "MARACANA / LINHA VERDE";
+	public static final String ONIBUSB11 = "MARACANÃ / STA.  CÂNDIDA";
+	public static final String ONIBUSB32 = "MARACANÃ / STA. CÂNDIDA";
+	public static final String ONIBUS633 = "MARIA ANGÉLICA";
+	public static final String ONIBUS522 = "MARINGÁ";
+	public static final String ONIBUS181 = "MATEUS LEME";
+	public static final String ONIBUS594 = "MENONITAS";
+	public static final String ONIBUS331 = "MERCÚRIO";
+	public static final String ONIBUS812 = "MONTANA";
+	public static final String ONIBUSB19 = "MONTE CASTELO";
+	public static final String ONIBUS814 = "MOSSUNGUÊ";
+	public static final String ONIBUSF16 = "NAÇÕES I";
+	public static final String ONIBUSF22 = "NAÇÕES II";
+	public static final String ONIBUS176 = "NILO PEÇANHA";
+	public static final String ONIBUS521 = "NIVALDO BRAGA";
+	public static final String ONIBUS674 = "NOSSA SRA. DA LUZ";
+	public static final String ONIBUS280 = "NOSSA SRA. DE NAZARÉ";
+	public static final String ONIBUS360 = "NOVENA";
+	public static final String ONIBUS666 = "NOVO MUNDO";
+	public static final String ONIBUS233 = "OLARIA";
+	public static final String ONIBUS535 = "OSTERNACK / BOQUEIRÃO";
+	public static final String ONIBUS548 = "OSTERNACK / S. CERCADO";
+	public static final String ONIBUS915 = "OURO VERDE / V. BÁDIA";
+	public static final String ONIBUS272 = "PAINEIRAS";
+	public static final String ONIBUS640 = "PALMEIRA";
+	public static final String ONIBUSB22 = "PALOMA";
+	public static final String ONIBUSB36 = "PALOMA / GUARAITUBA";
+	public static final String ONIBUS387 = "PALOTINOS";
+	public static final String ONIBUS343 = "PARAÍSO";
+	public static final String ONIBUS534 = "PARIGOT DE SOUZA";
+	public static final String ONIBUS623 = "PARQUE INDUSTRIAL";
+	public static final String ONIBUS911 = "PASSAÚNA";
+	public static final String ONIBUS462 = "PETRÓPOLIS";
+	public static final String ONIBUSC42 = "PINHAIS / B. ALTO";
+	public static final String ONIBUS304 = "PINHAIS / C. COMPRIDO";
+	public static final String ONIBUSC03 = "PINHAIS / GUADALUPE";
+	public static final String ONIBUSD14 = "PINHAIS / PIRAQUARA";
+	public static final String ONIBUS301 = "PINHAIS / RUI BARBOSA";
+	public static final String ONIBUS603 = "PINHEIRINHO";
+	public static final String ONIBUS638 = "PINHEIRINHO";
+	public static final String ONIBUS644 = "PINHEIRINHO / CIC";
+	public static final String ONIBUS688 = "PINHEIRINHO / ZOOLÓGICO";
+	public static final String ONIBUS916 = "PINHEIROS";
+	public static final String ONIBUS631 = "PIRATINI / BR 476";
+	public static final String ONIBUS649 = "PIRINEUS";
+	public static final String ONIBUSB14 = "PLANALTO";
+	public static final String ONIBUSD11 = "PLANTA DEODORO";
+	public static final String ONIBUSC22 = "PLANTA KARLA";
+	public static final String ONIBUS646 = "POMPÉIA";
+	public static final String ONIBUS671 = "PORTÃO";
+	public static final String ONIBUS612 = "PORTÃO / CIC";
+	public static final String ONIBUS616 = "PORTAO / STA. BERNADETHE - L. VERDE";
+	public static final String ONIBUSX20 = "PORTAO/SITIO CERCADO";
+	public static final String ONIBUSB35 = "PORTEIRA / PALOMA";
+	public static final String ONIBUS718 = "PORTO BELO";
+	public static final String ONIBUSF18 = "PQ. INDUSTRIAL";
+	public static final String ONIBUSE63 = "PRADO VELHO / P. MORO";
+	public static final String ONIBUSD16 = "PRESÍDIO";
+	public static final String ONIBUS171 = "PRIMAVERA";
+	public static final String ONIBUSC26 = "PRIVÊ";
+	public static final String ONIBUSE31 = "PUC / SÃO JOSÉ";
+	public static final String ONIBUSI41 = "Q. BARRAS / BOCAIÚVA";
+	public static final String ONIBUSI40 = "Q. BARRAS / PIRAQUARA";
+	public static final String ONIBUSI51 = "Q. BARRAS/T.PAULISTA-ANTI HORARI";
+	public static final String ONIBUSI50 = "Q. BARRAS/T.PAULISTA-HORARIO";
+	public static final String ONIBUS632 = "QUARTEL GENERAL";
+	public static final String ONIBUSG11 = "QUITANDINHA / PINHEIRINHO";
+	public static final String ONIBUSL11 = "R. BRANCO / TAMANDARÉ";
+	public static final String ONIBUS168 = "RAPOSO TAVARES";
+	public static final String ONIBUS165 = "RAQUEL PRADO / PUC";
+	public static final String ONIBUSJ12 = "REBOUÇAS";
+	public static final String ONIBUS219 = "REFORÇO COLINA";
+	public static final String ONIBUSX14 = "REFORÇO HAUER";
+	public static final String ONIBUS539 = "REFORÇO TERMINAL";
+	public static final String ONIBUSB27 = "RIBEIRA / FCO. CORADIN";
+	public static final String ONIBUS684 = "RIO BONITO";
+	public static final String ONIBUS685 = "RIO BONITO / CIC";
+	public static final String ONIBUS636 = "RIO NEGRO";
+	public static final String ONIBUS221 = "RIO VERDE";
+	public static final String ONIBUS827 = "RIVIERA";
+	public static final String ONIBUSB29 = "ROÇA GRANDE /  APDEC";
+	public static final String ONIBUS622 = "RONDON";
+	public static final String ONIBUSB18 = "ROSEIRA";
+	public static final String ONIBUS370 = "RUA XV / BARIGUI";
+	public static final String ONIBUS680 = "RURBANA";
+	public static final String ONIBUS546 = "S. CERCADO / BOQUEIRÃO";
+	public static final String ONIBUS610 = "S. CERCADO / C. RASO";
+	public static final String ONIBUS653 = "SABARÁ";
+	public static final String ONIBUS375 = "SAGRADO CORAÇÃO";
+	public static final String ONIBUSA11 = "SAN FRANCISCO";
+	public static final String ONIBUS236 = "SÃO BENEDITO";
+	public static final String ONIBUS965 = "SÃO BERNARDO";
+	public static final String ONIBUS870 = "SÃO BRAZ";
+	public static final String ONIBUSD12 = "SÃO CRISTÓVÃO";
+	public static final String ONIBUS511 = "SÃO FRANCISCO";
+	public static final String ONIBUS213 = "SÃO JOÃO";
+	public static final String ONIBUS670 = "SÃO JORGE";
+	public static final String ONIBUSA17 = "SÃO JORGE";
+	public static final String ONIBUS824 = "SÃO JOSÉ / D. FINA";
+	public static final String ONIBUS811 = "SATURNO";
+	public static final String ONIBUS876 = "SAVÓIA";
+	public static final String ONIBUSX11 = "SITIO CERCADO / C. RASO";
+	public static final String ONIBUS508 = "SÍTIO CERCADO (ANTI-HORÁRIO)";
+	public static final String ONIBUS507 = "SÍTIO CERCADO (HORÁRIO)";
+	public static final String ONIBUS212 = "SOLAR";
+	public static final String ONIBUS463 = "SOLITUDE";
+	public static final String ONIBUS713 = "STA. AMÉLIA";
+	public static final String ONIBUSJ16 = "STA. ÂNGELA";
+	public static final String ONIBUS461 = "STA. BARBARA";
+	public static final String ONIBUS203 = "STA. CÂNDIDA / C. RASO";
+	public static final String ONIBUS204 = "STA. CÂNDIDA / PINHEIRINHO";
+	public static final String ONIBUS620 = "STA. CRUZ";
+	public static final String ONIBUS901 = "STA. FELICIDADE";
+	public static final String ONIBUS902 = "STA. FELICIDADE";
+	public static final String ONIBUS924 = "STA. FELICIDADE / STA. CÂNDIDA";
+	public static final String ONIBUS274 = "STA. GEMA";
+	public static final String ONIBUSB17 = "STA. HELENA";
+	public static final String ONIBUS531 = "STA. INÊS";
+	public static final String ONIBUS637 = "STA. JOANA";
+	public static final String ONIBUSF14 = "STA. MARIA";
+	public static final String ONIBUS760 = "STA. QUITÉRIA";
+	public static final String ONIBUS619 = "STA. RITA / CIC";
+	public static final String ONIBUS650 = "STA. RITA / PINHEIRINHO";
+	public static final String ONIBUS243 = "STA. TEREZINHA";
+	public static final String ONIBUSF19 = "STA. TEREZINHA";
+	public static final String ONIBUSF26 = "STA. TEREZINHA / IPE";
+	public static final String ONIBUSE11 = "T. BOQ. / T. AFONSO PENA";
+	public static final String ONIBUSE21 = "T. BOQ. / T. CENTRAL";
+	public static final String ONIBUSC04 = "T. C. IMBUIA / T. PINHAIS";
+	public static final String ONIBUS806 = "T. C. LARGO / CAMP. SIQUEIRA";
+	public static final String ONIBUSI90 = "T. CACHOEIRA / T. MARACANÃ";
+	public static final String ONIBUSA02 = "TAMANDARÉ";
+	public static final String ONIBUS105 = "TAMANDARÉ / CABRAL";
+	public static final String ONIBUS218 = "TAMANDARÉ / CABRAL";
+	public static final String ONIBUSI91 = "TAMANDARÉ / COLOMBO";
+	public static final String ONIBUSA22 = "TANGUÁ / TAMANDARÉ";
+	public static final String ONIBUS372 = "TARUMÃ";
+	public static final String ONIBUS667 = "TERMINAL CIC";
+	public static final String ONIBUSJ14 = "TIMBOTUVA (EST. NOVA)";
+	public static final String ONIBUSJ13 = "TIMBOTUVA (EST. VELHA)";
+	public static final String ONIBUS214 = "TINGUI";
+	public static final String ONIBUS545 = "TRABALHADOR";
+	public static final String ONIBUS861 = "TRAMONTINA";
+	public static final String ONIBUS321 = "TRINDADE";
+	public static final String ONIBUS815 = "TUIUTI / BARIGUI";
+	public static final String ONIBUS979 = "TURISMO";
+	public static final String ONIBUS472 = "UBERABA";
+	public static final String ONIBUS615 = "UBERLÂNDIA";
+	public static final String ONIBUS643 = "UMBARÁ";
+	public static final String ONIBUS829 = "UNIV.POSITIVO";
+	public static final String ONIBUSC25 = "V. AMÉLIA";
+	public static final String ONIBUS323 = "V. AUTÓDROMO";
+	public static final String ONIBUS663 = "V. CUBAS";
+	public static final String ONIBUS222 = "V. ESPERANÇA";
+	public static final String ONIBUSC30 = "V. GRANDE / V. TARUMÃ";
+	public static final String ONIBUS761 = "V. IZABEL";
+	public static final String ONIBUS242 = "V. LEONICE";
+	public static final String ONIBUS467 = "V. MACEDO";
+	public static final String ONIBUSD23 = "V. MACEDO";
+	public static final String ONIBUSC17 = "V. MARIA ANTONIETA";
+	public static final String ONIBUSB28 = "V. MARIA DO ROSÁRIO";
+	public static final String ONIBUS714 = "V. MARISA";
+	public static final String ONIBUS825 = "V. MARQUETO";
+	public static final String ONIBUS166 = "V. NORI";
+	public static final String ONIBUSC12 = "V. NOVA";
+	public static final String ONIBUSA32 = "V. PRADO";
+	public static final String ONIBUS336 = "V. RENO";
+	public static final String ONIBUS665 = "V. REX";
+	public static final String ONIBUS762 = "V. ROSINHA";
+	public static final String ONIBUS860 = "V. SANDRA";
+	public static final String ONIBUS471 = "V. SÃO PAULO";
+	public static final String ONIBUS624 = "V. SÃO PEDRO";
+	public static final String ONIBUS184 = "V. SUIÇA";
+	public static final String ONIBUS613 = "V. URANO";
+	public static final String ONIBUS777 = "V. VELHA";
+	public static final String ONIBUS652 = "V. VERDE";
+	public static final String ONIBUS918 = "VENEZA";
+	public static final String ONIBUSZ03 = "VIC. DE CARVALHO / C. IMBUIA";
+	public static final String ONIBUS779 = "VILA VELHA/BURITI";
+	public static final String ONIBUS630 = "VITÓRIA RÉGIA";
+	public static final String ONIBUS690 = "V.JULIANA";
+	public static final String ONIBUSC15 = "WEISSÓPOLIS";
+	public static final String ONIBUS657 = "XAXIM / CAPÃO RASO";
+	public static final String ONIBUS551 = "XAXIM / LINHA VERDE";
+	public static final String ONIBUS536 = "ZOOLÓGICO";
+
 	public static Vector getLinhasOnibus() {
 		Vector linhasOnibus = new Vector();
-		linhasOnibus.addElement("A. BRANCA / FAZ. RIO GRANDE");
-		linhasOnibus.addElement("A. MUNHOZ / J. BOTÂNICO");
-		linhasOnibus.addElement("ABAETÉ");
-		linhasOnibus.addElement("ABRANCHES");
-		linhasOnibus.addElement("ACRÓPOLE");
-		linhasOnibus.addElement("AEROPORTO");
-		linhasOnibus.addElement("AGRÍCOLA");
-		linhasOnibus.addElement("ÁGUA CLARA");
-		linhasOnibus.addElement("ÁGUA VERDE/ ABRANCHES");
-		linhasOnibus.addElement("AGUDOS DO SUL");
-		linhasOnibus.addElement("AHÚ / LOS ANGELES");
-		linhasOnibus.addElement("ALFERES POLI");
-		linhasOnibus.addElement("ALIANÇA");
-		linhasOnibus.addElement("ALTO BOQUEIRÃO");
-		linhasOnibus.addElement("ALTO TARUMÃ");
-		linhasOnibus.addElement("ANA TERRA / ADRIANE");
-		linhasOnibus.addElement("ANGÉLICA / C. RASO");
-		linhasOnibus.addElement("ANGÉLICA / CIC");
-		linhasOnibus.addElement("ARAGUAIA");
-		linhasOnibus.addElement("ARAUCARIA / CAMPO LARGO");
-		linhasOnibus.addElement("ARAUCÁRIA / PINHEIRINHO");
-		linhasOnibus.addElement("ARAUCÁRIA / PORTÃO");
-		linhasOnibus.addElement("AUGUSTA");
-		linhasOnibus.addElement("AUGUSTO STRESSER");
-		linhasOnibus.addElement("AVENIDA IRAÍ / C. IMBUIA");
-		linhasOnibus.addElement("B. ALTO / BOA VISTA");
-		linhasOnibus.addElement("B. ALTO / E. PERNETA");
-		linhasOnibus.addElement("B. ALTO / STA. CÂNDIDA");
-		linhasOnibus.addElement("B. ALTO / STA. FELICIDADE");
-		linhasOnibus.addElement("BAIRRO NOVO");
-		linhasOnibus.addElement("BAIRRO NOVO A");
-		linhasOnibus.addElement("BAIRRO NOVO B");
-		linhasOnibus.addElement("BAIRRO NOVO C");
-		linhasOnibus.addElement("BANESTADO / CALIFÓRNIA");
-		linhasOnibus.addElement("BARREIRINHA");
-		linhasOnibus.addElement("BARREIRINHA / SÃO JOSÉ");
-		linhasOnibus.addElement("BIGORRILHO");
-		linhasOnibus.addElement("BOA VISTA / BARREIRINHA");
-		linhasOnibus.addElement("BOCAIÚVA DO SUL");
-		linhasOnibus.addElement("BOM PASTOR");
-		linhasOnibus.addElement("BOM RETIRO / PUC");
-		linhasOnibus.addElement("BOQUEIRÃO");
-		linhasOnibus.addElement("BOQUEIRÃO / C. CÍVICO");
-		linhasOnibus.addElement("BOQUEIRAO / KRAFT");
-		linhasOnibus.addElement("BORDA DO CAMPO");
-		linhasOnibus.addElement("BOSCH");
-		linhasOnibus.addElement("BRACATINGA");
-		linhasOnibus.addElement("BRITANITE");
-		linhasOnibus.addElement("BUTIATUVINHA");
-		linhasOnibus.addElement("C. BELEM / S. FILHO");
-		linhasOnibus.addElement("C. COMPRIDO / C. RASO");
-		linhasOnibus.addElement("C. COMPRIDO / CIC");
-		linhasOnibus.addElement("C. IMBUIA / PQ. BARIGUI");
-		linhasOnibus.addElement("C. LARGO / BALSA NOVA");
-		linhasOnibus.addElement("C. MÚSICA / V. ALEGRE");
-		linhasOnibus.addElement("C. RASO / CAIUÁ");
-		linhasOnibus.addElement("C. RASO / CAMP. SIQUEIRA");
-		linhasOnibus.addElement("CABRAL / BOM RETIRO");
-		linhasOnibus.addElement("CABRAL / CACHOEIRA");
-		linhasOnibus.addElement("CABRAL / MARACANÃ");
-		linhasOnibus.addElement("CABRAL / OSÓRIO");
-		linhasOnibus.addElement("CABRAL / PORTÃO");
-		linhasOnibus.addElement("CACHIMBA");
-		linhasOnibus.addElement("CACHIMBA / OLARIA");
-		linhasOnibus.addElement("CAIUÁ");
-		linhasOnibus.addElement("CAIUA / C.COMPRIDO");
-		linhasOnibus.addElement("CAJURU");
-		linhasOnibus.addElement("CAMARGO");
-		linhasOnibus.addElement("CAMP. SIQUEIRA / BATEL");
-		linhasOnibus.addElement("CAMPO ALEGRE");
-		linhasOnibus.addElement("CAMPO LARGO");
-		linhasOnibus.addElement("CAMPO MAGRO");
-		linhasOnibus.addElement("CANAL BELÉM");
-		linhasOnibus.addElement("CARBOMAFRA");
-		linhasOnibus.addElement("CARMELA DUTRA");
-		linhasOnibus.addElement("CASA DE CUSTÓDIA");
-		linhasOnibus.addElement("CASSIOPÉIA");
-		linhasOnibus.addElement("CENTENÁRIO");
-		linhasOnibus.addElement("CENTENÁRIO / BOQUEIRÃO");
-		linhasOnibus.addElement("CENTENÁRIO / C. COMPRIDO");
-		linhasOnibus.addElement("CENTENÁRIO / HAUER");
-		linhasOnibus.addElement("CENTENÁRIO / RUI BARBOSA");
-		linhasOnibus.addElement("CENTRO POLITÉCNICO");
-		linhasOnibus.addElement("CIC / TIRADENTES");
-		linhasOnibus.addElement("CIRCULAR CENTRO (ANTI-HORÁRIO)");
-		linhasOnibus.addElement("CIRCULAR CENTRO (HORÁRIO)");
-		linhasOnibus.addElement("CIRCULAR SUL  (ANTI-HORÁRIO)");
-		linhasOnibus.addElement("CIRCULAR SUL (HORÁRIO)");
-		linhasOnibus.addElement("COLINA VERDE");
-		linhasOnibus.addElement("COLOMBO / ANG. CARON");
-		linhasOnibus.addElement("COLOMBO / CIC");
-		linhasOnibus.addElement("COLOMBO / SÃO JOSÉ");
-		linhasOnibus.addElement("COLÔNIA FARIA");
-		linhasOnibus.addElement("COTOLENGO");
-		linhasOnibus.addElement("CRISTO REI");
-		linhasOnibus.addElement("CTBA  / V. PALMITAL");
-		linhasOnibus.addElement("CTBA / APOLO");
-		linhasOnibus.addElement("CTBA / ARAUCÁRIA");
-		linhasOnibus.addElement("CTBA / ARAUCÁRIA");
-		linhasOnibus.addElement("CTBA / AREIA BRANCA");
-		linhasOnibus.addElement("CTBA / BATEIAS");
-		linhasOnibus.addElement("CTBA / BRAGA");
-		linhasOnibus.addElement("CTBA / C. GDE  SUL (RAPIDO)");
-		linhasOnibus.addElement("CTBA / C. GRANDE DO SUL");
-		linhasOnibus.addElement("CTBA / C. LARGO");
-		linhasOnibus.addElement("CTBA / CAMP. DOS PAULAS");
-		linhasOnibus.addElement("CTBA / CAMPO LARGO");
-		linhasOnibus.addElement("CTBA / CAP. DO ATUBA");
-		linhasOnibus.addElement("CTBA / CERNE");
-		linhasOnibus.addElement("CTBA / COLOMBO (CAMBARÁ)");
-		linhasOnibus.addElement("CTBA / COLOMBO (GUARACI)");
-		linhasOnibus.addElement("CTBA / COLOMBO (ROD. UVA)");
-		linhasOnibus.addElement("CTBA / CONJ. ATUBA");
-		linhasOnibus.addElement("CTBA / CONTENDA");
-		linhasOnibus.addElement("CTBA / EUGÊNIA MARIA");
-		linhasOnibus.addElement("CTBA / FAZ. RIO GRANDE");
-		linhasOnibus.addElement("CTBA / GUATUPÊ");
-		linhasOnibus.addElement("CTBA / INDEPENDÊNCIA");
-		linhasOnibus.addElement("CTBA / ITAPERUÇU");
-		linhasOnibus.addElement("CTBA / JD. ANA ROSA");
-		linhasOnibus.addElement("CTBA / JD. ARAPONGAS");
-		linhasOnibus.addElement("CTBA / JD. CÉSAR AUGUSTO");
-		linhasOnibus.addElement("CTBA / JD. CRISTAL");
-		linhasOnibus.addElement("CTBA / JD. CRUZEIRO");
-		linhasOnibus.addElement("CTBA / JD. CURITIBA");
-		linhasOnibus.addElement("CTBA / JD. IPÊ");
-		linhasOnibus.addElement("CTBA / JD. IZAURA");
-		linhasOnibus.addElement("CTBA / JD. MARROCOS");
-		linhasOnibus.addElement("CTBA / JD. OSASCO");
-		linhasOnibus.addElement("CTBA / JD. PARAÍSO");
-		linhasOnibus.addElement("CTBA / JD. SÃO GABRIEL");
-		linhasOnibus.addElement("CTBA / MANDIRITUBA");
-		linhasOnibus.addElement("CTBA / MARACANÃ");
-		linhasOnibus.addElement("CTBA / PEDRO MORO");
-		linhasOnibus.addElement("CTBA / PIRAQUARA");
-		linhasOnibus.addElement("CTBA / PIRAQUARA (DIRETO)");
-		linhasOnibus.addElement("CTBA / POSTO PARIS");
-		linhasOnibus.addElement("CTBA / POUSADA");
-		linhasOnibus.addElement("CTBA / PUC");
-		linhasOnibus.addElement("CTBA / Q. BARRAS (BR 116)");
-		linhasOnibus.addElement("CTBA / Q. BARRAS (GRACIOSA)");
-		linhasOnibus.addElement("CTBA / QUISISANA");
-		linhasOnibus.addElement("CTBA / R. BCO. DO SUL");
-		linhasOnibus.addElement("CTBA / ROÇA GRANDE");
-		linhasOnibus.addElement("CTBA / ROSEIRA");
-		linhasOnibus.addElement("CTBA / SÃO JOSÉ");
-		linhasOnibus.addElement("CTBA / SÃO SEBASTIÃO");
-		linhasOnibus.addElement("CTBA / STA. TEREZA");
-		linhasOnibus.addElement("CTBA / TAMANDARÉ");
-		linhasOnibus.addElement("CTBA / TAMANDARÉ (LAMENHA)");
-		linhasOnibus.addElement("CTBA / TAMANDARÉ (MINÉRIOS)");
-		linhasOnibus.addElement("CTBA / TANGUÁ");
-		linhasOnibus.addElement("CTBA / TERRA BOA");
-		linhasOnibus.addElement("CTBA / TIMBÚ");
-		linhasOnibus.addElement("CTBA / URANO");
-		linhasOnibus.addElement("CTBA / V.  MARTA");
-		linhasOnibus.addElement("CTBA / V. ZUMBI");
-		linhasOnibus.addElement("CTBA / XINGU");
-		linhasOnibus.addElement("CTBA/GUARAITUBA(VIA MARACANA)");
-		linhasOnibus.addElement("CTBA/Q.BARRAS(RAPIDO)");
-		linhasOnibus.addElement("DALAGASSA");
-		linhasOnibus.addElement("DETRAN / VIC. MACHADO");
-		linhasOnibus.addElement("DIRETO C. IMBUIA");
-		linhasOnibus.addElement("DIRETO CABRAL");
-		linhasOnibus.addElement("DOM ÁTICO");
-		linhasOnibus.addElement("E. E. ALCINDO FANAYA 1");
-		linhasOnibus.addElement("E. E. ALCINDO FANAYA 2");
-		linhasOnibus.addElement("E. E. ALI BARK 1");
-		linhasOnibus.addElement("E. E. ALI BARK 2");
-		linhasOnibus.addElement("E. E. ALTO BOQUEIRÃO");
-		linhasOnibus.addElement("E. E. APAE 1");
-		linhasOnibus.addElement("E. E. APAE 2");
-		linhasOnibus.addElement("E. E. APAE 3");
-		linhasOnibus.addElement("E. E. APAE 6");
-		linhasOnibus.addElement("E. E. BAIRRO NOVO");
-		linhasOnibus.addElement("E. E. C. IMBUIA");
-		linhasOnibus.addElement("E. E. CAJURU");
-		linhasOnibus.addElement("E. E. CENTRAU 1");
-		linhasOnibus.addElement("E. E. CIC");
-		linhasOnibus.addElement("E. E. ECUMÊNICA 1");
-		linhasOnibus.addElement("E. E. ECUMÊNICA 2");
-		linhasOnibus.addElement("E. E. HELENA ANTIPOFF 1");
-		linhasOnibus.addElement("E. E. HELENA ANTIPOFF 2");
-		linhasOnibus.addElement("E. E. HELENA ANTIPOFF 4");
-		linhasOnibus.addElement("E. E. NOSSA SRA. DA LUZ");
-		linhasOnibus.addElement("E. E. PINHAIS 1");
-		linhasOnibus.addElement("E. E. PINHAIS 2");
-		linhasOnibus.addElement("E. E. PINHEIRINHO");
-		linhasOnibus.addElement("E. E. SÍTIO CERCADO");
-		linhasOnibus.addElement("E. E. STA. HELENA");
-		linhasOnibus.addElement("E. E. STA. QUITÉRIA");
-		linhasOnibus.addElement("E. E. TATUQUARA");
-		linhasOnibus.addElement("E. E. THOMAZ EDISON 1");
-		linhasOnibus.addElement("E. E. TOMAZ EDISON 2");
-		linhasOnibus.addElement("E. E. TOMAZ EDISON 3");
-		linhasOnibus.addElement("E. E. TOMAZ EDISON 4");
-		linhasOnibus.addElement("E. E. TOMAZ EDISON 5");
-		linhasOnibus.addElement("E. E. VIVIAN MARCAL 1");
-		linhasOnibus.addElement("E. E. 29 DE MARÇO 1");
-		linhasOnibus.addElement("E. VERÍSSIMO / PANTANAL");
-		linhasOnibus.addElement("EMILIANO PERNETA");
-		linhasOnibus.addElement("ERASTO  GAERTNER");
-		linhasOnibus.addElement("ESPECIAL BOQUEIRAO");
-		linhasOnibus.addElement("ESPECIAL HASDRUBAL BELLEGARD");
-		linhasOnibus.addElement("ESPECIAL PAUL GARFUNKEL");
-		linhasOnibus.addElement("ESPECIAL TROMBINI");
-		linhasOnibus.addElement("ESTADOS");
-		linhasOnibus.addElement("ESTRIBO AHÚ");
-		linhasOnibus.addElement("ESTUDANTES");
-		linhasOnibus.addElement("EUCALIPTOS");
-		linhasOnibus.addElement("EUCALIPTOS II");
-		linhasOnibus.addElement("EUCALIPTOS III / PIONEIROS");
-		linhasOnibus.addElement("EXECUTIVO / AEROPORTO");
-		linhasOnibus.addElement("FANNY");
-		linhasOnibus.addElement("FAZ. RIO GRANDE / A. BRANCA");
-		linhasOnibus.addElement("FAZ. RIO GRANDE / MANDIRITUBA");
-		linhasOnibus.addElement("FAZEND. / CAIUÁ-FRIGORÍF.");
-		linhasOnibus.addElement("FAZENDA / CIC");
-		linhasOnibus.addElement("FAZENDA / PINHEIRINHO");
-		linhasOnibus.addElement("FAZENDA (DIRETO)");
-		linhasOnibus.addElement("FAZENDINHA");
-		linhasOnibus.addElement("FAZENDINHA / C. COMPRIDO");
-		linhasOnibus.addElement("FAZENDINHA / C.RASO");
-		linhasOnibus.addElement("FAZENDINHA / PORTÃO");
-		linhasOnibus.addElement("FAZENDINHA / PUC");
-		linhasOnibus.addElement("FAZENDINHA / TAMANDARÉ");
-		linhasOnibus.addElement("FERNANDO DE NORONHA");
-		linhasOnibus.addElement("FERNÃO DIAS");
-		linhasOnibus.addElement("FORMOSA");
-		linhasOnibus.addElement("FREDOLIN WOLF");
-		linhasOnibus.addElement("FUTURAMA");
-		linhasOnibus.addElement("FUTURAMA / S. CERCADO");
-		linhasOnibus.addElement("GABINETO");
-		linhasOnibus.addElement("GANCHINHO");
-		linhasOnibus.addElement("GIANNINI");
-		linhasOnibus.addElement("GRALHA AZUL");
-		linhasOnibus.addElement("GRAMADOS");
-		linhasOnibus.addElement("GUABIROTUBA");
-		linhasOnibus.addElement("GUARAITUBA");
-		linhasOnibus.addElement("GUARAITUBA / CABRAL");
-		linhasOnibus.addElement("GUARAITUBA / CABRAL");
-		linhasOnibus.addElement("GUARAITUBA / MARACANA");
-		linhasOnibus.addElement("GUARITUBA");
-		linhasOnibus.addElement("GUILHERMINA");
-		linhasOnibus.addElement("HAUER / BOQUEIRÃO");
-		linhasOnibus.addElement("HIGIENÓPOLIS");
-		linhasOnibus.addElement("HUGO LANGE");
-		linhasOnibus.addElement("IGUAÇU I");
-		linhasOnibus.addElement("IGUAÇU II");
-		linhasOnibus.addElement("IGUAPE I");
-		linhasOnibus.addElement("IGUAPE II");
-		linhasOnibus.addElement("INTEGRAR  PIRAQUARA");
-		linhasOnibus.addElement("INTER 2 ( ANTI-HORÁRIO)");
-		linhasOnibus.addElement("INTER 2 (HORÁRIO)");
-		linhasOnibus.addElement("INTERBAIRROS I (ANTI-HORÁRIO)");
-		linhasOnibus.addElement("INTERBAIRROS I (HORÁRIO)");
-		linhasOnibus.addElement("INTERBAIRROS II (ANTI-HORÁRIO)");
-		linhasOnibus.addElement("INTERBAIRROS II (HORÁRIO)");
-		linhasOnibus.addElement("INTERBAIRROS III");
-		linhasOnibus.addElement("INTERBAIRROS IV");
-		linhasOnibus.addElement("INTERBAIRROS V");
-		linhasOnibus.addElement("INTERBAIRROS VI");
-		linhasOnibus.addElement("INTERHOSPITAIS");
-		linhasOnibus.addElement("ITAMARATI");
-		linhasOnibus.addElement("ITAPERUÇU / CAIC");
-		linhasOnibus.addElement("ITAPERUÇU / TAMANDARÉ");
-		linhasOnibus.addElement("ITATIAIA");
-		linhasOnibus.addElement("ITUPAVA / HOSP. MILITAR");
-		linhasOnibus.addElement("JACOB MACANHAN");
-		linhasOnibus.addElement("JD. BELA VISTA");
-		linhasOnibus.addElement("JD. BOA VISTA");
-		linhasOnibus.addElement("JD. CENTAURO");
-		linhasOnibus.addElement("JD. CHAPARRAL");
-		linhasOnibus.addElement("JD. CLÁUDIA");
-		linhasOnibus.addElement("JD. DAS GRAÇAS");
-		linhasOnibus.addElement("JD. DO ARROIO");
-		linhasOnibus.addElement("JD. ESPLANADA");
-		linhasOnibus.addElement("JD. EUCALIPTOS");
-		linhasOnibus.addElement("JD. GRAMADOS");
-		linhasOnibus.addElement("JD. GRAZIELA");
-		linhasOnibus.addElement("JD. HOLANDÊS");
-		linhasOnibus.addElement("JD. INDEPENDÊNCIA / CIC");
-		linhasOnibus.addElement("JD. IPÊ");
-		linhasOnibus.addElement("JD. IRAÍ");
-		linhasOnibus.addElement("JD. ITÁLIA");
-		linhasOnibus.addElement("JD. ITIBERÊ");
-		linhasOnibus.addElement("JD. KOSMOS");
-		linhasOnibus.addElement("JD. LUDOVICA");
-		linhasOnibus.addElement("JD. MERCÊS / GUANABARA");
-		linhasOnibus.addElement("JD. MONTE SANTO");
-		linhasOnibus.addElement("JD. ORDEM");
-		linhasOnibus.addElement("JD. PARAÍSO / TAMANDARÉ");
-		linhasOnibus.addElement("JD. PARANAENSE");
-		linhasOnibus.addElement("JD. PIONEIRO");
-		linhasOnibus.addElement("JD. SOCIAL / BATEL");
-		linhasOnibus.addElement("JD. STA. MÔNICA");
-		linhasOnibus.addElement("JD. TROPICAL");
-		linhasOnibus.addElement("JD. VENEZA");
-		linhasOnibus.addElement("JOAQUINA");
-		linhasOnibus.addElement("JOSÉ CULPI");
-		linhasOnibus.addElement("JÚLIO GRAF");
-		linhasOnibus.addElement("JUVEVÊ / ÁGUA VERDE");
-		linhasOnibus.addElement("KAMYR");
-		linhasOnibus.addElement("LARANJEIRAS");
-		linhasOnibus.addElement("LD OSTERNACK / S. CERCADO");
-		linhasOnibus.addElement("LG. FERREIRAS / PINHEIRINHO");
-		linhasOnibus.addElement("LIGEIRÃO - PINHEIRINHO / C. GOMES");
-		linhasOnibus.addElement("LIGEIRAO BOQUEIRAO");
-		linhasOnibus.addElement("LINDÓIA");
-		linhasOnibus.addElement("LONDRINA");
-		linhasOnibus.addElement("LUIZ NICHELE");
-		linhasOnibus.addElement("MAD. ABRANCHES");
-		linhasOnibus.addElement("MAD. BAIRRO NOVO");
-		linhasOnibus.addElement("MAD. BOQUEIRÃO");
-		linhasOnibus.addElement("MAD. CAIUÁ");
-		linhasOnibus.addElement("MAD. CAMPO COMPRIDO");
-		linhasOnibus.addElement("MAD. CAMPO COMPRIDO");
-		linhasOnibus.addElement("MAD. CENTENÁRIO");
-		linhasOnibus.addElement("MAD. CENTENÁRIO / RUI BARBOSA");
-		linhasOnibus.addElement("MAD. CIC");
-		linhasOnibus.addElement("MAD. CTBA / PINHAIS");
-		linhasOnibus.addElement("MAD. CTBA / PIRAQUARA");
-		linhasOnibus.addElement("MAD. CTBA / SÃO DIMAS");
-		linhasOnibus.addElement("MAD. CTBA / SÃO JOSÉ");
-		linhasOnibus.addElement("MAD. CTBA / TAMANDARÉ");
-		linhasOnibus.addElement("MAD. FAZ. RIO GRANDE");
-		linhasOnibus.addElement("MAD. FERRARIA");
-		linhasOnibus.addElement("MAD. JD. GRAZIELA");
-		linhasOnibus.addElement("MAD. PENHA / F. NORONHA");
-		linhasOnibus.addElement("MAD. PETRÓPOLIS / SOLITUDE");
-		linhasOnibus.addElement("MAD. PILARZINHO / UBERABA");
-		linhasOnibus.addElement("MAD. PINHEIRINHO");
-		linhasOnibus.addElement("MAD. S. CÂNDIDA / C. RASO");
-		linhasOnibus.addElement("MAD. S. FRANCISCO / IGUAPE");
-		linhasOnibus.addElement("MAD. S. PEDRO / R. NEGRO");
-		linhasOnibus.addElement("MAD. SÃO BRÁZ");
-		linhasOnibus.addElement("MAD. STA. FELICIDADE");
-		linhasOnibus.addElement("MAD. TARUMÃ / AUGUSTA");
-		linhasOnibus.addElement("MAD. TATUQUARA");
-		linhasOnibus.addElement("MAD. V. VELHA");
-		linhasOnibus.addElement("MAL. HERMES / STA. EFIGÊNIA");
-		linhasOnibus.addElement("MARACANÃ / B. ALTO");
-		linhasOnibus.addElement("MARACANÃ / C. IMBUIA");
-		linhasOnibus.addElement("MARACANA / LINHA VERDE");
-		linhasOnibus.addElement("MARACANÃ / STA.  CÂNDIDA");
-		linhasOnibus.addElement("MARACANÃ / STA. CÂNDIDA");
-		linhasOnibus.addElement("MARIA ANGÉLICA");
-		linhasOnibus.addElement("MARINGÁ");
-		linhasOnibus.addElement("MATEUS LEME");
-		linhasOnibus.addElement("MENONITAS");
-		linhasOnibus.addElement("MERCÚRIO");
-		linhasOnibus.addElement("MONTANA");
-		linhasOnibus.addElement("MONTE CASTELO");
-		linhasOnibus.addElement("MOSSUNGUÊ");
-		linhasOnibus.addElement("NAÇÕES I");
-		linhasOnibus.addElement("NAÇÕES II");
-		linhasOnibus.addElement("NILO PEÇANHA");
-		linhasOnibus.addElement("NIVALDO BRAGA");
-		linhasOnibus.addElement("NOSSA SRA. DA LUZ");
-		linhasOnibus.addElement("NOSSA SRA. DE NAZARÉ");
-		linhasOnibus.addElement("NOVENA");
-		linhasOnibus.addElement("NOVO MUNDO");
-		linhasOnibus.addElement("OLARIA");
-		linhasOnibus.addElement("OSTERNACK / BOQUEIRÃO");
-		linhasOnibus.addElement("OSTERNACK / S. CERCADO");
-		linhasOnibus.addElement("OURO VERDE / V. BÁDIA");
-		linhasOnibus.addElement("PAINEIRAS");
-		linhasOnibus.addElement("PALMEIRA");
-		linhasOnibus.addElement("PALOMA");
-		linhasOnibus.addElement("PALOMA / GUARAITUBA");
-		linhasOnibus.addElement("PALOTINOS");
-		linhasOnibus.addElement("PARAÍSO");
-		linhasOnibus.addElement("PARIGOT DE SOUZA");
-		linhasOnibus.addElement("PARQUE INDUSTRIAL");
-		linhasOnibus.addElement("PASSAÚNA");
-		linhasOnibus.addElement("PETRÓPOLIS");
-		linhasOnibus.addElement("PINHAIS / B. ALTO");
-		linhasOnibus.addElement("PINHAIS / C. COMPRIDO");
-		linhasOnibus.addElement("PINHAIS / GUADALUPE");
-		linhasOnibus.addElement("PINHAIS / PIRAQUARA");
-		linhasOnibus.addElement("PINHAIS / RUI BARBOSA");
-		linhasOnibus.addElement("PINHEIRINHO");
-		linhasOnibus.addElement("PINHEIRINHO");
-		linhasOnibus.addElement("PINHEIRINHO / CIC");
-		linhasOnibus.addElement("PINHEIRINHO / ZOOLÓGICO");
-		linhasOnibus.addElement("PINHEIROS");
-		linhasOnibus.addElement("PIRATINI / BR 476");
-		linhasOnibus.addElement("PIRINEUS");
-		linhasOnibus.addElement("PLANALTO");
-		linhasOnibus.addElement("PLANTA DEODORO");
-		linhasOnibus.addElement("PLANTA KARLA");
-		linhasOnibus.addElement("POMPÉIA");
-		linhasOnibus.addElement("PORTÃO");
-		linhasOnibus.addElement("PORTÃO / CIC");
-		linhasOnibus.addElement("PORTAO / STA. BERNADETHE - L. VERDE");
-		linhasOnibus.addElement("PORTAO/SITIO CERCADO");
-		linhasOnibus.addElement("PORTEIRA / PALOMA");
-		linhasOnibus.addElement("PORTO BELO");
-		linhasOnibus.addElement("PQ. INDUSTRIAL");
-		linhasOnibus.addElement("PRADO VELHO / P. MORO");
-		linhasOnibus.addElement("PRESÍDIO");
-		linhasOnibus.addElement("PRIMAVERA");
-		linhasOnibus.addElement("PRIVÊ");
-		linhasOnibus.addElement("PUC / SÃO JOSÉ");
-		linhasOnibus.addElement("Q. BARRAS / BOCAIÚVA");
-		linhasOnibus.addElement("Q. BARRAS / PIRAQUARA");
-		linhasOnibus.addElement("Q. BARRAS/T.PAULISTA-ANTI HORARI");
-		linhasOnibus.addElement("Q. BARRAS/T.PAULISTA-HORARIO");
-		linhasOnibus.addElement("QUARTEL GENERAL");
-		linhasOnibus.addElement("QUITANDINHA / PINHEIRINHO");
-		linhasOnibus.addElement("R. BRANCO / TAMANDARÉ");
-		linhasOnibus.addElement("RAPOSO TAVARES");
-		linhasOnibus.addElement("RAQUEL PRADO / PUC");
-		linhasOnibus.addElement("REBOUÇAS");
-		linhasOnibus.addElement("REFORÇO COLINA");
-		linhasOnibus.addElement("REFORÇO HAUER");
-		linhasOnibus.addElement("REFORÇO TERMINAL");
-		linhasOnibus.addElement("RIBEIRA / FCO. CORADIN");
-		linhasOnibus.addElement("RIO BONITO");
-		linhasOnibus.addElement("RIO BONITO / CIC");
-		linhasOnibus.addElement("RIO NEGRO");
-		linhasOnibus.addElement("RIO VERDE");
-		linhasOnibus.addElement("RIVIERA");
-		linhasOnibus.addElement("ROÇA GRANDE /  APDEC");
-		linhasOnibus.addElement("RONDON");
-		linhasOnibus.addElement("ROSEIRA");
-		linhasOnibus.addElement("RUA XV / BARIGUI");
-		linhasOnibus.addElement("RURBANA");
-		linhasOnibus.addElement("S. CERCADO / BOQUEIRÃO");
-		linhasOnibus.addElement("S. CERCADO / C. RASO");
-		linhasOnibus.addElement("SABARÁ");
-		linhasOnibus.addElement("SAGRADO CORAÇÃO");
-		linhasOnibus.addElement("SAN FRANCISCO");
-		linhasOnibus.addElement("SÃO BENEDITO");
-		linhasOnibus.addElement("SÃO BERNARDO");
-		linhasOnibus.addElement("SÃO BRAZ");
-		linhasOnibus.addElement("SÃO CRISTÓVÃO");
-		linhasOnibus.addElement("SÃO FRANCISCO");
-		linhasOnibus.addElement("SÃO JOÃO");
-		linhasOnibus.addElement("SÃO JORGE");
-		linhasOnibus.addElement("SÃO JORGE");
-		linhasOnibus.addElement("SÃO JOSÉ / D. FINA");
-		linhasOnibus.addElement("SATURNO");
-		linhasOnibus.addElement("SAVÓIA");
-		linhasOnibus.addElement("SITIO CERCADO / C. RASO");
-		linhasOnibus.addElement("SÍTIO CERCADO (ANTI-HORÁRIO)");
-		linhasOnibus.addElement("SÍTIO CERCADO (HORÁRIO)");
-		linhasOnibus.addElement("SOLAR");
-		linhasOnibus.addElement("SOLITUDE");
-		linhasOnibus.addElement("STA. AMÉLIA");
-		linhasOnibus.addElement("STA. ÂNGELA");
-		linhasOnibus.addElement("STA. BARBARA");
-		linhasOnibus.addElement("STA. CÂNDIDA / C. RASO");
-		linhasOnibus.addElement("STA. CÂNDIDA / PINHEIRINHO");
-		linhasOnibus.addElement("STA. CRUZ");
-		linhasOnibus.addElement("STA. FELICIDADE");
-		linhasOnibus.addElement("STA. FELICIDADE");
-		linhasOnibus.addElement("STA. FELICIDADE / STA. CÂNDIDA");
-		linhasOnibus.addElement("STA. GEMA");
-		linhasOnibus.addElement("STA. HELENA");
-		linhasOnibus.addElement("STA. INÊS");
-		linhasOnibus.addElement("STA. JOANA");
-		linhasOnibus.addElement("STA. MARIA");
-		linhasOnibus.addElement("STA. QUITÉRIA");
-		linhasOnibus.addElement("STA. RITA / CIC");
-		linhasOnibus.addElement("STA. RITA / PINHEIRINHO");
-		linhasOnibus.addElement("STA. TEREZINHA");
-		linhasOnibus.addElement("STA. TEREZINHA");
-		linhasOnibus.addElement("STA. TEREZINHA / IPE");
-		linhasOnibus.addElement("T. BOQ. / T. AFONSO PENA");
-		linhasOnibus.addElement("T. BOQ. / T. CENTRAL");
-		linhasOnibus.addElement("T. C. IMBUIA / T. PINHAIS");
-		linhasOnibus.addElement("T. C. LARGO / CAMP. SIQUEIRA");
-		linhasOnibus.addElement("T. CACHOEIRA / T. MARACANÃ");
-		linhasOnibus.addElement("TAMANDARÉ");
-		linhasOnibus.addElement("TAMANDARÉ / CABRAL");
-		linhasOnibus.addElement("TAMANDARÉ / CABRAL");
-		linhasOnibus.addElement("TAMANDARÉ / COLOMBO");
-		linhasOnibus.addElement("TANGUÁ / TAMANDARÉ");
-		linhasOnibus.addElement("TARUMÃ");
-		linhasOnibus.addElement("TERMINAL CIC");
-		linhasOnibus.addElement("TIMBOTUVA (EST. NOVA)");
-		linhasOnibus.addElement("TIMBOTUVA (EST. VELHA)");
-		linhasOnibus.addElement("TINGUI");
-		linhasOnibus.addElement("TRABALHADOR");
-		linhasOnibus.addElement("TRAMONTINA");
-		linhasOnibus.addElement("TRINDADE");
-		linhasOnibus.addElement("TUIUTI / BARIGUI");
-		linhasOnibus.addElement("TURISMO");
-		linhasOnibus.addElement("UBERABA");
-		linhasOnibus.addElement("UBERLÂNDIA");
-		linhasOnibus.addElement("UMBARÁ");
-		linhasOnibus.addElement("UNIV.POSITIVO");
-		linhasOnibus.addElement("V. AMÉLIA");
-		linhasOnibus.addElement("V. AUTÓDROMO");
-		linhasOnibus.addElement("V. CUBAS");
-		linhasOnibus.addElement("V. ESPERANÇA");
-		linhasOnibus.addElement("V. GRANDE / V. TARUMÃ");
-		linhasOnibus.addElement("V. IZABEL");
-		linhasOnibus.addElement("V. LEONICE");
-		linhasOnibus.addElement("V. MACEDO");
-		linhasOnibus.addElement("V. MACEDO");
-		linhasOnibus.addElement("V. MARIA ANTONIETA");
-		linhasOnibus.addElement("V. MARIA DO ROSÁRIO");
-		linhasOnibus.addElement("V. MARISA");
-		linhasOnibus.addElement("V. MARQUETO");
-		linhasOnibus.addElement("V. NORI");
-		linhasOnibus.addElement("V. NOVA");
-		linhasOnibus.addElement("V. PRADO");
-		linhasOnibus.addElement("V. RENO");
-		linhasOnibus.addElement("V. REX");
-		linhasOnibus.addElement("V. ROSINHA");
-		linhasOnibus.addElement("V. SANDRA");
-		linhasOnibus.addElement("V. SÃO PAULO");
-		linhasOnibus.addElement("V. SÃO PEDRO");
-		linhasOnibus.addElement("V. SUIÇA");
-		linhasOnibus.addElement("V. URANO");
-		linhasOnibus.addElement("V. VELHA");
-		linhasOnibus.addElement("V. VERDE");
-		linhasOnibus.addElement("VENEZA");
-		linhasOnibus.addElement("VIC. DE CARVALHO / C. IMBUIA");
-		linhasOnibus.addElement("VILA VELHA/BURITI");
-		linhasOnibus.addElement("VITÓRIA RÉGIA");
-		linhasOnibus.addElement("V.JULIANA");
-		linhasOnibus.addElement("WEISSÓPOLIS");
-		linhasOnibus.addElement("XAXIM / CAPÃO RASO");
-		linhasOnibus.addElement("XAXIM / LINHA VERDE");
-		linhasOnibus.addElement("ZOOLÓGICO");
-		
+	
+		linhasOnibus.addElement(ONIBUSG12);
+		linhasOnibus.addElement(ONIBUS464);
+		linhasOnibus.addElement(ONIBUS226);
+		linhasOnibus.addElement(ONIBUS182);
+		linhasOnibus.addElement(ONIBUS332);
+		linhasOnibus.addElement(ONIBUS208);
+		linhasOnibus.addElement(ONIBUS334);
+		linhasOnibus.addElement(ONIBUSC13);
+		linhasOnibus.addElement(ONIBUS180);
+		linhasOnibus.addElement(ONIBUSI21);
+		linhasOnibus.addElement(ONIBUS265);
+		linhasOnibus.addElement(ONIBUS560);
+		linhasOnibus.addElement(ONIBUS232);
+		linhasOnibus.addElement(ONIBUS629);
+		linhasOnibus.addElement(ONIBUS373);
+		linhasOnibus.addElement(ONIBUSB15);
+		linhasOnibus.addElement(ONIBUSH20);
+		linhasOnibus.addElement(ONIBUSH21);
+		linhasOnibus.addElement(ONIBUS311);
+		linhasOnibus.addElement(ONIBUSI32);
+		linhasOnibus.addElement(ONIBUSH11);
+		linhasOnibus.addElement(ONIBUSH12);
+		linhasOnibus.addElement(ONIBUS823);
+		linhasOnibus.addElement(ONIBUS361);
+		linhasOnibus.addElement(ONIBUS313);
+		linhasOnibus.addElement(ONIBUS342);
+		linhasOnibus.addElement(ONIBUSC41);
+		linhasOnibus.addElement(ONIBUS341);
+		linhasOnibus.addElement(ONIBUS307);
+		linhasOnibus.addElement(ONIBUS506);
+		linhasOnibus.addElement(ONIBUS541);
+		linhasOnibus.addElement(ONIBUS542);
+		linhasOnibus.addElement(ONIBUS547);
+		linhasOnibus.addElement(ONIBUS231);
+		linhasOnibus.addElement(ONIBUS205);
+		linhasOnibus.addElement(ONIBUS206);
+		linhasOnibus.addElement(ONIBUS875);
+		linhasOnibus.addElement(ONIBUS225);
+		linhasOnibus.addElement(ONIBUSB33);
+		linhasOnibus.addElement(ONIBUS922);
+		linhasOnibus.addElement(ONIBUS175);
+		linhasOnibus.addElement(ONIBUS503);
+		linhasOnibus.addElement(ONIBUS505);
+		linhasOnibus.addElement(ONIBUS540);
+		linhasOnibus.addElement(ONIBUSO71);
+		linhasOnibus.addElement(ONIBUS627);
+		linhasOnibus.addElement(ONIBUS170);
+		linhasOnibus.addElement(ONIBUSO75);
+		linhasOnibus.addElement(ONIBUS913);
+		linhasOnibus.addElement(ONIBUS516);
+		linhasOnibus.addElement(ONIBUS828);
+		linhasOnibus.addElement(ONIBUS826);
+		linhasOnibus.addElement(ONIBUS393);
+		linhasOnibus.addElement(ONIBUSI30);
+		linhasOnibus.addElement(ONIBUS150);
+		linhasOnibus.addElement(ONIBUS658);
+		linhasOnibus.addElement(ONIBUS024);
+		linhasOnibus.addElement(ONIBUS201);
+		linhasOnibus.addElement(ONIBUS215);
+		linhasOnibus.addElement(ONIBUSB02);
+		linhasOnibus.addElement(ONIBUS207);
+		linhasOnibus.addElement(ONIBUS216);
+		linhasOnibus.addElement(ONIBUS647);
+		linhasOnibus.addElement(ONIBUS659);
+		linhasOnibus.addElement(ONIBUS703);
+		linhasOnibus.addElement(ONIBUS732);
+		linhasOnibus.addElement(ONIBUS386);
+		linhasOnibus.addElement(ONIBUS322);
+		linhasOnibus.addElement(ONIBUS801);
+		linhasOnibus.addElement(ONIBUS654);
+		linhasOnibus.addElement(ONIBUSJ15);
+		linhasOnibus.addElement(ONIBUS923);
+		linhasOnibus.addElement(ONIBUS475);
+		linhasOnibus.addElement(ONIBUS628);
+		linhasOnibus.addElement(ONIBUS776);
+		linhasOnibus.addElement(ONIBUS668);
+		linhasOnibus.addElement(ONIBUS224);
+		linhasOnibus.addElement(ONIBUS305);
+		linhasOnibus.addElement(ONIBUS335);
+		linhasOnibus.addElement(ONIBUS303);
+		linhasOnibus.addElement(ONIBUS338);
+		linhasOnibus.addElement(ONIBUS302);
+		linhasOnibus.addElement(ONIBUS469);
+		linhasOnibus.addElement(ONIBUS601);
+		linhasOnibus.addElement(ONIBUS002);
+		linhasOnibus.addElement(ONIBUS001);
+		linhasOnibus.addElement(ONIBUS602);
+		linhasOnibus.addElement(ONIBUS502);
+		linhasOnibus.addElement(ONIBUS211);
+		linhasOnibus.addElement(ONIBUSI31);
+		linhasOnibus.addElement(ONIBUS607);
+		linhasOnibus.addElement(ONIBUSI20);
+		linhasOnibus.addElement(ONIBUSB24);
+		linhasOnibus.addElement(ONIBUS778);
+		linhasOnibus.addElement(ONIBUS385);
+		linhasOnibus.addElement(ONIBUSC72);
+		linhasOnibus.addElement(ONIBUSE02);
+		linhasOnibus.addElement(ONIBUS606);
+		linhasOnibus.addElement(ONIBUSH01);
+		linhasOnibus.addElement(ONIBUSG72);
+		linhasOnibus.addElement(ONIBUSP63);
+		linhasOnibus.addElement(ONIBUSE67);
+		linhasOnibus.addElement(ONIBUSN70);
+		linhasOnibus.addElement(ONIBUSN71);
+		linhasOnibus.addElement(ONIBUSJ62);
+		linhasOnibus.addElement(ONIBUSG73);
+		linhasOnibus.addElement(ONIBUS805);
+		linhasOnibus.addElement(ONIBUSB61);
+		linhasOnibus.addElement(ONIBUSP64);
+		linhasOnibus.addElement(ONIBUSB80);
+		linhasOnibus.addElement(ONIBUSB81);
+		linhasOnibus.addElement(ONIBUSB72);
+		linhasOnibus.addElement(ONIBUSC63);
+		linhasOnibus.addElement(ONIBUSR71);
+		linhasOnibus.addElement(ONIBUSN72);
+		linhasOnibus.addElement(ONIBUS605);
+		linhasOnibus.addElement(ONIBUSE77);
+		linhasOnibus.addElement(ONIBUSE66);
+		linhasOnibus.addElement(ONIBUSK71);
+		linhasOnibus.addElement(ONIBUSB82);
+		linhasOnibus.addElement(ONIBUSB75);
+		linhasOnibus.addElement(ONIBUSB74);
+		linhasOnibus.addElement(ONIBUSE75);
+		linhasOnibus.addElement(ONIBUSE73);
+		linhasOnibus.addElement(ONIBUSB77);
+		linhasOnibus.addElement(ONIBUSE71);
+		linhasOnibus.addElement(ONIBUSE72);
+		linhasOnibus.addElement(ONIBUSA73);
+		linhasOnibus.addElement(ONIBUSB73);
+		linhasOnibus.addElement(ONIBUSA72);
+		linhasOnibus.addElement(ONIBUSB78);
+		linhasOnibus.addElement(ONIBUSG71);
+		linhasOnibus.addElement(ONIBUSB01);
+		linhasOnibus.addElement(ONIBUSE62);
+		linhasOnibus.addElement(ONIBUSD61);
+		linhasOnibus.addElement(ONIBUSD66);
+		linhasOnibus.addElement(ONIBUSE76);
+		linhasOnibus.addElement(ONIBUSO72);
+		linhasOnibus.addElement(ONIBUSE70);
+		linhasOnibus.addElement(ONIBUSO74);
+		linhasOnibus.addElement(ONIBUSO73);
+		linhasOnibus.addElement(ONIBUSE68);
+		linhasOnibus.addElement(ONIBUSL71);
+		linhasOnibus.addElement(ONIBUSB79);
+		linhasOnibus.addElement(ONIBUSE78);
+		linhasOnibus.addElement(ONIBUSE05);
+		linhasOnibus.addElement(ONIBUSB76);
+		linhasOnibus.addElement(ONIBUSB83);
+		linhasOnibus.addElement(ONIBUSA01);
+		linhasOnibus.addElement(ONIBUSA07);
+		linhasOnibus.addElement(ONIBUSA06);
+		linhasOnibus.addElement(ONIBUSA77);
+		linhasOnibus.addElement(ONIBUSP65);
+		linhasOnibus.addElement(ONIBUSN73);
+		linhasOnibus.addElement(ONIBUSE01);
+		linhasOnibus.addElement(ONIBUSA78);
+		linhasOnibus.addElement(ONIBUSC66);
+		linhasOnibus.addElement(ONIBUSE65);
+		linhasOnibus.addElement(ONIBUSB06);
+		linhasOnibus.addElement(ONIBUSO76);
+		linhasOnibus.addElement(ONIBUS681);
+		linhasOnibus.addElement(ONIBUS380);
+		linhasOnibus.addElement(ONIBUSC05);
+		linhasOnibus.addElement(ONIBUSB31);
+		linhasOnibus.addElement(ONIBUS662);
+		linhasOnibus.addElement(ONIBUS699);
+		linhasOnibus.addElement(ONIBUS795);
+		linhasOnibus.addElement(ONIBUS799);
+		linhasOnibus.addElement(ONIBUS798);
+		linhasOnibus.addElement(ONIBUS695);
+		linhasOnibus.addElement(ONIBUS399);
+		linhasOnibus.addElement(ONIBUS596);
+		linhasOnibus.addElement(ONIBUS598);
+		linhasOnibus.addElement(ONIBUS396);
+		linhasOnibus.addElement(ONIBUS694);
+		linhasOnibus.addElement(ONIBUS398);
+		linhasOnibus.addElement(ONIBUS397);
+		linhasOnibus.addElement(ONIBUS394);
+		linhasOnibus.addElement(ONIBUS899);
+		linhasOnibus.addElement(ONIBUS697);
+		linhasOnibus.addElement(ONIBUS897);
+		linhasOnibus.addElement(ONIBUS599);
+		linhasOnibus.addElement(ONIBUS497);
+		linhasOnibus.addElement(ONIBUS499);
+		linhasOnibus.addElement(ONIBUS698);
+		linhasOnibus.addElement(ONIBUS495);
+		linhasOnibus.addElement(ONIBUS498);
+		linhasOnibus.addElement(ONIBUS696);
+		linhasOnibus.addElement(ONIBUS597);
+		linhasOnibus.addElement(ONIBUS796);
+		linhasOnibus.addElement(ONIBUS797);
+		linhasOnibus.addElement(ONIBUS895);
+		linhasOnibus.addElement(ONIBUS693);
+		linhasOnibus.addElement(ONIBUS893);
+		linhasOnibus.addElement(ONIBUS691);
+		linhasOnibus.addElement(ONIBUS392);
+		linhasOnibus.addElement(ONIBUS692);
+		linhasOnibus.addElement(ONIBUS998);
+		linhasOnibus.addElement(ONIBUS894);
+		linhasOnibus.addElement(ONIBUS533);
+		linhasOnibus.addElement(ONIBUSC23);
+		linhasOnibus.addElement(ONIBUS465);
+		linhasOnibus.addElement(ONIBUSX12);
+		linhasOnibus.addElement(ONIBUSX19);
+		linhasOnibus.addElement(ONIBUSX18);
+		linhasOnibus.addElement(ONIBUS968);
+		linhasOnibus.addElement(ONIBUSF13);
+		linhasOnibus.addElement(ONIBUS266);
+		linhasOnibus.addElement(ONIBUS466);
+		linhasOnibus.addElement(ONIBUSF17);
+		linhasOnibus.addElement(ONIBUSF24);
+		linhasOnibus.addElement(ONIBUSF27);
+		linhasOnibus.addElement(ONIBUSE64);
+		linhasOnibus.addElement(ONIBUS621);
+		linhasOnibus.addElement(ONIBUSF73);
+		linhasOnibus.addElement(ONIBUSF72);
+		linhasOnibus.addElement(ONIBUS719);
+		linhasOnibus.addElement(ONIBUSF05);
+		linhasOnibus.addElement(ONIBUSF01);
+		linhasOnibus.addElement(ONIBUSF03);
+		linhasOnibus.addElement(ONIBUS701);
+		linhasOnibus.addElement(ONIBUS720);
+		linhasOnibus.addElement(ONIBUS831);
+		linhasOnibus.addElement(ONIBUS611);
+		linhasOnibus.addElement(ONIBUS614);
+		linhasOnibus.addElement(ONIBUS702);
+		linhasOnibus.addElement(ONIBUS270);
+		linhasOnibus.addElement(ONIBUS821);
+		linhasOnibus.addElement(ONIBUS673);
+		linhasOnibus.addElement(ONIBUS167);
+		linhasOnibus.addElement(ONIBUS639);
+		linhasOnibus.addElement(ONIBUS683);
+		linhasOnibus.addElement(ONIBUS822);
+		linhasOnibus.addElement(ONIBUS642);
+		linhasOnibus.addElement(ONIBUSA16);
+		linhasOnibus.addElement(ONIBUSF15);
+		linhasOnibus.addElement(ONIBUS625);
+		linhasOnibus.addElement(ONIBUS470);
+		linhasOnibus.addElement(ONIBUSB23);
+		linhasOnibus.addElement(ONIBUSB05);
+		linhasOnibus.addElement(ONIBUSB20);
+		linhasOnibus.addElement(ONIBUSB34);
+		linhasOnibus.addElement(ONIBUSD22);
+		linhasOnibus.addElement(ONIBUS561);
+		linhasOnibus.addElement(ONIBUS513);
+		linhasOnibus.addElement(ONIBUS371);
+		linhasOnibus.addElement(ONIBUS374);
+		linhasOnibus.addElement(ONIBUSF12);
+		linhasOnibus.addElement(ONIBUSF21);
+		linhasOnibus.addElement(ONIBUS523);
+		linhasOnibus.addElement(ONIBUS515);
+		linhasOnibus.addElement(ONIBUSD13);
+		linhasOnibus.addElement(ONIBUS023);
+		linhasOnibus.addElement(ONIBUS022);
+		linhasOnibus.addElement(ONIBUS011);
+		linhasOnibus.addElement(ONIBUS010);
+		linhasOnibus.addElement(ONIBUS021);
+		linhasOnibus.addElement(ONIBUS020);
+		linhasOnibus.addElement(ONIBUS030);
+		linhasOnibus.addElement(ONIBUS040);
+		linhasOnibus.addElement(ONIBUS050);
+		linhasOnibus.addElement(ONIBUS060);
+		linhasOnibus.addElement(ONIBUS378);
+		linhasOnibus.addElement(ONIBUS512);
+		linhasOnibus.addElement(ONIBUSI71);
+		linhasOnibus.addElement(ONIBUSK11);
+		linhasOnibus.addElement(ONIBUS711);
+		linhasOnibus.addElement(ONIBUS366);
+		linhasOnibus.addElement(ONIBUSC28);
+		linhasOnibus.addElement(ONIBUSD31);
+		linhasOnibus.addElement(ONIBUS914);
+		linhasOnibus.addElement(ONIBUS468);
+		linhasOnibus.addElement(ONIBUS183);
+		linhasOnibus.addElement(ONIBUSC20);
+		linhasOnibus.addElement(ONIBUSB13);
+		linhasOnibus.addElement(ONIBUS244);
+		linhasOnibus.addElement(ONIBUS865);
+		linhasOnibus.addElement(ONIBUSB26);
+		linhasOnibus.addElement(ONIBUSA14);
+		linhasOnibus.addElement(ONIBUSA31);
+		linhasOnibus.addElement(ONIBUSC11);
+		linhasOnibus.addElement(ONIBUS712);
+		linhasOnibus.addElement(ONIBUS917);
+		linhasOnibus.addElement(ONIBUSC16);
+		linhasOnibus.addElement(ONIBUS972);
+		linhasOnibus.addElement(ONIBUS474);
+		linhasOnibus.addElement(ONIBUS169);
+		linhasOnibus.addElement(ONIBUS617);
+		linhasOnibus.addElement(ONIBUS160);
+		linhasOnibus.addElement(ONIBUSA13);
+		linhasOnibus.addElement(ONIBUS655);
+		linhasOnibus.addElement(ONIBUSA21);
+		linhasOnibus.addElement(ONIBUS532);
+		linhasOnibus.addElement(ONIBUS921);
+		linhasOnibus.addElement(ONIBUS365);
+		linhasOnibus.addElement(ONIBUSD21);
+		linhasOnibus.addElement(ONIBUSC18);
+		linhasOnibus.addElement(ONIBUSF25);
+		linhasOnibus.addElement(ONIBUSC27);
+		linhasOnibus.addElement(ONIBUS912);
+		linhasOnibus.addElement(ONIBUS967);
+		linhasOnibus.addElement(ONIBUS285);
+		linhasOnibus.addElement(ONIBUS656);
+		linhasOnibus.addElement(ONIBUS271);
+		linhasOnibus.addElement(ONIBUS520);
+		linhasOnibus.addElement(ONIBUSG13);
+		linhasOnibus.addElement(ONIBUS550);
+		linhasOnibus.addElement(ONIBUS500);
+		linhasOnibus.addElement(ONIBUS661);
+		linhasOnibus.addElement(ONIBUS635);
+		linhasOnibus.addElement(ONIBUS641);
+		linhasOnibus.addElement(ONIBUS189);
+		linhasOnibus.addElement(ONIBUS549);
+		linhasOnibus.addElement(ONIBUS509);
+		linhasOnibus.addElement(ONIBUS789);
+		linhasOnibus.addElement(ONIBUS802);
+		linhasOnibus.addElement(ONIBUS809);
+		linhasOnibus.addElement(ONIBUS309);
+		linhasOnibus.addElement(ONIBUS308);
+		linhasOnibus.addElement(ONIBUS609);
+		linhasOnibus.addElement(ONIBUSC64);
+		linhasOnibus.addElement(ONIBUSD69);
+		linhasOnibus.addElement(ONIBUSB69);
+		linhasOnibus.addElement(ONIBUSE69);
+		linhasOnibus.addElement(ONIBUSA05);
+		linhasOnibus.addElement(ONIBUSF09);
+		linhasOnibus.addElement(ONIBUSJ19);
+		linhasOnibus.addElement(ONIBUS289);
+		linhasOnibus.addElement(ONIBUS229);
+		linhasOnibus.addElement(ONIBUS489);
+		linhasOnibus.addElement(ONIBUS188);
+		linhasOnibus.addElement(ONIBUS608);
+		linhasOnibus.addElement(ONIBUS209);
+		linhasOnibus.addElement(ONIBUS519);
+		linhasOnibus.addElement(ONIBUS689);
+		linhasOnibus.addElement(ONIBUS889);
+		linhasOnibus.addElement(ONIBUS989);
+		linhasOnibus.addElement(ONIBUS389);
+		linhasOnibus.addElement(ONIBUS679);
+		linhasOnibus.addElement(ONIBUS788);
+		linhasOnibus.addElement(ONIBUS260);
+		linhasOnibus.addElement(ONIBUSB25);
+		linhasOnibus.addElement(ONIBUSB41);
+		linhasOnibus.addElement(ONIBUSB42);
+		linhasOnibus.addElement(ONIBUSB11);
+		linhasOnibus.addElement(ONIBUSB32);
+		linhasOnibus.addElement(ONIBUS633);
+		linhasOnibus.addElement(ONIBUS522);
+		linhasOnibus.addElement(ONIBUS181);
+		linhasOnibus.addElement(ONIBUS594);
+		linhasOnibus.addElement(ONIBUS331);
+		linhasOnibus.addElement(ONIBUS812);
+		linhasOnibus.addElement(ONIBUSB19);
+		linhasOnibus.addElement(ONIBUS814);
+		linhasOnibus.addElement(ONIBUSF16);
+		linhasOnibus.addElement(ONIBUSF22);
+		linhasOnibus.addElement(ONIBUS176);
+		linhasOnibus.addElement(ONIBUS521);
+		linhasOnibus.addElement(ONIBUS674);
+		linhasOnibus.addElement(ONIBUS280);
+		linhasOnibus.addElement(ONIBUS360);
+		linhasOnibus.addElement(ONIBUS666);
+		linhasOnibus.addElement(ONIBUS233);
+		linhasOnibus.addElement(ONIBUS535);
+		linhasOnibus.addElement(ONIBUS548);
+		linhasOnibus.addElement(ONIBUS915);
+		linhasOnibus.addElement(ONIBUS272);
+		linhasOnibus.addElement(ONIBUS640);
+		linhasOnibus.addElement(ONIBUSB22);
+		linhasOnibus.addElement(ONIBUSB36);
+		linhasOnibus.addElement(ONIBUS387);
+		linhasOnibus.addElement(ONIBUS343);
+		linhasOnibus.addElement(ONIBUS534);
+		linhasOnibus.addElement(ONIBUS623);
+		linhasOnibus.addElement(ONIBUS911);
+		linhasOnibus.addElement(ONIBUS462);
+		linhasOnibus.addElement(ONIBUSC42);
+		linhasOnibus.addElement(ONIBUS304);
+		linhasOnibus.addElement(ONIBUSC03);
+		linhasOnibus.addElement(ONIBUSD14);
+		linhasOnibus.addElement(ONIBUS301);
+		linhasOnibus.addElement(ONIBUS603);
+		linhasOnibus.addElement(ONIBUS638);
+		linhasOnibus.addElement(ONIBUS644);
+		linhasOnibus.addElement(ONIBUS688);
+		linhasOnibus.addElement(ONIBUS916);
+		linhasOnibus.addElement(ONIBUS631);
+		linhasOnibus.addElement(ONIBUS649);
+		linhasOnibus.addElement(ONIBUSB14);
+		linhasOnibus.addElement(ONIBUSD11);
+		linhasOnibus.addElement(ONIBUSC22);
+		linhasOnibus.addElement(ONIBUS646);
+		linhasOnibus.addElement(ONIBUS671);
+		linhasOnibus.addElement(ONIBUS612);
+		linhasOnibus.addElement(ONIBUS616);
+		linhasOnibus.addElement(ONIBUSX20);
+		linhasOnibus.addElement(ONIBUSB35);
+		linhasOnibus.addElement(ONIBUS718);
+		linhasOnibus.addElement(ONIBUSF18);
+		linhasOnibus.addElement(ONIBUSE63);
+		linhasOnibus.addElement(ONIBUSD16);
+		linhasOnibus.addElement(ONIBUS171);
+		linhasOnibus.addElement(ONIBUSC26);
+		linhasOnibus.addElement(ONIBUSE31);
+		linhasOnibus.addElement(ONIBUSI41);
+		linhasOnibus.addElement(ONIBUSI40);
+		linhasOnibus.addElement(ONIBUSI51);
+		linhasOnibus.addElement(ONIBUSI50);
+		linhasOnibus.addElement(ONIBUS632);
+		linhasOnibus.addElement(ONIBUSG11);
+		linhasOnibus.addElement(ONIBUSL11);
+		linhasOnibus.addElement(ONIBUS168);
+		linhasOnibus.addElement(ONIBUS165);
+		linhasOnibus.addElement(ONIBUSJ12);
+		linhasOnibus.addElement(ONIBUS219);
+		linhasOnibus.addElement(ONIBUSX14);
+		linhasOnibus.addElement(ONIBUS539);
+		linhasOnibus.addElement(ONIBUSB27);
+		linhasOnibus.addElement(ONIBUS684);
+		linhasOnibus.addElement(ONIBUS685);
+		linhasOnibus.addElement(ONIBUS636);
+		linhasOnibus.addElement(ONIBUS221);
+		linhasOnibus.addElement(ONIBUS827);
+		linhasOnibus.addElement(ONIBUSB29);
+		linhasOnibus.addElement(ONIBUS622);
+		linhasOnibus.addElement(ONIBUSB18);
+		linhasOnibus.addElement(ONIBUS370);
+		linhasOnibus.addElement(ONIBUS680);
+		linhasOnibus.addElement(ONIBUS546);
+		linhasOnibus.addElement(ONIBUS610);
+		linhasOnibus.addElement(ONIBUS653);
+		linhasOnibus.addElement(ONIBUS375);
+		linhasOnibus.addElement(ONIBUSA11);
+		linhasOnibus.addElement(ONIBUS236);
+		linhasOnibus.addElement(ONIBUS965);
+		linhasOnibus.addElement(ONIBUS870);
+		linhasOnibus.addElement(ONIBUSD12);
+		linhasOnibus.addElement(ONIBUS511);
+		linhasOnibus.addElement(ONIBUS213);
+		linhasOnibus.addElement(ONIBUS670);
+		linhasOnibus.addElement(ONIBUSA17);
+		linhasOnibus.addElement(ONIBUS824);
+		linhasOnibus.addElement(ONIBUS811);
+		linhasOnibus.addElement(ONIBUS876);
+		linhasOnibus.addElement(ONIBUSX11);
+		linhasOnibus.addElement(ONIBUS508);
+		linhasOnibus.addElement(ONIBUS507);
+		linhasOnibus.addElement(ONIBUS212);
+		linhasOnibus.addElement(ONIBUS463);
+		linhasOnibus.addElement(ONIBUS713);
+		linhasOnibus.addElement(ONIBUSJ16);
+		linhasOnibus.addElement(ONIBUS461);
+		linhasOnibus.addElement(ONIBUS203);
+		linhasOnibus.addElement(ONIBUS204);
+		linhasOnibus.addElement(ONIBUS620);
+		linhasOnibus.addElement(ONIBUS901);
+		linhasOnibus.addElement(ONIBUS902);
+		linhasOnibus.addElement(ONIBUS924);
+		linhasOnibus.addElement(ONIBUS274);
+		linhasOnibus.addElement(ONIBUSB17);
+		linhasOnibus.addElement(ONIBUS531);
+		linhasOnibus.addElement(ONIBUS637);
+		linhasOnibus.addElement(ONIBUSF14);
+		linhasOnibus.addElement(ONIBUS760);
+		linhasOnibus.addElement(ONIBUS619);
+		linhasOnibus.addElement(ONIBUS650);
+		linhasOnibus.addElement(ONIBUS243);
+		linhasOnibus.addElement(ONIBUSF19);
+		linhasOnibus.addElement(ONIBUSF26);
+		linhasOnibus.addElement(ONIBUSE11);
+		linhasOnibus.addElement(ONIBUSE21);
+		linhasOnibus.addElement(ONIBUSC04);
+		linhasOnibus.addElement(ONIBUS806);
+		linhasOnibus.addElement(ONIBUSI90);
+		linhasOnibus.addElement(ONIBUSA02);
+		linhasOnibus.addElement(ONIBUS105);
+		linhasOnibus.addElement(ONIBUS218);
+		linhasOnibus.addElement(ONIBUSI91);
+		linhasOnibus.addElement(ONIBUSA22);
+		linhasOnibus.addElement(ONIBUS372);
+		linhasOnibus.addElement(ONIBUS667);
+		linhasOnibus.addElement(ONIBUSJ14);
+		linhasOnibus.addElement(ONIBUSJ13);
+		linhasOnibus.addElement(ONIBUS214);
+		linhasOnibus.addElement(ONIBUS545);
+		linhasOnibus.addElement(ONIBUS861);
+		linhasOnibus.addElement(ONIBUS321);
+		linhasOnibus.addElement(ONIBUS815);
+		linhasOnibus.addElement(ONIBUS979);
+		linhasOnibus.addElement(ONIBUS472);
+		linhasOnibus.addElement(ONIBUS615);
+		linhasOnibus.addElement(ONIBUS643);
+		linhasOnibus.addElement(ONIBUS829);
+		linhasOnibus.addElement(ONIBUSC25);
+		linhasOnibus.addElement(ONIBUS323);
+		linhasOnibus.addElement(ONIBUS663);
+		linhasOnibus.addElement(ONIBUS222);
+		linhasOnibus.addElement(ONIBUSC30);
+		linhasOnibus.addElement(ONIBUS761);
+		linhasOnibus.addElement(ONIBUS242);
+		linhasOnibus.addElement(ONIBUS467);
+		linhasOnibus.addElement(ONIBUSD23);
+		linhasOnibus.addElement(ONIBUSC17);
+		linhasOnibus.addElement(ONIBUSB28);
+		linhasOnibus.addElement(ONIBUS714);
+		linhasOnibus.addElement(ONIBUS825);
+		linhasOnibus.addElement(ONIBUS166);
+		linhasOnibus.addElement(ONIBUSC12);
+		linhasOnibus.addElement(ONIBUSA32);
+		linhasOnibus.addElement(ONIBUS336);
+		linhasOnibus.addElement(ONIBUS665);
+		linhasOnibus.addElement(ONIBUS762);
+		linhasOnibus.addElement(ONIBUS860);
+		linhasOnibus.addElement(ONIBUS471);
+		linhasOnibus.addElement(ONIBUS624);
+		linhasOnibus.addElement(ONIBUS184);
+		linhasOnibus.addElement(ONIBUS613);
+		linhasOnibus.addElement(ONIBUS777);
+		linhasOnibus.addElement(ONIBUS652);
+		linhasOnibus.addElement(ONIBUS918);
+		linhasOnibus.addElement(ONIBUSZ03);
+		linhasOnibus.addElement(ONIBUS779);
+		linhasOnibus.addElement(ONIBUS630);
+		linhasOnibus.addElement(ONIBUS690);
+		linhasOnibus.addElement(ONIBUSC15);
+		linhasOnibus.addElement(ONIBUS657);
+		linhasOnibus.addElement(ONIBUS551);
+		linhasOnibus.addElement(ONIBUS536);	
 		return linhasOnibus;
 	} 
 
-		public static Onibus getByNome(String nome) {
-		if (nome.equals("A. BRANCA / FAZ. RIO GRANDE")) {
-			return OnibusG12.create();
-		}
 	
-		if (nome.equals("A. MUNHOZ / J. BOTÂNICO")) {
-			return Onibus464.create();
-		}
-	
-		if (nome.equals("ABAETÉ")) {
-			return Onibus226.create();
-		}
-	
-		if (nome.equals("ABRANCHES")) {
-			return Onibus182.create();
-		}
-	
-		if (nome.equals("ACRÓPOLE")) {
-			return Onibus332.create();
-		}
-	
-		if (nome.equals("AEROPORTO")) {
-			return Onibus208.create();
-		}
-	
-		if (nome.equals("AGRÍCOLA")) {
-			return Onibus334.create();
-		}
-	
-		if (nome.equals("ÁGUA CLARA")) {
-			return OnibusC13.create();
-		}
-	
-		if (nome.equals("ÁGUA VERDE/ ABRANCHES")) {
-			return Onibus180.create();
-		}
-	
-		if (nome.equals("AGUDOS DO SUL")) {
-			return OnibusI21.create();
-		}
-	
-		if (nome.equals("AHÚ / LOS ANGELES")) {
-			return Onibus265.create();
-		}
-	
-		if (nome.equals("ALFERES POLI")) {
-			return Onibus560.create();
-		}
-	
-		if (nome.equals("ALIANÇA")) {
-			return Onibus232.create();
-		}
-	
-		if (nome.equals("ALTO BOQUEIRÃO")) {
-			return Onibus629.create();
-		}
-	
-		if (nome.equals("ALTO TARUMÃ")) {
-			return Onibus373.create();
-		}
-	
-		if (nome.equals("ANA TERRA / ADRIANE")) {
-			return OnibusB15.create();
-		}
-	
-		if (nome.equals("ANGÉLICA / C. RASO")) {
-			return OnibusH20.create();
-		}
-	
-		if (nome.equals("ANGÉLICA / CIC")) {
-			return OnibusH21.create();
-		}
-	
-		if (nome.equals("ARAGUAIA")) {
-			return Onibus311.create();
-		}
-	
-		if (nome.equals("ARAUCARIA / CAMPO LARGO")) {
-			return OnibusI32.create();
-		}
-	
-		if (nome.equals("ARAUCÁRIA / PINHEIRINHO")) {
-			return OnibusH11.create();
-		}
-	
-		if (nome.equals("ARAUCÁRIA / PORTÃO")) {
-			return OnibusH12.create();
-		}
-	
-		if (nome.equals("AUGUSTA")) {
-			return Onibus823.create();
-		}
-	
-		if (nome.equals("AUGUSTO STRESSER")) {
-			return Onibus361.create();
-		}
-	
-		if (nome.equals("AVENIDA IRAÍ / C. IMBUIA")) {
-			return Onibus313.create();
-		}
-	
-		if (nome.equals("B. ALTO / BOA VISTA")) {
-			return Onibus342.create();
-		}
-	
-		if (nome.equals("B. ALTO / E. PERNETA")) {
-			return OnibusC41.create();
-		}
-	
-		if (nome.equals("B. ALTO / STA. CÂNDIDA")) {
-			return Onibus341.create();
-		}
-	
-		if (nome.equals("B. ALTO / STA. FELICIDADE")) {
-			return Onibus307.create();
-		}
-	
-		if (nome.equals("BAIRRO NOVO")) {
-			return Onibus506.create();
-		}
-	
-		if (nome.equals("BAIRRO NOVO A")) {
-			return Onibus541.create();
-		}
-	
-		if (nome.equals("BAIRRO NOVO B")) {
-			return Onibus542.create();
-		}
-	
-		if (nome.equals("BAIRRO NOVO C")) {
-			return Onibus547.create();
-		}
-	
-		if (nome.equals("BANESTADO / CALIFÓRNIA")) {
-			return Onibus231.create();
-		}
-	
-		if (nome.equals("BARREIRINHA")) {
-			return Onibus205.create();
-		}
-	
-		if (nome.equals("BARREIRINHA / SÃO JOSÉ")) {
-			return Onibus206.create();
-		}
-	
-		if (nome.equals("BIGORRILHO")) {
-			return Onibus875.create();
-		}
-	
-		if (nome.equals("BOA VISTA / BARREIRINHA")) {
-			return Onibus225.create();
-		}
-	
-		if (nome.equals("BOCAIÚVA DO SUL")) {
-			return OnibusB33.create();
-		}
-	
-		if (nome.equals("BOM PASTOR")) {
-			return Onibus922.create();
-		}
-	
-		if (nome.equals("BOM RETIRO / PUC")) {
-			return Onibus175.create();
-		}
-	
-		if (nome.equals("BOQUEIRÃO")) {
-			return Onibus503.create();
-		}
-	
-		if (nome.equals("BOQUEIRÃO / C. CÍVICO")) {
-			return Onibus505.create();
-		}
-	
-		if (nome.equals("BOQUEIRAO / KRAFT")) {
-			return Onibus540.create();
-		}
-	
-		if (nome.equals("BORDA DO CAMPO")) {
-			return OnibusO71.create();
-		}
-	
-		if (nome.equals("BOSCH")) {
-			return Onibus627.create();
-		}
-	
-		if (nome.equals("BRACATINGA")) {
-			return Onibus170.create();
-		}
-	
-		if (nome.equals("BRITANITE")) {
-			return OnibusO75.create();
-		}
-	
-		if (nome.equals("BUTIATUVINHA")) {
-			return Onibus913.create();
-		}
-	
-		if (nome.equals("C. BELEM / S. FILHO")) {
-			return Onibus516.create();
-		}
-	
-		if (nome.equals("C. COMPRIDO / C. RASO")) {
-			return Onibus828.create();
-		}
-	
-		if (nome.equals("C. COMPRIDO / CIC")) {
-			return Onibus826.create();
-		}
-	
-		if (nome.equals("C. IMBUIA / PQ. BARIGUI")) {
-			return Onibus393.create();
-		}
-	
-		if (nome.equals("C. LARGO / BALSA NOVA")) {
-			return OnibusI30.create();
-		}
-	
-		if (nome.equals("C. MÚSICA / V. ALEGRE")) {
-			return Onibus150.create();
-		}
-	
-		if (nome.equals("C. RASO / CAIUÁ")) {
-			return Onibus658.create();
-		}
-	
-		if (nome.equals("C. RASO / CAMP. SIQUEIRA")) {
-			return Onibus024.create();
-		}
-	
-		if (nome.equals("CABRAL / BOM RETIRO")) {
-			return Onibus201.create();
-		}
-	
-		if (nome.equals("CABRAL / CACHOEIRA")) {
-			return Onibus215.create();
-		}
-	
-		if (nome.equals("CABRAL / MARACANÃ")) {
-			return OnibusB02.create();
-		}
-	
-		if (nome.equals("CABRAL / OSÓRIO")) {
-			return Onibus207.create();
-		}
-	
-		if (nome.equals("CABRAL / PORTÃO")) {
-			return Onibus216.create();
-		}
-	
-		if (nome.equals("CACHIMBA")) {
-			return Onibus647.create();
-		}
-	
-		if (nome.equals("CACHIMBA / OLARIA")) {
-			return Onibus659.create();
-		}
-	
-		if (nome.equals("CAIUÁ")) {
-			return Onibus703.create();
-		}
-	
-		if (nome.equals("CAIUA / C.COMPRIDO")) {
-			return Onibus732.create();
-		}
-	
-		if (nome.equals("CAJURU")) {
-			return Onibus386.create();
-		}
-	
-		if (nome.equals("CAMARGO")) {
-			return Onibus322.create();
-		}
-	
-		if (nome.equals("CAMP. SIQUEIRA / BATEL")) {
-			return Onibus801.create();
-		}
-	
-		if (nome.equals("CAMPO ALEGRE")) {
-			return Onibus654.create();
-		}
-	
-		if (nome.equals("CAMPO LARGO")) {
-			return OnibusJ15.create();
-		}
-	
-		if (nome.equals("CAMPO MAGRO")) {
-			return Onibus923.create();
-		}
-	
-		if (nome.equals("CANAL BELÉM")) {
-			return Onibus475.create();
-		}
-	
-		if (nome.equals("CARBOMAFRA")) {
-			return Onibus628.create();
-		}
-	
-		if (nome.equals("CARMELA DUTRA")) {
-			return Onibus776.create();
-		}
-	
-		if (nome.equals("CASA DE CUSTÓDIA")) {
-			return Onibus668.create();
-		}
-	
-		if (nome.equals("CASSIOPÉIA")) {
-			return Onibus224.create();
-		}
-	
-		if (nome.equals("CENTENÁRIO")) {
-			return Onibus305.create();
-		}
-	
-		if (nome.equals("CENTENÁRIO / BOQUEIRÃO")) {
-			return Onibus335.create();
-		}
-	
-		if (nome.equals("CENTENÁRIO / C. COMPRIDO")) {
-			return Onibus303.create();
-		}
-	
-		if (nome.equals("CENTENÁRIO / HAUER")) {
-			return Onibus338.create();
-		}
-	
-		if (nome.equals("CENTENÁRIO / RUI BARBOSA")) {
-			return Onibus302.create();
-		}
-	
-		if (nome.equals("CENTRO POLITÉCNICO")) {
-			return Onibus469.create();
-		}
-	
-		if (nome.equals("CIC / TIRADENTES")) {
-			return Onibus601.create();
-		}
-	
-		if (nome.equals("CIRCULAR CENTRO (ANTI-HORÁRIO)")) {
-			return Onibus002.create();
-		}
-	
-		if (nome.equals("CIRCULAR CENTRO (HORÁRIO)")) {
-			return Onibus001.create();
-		}
-	
-		if (nome.equals("CIRCULAR SUL  (ANTI-HORÁRIO)")) {
-			return Onibus602.create();
-		}
-	
-		if (nome.equals("CIRCULAR SUL (HORÁRIO)")) {
-			return Onibus502.create();
-		}
-	
-		if (nome.equals("COLINA VERDE")) {
-			return Onibus211.create();
-		}
-	
-		if (nome.equals("COLOMBO / ANG. CARON")) {
-			return OnibusI31.create();
-		}
-	
-		if (nome.equals("COLOMBO / CIC")) {
-			return Onibus607.create();
-		}
-	
-		if (nome.equals("COLOMBO / SÃO JOSÉ")) {
-			return OnibusI20.create();
-		}
-	
-		if (nome.equals("COLÔNIA FARIA")) {
-			return OnibusB24.create();
-		}
-	
-		if (nome.equals("COTOLENGO")) {
-			return Onibus778.create();
-		}
-	
-		if (nome.equals("CRISTO REI")) {
-			return Onibus385.create();
-		}
-	
-		if (nome.equals("CTBA  / V. PALMITAL")) {
-			return OnibusC72.create();
-		}
-	
-		if (nome.equals("CTBA / APOLO")) {
-			return OnibusE02.create();
-		}
-	
-		if (nome.equals("CTBA / ARAUCÁRIA")) {
-			return Onibus606.create();
-		}
-	
-		if (nome.equals("CTBA / ARAUCÁRIA")) {
-			return OnibusH01.create();
-		}
-	
-		if (nome.equals("CTBA / AREIA BRANCA")) {
-			return OnibusG72.create();
-		}
-	
-		if (nome.equals("CTBA / BATEIAS")) {
-			return OnibusP63.create();
-		}
-	
-		if (nome.equals("CTBA / BRAGA")) {
-			return OnibusE67.create();
-		}
-	
-		if (nome.equals("CTBA / C. GDE  SUL (RAPIDO)")) {
-			return OnibusN70.create();
-		}
-	
-		if (nome.equals("CTBA / C. GRANDE DO SUL")) {
-			return OnibusN71.create();
-		}
-	
-		if (nome.equals("CTBA / C. LARGO")) {
-			return OnibusJ62.create();
-		}
-	
-		if (nome.equals("CTBA / CAMP. DOS PAULAS")) {
-			return OnibusG73.create();
-		}
-	
-		if (nome.equals("CTBA / CAMPO LARGO")) {
-			return Onibus805.create();
-		}
-	
-		if (nome.equals("CTBA / CAP. DO ATUBA")) {
-			return OnibusB61.create();
-		}
-	
-		if (nome.equals("CTBA / CERNE")) {
-			return OnibusP64.create();
-		}
-	
-		if (nome.equals("CTBA / COLOMBO (CAMBARÁ)")) {
-			return OnibusB80.create();
-		}
-	
-		if (nome.equals("CTBA / COLOMBO (GUARACI)")) {
-			return OnibusB81.create();
-		}
-	
-		if (nome.equals("CTBA / COLOMBO (ROD. UVA)")) {
-			return OnibusB72.create();
-		}
-	
-		if (nome.equals("CTBA / CONJ. ATUBA")) {
-			return OnibusC63.create();
-		}
-	
-		if (nome.equals("CTBA / CONTENDA")) {
-			return OnibusR71.create();
-		}
-	
-		if (nome.equals("CTBA / EUGÊNIA MARIA")) {
-			return OnibusN72.create();
-		}
-	
-		if (nome.equals("CTBA / FAZ. RIO GRANDE")) {
-			return Onibus605.create();
-		}
-	
-		if (nome.equals("CTBA / GUATUPÊ")) {
-			return OnibusE77.create();
-		}
-	
-		if (nome.equals("CTBA / INDEPENDÊNCIA")) {
-			return OnibusE66.create();
-		}
-	
-		if (nome.equals("CTBA / ITAPERUÇU")) {
-			return OnibusK71.create();
-		}
-	
-		if (nome.equals("CTBA / JD. ANA ROSA")) {
-			return OnibusB82.create();
-		}
-	
-		if (nome.equals("CTBA / JD. ARAPONGAS")) {
-			return OnibusB75.create();
-		}
-	
-		if (nome.equals("CTBA / JD. CÉSAR AUGUSTO")) {
-			return OnibusB74.create();
-		}
-	
-		if (nome.equals("CTBA / JD. CRISTAL")) {
-			return OnibusE75.create();
-		}
-	
-		if (nome.equals("CTBA / JD. CRUZEIRO")) {
-			return OnibusE73.create();
-		}
-	
-		if (nome.equals("CTBA / JD. CURITIBA")) {
-			return OnibusB77.create();
-		}
-	
-		if (nome.equals("CTBA / JD. IPÊ")) {
-			return OnibusE71.create();
-		}
-	
-		if (nome.equals("CTBA / JD. IZAURA")) {
-			return OnibusE72.create();
-		}
-	
-		if (nome.equals("CTBA / JD. MARROCOS")) {
-			return OnibusA73.create();
-		}
-	
-		if (nome.equals("CTBA / JD. OSASCO")) {
-			return OnibusB73.create();
-		}
-	
-		if (nome.equals("CTBA / JD. PARAÍSO")) {
-			return OnibusA72.create();
-		}
-	
-		if (nome.equals("CTBA / JD. SÃO GABRIEL")) {
-			return OnibusB78.create();
-		}
-	
-		if (nome.equals("CTBA / MANDIRITUBA")) {
-			return OnibusG71.create();
-		}
-	
-		if (nome.equals("CTBA / MARACANÃ")) {
-			return OnibusB01.create();
-		}
-	
-		if (nome.equals("CTBA / PEDRO MORO")) {
-			return OnibusE62.create();
-		}
-	
-		if (nome.equals("CTBA / PIRAQUARA")) {
-			return OnibusD61.create();
-		}
-	
-		if (nome.equals("CTBA / PIRAQUARA (DIRETO)")) {
-			return OnibusD66.create();
-		}
-	
-		if (nome.equals("CTBA / POSTO PARIS")) {
-			return OnibusE76.create();
-		}
-	
-		if (nome.equals("CTBA / POUSADA")) {
-			return OnibusO72.create();
-		}
-	
-		if (nome.equals("CTBA / PUC")) {
-			return OnibusE70.create();
-		}
-	
-		if (nome.equals("CTBA / Q. BARRAS (BR 116)")) {
-			return OnibusO74.create();
-		}
-	
-		if (nome.equals("CTBA / Q. BARRAS (GRACIOSA)")) {
-			return OnibusO73.create();
-		}
-	
-		if (nome.equals("CTBA / QUISISANA")) {
-			return OnibusE68.create();
-		}
-	
-		if (nome.equals("CTBA / R. BCO. DO SUL")) {
-			return OnibusL71.create();
-		}
-	
-		if (nome.equals("CTBA / ROÇA GRANDE")) {
-			return OnibusB79.create();
-		}
-	
-		if (nome.equals("CTBA / ROSEIRA")) {
-			return OnibusE78.create();
-		}
-	
-		if (nome.equals("CTBA / SÃO JOSÉ")) {
-			return OnibusE05.create();
-		}
-	
-		if (nome.equals("CTBA / SÃO SEBASTIÃO")) {
-			return OnibusB76.create();
-		}
-	
-		if (nome.equals("CTBA / STA. TEREZA")) {
-			return OnibusB83.create();
-		}
-	
-		if (nome.equals("CTBA / TAMANDARÉ")) {
-			return OnibusA01.create();
-		}
-	
-		if (nome.equals("CTBA / TAMANDARÉ (LAMENHA)")) {
-			return OnibusA07.create();
-		}
-	
-		if (nome.equals("CTBA / TAMANDARÉ (MINÉRIOS)")) {
-			return OnibusA06.create();
-		}
-	
-		if (nome.equals("CTBA / TANGUÁ")) {
-			return OnibusA77.create();
-		}
-	
-		if (nome.equals("CTBA / TERRA BOA")) {
-			return OnibusP65.create();
-		}
-	
-		if (nome.equals("CTBA / TIMBÚ")) {
-			return OnibusN73.create();
-		}
-	
-		if (nome.equals("CTBA / URANO")) {
-			return OnibusE01.create();
-		}
-	
-		if (nome.equals("CTBA / V.  MARTA")) {
-			return OnibusA78.create();
-		}
-	
-		if (nome.equals("CTBA / V. ZUMBI")) {
-			return OnibusC66.create();
-		}
-	
-		if (nome.equals("CTBA / XINGU")) {
-			return OnibusE65.create();
-		}
-	
-		if (nome.equals("CTBA/GUARAITUBA(VIA MARACANA)")) {
-			return OnibusB06.create();
-		}
-	
-		if (nome.equals("CTBA/Q.BARRAS(RAPIDO)")) {
-			return OnibusO76.create();
-		}
-	
-		if (nome.equals("DALAGASSA")) {
-			return Onibus681.create();
-		}
-	
-		if (nome.equals("DETRAN / VIC. MACHADO")) {
-			return Onibus380.create();
-		}
-	
-		if (nome.equals("DIRETO C. IMBUIA")) {
-			return OnibusC05.create();
-		}
-	
-		if (nome.equals("DIRETO CABRAL")) {
-			return OnibusB31.create();
-		}
-	
-		if (nome.equals("DOM ÁTICO")) {
-			return Onibus662.create();
-		}
-	
-		if (nome.equals("E. E. ALCINDO FANAYA 1")) {
-			return Onibus699.create();
-		}
-	
-		if (nome.equals("E. E. ALCINDO FANAYA 2")) {
-			return Onibus795.create();
-		}
-	
-		if (nome.equals("E. E. ALI BARK 1")) {
-			return Onibus799.create();
-		}
-	
-		if (nome.equals("E. E. ALI BARK 2")) {
-			return Onibus798.create();
-		}
-	
-		if (nome.equals("E. E. ALTO BOQUEIRÃO")) {
-			return Onibus695.create();
-		}
-	
-		if (nome.equals("E. E. APAE 1")) {
-			return Onibus399.create();
-		}
-	
-		if (nome.equals("E. E. APAE 2")) {
-			return Onibus596.create();
-		}
-	
-		if (nome.equals("E. E. APAE 3")) {
-			return Onibus598.create();
-		}
-	
-		if (nome.equals("E. E. APAE 6")) {
-			return Onibus396.create();
-		}
-	
-		if (nome.equals("E. E. BAIRRO NOVO")) {
-			return Onibus694.create();
-		}
-	
-		if (nome.equals("E. E. C. IMBUIA")) {
-			return Onibus398.create();
-		}
-	
-		if (nome.equals("E. E. CAJURU")) {
-			return Onibus397.create();
-		}
-	
-		if (nome.equals("E. E. CENTRAU 1")) {
-			return Onibus394.create();
-		}
-	
-		if (nome.equals("E. E. CIC")) {
-			return Onibus899.create();
-		}
-	
-		if (nome.equals("E. E. ECUMÊNICA 1")) {
-			return Onibus697.create();
-		}
-	
-		if (nome.equals("E. E. ECUMÊNICA 2")) {
-			return Onibus897.create();
-		}
-	
-		if (nome.equals("E. E. HELENA ANTIPOFF 1")) {
-			return Onibus599.create();
-		}
-	
-		if (nome.equals("E. E. HELENA ANTIPOFF 2")) {
-			return Onibus497.create();
-		}
-	
-		if (nome.equals("E. E. HELENA ANTIPOFF 4")) {
-			return Onibus499.create();
-		}
-	
-		if (nome.equals("E. E. NOSSA SRA. DA LUZ")) {
-			return Onibus698.create();
-		}
-	
-		if (nome.equals("E. E. PINHAIS 1")) {
-			return Onibus495.create();
-		}
-	
-		if (nome.equals("E. E. PINHAIS 2")) {
-			return Onibus498.create();
-		}
-	
-		if (nome.equals("E. E. PINHEIRINHO")) {
-			return Onibus696.create();
-		}
-	
-		if (nome.equals("E. E. SÍTIO CERCADO")) {
-			return Onibus597.create();
-		}
-	
-		if (nome.equals("E. E. STA. HELENA")) {
-			return Onibus796.create();
-		}
-	
-		if (nome.equals("E. E. STA. QUITÉRIA")) {
-			return Onibus797.create();
-		}
-	
-		if (nome.equals("E. E. TATUQUARA")) {
-			return Onibus895.create();
-		}
-	
-		if (nome.equals("E. E. THOMAZ EDISON 1")) {
-			return Onibus693.create();
-		}
-	
-		if (nome.equals("E. E. TOMAZ EDISON 2")) {
-			return Onibus893.create();
-		}
-	
-		if (nome.equals("E. E. TOMAZ EDISON 3")) {
-			return Onibus691.create();
-		}
-	
-		if (nome.equals("E. E. TOMAZ EDISON 4")) {
-			return Onibus392.create();
-		}
-	
-		if (nome.equals("E. E. TOMAZ EDISON 5")) {
-			return Onibus692.create();
-		}
-	
-		if (nome.equals("E. E. VIVIAN MARCAL 1")) {
-			return Onibus998.create();
-		}
-	
-		if (nome.equals("E. E. 29 DE MARÇO 1")) {
-			return Onibus894.create();
-		}
-	
-		if (nome.equals("E. VERÍSSIMO / PANTANAL")) {
-			return Onibus533.create();
-		}
-	
-		if (nome.equals("EMILIANO PERNETA")) {
-			return OnibusC23.create();
-		}
-	
-		if (nome.equals("ERASTO  GAERTNER")) {
-			return Onibus465.create();
-		}
-	
-		if (nome.equals("ESPECIAL BOQUEIRAO")) {
-			return OnibusX12.create();
-		}
-	
-		if (nome.equals("ESPECIAL HASDRUBAL BELLEGARD")) {
-			return OnibusX19.create();
-		}
-	
-		if (nome.equals("ESPECIAL PAUL GARFUNKEL")) {
-			return OnibusX18.create();
-		}
-	
-		if (nome.equals("ESPECIAL TROMBINI")) {
-			return Onibus968.create();
-		}
-	
-		if (nome.equals("ESTADOS")) {
-			return OnibusF13.create();
-		}
-	
-		if (nome.equals("ESTRIBO AHÚ")) {
-			return Onibus266.create();
-		}
-	
-		if (nome.equals("ESTUDANTES")) {
-			return Onibus466.create();
-		}
-	
-		if (nome.equals("EUCALIPTOS")) {
-			return OnibusF17.create();
-		}
-	
-		if (nome.equals("EUCALIPTOS II")) {
-			return OnibusF24.create();
-		}
-	
-		if (nome.equals("EUCALIPTOS III / PIONEIROS")) {
-			return OnibusF27.create();
-		}
-	
-		if (nome.equals("EXECUTIVO / AEROPORTO")) {
-			return OnibusE64.create();
-		}
-	
-		if (nome.equals("FANNY")) {
-			return Onibus621.create();
-		}
-	
-		if (nome.equals("FAZ. RIO GRANDE / A. BRANCA")) {
-			return OnibusF73.create();
-		}
-	
-		if (nome.equals("FAZ. RIO GRANDE / MANDIRITUBA")) {
-			return OnibusF72.create();
-		}
-	
-		if (nome.equals("FAZEND. / CAIUÁ-FRIGORÍF.")) {
-			return Onibus719.create();
-		}
-	
-		if (nome.equals("FAZENDA / CIC")) {
-			return OnibusF05.create();
-		}
-	
-		if (nome.equals("FAZENDA / PINHEIRINHO")) {
-			return OnibusF01.create();
-		}
-	
-		if (nome.equals("FAZENDA (DIRETO)")) {
-			return OnibusF03.create();
-		}
-	
-		if (nome.equals("FAZENDINHA")) {
-			return Onibus701.create();
-		}
-	
-		if (nome.equals("FAZENDINHA / C. COMPRIDO")) {
-			return Onibus720.create();
-		}
-	
-		if (nome.equals("FAZENDINHA / C.RASO")) {
-			return Onibus831.create();
-		}
-	
-		if (nome.equals("FAZENDINHA / PORTÃO")) {
-			return Onibus611.create();
-		}
-	
-		if (nome.equals("FAZENDINHA / PUC")) {
-			return Onibus614.create();
-		}
-	
-		if (nome.equals("FAZENDINHA / TAMANDARÉ")) {
-			return Onibus702.create();
-		}
-	
-		if (nome.equals("FERNANDO DE NORONHA")) {
-			return Onibus270.create();
-		}
-	
-		if (nome.equals("FERNÃO DIAS")) {
-			return Onibus821.create();
-		}
-	
-		if (nome.equals("FORMOSA")) {
-			return Onibus673.create();
-		}
-	
-		if (nome.equals("FREDOLIN WOLF")) {
-			return Onibus167.create();
-		}
-	
-		if (nome.equals("FUTURAMA")) {
-			return Onibus639.create();
-		}
-	
-		if (nome.equals("FUTURAMA / S. CERCADO")) {
-			return Onibus683.create();
-		}
-	
-		if (nome.equals("GABINETO")) {
-			return Onibus822.create();
-		}
-	
-		if (nome.equals("GANCHINHO")) {
-			return Onibus642.create();
-		}
-	
-		if (nome.equals("GIANNINI")) {
-			return OnibusA16.create();
-		}
-	
-		if (nome.equals("GRALHA AZUL")) {
-			return OnibusF15.create();
-		}
-	
-		if (nome.equals("GRAMADOS")) {
-			return Onibus625.create();
-		}
-	
-		if (nome.equals("GUABIROTUBA")) {
-			return Onibus470.create();
-		}
-	
-		if (nome.equals("GUARAITUBA")) {
-			return OnibusB23.create();
-		}
-	
-		if (nome.equals("GUARAITUBA / CABRAL")) {
-			return OnibusB05.create();
-		}
-	
-		if (nome.equals("GUARAITUBA / CABRAL")) {
-			return OnibusB20.create();
-		}
-	
-		if (nome.equals("GUARAITUBA / MARACANA")) {
-			return OnibusB34.create();
-		}
-	
-		if (nome.equals("GUARITUBA")) {
-			return OnibusD22.create();
-		}
-	
-		if (nome.equals("GUILHERMINA")) {
-			return Onibus561.create();
-		}
-	
-		if (nome.equals("HAUER / BOQUEIRÃO")) {
-			return Onibus513.create();
-		}
-	
-		if (nome.equals("HIGIENÓPOLIS")) {
-			return Onibus371.create();
-		}
-	
-		if (nome.equals("HUGO LANGE")) {
-			return Onibus374.create();
-		}
-	
-		if (nome.equals("IGUAÇU I")) {
-			return OnibusF12.create();
-		}
-	
-		if (nome.equals("IGUAÇU II")) {
-			return OnibusF21.create();
-		}
-	
-		if (nome.equals("IGUAPE I")) {
-			return Onibus523.create();
-		}
-	
-		if (nome.equals("IGUAPE II")) {
-			return Onibus515.create();
-		}
-	
-		if (nome.equals("INTEGRAR  PIRAQUARA")) {
-			return OnibusD13.create();
-		}
-	
-		if (nome.equals("INTER 2 ( ANTI-HORÁRIO)")) {
-			return Onibus023.create();
-		}
-	
-		if (nome.equals("INTER 2 (HORÁRIO)")) {
-			return Onibus022.create();
-		}
-	
-		if (nome.equals("INTERBAIRROS I (ANTI-HORÁRIO)")) {
-			return Onibus011.create();
-		}
-	
-		if (nome.equals("INTERBAIRROS I (HORÁRIO)")) {
-			return Onibus010.create();
-		}
-	
-		if (nome.equals("INTERBAIRROS II (ANTI-HORÁRIO)")) {
-			return Onibus021.create();
-		}
-	
-		if (nome.equals("INTERBAIRROS II (HORÁRIO)")) {
-			return Onibus020.create();
-		}
-	
-		if (nome.equals("INTERBAIRROS III")) {
-			return Onibus030.create();
-		}
-	
-		if (nome.equals("INTERBAIRROS IV")) {
-			return Onibus040.create();
-		}
-	
-		if (nome.equals("INTERBAIRROS V")) {
-			return Onibus050.create();
-		}
-	
-		if (nome.equals("INTERBAIRROS VI")) {
-			return Onibus060.create();
-		}
-	
-		if (nome.equals("INTERHOSPITAIS")) {
-			return Onibus378.create();
-		}
-	
-		if (nome.equals("ITAMARATI")) {
-			return Onibus512.create();
-		}
-	
-		if (nome.equals("ITAPERUÇU / CAIC")) {
-			return OnibusI71.create();
-		}
-	
-		if (nome.equals("ITAPERUÇU / TAMANDARÉ")) {
-			return OnibusK11.create();
-		}
-	
-		if (nome.equals("ITATIAIA")) {
-			return Onibus711.create();
-		}
-	
-		if (nome.equals("ITUPAVA / HOSP. MILITAR")) {
-			return Onibus366.create();
-		}
-	
-		if (nome.equals("JACOB MACANHAN")) {
-			return OnibusC28.create();
-		}
-	
-		if (nome.equals("JD. BELA VISTA")) {
-			return OnibusD31.create();
-		}
-	
-		if (nome.equals("JD. BOA VISTA")) {
-			return Onibus914.create();
-		}
-	
-		if (nome.equals("JD. CENTAURO")) {
-			return Onibus468.create();
-		}
-	
-		if (nome.equals("JD. CHAPARRAL")) {
-			return Onibus183.create();
-		}
-	
-		if (nome.equals("JD. CLÁUDIA")) {
-			return OnibusC20.create();
-		}
-	
-		if (nome.equals("JD. DAS GRAÇAS")) {
-			return OnibusB13.create();
-		}
-	
-		if (nome.equals("JD. DO ARROIO")) {
-			return Onibus244.create();
-		}
-	
-		if (nome.equals("JD. ESPLANADA")) {
-			return Onibus865.create();
-		}
-	
-		if (nome.equals("JD. EUCALIPTOS")) {
-			return OnibusB26.create();
-		}
-	
-		if (nome.equals("JD. GRAMADOS")) {
-			return OnibusA14.create();
-		}
-	
-		if (nome.equals("JD. GRAZIELA")) {
-			return OnibusA31.create();
-		}
-	
-		if (nome.equals("JD. HOLANDÊS")) {
-			return OnibusC11.create();
-		}
-	
-		if (nome.equals("JD. INDEPENDÊNCIA / CIC")) {
-			return Onibus712.create();
-		}
-	
-		if (nome.equals("JD. IPÊ")) {
-			return Onibus917.create();
-		}
-	
-		if (nome.equals("JD. IRAÍ")) {
-			return OnibusC16.create();
-		}
-	
-		if (nome.equals("JD. ITÁLIA")) {
-			return Onibus972.create();
-		}
-	
-		if (nome.equals("JD. ITIBERÊ")) {
-			return Onibus474.create();
-		}
-	
-		if (nome.equals("JD. KOSMOS")) {
-			return Onibus169.create();
-		}
-	
-		if (nome.equals("JD. LUDOVICA")) {
-			return Onibus617.create();
-		}
-	
-		if (nome.equals("JD. MERCÊS / GUANABARA")) {
-			return Onibus160.create();
-		}
-	
-		if (nome.equals("JD. MONTE SANTO")) {
-			return OnibusA13.create();
-		}
-	
-		if (nome.equals("JD. ORDEM")) {
-			return Onibus655.create();
-		}
-	
-		if (nome.equals("JD. PARAÍSO / TAMANDARÉ")) {
-			return OnibusA21.create();
-		}
-	
-		if (nome.equals("JD. PARANAENSE")) {
-			return Onibus532.create();
-		}
-	
-		if (nome.equals("JD. PIONEIRO")) {
-			return Onibus921.create();
-		}
-	
-		if (nome.equals("JD. SOCIAL / BATEL")) {
-			return Onibus365.create();
-		}
-	
-		if (nome.equals("JD. STA. MÔNICA")) {
-			return OnibusD21.create();
-		}
-	
-		if (nome.equals("JD. TROPICAL")) {
-			return OnibusC18.create();
-		}
-	
-		if (nome.equals("JD. VENEZA")) {
-			return OnibusF25.create();
-		}
-	
-		if (nome.equals("JOAQUINA")) {
-			return OnibusC27.create();
-		}
-	
-		if (nome.equals("JOSÉ CULPI")) {
-			return Onibus912.create();
-		}
-	
-		if (nome.equals("JÚLIO GRAF")) {
-			return Onibus967.create();
-		}
-	
-		if (nome.equals("JUVEVÊ / ÁGUA VERDE")) {
-			return Onibus285.create();
-		}
-	
-		if (nome.equals("KAMYR")) {
-			return Onibus656.create();
-		}
-	
-		if (nome.equals("LARANJEIRAS")) {
-			return Onibus271.create();
-		}
-	
-		if (nome.equals("LD OSTERNACK / S. CERCADO")) {
-			return Onibus520.create();
-		}
-	
-		if (nome.equals("LG. FERREIRAS / PINHEIRINHO")) {
-			return OnibusG13.create();
-		}
-	
-		if (nome.equals("LIGEIRÃO - PINHEIRINHO / C. GOMES")) {
-			return Onibus550.create();
-		}
-	
-		if (nome.equals("LIGEIRAO BOQUEIRAO")) {
-			return Onibus500.create();
-		}
-	
-		if (nome.equals("LINDÓIA")) {
-			return Onibus661.create();
-		}
-	
-		if (nome.equals("LONDRINA")) {
-			return Onibus635.create();
-		}
-	
-		if (nome.equals("LUIZ NICHELE")) {
-			return Onibus641.create();
-		}
-	
-		if (nome.equals("MAD. ABRANCHES")) {
-			return Onibus189.create();
-		}
-	
-		if (nome.equals("MAD. BAIRRO NOVO")) {
-			return Onibus549.create();
-		}
-	
-		if (nome.equals("MAD. BOQUEIRÃO")) {
-			return Onibus509.create();
-		}
-	
-		if (nome.equals("MAD. CAIUÁ")) {
-			return Onibus789.create();
-		}
-	
-		if (nome.equals("MAD. CAMPO COMPRIDO")) {
-			return Onibus802.create();
-		}
-	
-		if (nome.equals("MAD. CAMPO COMPRIDO")) {
-			return Onibus809.create();
-		}
-	
-		if (nome.equals("MAD. CENTENÁRIO")) {
-			return Onibus309.create();
-		}
-	
-		if (nome.equals("MAD. CENTENÁRIO / RUI BARBOSA")) {
-			return Onibus308.create();
-		}
-	
-		if (nome.equals("MAD. CIC")) {
-			return Onibus609.create();
-		}
-	
-		if (nome.equals("MAD. CTBA / PINHAIS")) {
-			return OnibusC64.create();
-		}
-	
-		if (nome.equals("MAD. CTBA / PIRAQUARA")) {
-			return OnibusD69.create();
-		}
-	
-		if (nome.equals("MAD. CTBA / SÃO DIMAS")) {
-			return OnibusB69.create();
-		}
-	
-		if (nome.equals("MAD. CTBA / SÃO JOSÉ")) {
-			return OnibusE69.create();
-		}
-	
-		if (nome.equals("MAD. CTBA / TAMANDARÉ")) {
-			return OnibusA05.create();
-		}
-	
-		if (nome.equals("MAD. FAZ. RIO GRANDE")) {
-			return OnibusF09.create();
-		}
-	
-		if (nome.equals("MAD. FERRARIA")) {
-			return OnibusJ19.create();
-		}
-	
-		if (nome.equals("MAD. JD. GRAZIELA")) {
-			return Onibus289.create();
-		}
-	
-		if (nome.equals("MAD. PENHA / F. NORONHA")) {
-			return Onibus229.create();
-		}
-	
-		if (nome.equals("MAD. PETRÓPOLIS / SOLITUDE")) {
-			return Onibus489.create();
-		}
-	
-		if (nome.equals("MAD. PILARZINHO / UBERABA")) {
-			return Onibus188.create();
-		}
-	
-		if (nome.equals("MAD. PINHEIRINHO")) {
-			return Onibus608.create();
-		}
-	
-		if (nome.equals("MAD. S. CÂNDIDA / C. RASO")) {
-			return Onibus209.create();
-		}
-	
-		if (nome.equals("MAD. S. FRANCISCO / IGUAPE")) {
-			return Onibus519.create();
-		}
-	
-		if (nome.equals("MAD. S. PEDRO / R. NEGRO")) {
-			return Onibus689.create();
-		}
-	
-		if (nome.equals("MAD. SÃO BRÁZ")) {
-			return Onibus889.create();
-		}
-	
-		if (nome.equals("MAD. STA. FELICIDADE")) {
-			return Onibus989.create();
-		}
-	
-		if (nome.equals("MAD. TARUMÃ / AUGUSTA")) {
-			return Onibus389.create();
-		}
-	
-		if (nome.equals("MAD. TATUQUARA")) {
-			return Onibus679.create();
-		}
-	
-		if (nome.equals("MAD. V. VELHA")) {
-			return Onibus788.create();
-		}
-	
-		if (nome.equals("MAL. HERMES / STA. EFIGÊNIA")) {
-			return Onibus260.create();
-		}
-	
-		if (nome.equals("MARACANÃ / B. ALTO")) {
-			return OnibusB25.create();
-		}
-	
-		if (nome.equals("MARACANÃ / C. IMBUIA")) {
-			return OnibusB41.create();
-		}
-	
-		if (nome.equals("MARACANA / LINHA VERDE")) {
-			return OnibusB42.create();
-		}
-	
-		if (nome.equals("MARACANÃ / STA.  CÂNDIDA")) {
-			return OnibusB11.create();
-		}
-	
-		if (nome.equals("MARACANÃ / STA. CÂNDIDA")) {
-			return OnibusB32.create();
-		}
-	
-		if (nome.equals("MARIA ANGÉLICA")) {
-			return Onibus633.create();
-		}
-	
-		if (nome.equals("MARINGÁ")) {
-			return Onibus522.create();
-		}
-	
-		if (nome.equals("MATEUS LEME")) {
-			return Onibus181.create();
-		}
-	
-		if (nome.equals("MENONITAS")) {
-			return Onibus594.create();
-		}
-	
-		if (nome.equals("MERCÚRIO")) {
-			return Onibus331.create();
-		}
-	
-		if (nome.equals("MONTANA")) {
-			return Onibus812.create();
-		}
-	
-		if (nome.equals("MONTE CASTELO")) {
-			return OnibusB19.create();
-		}
-	
-		if (nome.equals("MOSSUNGUÊ")) {
-			return Onibus814.create();
-		}
-	
-		if (nome.equals("NAÇÕES I")) {
-			return OnibusF16.create();
-		}
-	
-		if (nome.equals("NAÇÕES II")) {
-			return OnibusF22.create();
-		}
-	
-		if (nome.equals("NILO PEÇANHA")) {
-			return Onibus176.create();
-		}
-	
-		if (nome.equals("NIVALDO BRAGA")) {
-			return Onibus521.create();
-		}
-	
-		if (nome.equals("NOSSA SRA. DA LUZ")) {
-			return Onibus674.create();
-		}
-	
-		if (nome.equals("NOSSA SRA. DE NAZARÉ")) {
-			return Onibus280.create();
-		}
-	
-		if (nome.equals("NOVENA")) {
-			return Onibus360.create();
-		}
-	
-		if (nome.equals("NOVO MUNDO")) {
-			return Onibus666.create();
-		}
-	
-		if (nome.equals("OLARIA")) {
-			return Onibus233.create();
-		}
-	
-		if (nome.equals("OSTERNACK / BOQUEIRÃO")) {
-			return Onibus535.create();
-		}
-	
-		if (nome.equals("OSTERNACK / S. CERCADO")) {
-			return Onibus548.create();
-		}
-	
-		if (nome.equals("OURO VERDE / V. BÁDIA")) {
-			return Onibus915.create();
-		}
-	
-		if (nome.equals("PAINEIRAS")) {
-			return Onibus272.create();
-		}
-	
-		if (nome.equals("PALMEIRA")) {
-			return Onibus640.create();
-		}
-	
-		if (nome.equals("PALOMA")) {
-			return OnibusB22.create();
-		}
-	
-		if (nome.equals("PALOMA / GUARAITUBA")) {
-			return OnibusB36.create();
-		}
-	
-		if (nome.equals("PALOTINOS")) {
-			return Onibus387.create();
-		}
-	
-		if (nome.equals("PARAÍSO")) {
-			return Onibus343.create();
-		}
-	
-		if (nome.equals("PARIGOT DE SOUZA")) {
-			return Onibus534.create();
-		}
-	
-		if (nome.equals("PARQUE INDUSTRIAL")) {
-			return Onibus623.create();
-		}
-	
-		if (nome.equals("PASSAÚNA")) {
-			return Onibus911.create();
-		}
-	
-		if (nome.equals("PETRÓPOLIS")) {
-			return Onibus462.create();
-		}
-	
-		if (nome.equals("PINHAIS / B. ALTO")) {
-			return OnibusC42.create();
-		}
-	
-		if (nome.equals("PINHAIS / C. COMPRIDO")) {
-			return Onibus304.create();
-		}
-	
-		if (nome.equals("PINHAIS / GUADALUPE")) {
-			return OnibusC03.create();
-		}
-	
-		if (nome.equals("PINHAIS / PIRAQUARA")) {
-			return OnibusD14.create();
-		}
-	
-		if (nome.equals("PINHAIS / RUI BARBOSA")) {
-			return Onibus301.create();
-		}
-	
-		if (nome.equals("PINHEIRINHO")) {
-			return Onibus603.create();
-		}
-	
-		if (nome.equals("PINHEIRINHO")) {
-			return Onibus638.create();
-		}
-	
-		if (nome.equals("PINHEIRINHO / CIC")) {
-			return Onibus644.create();
-		}
-	
-		if (nome.equals("PINHEIRINHO / ZOOLÓGICO")) {
-			return Onibus688.create();
-		}
-	
-		if (nome.equals("PINHEIROS")) {
-			return Onibus916.create();
-		}
-	
-		if (nome.equals("PIRATINI / BR 476")) {
-			return Onibus631.create();
-		}
-	
-		if (nome.equals("PIRINEUS")) {
-			return Onibus649.create();
-		}
-	
-		if (nome.equals("PLANALTO")) {
-			return OnibusB14.create();
-		}
-	
-		if (nome.equals("PLANTA DEODORO")) {
-			return OnibusD11.create();
-		}
-	
-		if (nome.equals("PLANTA KARLA")) {
-			return OnibusC22.create();
-		}
-	
-		if (nome.equals("POMPÉIA")) {
-			return Onibus646.create();
-		}
-	
-		if (nome.equals("PORTÃO")) {
-			return Onibus671.create();
-		}
-	
-		if (nome.equals("PORTÃO / CIC")) {
-			return Onibus612.create();
-		}
-	
-		if (nome.equals("PORTAO / STA. BERNADETHE - L. VERDE")) {
-			return Onibus616.create();
-		}
-	
-		if (nome.equals("PORTAO/SITIO CERCADO")) {
-			return OnibusX20.create();
-		}
-	
-		if (nome.equals("PORTEIRA / PALOMA")) {
-			return OnibusB35.create();
-		}
-	
-		if (nome.equals("PORTO BELO")) {
-			return Onibus718.create();
-		}
-	
-		if (nome.equals("PQ. INDUSTRIAL")) {
-			return OnibusF18.create();
-		}
-	
-		if (nome.equals("PRADO VELHO / P. MORO")) {
-			return OnibusE63.create();
-		}
-	
-		if (nome.equals("PRESÍDIO")) {
-			return OnibusD16.create();
-		}
-	
-		if (nome.equals("PRIMAVERA")) {
-			return Onibus171.create();
-		}
-	
-		if (nome.equals("PRIVÊ")) {
-			return OnibusC26.create();
-		}
-	
-		if (nome.equals("PUC / SÃO JOSÉ")) {
-			return OnibusE31.create();
-		}
-	
-		if (nome.equals("Q. BARRAS / BOCAIÚVA")) {
-			return OnibusI41.create();
-		}
-	
-		if (nome.equals("Q. BARRAS / PIRAQUARA")) {
-			return OnibusI40.create();
-		}
-	
-		if (nome.equals("Q. BARRAS/T.PAULISTA-ANTI HORARI")) {
-			return OnibusI51.create();
-		}
-	
-		if (nome.equals("Q. BARRAS/T.PAULISTA-HORARIO")) {
-			return OnibusI50.create();
-		}
-	
-		if (nome.equals("QUARTEL GENERAL")) {
-			return Onibus632.create();
-		}
-	
-		if (nome.equals("QUITANDINHA / PINHEIRINHO")) {
-			return OnibusG11.create();
-		}
-	
-		if (nome.equals("R. BRANCO / TAMANDARÉ")) {
-			return OnibusL11.create();
-		}
-	
-		if (nome.equals("RAPOSO TAVARES")) {
-			return Onibus168.create();
-		}
-	
-		if (nome.equals("RAQUEL PRADO / PUC")) {
-			return Onibus165.create();
-		}
-	
-		if (nome.equals("REBOUÇAS")) {
-			return OnibusJ12.create();
-		}
-	
-		if (nome.equals("REFORÇO COLINA")) {
-			return Onibus219.create();
-		}
-	
-		if (nome.equals("REFORÇO HAUER")) {
-			return OnibusX14.create();
-		}
-	
-		if (nome.equals("REFORÇO TERMINAL")) {
-			return Onibus539.create();
-		}
-	
-		if (nome.equals("RIBEIRA / FCO. CORADIN")) {
-			return OnibusB27.create();
-		}
-	
-		if (nome.equals("RIO BONITO")) {
-			return Onibus684.create();
-		}
-	
-		if (nome.equals("RIO BONITO / CIC")) {
-			return Onibus685.create();
-		}
-	
-		if (nome.equals("RIO NEGRO")) {
-			return Onibus636.create();
-		}
-	
-		if (nome.equals("RIO VERDE")) {
-			return Onibus221.create();
-		}
-	
-		if (nome.equals("RIVIERA")) {
-			return Onibus827.create();
-		}
-	
-		if (nome.equals("ROÇA GRANDE /  APDEC")) {
-			return OnibusB29.create();
-		}
-	
-		if (nome.equals("RONDON")) {
-			return Onibus622.create();
-		}
-	
-		if (nome.equals("ROSEIRA")) {
-			return OnibusB18.create();
-		}
-	
-		if (nome.equals("RUA XV / BARIGUI")) {
-			return Onibus370.create();
-		}
-	
-		if (nome.equals("RURBANA")) {
-			return Onibus680.create();
-		}
-	
-		if (nome.equals("S. CERCADO / BOQUEIRÃO")) {
-			return Onibus546.create();
-		}
-	
-		if (nome.equals("S. CERCADO / C. RASO")) {
-			return Onibus610.create();
-		}
-	
-		if (nome.equals("SABARÁ")) {
-			return Onibus653.create();
-		}
-	
-		if (nome.equals("SAGRADO CORAÇÃO")) {
-			return Onibus375.create();
-		}
-	
-		if (nome.equals("SAN FRANCISCO")) {
-			return OnibusA11.create();
-		}
-	
-		if (nome.equals("SÃO BENEDITO")) {
-			return Onibus236.create();
-		}
-	
-		if (nome.equals("SÃO BERNARDO")) {
-			return Onibus965.create();
-		}
-	
-		if (nome.equals("SÃO BRAZ")) {
-			return Onibus870.create();
-		}
-	
-		if (nome.equals("SÃO CRISTÓVÃO")) {
-			return OnibusD12.create();
-		}
-	
-		if (nome.equals("SÃO FRANCISCO")) {
-			return Onibus511.create();
-		}
-	
-		if (nome.equals("SÃO JOÃO")) {
-			return Onibus213.create();
-		}
-	
-		if (nome.equals("SÃO JORGE")) {
-			return Onibus670.create();
-		}
-	
-		if (nome.equals("SÃO JORGE")) {
-			return OnibusA17.create();
-		}
-	
-		if (nome.equals("SÃO JOSÉ / D. FINA")) {
-			return Onibus824.create();
-		}
-	
-		if (nome.equals("SATURNO")) {
-			return Onibus811.create();
-		}
-	
-		if (nome.equals("SAVÓIA")) {
-			return Onibus876.create();
-		}
-	
-		if (nome.equals("SITIO CERCADO / C. RASO")) {
-			return OnibusX11.create();
-		}
-	
-		if (nome.equals("SÍTIO CERCADO (ANTI-HORÁRIO)")) {
-			return Onibus508.create();
-		}
-	
-		if (nome.equals("SÍTIO CERCADO (HORÁRIO)")) {
-			return Onibus507.create();
-		}
-	
-		if (nome.equals("SOLAR")) {
-			return Onibus212.create();
-		}
-	
-		if (nome.equals("SOLITUDE")) {
-			return Onibus463.create();
-		}
-	
-		if (nome.equals("STA. AMÉLIA")) {
-			return Onibus713.create();
-		}
-	
-		if (nome.equals("STA. ÂNGELA")) {
-			return OnibusJ16.create();
-		}
-	
-		if (nome.equals("STA. BARBARA")) {
-			return Onibus461.create();
-		}
-	
-		if (nome.equals("STA. CÂNDIDA / C. RASO")) {
-			return Onibus203.create();
-		}
-	
-		if (nome.equals("STA. CÂNDIDA / PINHEIRINHO")) {
-			return Onibus204.create();
-		}
-	
-		if (nome.equals("STA. CRUZ")) {
-			return Onibus620.create();
-		}
-	
-		if (nome.equals("STA. FELICIDADE")) {
-			return Onibus901.create();
-		}
-	
-		if (nome.equals("STA. FELICIDADE")) {
-			return Onibus902.create();
-		}
-	
-		if (nome.equals("STA. FELICIDADE / STA. CÂNDIDA")) {
-			return Onibus924.create();
-		}
-	
-		if (nome.equals("STA. GEMA")) {
-			return Onibus274.create();
-		}
-	
-		if (nome.equals("STA. HELENA")) {
-			return OnibusB17.create();
-		}
-	
-		if (nome.equals("STA. INÊS")) {
-			return Onibus531.create();
-		}
-	
-		if (nome.equals("STA. JOANA")) {
-			return Onibus637.create();
-		}
-	
-		if (nome.equals("STA. MARIA")) {
-			return OnibusF14.create();
-		}
-	
-		if (nome.equals("STA. QUITÉRIA")) {
-			return Onibus760.create();
-		}
-	
-		if (nome.equals("STA. RITA / CIC")) {
-			return Onibus619.create();
-		}
-	
-		if (nome.equals("STA. RITA / PINHEIRINHO")) {
-			return Onibus650.create();
-		}
-	
-		if (nome.equals("STA. TEREZINHA")) {
-			return Onibus243.create();
-		}
-	
-		if (nome.equals("STA. TEREZINHA")) {
-			return OnibusF19.create();
-		}
-	
-		if (nome.equals("STA. TEREZINHA / IPE")) {
-			return OnibusF26.create();
-		}
-	
-		if (nome.equals("T. BOQ. / T. AFONSO PENA")) {
-			return OnibusE11.create();
-		}
-	
-		if (nome.equals("T. BOQ. / T. CENTRAL")) {
-			return OnibusE21.create();
-		}
-	
-		if (nome.equals("T. C. IMBUIA / T. PINHAIS")) {
-			return OnibusC04.create();
-		}
-	
-		if (nome.equals("T. C. LARGO / CAMP. SIQUEIRA")) {
-			return Onibus806.create();
-		}
-	
-		if (nome.equals("T. CACHOEIRA / T. MARACANÃ")) {
-			return OnibusI90.create();
-		}
-	
-		if (nome.equals("TAMANDARÉ")) {
-			return OnibusA02.create();
-		}
-	
-		if (nome.equals("TAMANDARÉ / CABRAL")) {
-			return Onibus105.create();
-		}
-	
-		if (nome.equals("TAMANDARÉ / CABRAL")) {
-			return Onibus218.create();
-		}
-	
-		if (nome.equals("TAMANDARÉ / COLOMBO")) {
-			return OnibusI91.create();
-		}
-	
-		if (nome.equals("TANGUÁ / TAMANDARÉ")) {
-			return OnibusA22.create();
-		}
-	
-		if (nome.equals("TARUMÃ")) {
-			return Onibus372.create();
-		}
-	
-		if (nome.equals("TERMINAL CIC")) {
-			return Onibus667.create();
-		}
-	
-		if (nome.equals("TIMBOTUVA (EST. NOVA)")) {
-			return OnibusJ14.create();
-		}
-	
-		if (nome.equals("TIMBOTUVA (EST. VELHA)")) {
-			return OnibusJ13.create();
-		}
-	
-		if (nome.equals("TINGUI")) {
-			return Onibus214.create();
-		}
-	
-		if (nome.equals("TRABALHADOR")) {
-			return Onibus545.create();
-		}
-	
-		if (nome.equals("TRAMONTINA")) {
-			return Onibus861.create();
-		}
-	
-		if (nome.equals("TRINDADE")) {
-			return Onibus321.create();
-		}
-	
-		if (nome.equals("TUIUTI / BARIGUI")) {
-			return Onibus815.create();
-		}
-	
-		if (nome.equals("TURISMO")) {
-			return Onibus979.create();
-		}
-	
-		if (nome.equals("UBERABA")) {
-			return Onibus472.create();
-		}
-	
-		if (nome.equals("UBERLÂNDIA")) {
-			return Onibus615.create();
-		}
-	
-		if (nome.equals("UMBARÁ")) {
-			return Onibus643.create();
-		}
-	
-		if (nome.equals("UNIV.POSITIVO")) {
-			return Onibus829.create();
-		}
-	
-		if (nome.equals("V. AMÉLIA")) {
-			return OnibusC25.create();
-		}
-	
-		if (nome.equals("V. AUTÓDROMO")) {
-			return Onibus323.create();
-		}
-	
-		if (nome.equals("V. CUBAS")) {
-			return Onibus663.create();
-		}
-	
-		if (nome.equals("V. ESPERANÇA")) {
-			return Onibus222.create();
-		}
-	
-		if (nome.equals("V. GRANDE / V. TARUMÃ")) {
-			return OnibusC30.create();
-		}
-	
-		if (nome.equals("V. IZABEL")) {
-			return Onibus761.create();
-		}
-	
-		if (nome.equals("V. LEONICE")) {
-			return Onibus242.create();
-		}
-	
-		if (nome.equals("V. MACEDO")) {
-			return Onibus467.create();
-		}
-	
-		if (nome.equals("V. MACEDO")) {
-			return OnibusD23.create();
-		}
-	
-		if (nome.equals("V. MARIA ANTONIETA")) {
-			return OnibusC17.create();
-		}
-	
-		if (nome.equals("V. MARIA DO ROSÁRIO")) {
-			return OnibusB28.create();
-		}
-	
-		if (nome.equals("V. MARISA")) {
-			return Onibus714.create();
-		}
-	
-		if (nome.equals("V. MARQUETO")) {
-			return Onibus825.create();
-		}
-	
-		if (nome.equals("V. NORI")) {
-			return Onibus166.create();
-		}
-	
-		if (nome.equals("V. NOVA")) {
-			return OnibusC12.create();
-		}
-	
-		if (nome.equals("V. PRADO")) {
-			return OnibusA32.create();
-		}
-	
-		if (nome.equals("V. RENO")) {
-			return Onibus336.create();
-		}
-	
-		if (nome.equals("V. REX")) {
-			return Onibus665.create();
-		}
-	
-		if (nome.equals("V. ROSINHA")) {
-			return Onibus762.create();
-		}
-	
-		if (nome.equals("V. SANDRA")) {
-			return Onibus860.create();
-		}
-	
-		if (nome.equals("V. SÃO PAULO")) {
-			return Onibus471.create();
-		}
-	
-		if (nome.equals("V. SÃO PEDRO")) {
-			return Onibus624.create();
-		}
-	
-		if (nome.equals("V. SUIÇA")) {
-			return Onibus184.create();
-		}
-	
-		if (nome.equals("V. URANO")) {
-			return Onibus613.create();
-		}
-	
-		if (nome.equals("V. VELHA")) {
-			return Onibus777.create();
-		}
-	
-		if (nome.equals("V. VERDE")) {
-			return Onibus652.create();
-		}
-	
-		if (nome.equals("VENEZA")) {
-			return Onibus918.create();
-		}
-	
-		if (nome.equals("VIC. DE CARVALHO / C. IMBUIA")) {
-			return OnibusZ03.create();
-		}
-	
-		if (nome.equals("VILA VELHA/BURITI")) {
-			return Onibus779.create();
-		}
-	
-		if (nome.equals("VITÓRIA RÉGIA")) {
-			return Onibus630.create();
-		}
-	
-		if (nome.equals("V.JULIANA")) {
-			return Onibus690.create();
-		}
-	
-		if (nome.equals("WEISSÓPOLIS")) {
-			return OnibusC15.create();
-		}
-	
-		if (nome.equals("XAXIM / CAPÃO RASO")) {
-			return Onibus657.create();
-		}
-	
-		if (nome.equals("XAXIM / LINHA VERDE")) {
-			return Onibus551.create();
-		}
-	
-		if (nome.equals("ZOOLÓGICO")) {
-			return Onibus536.create();
-		}
-	
+	public static Onibus getByNome(String nome) {
+		if (nome == ONIBUSG12) return OnibusG12.create();
+		if (nome == ONIBUS464) return Onibus464.create();
+		if (nome == ONIBUS226) return Onibus226.create();
+		if (nome == ONIBUS182) return Onibus182.create();
+		if (nome == ONIBUS332) return Onibus332.create();
+		if (nome == ONIBUS208) return Onibus208.create();
+		if (nome == ONIBUS334) return Onibus334.create();
+		if (nome == ONIBUSC13) return OnibusC13.create();
+		if (nome == ONIBUS180) return Onibus180.create();
+		if (nome == ONIBUSI21) return OnibusI21.create();
+		if (nome == ONIBUS265) return Onibus265.create();
+		if (nome == ONIBUS560) return Onibus560.create();
+		if (nome == ONIBUS232) return Onibus232.create();
+		if (nome == ONIBUS629) return Onibus629.create();
+		if (nome == ONIBUS373) return Onibus373.create();
+		if (nome == ONIBUSB15) return OnibusB15.create();
+		if (nome == ONIBUSH20) return OnibusH20.create();
+		if (nome == ONIBUSH21) return OnibusH21.create();
+		if (nome == ONIBUS311) return Onibus311.create();
+		if (nome == ONIBUSI32) return OnibusI32.create();
+		if (nome == ONIBUSH11) return OnibusH11.create();
+		if (nome == ONIBUSH12) return OnibusH12.create();
+		if (nome == ONIBUS823) return Onibus823.create();
+		if (nome == ONIBUS361) return Onibus361.create();
+		if (nome == ONIBUS313) return Onibus313.create();
+		if (nome == ONIBUS342) return Onibus342.create();
+		if (nome == ONIBUSC41) return OnibusC41.create();
+		if (nome == ONIBUS341) return Onibus341.create();
+		if (nome == ONIBUS307) return Onibus307.create();
+		if (nome == ONIBUS506) return Onibus506.create();
+		if (nome == ONIBUS541) return Onibus541.create();
+		if (nome == ONIBUS542) return Onibus542.create();
+		if (nome == ONIBUS547) return Onibus547.create();
+		if (nome == ONIBUS231) return Onibus231.create();
+		if (nome == ONIBUS205) return Onibus205.create();
+		if (nome == ONIBUS206) return Onibus206.create();
+		if (nome == ONIBUS875) return Onibus875.create();
+		if (nome == ONIBUS225) return Onibus225.create();
+		if (nome == ONIBUSB33) return OnibusB33.create();
+		if (nome == ONIBUS922) return Onibus922.create();
+		if (nome == ONIBUS175) return Onibus175.create();
+		if (nome == ONIBUS503) return Onibus503.create();
+		if (nome == ONIBUS505) return Onibus505.create();
+		if (nome == ONIBUS540) return Onibus540.create();
+		if (nome == ONIBUSO71) return OnibusO71.create();
+		if (nome == ONIBUS627) return Onibus627.create();
+		if (nome == ONIBUS170) return Onibus170.create();
+		if (nome == ONIBUSO75) return OnibusO75.create();
+		if (nome == ONIBUS913) return Onibus913.create();
+		if (nome == ONIBUS516) return Onibus516.create();
+		if (nome == ONIBUS828) return Onibus828.create();
+		if (nome == ONIBUS826) return Onibus826.create();
+		if (nome == ONIBUS393) return Onibus393.create();
+		if (nome == ONIBUSI30) return OnibusI30.create();
+		if (nome == ONIBUS150) return Onibus150.create();
+		if (nome == ONIBUS658) return Onibus658.create();
+		if (nome == ONIBUS024) return Onibus024.create();
+		if (nome == ONIBUS201) return Onibus201.create();
+		if (nome == ONIBUS215) return Onibus215.create();
+		if (nome == ONIBUSB02) return OnibusB02.create();
+		if (nome == ONIBUS207) return Onibus207.create();
+		if (nome == ONIBUS216) return Onibus216.create();
+		if (nome == ONIBUS647) return Onibus647.create();
+		if (nome == ONIBUS659) return Onibus659.create();
+		if (nome == ONIBUS703) return Onibus703.create();
+		if (nome == ONIBUS732) return Onibus732.create();
+		if (nome == ONIBUS386) return Onibus386.create();
+		if (nome == ONIBUS322) return Onibus322.create();
+		if (nome == ONIBUS801) return Onibus801.create();
+		if (nome == ONIBUS654) return Onibus654.create();
+		if (nome == ONIBUSJ15) return OnibusJ15.create();
+		if (nome == ONIBUS923) return Onibus923.create();
+		if (nome == ONIBUS475) return Onibus475.create();
+		if (nome == ONIBUS628) return Onibus628.create();
+		if (nome == ONIBUS776) return Onibus776.create();
+		if (nome == ONIBUS668) return Onibus668.create();
+		if (nome == ONIBUS224) return Onibus224.create();
+		if (nome == ONIBUS305) return Onibus305.create();
+		if (nome == ONIBUS335) return Onibus335.create();
+		if (nome == ONIBUS303) return Onibus303.create();
+		if (nome == ONIBUS338) return Onibus338.create();
+		if (nome == ONIBUS302) return Onibus302.create();
+		if (nome == ONIBUS469) return Onibus469.create();
+		if (nome == ONIBUS601) return Onibus601.create();
+		if (nome == ONIBUS002) return Onibus002.create();
+		if (nome == ONIBUS001) return Onibus001.create();
+		if (nome == ONIBUS602) return Onibus602.create();
+		if (nome == ONIBUS502) return Onibus502.create();
+		if (nome == ONIBUS211) return Onibus211.create();
+		if (nome == ONIBUSI31) return OnibusI31.create();
+		if (nome == ONIBUS607) return Onibus607.create();
+		if (nome == ONIBUSI20) return OnibusI20.create();
+		if (nome == ONIBUSB24) return OnibusB24.create();
+		if (nome == ONIBUS778) return Onibus778.create();
+		if (nome == ONIBUS385) return Onibus385.create();
+		if (nome == ONIBUSC72) return OnibusC72.create();
+		if (nome == ONIBUSE02) return OnibusE02.create();
+		if (nome == ONIBUS606) return Onibus606.create();
+		if (nome == ONIBUSH01) return OnibusH01.create();
+		if (nome == ONIBUSG72) return OnibusG72.create();
+		if (nome == ONIBUSP63) return OnibusP63.create();
+		if (nome == ONIBUSE67) return OnibusE67.create();
+		if (nome == ONIBUSN70) return OnibusN70.create();
+		if (nome == ONIBUSN71) return OnibusN71.create();
+		if (nome == ONIBUSJ62) return OnibusJ62.create();
+		if (nome == ONIBUSG73) return OnibusG73.create();
+		if (nome == ONIBUS805) return Onibus805.create();
+		if (nome == ONIBUSB61) return OnibusB61.create();
+		if (nome == ONIBUSP64) return OnibusP64.create();
+		if (nome == ONIBUSB80) return OnibusB80.create();
+		if (nome == ONIBUSB81) return OnibusB81.create();
+		if (nome == ONIBUSB72) return OnibusB72.create();
+		if (nome == ONIBUSC63) return OnibusC63.create();
+		if (nome == ONIBUSR71) return OnibusR71.create();
+		if (nome == ONIBUSN72) return OnibusN72.create();
+		if (nome == ONIBUS605) return Onibus605.create();
+		if (nome == ONIBUSE77) return OnibusE77.create();
+		if (nome == ONIBUSE66) return OnibusE66.create();
+		if (nome == ONIBUSK71) return OnibusK71.create();
+		if (nome == ONIBUSB82) return OnibusB82.create();
+		if (nome == ONIBUSB75) return OnibusB75.create();
+		if (nome == ONIBUSB74) return OnibusB74.create();
+		if (nome == ONIBUSE75) return OnibusE75.create();
+		if (nome == ONIBUSE73) return OnibusE73.create();
+		if (nome == ONIBUSB77) return OnibusB77.create();
+		if (nome == ONIBUSE71) return OnibusE71.create();
+		if (nome == ONIBUSE72) return OnibusE72.create();
+		if (nome == ONIBUSA73) return OnibusA73.create();
+		if (nome == ONIBUSB73) return OnibusB73.create();
+		if (nome == ONIBUSA72) return OnibusA72.create();
+		if (nome == ONIBUSB78) return OnibusB78.create();
+		if (nome == ONIBUSG71) return OnibusG71.create();
+		if (nome == ONIBUSB01) return OnibusB01.create();
+		if (nome == ONIBUSE62) return OnibusE62.create();
+		if (nome == ONIBUSD61) return OnibusD61.create();
+		if (nome == ONIBUSD66) return OnibusD66.create();
+		if (nome == ONIBUSE76) return OnibusE76.create();
+		if (nome == ONIBUSO72) return OnibusO72.create();
+		if (nome == ONIBUSE70) return OnibusE70.create();
+		if (nome == ONIBUSO74) return OnibusO74.create();
+		if (nome == ONIBUSO73) return OnibusO73.create();
+		if (nome == ONIBUSE68) return OnibusE68.create();
+		if (nome == ONIBUSL71) return OnibusL71.create();
+		if (nome == ONIBUSB79) return OnibusB79.create();
+		if (nome == ONIBUSE78) return OnibusE78.create();
+		if (nome == ONIBUSE05) return OnibusE05.create();
+		if (nome == ONIBUSB76) return OnibusB76.create();
+		if (nome == ONIBUSB83) return OnibusB83.create();
+		if (nome == ONIBUSA01) return OnibusA01.create();
+		if (nome == ONIBUSA07) return OnibusA07.create();
+		if (nome == ONIBUSA06) return OnibusA06.create();
+		if (nome == ONIBUSA77) return OnibusA77.create();
+		if (nome == ONIBUSP65) return OnibusP65.create();
+		if (nome == ONIBUSN73) return OnibusN73.create();
+		if (nome == ONIBUSE01) return OnibusE01.create();
+		if (nome == ONIBUSA78) return OnibusA78.create();
+		if (nome == ONIBUSC66) return OnibusC66.create();
+		if (nome == ONIBUSE65) return OnibusE65.create();
+		if (nome == ONIBUSB06) return OnibusB06.create();
+		if (nome == ONIBUSO76) return OnibusO76.create();
+		if (nome == ONIBUS681) return Onibus681.create();
+		if (nome == ONIBUS380) return Onibus380.create();
+		if (nome == ONIBUSC05) return OnibusC05.create();
+		if (nome == ONIBUSB31) return OnibusB31.create();
+		if (nome == ONIBUS662) return Onibus662.create();
+		if (nome == ONIBUS699) return Onibus699.create();
+		if (nome == ONIBUS795) return Onibus795.create();
+		if (nome == ONIBUS799) return Onibus799.create();
+		if (nome == ONIBUS798) return Onibus798.create();
+		if (nome == ONIBUS695) return Onibus695.create();
+		if (nome == ONIBUS399) return Onibus399.create();
+		if (nome == ONIBUS596) return Onibus596.create();
+		if (nome == ONIBUS598) return Onibus598.create();
+		if (nome == ONIBUS396) return Onibus396.create();
+		if (nome == ONIBUS694) return Onibus694.create();
+		if (nome == ONIBUS398) return Onibus398.create();
+		if (nome == ONIBUS397) return Onibus397.create();
+		if (nome == ONIBUS394) return Onibus394.create();
+		if (nome == ONIBUS899) return Onibus899.create();
+		if (nome == ONIBUS697) return Onibus697.create();
+		if (nome == ONIBUS897) return Onibus897.create();
+		if (nome == ONIBUS599) return Onibus599.create();
+		if (nome == ONIBUS497) return Onibus497.create();
+		if (nome == ONIBUS499) return Onibus499.create();
+		if (nome == ONIBUS698) return Onibus698.create();
+		if (nome == ONIBUS495) return Onibus495.create();
+		if (nome == ONIBUS498) return Onibus498.create();
+		if (nome == ONIBUS696) return Onibus696.create();
+		if (nome == ONIBUS597) return Onibus597.create();
+		if (nome == ONIBUS796) return Onibus796.create();
+		if (nome == ONIBUS797) return Onibus797.create();
+		if (nome == ONIBUS895) return Onibus895.create();
+		if (nome == ONIBUS693) return Onibus693.create();
+		if (nome == ONIBUS893) return Onibus893.create();
+		if (nome == ONIBUS691) return Onibus691.create();
+		if (nome == ONIBUS392) return Onibus392.create();
+		if (nome == ONIBUS692) return Onibus692.create();
+		if (nome == ONIBUS998) return Onibus998.create();
+		if (nome == ONIBUS894) return Onibus894.create();
+		if (nome == ONIBUS533) return Onibus533.create();
+		if (nome == ONIBUSC23) return OnibusC23.create();
+		if (nome == ONIBUS465) return Onibus465.create();
+		if (nome == ONIBUSX12) return OnibusX12.create();
+		if (nome == ONIBUSX19) return OnibusX19.create();
+		if (nome == ONIBUSX18) return OnibusX18.create();
+		if (nome == ONIBUS968) return Onibus968.create();
+		if (nome == ONIBUSF13) return OnibusF13.create();
+		if (nome == ONIBUS266) return Onibus266.create();
+		if (nome == ONIBUS466) return Onibus466.create();
+		if (nome == ONIBUSF17) return OnibusF17.create();
+		if (nome == ONIBUSF24) return OnibusF24.create();
+		if (nome == ONIBUSF27) return OnibusF27.create();
+		if (nome == ONIBUSE64) return OnibusE64.create();
+		if (nome == ONIBUS621) return Onibus621.create();
+		if (nome == ONIBUSF73) return OnibusF73.create();
+		if (nome == ONIBUSF72) return OnibusF72.create();
+		if (nome == ONIBUS719) return Onibus719.create();
+		if (nome == ONIBUSF05) return OnibusF05.create();
+		if (nome == ONIBUSF01) return OnibusF01.create();
+		if (nome == ONIBUSF03) return OnibusF03.create();
+		if (nome == ONIBUS701) return Onibus701.create();
+		if (nome == ONIBUS720) return Onibus720.create();
+		if (nome == ONIBUS831) return Onibus831.create();
+		if (nome == ONIBUS611) return Onibus611.create();
+		if (nome == ONIBUS614) return Onibus614.create();
+		if (nome == ONIBUS702) return Onibus702.create();
+		if (nome == ONIBUS270) return Onibus270.create();
+		if (nome == ONIBUS821) return Onibus821.create();
+		if (nome == ONIBUS673) return Onibus673.create();
+		if (nome == ONIBUS167) return Onibus167.create();
+		if (nome == ONIBUS639) return Onibus639.create();
+		if (nome == ONIBUS683) return Onibus683.create();
+		if (nome == ONIBUS822) return Onibus822.create();
+		if (nome == ONIBUS642) return Onibus642.create();
+		if (nome == ONIBUSA16) return OnibusA16.create();
+		if (nome == ONIBUSF15) return OnibusF15.create();
+		if (nome == ONIBUS625) return Onibus625.create();
+		if (nome == ONIBUS470) return Onibus470.create();
+		if (nome == ONIBUSB23) return OnibusB23.create();
+		if (nome == ONIBUSB05) return OnibusB05.create();
+		if (nome == ONIBUSB20) return OnibusB20.create();
+		if (nome == ONIBUSB34) return OnibusB34.create();
+		if (nome == ONIBUSD22) return OnibusD22.create();
+		if (nome == ONIBUS561) return Onibus561.create();
+		if (nome == ONIBUS513) return Onibus513.create();
+		if (nome == ONIBUS371) return Onibus371.create();
+		if (nome == ONIBUS374) return Onibus374.create();
+		if (nome == ONIBUSF12) return OnibusF12.create();
+		if (nome == ONIBUSF21) return OnibusF21.create();
+		if (nome == ONIBUS523) return Onibus523.create();
+		if (nome == ONIBUS515) return Onibus515.create();
+		if (nome == ONIBUSD13) return OnibusD13.create();
+		if (nome == ONIBUS023) return Onibus023.create();
+		if (nome == ONIBUS022) return Onibus022.create();
+		if (nome == ONIBUS011) return Onibus011.create();
+		if (nome == ONIBUS010) return Onibus010.create();
+		if (nome == ONIBUS021) return Onibus021.create();
+		if (nome == ONIBUS020) return Onibus020.create();
+		if (nome == ONIBUS030) return Onibus030.create();
+		if (nome == ONIBUS040) return Onibus040.create();
+		if (nome == ONIBUS050) return Onibus050.create();
+		if (nome == ONIBUS060) return Onibus060.create();
+		if (nome == ONIBUS378) return Onibus378.create();
+		if (nome == ONIBUS512) return Onibus512.create();
+		if (nome == ONIBUSI71) return OnibusI71.create();
+		if (nome == ONIBUSK11) return OnibusK11.create();
+		if (nome == ONIBUS711) return Onibus711.create();
+		if (nome == ONIBUS366) return Onibus366.create();
+		if (nome == ONIBUSC28) return OnibusC28.create();
+		if (nome == ONIBUSD31) return OnibusD31.create();
+		if (nome == ONIBUS914) return Onibus914.create();
+		if (nome == ONIBUS468) return Onibus468.create();
+		if (nome == ONIBUS183) return Onibus183.create();
+		if (nome == ONIBUSC20) return OnibusC20.create();
+		if (nome == ONIBUSB13) return OnibusB13.create();
+		if (nome == ONIBUS244) return Onibus244.create();
+		if (nome == ONIBUS865) return Onibus865.create();
+		if (nome == ONIBUSB26) return OnibusB26.create();
+		if (nome == ONIBUSA14) return OnibusA14.create();
+		if (nome == ONIBUSA31) return OnibusA31.create();
+		if (nome == ONIBUSC11) return OnibusC11.create();
+		if (nome == ONIBUS712) return Onibus712.create();
+		if (nome == ONIBUS917) return Onibus917.create();
+		if (nome == ONIBUSC16) return OnibusC16.create();
+		if (nome == ONIBUS972) return Onibus972.create();
+		if (nome == ONIBUS474) return Onibus474.create();
+		if (nome == ONIBUS169) return Onibus169.create();
+		if (nome == ONIBUS617) return Onibus617.create();
+		if (nome == ONIBUS160) return Onibus160.create();
+		if (nome == ONIBUSA13) return OnibusA13.create();
+		if (nome == ONIBUS655) return Onibus655.create();
+		if (nome == ONIBUSA21) return OnibusA21.create();
+		if (nome == ONIBUS532) return Onibus532.create();
+		if (nome == ONIBUS921) return Onibus921.create();
+		if (nome == ONIBUS365) return Onibus365.create();
+		if (nome == ONIBUSD21) return OnibusD21.create();
+		if (nome == ONIBUSC18) return OnibusC18.create();
+		if (nome == ONIBUSF25) return OnibusF25.create();
+		if (nome == ONIBUSC27) return OnibusC27.create();
+		if (nome == ONIBUS912) return Onibus912.create();
+		if (nome == ONIBUS967) return Onibus967.create();
+		if (nome == ONIBUS285) return Onibus285.create();
+		if (nome == ONIBUS656) return Onibus656.create();
+		if (nome == ONIBUS271) return Onibus271.create();
+		if (nome == ONIBUS520) return Onibus520.create();
+		if (nome == ONIBUSG13) return OnibusG13.create();
+		if (nome == ONIBUS550) return Onibus550.create();
+		if (nome == ONIBUS500) return Onibus500.create();
+		if (nome == ONIBUS661) return Onibus661.create();
+		if (nome == ONIBUS635) return Onibus635.create();
+		if (nome == ONIBUS641) return Onibus641.create();
+		if (nome == ONIBUS189) return Onibus189.create();
+		if (nome == ONIBUS549) return Onibus549.create();
+		if (nome == ONIBUS509) return Onibus509.create();
+		if (nome == ONIBUS789) return Onibus789.create();
+		if (nome == ONIBUS802) return Onibus802.create();
+		if (nome == ONIBUS809) return Onibus809.create();
+		if (nome == ONIBUS309) return Onibus309.create();
+		if (nome == ONIBUS308) return Onibus308.create();
+		if (nome == ONIBUS609) return Onibus609.create();
+		if (nome == ONIBUSC64) return OnibusC64.create();
+		if (nome == ONIBUSD69) return OnibusD69.create();
+		if (nome == ONIBUSB69) return OnibusB69.create();
+		if (nome == ONIBUSE69) return OnibusE69.create();
+		if (nome == ONIBUSA05) return OnibusA05.create();
+		if (nome == ONIBUSF09) return OnibusF09.create();
+		if (nome == ONIBUSJ19) return OnibusJ19.create();
+		if (nome == ONIBUS289) return Onibus289.create();
+		if (nome == ONIBUS229) return Onibus229.create();
+		if (nome == ONIBUS489) return Onibus489.create();
+		if (nome == ONIBUS188) return Onibus188.create();
+		if (nome == ONIBUS608) return Onibus608.create();
+		if (nome == ONIBUS209) return Onibus209.create();
+		if (nome == ONIBUS519) return Onibus519.create();
+		if (nome == ONIBUS689) return Onibus689.create();
+		if (nome == ONIBUS889) return Onibus889.create();
+		if (nome == ONIBUS989) return Onibus989.create();
+		if (nome == ONIBUS389) return Onibus389.create();
+		if (nome == ONIBUS679) return Onibus679.create();
+		if (nome == ONIBUS788) return Onibus788.create();
+		if (nome == ONIBUS260) return Onibus260.create();
+		if (nome == ONIBUSB25) return OnibusB25.create();
+		if (nome == ONIBUSB41) return OnibusB41.create();
+		if (nome == ONIBUSB42) return OnibusB42.create();
+		if (nome == ONIBUSB11) return OnibusB11.create();
+		if (nome == ONIBUSB32) return OnibusB32.create();
+		if (nome == ONIBUS633) return Onibus633.create();
+		if (nome == ONIBUS522) return Onibus522.create();
+		if (nome == ONIBUS181) return Onibus181.create();
+		if (nome == ONIBUS594) return Onibus594.create();
+		if (nome == ONIBUS331) return Onibus331.create();
+		if (nome == ONIBUS812) return Onibus812.create();
+		if (nome == ONIBUSB19) return OnibusB19.create();
+		if (nome == ONIBUS814) return Onibus814.create();
+		if (nome == ONIBUSF16) return OnibusF16.create();
+		if (nome == ONIBUSF22) return OnibusF22.create();
+		if (nome == ONIBUS176) return Onibus176.create();
+		if (nome == ONIBUS521) return Onibus521.create();
+		if (nome == ONIBUS674) return Onibus674.create();
+		if (nome == ONIBUS280) return Onibus280.create();
+		if (nome == ONIBUS360) return Onibus360.create();
+		if (nome == ONIBUS666) return Onibus666.create();
+		if (nome == ONIBUS233) return Onibus233.create();
+		if (nome == ONIBUS535) return Onibus535.create();
+		if (nome == ONIBUS548) return Onibus548.create();
+		if (nome == ONIBUS915) return Onibus915.create();
+		if (nome == ONIBUS272) return Onibus272.create();
+		if (nome == ONIBUS640) return Onibus640.create();
+		if (nome == ONIBUSB22) return OnibusB22.create();
+		if (nome == ONIBUSB36) return OnibusB36.create();
+		if (nome == ONIBUS387) return Onibus387.create();
+		if (nome == ONIBUS343) return Onibus343.create();
+		if (nome == ONIBUS534) return Onibus534.create();
+		if (nome == ONIBUS623) return Onibus623.create();
+		if (nome == ONIBUS911) return Onibus911.create();
+		if (nome == ONIBUS462) return Onibus462.create();
+		if (nome == ONIBUSC42) return OnibusC42.create();
+		if (nome == ONIBUS304) return Onibus304.create();
+		if (nome == ONIBUSC03) return OnibusC03.create();
+		if (nome == ONIBUSD14) return OnibusD14.create();
+		if (nome == ONIBUS301) return Onibus301.create();
+		if (nome == ONIBUS603) return Onibus603.create();
+		if (nome == ONIBUS638) return Onibus638.create();
+		if (nome == ONIBUS644) return Onibus644.create();
+		if (nome == ONIBUS688) return Onibus688.create();
+		if (nome == ONIBUS916) return Onibus916.create();
+		if (nome == ONIBUS631) return Onibus631.create();
+		if (nome == ONIBUS649) return Onibus649.create();
+		if (nome == ONIBUSB14) return OnibusB14.create();
+		if (nome == ONIBUSD11) return OnibusD11.create();
+		if (nome == ONIBUSC22) return OnibusC22.create();
+		if (nome == ONIBUS646) return Onibus646.create();
+		if (nome == ONIBUS671) return Onibus671.create();
+		if (nome == ONIBUS612) return Onibus612.create();
+		if (nome == ONIBUS616) return Onibus616.create();
+		if (nome == ONIBUSX20) return OnibusX20.create();
+		if (nome == ONIBUSB35) return OnibusB35.create();
+		if (nome == ONIBUS718) return Onibus718.create();
+		if (nome == ONIBUSF18) return OnibusF18.create();
+		if (nome == ONIBUSE63) return OnibusE63.create();
+		if (nome == ONIBUSD16) return OnibusD16.create();
+		if (nome == ONIBUS171) return Onibus171.create();
+		if (nome == ONIBUSC26) return OnibusC26.create();
+		if (nome == ONIBUSE31) return OnibusE31.create();
+		if (nome == ONIBUSI41) return OnibusI41.create();
+		if (nome == ONIBUSI40) return OnibusI40.create();
+		if (nome == ONIBUSI51) return OnibusI51.create();
+		if (nome == ONIBUSI50) return OnibusI50.create();
+		if (nome == ONIBUS632) return Onibus632.create();
+		if (nome == ONIBUSG11) return OnibusG11.create();
+		if (nome == ONIBUSL11) return OnibusL11.create();
+		if (nome == ONIBUS168) return Onibus168.create();
+		if (nome == ONIBUS165) return Onibus165.create();
+		if (nome == ONIBUSJ12) return OnibusJ12.create();
+		if (nome == ONIBUS219) return Onibus219.create();
+		if (nome == ONIBUSX14) return OnibusX14.create();
+		if (nome == ONIBUS539) return Onibus539.create();
+		if (nome == ONIBUSB27) return OnibusB27.create();
+		if (nome == ONIBUS684) return Onibus684.create();
+		if (nome == ONIBUS685) return Onibus685.create();
+		if (nome == ONIBUS636) return Onibus636.create();
+		if (nome == ONIBUS221) return Onibus221.create();
+		if (nome == ONIBUS827) return Onibus827.create();
+		if (nome == ONIBUSB29) return OnibusB29.create();
+		if (nome == ONIBUS622) return Onibus622.create();
+		if (nome == ONIBUSB18) return OnibusB18.create();
+		if (nome == ONIBUS370) return Onibus370.create();
+		if (nome == ONIBUS680) return Onibus680.create();
+		if (nome == ONIBUS546) return Onibus546.create();
+		if (nome == ONIBUS610) return Onibus610.create();
+		if (nome == ONIBUS653) return Onibus653.create();
+		if (nome == ONIBUS375) return Onibus375.create();
+		if (nome == ONIBUSA11) return OnibusA11.create();
+		if (nome == ONIBUS236) return Onibus236.create();
+		if (nome == ONIBUS965) return Onibus965.create();
+		if (nome == ONIBUS870) return Onibus870.create();
+		if (nome == ONIBUSD12) return OnibusD12.create();
+		if (nome == ONIBUS511) return Onibus511.create();
+		if (nome == ONIBUS213) return Onibus213.create();
+		if (nome == ONIBUS670) return Onibus670.create();
+		if (nome == ONIBUSA17) return OnibusA17.create();
+		if (nome == ONIBUS824) return Onibus824.create();
+		if (nome == ONIBUS811) return Onibus811.create();
+		if (nome == ONIBUS876) return Onibus876.create();
+		if (nome == ONIBUSX11) return OnibusX11.create();
+		if (nome == ONIBUS508) return Onibus508.create();
+		if (nome == ONIBUS507) return Onibus507.create();
+		if (nome == ONIBUS212) return Onibus212.create();
+		if (nome == ONIBUS463) return Onibus463.create();
+		if (nome == ONIBUS713) return Onibus713.create();
+		if (nome == ONIBUSJ16) return OnibusJ16.create();
+		if (nome == ONIBUS461) return Onibus461.create();
+		if (nome == ONIBUS203) return Onibus203.create();
+		if (nome == ONIBUS204) return Onibus204.create();
+		if (nome == ONIBUS620) return Onibus620.create();
+		if (nome == ONIBUS901) return Onibus901.create();
+		if (nome == ONIBUS902) return Onibus902.create();
+		if (nome == ONIBUS924) return Onibus924.create();
+		if (nome == ONIBUS274) return Onibus274.create();
+		if (nome == ONIBUSB17) return OnibusB17.create();
+		if (nome == ONIBUS531) return Onibus531.create();
+		if (nome == ONIBUS637) return Onibus637.create();
+		if (nome == ONIBUSF14) return OnibusF14.create();
+		if (nome == ONIBUS760) return Onibus760.create();
+		if (nome == ONIBUS619) return Onibus619.create();
+		if (nome == ONIBUS650) return Onibus650.create();
+		if (nome == ONIBUS243) return Onibus243.create();
+		if (nome == ONIBUSF19) return OnibusF19.create();
+		if (nome == ONIBUSF26) return OnibusF26.create();
+		if (nome == ONIBUSE11) return OnibusE11.create();
+		if (nome == ONIBUSE21) return OnibusE21.create();
+		if (nome == ONIBUSC04) return OnibusC04.create();
+		if (nome == ONIBUS806) return Onibus806.create();
+		if (nome == ONIBUSI90) return OnibusI90.create();
+		if (nome == ONIBUSA02) return OnibusA02.create();
+		if (nome == ONIBUS105) return Onibus105.create();
+		if (nome == ONIBUS218) return Onibus218.create();
+		if (nome == ONIBUSI91) return OnibusI91.create();
+		if (nome == ONIBUSA22) return OnibusA22.create();
+		if (nome == ONIBUS372) return Onibus372.create();
+		if (nome == ONIBUS667) return Onibus667.create();
+		if (nome == ONIBUSJ14) return OnibusJ14.create();
+		if (nome == ONIBUSJ13) return OnibusJ13.create();
+		if (nome == ONIBUS214) return Onibus214.create();
+		if (nome == ONIBUS545) return Onibus545.create();
+		if (nome == ONIBUS861) return Onibus861.create();
+		if (nome == ONIBUS321) return Onibus321.create();
+		if (nome == ONIBUS815) return Onibus815.create();
+		if (nome == ONIBUS979) return Onibus979.create();
+		if (nome == ONIBUS472) return Onibus472.create();
+		if (nome == ONIBUS615) return Onibus615.create();
+		if (nome == ONIBUS643) return Onibus643.create();
+		if (nome == ONIBUS829) return Onibus829.create();
+		if (nome == ONIBUSC25) return OnibusC25.create();
+		if (nome == ONIBUS323) return Onibus323.create();
+		if (nome == ONIBUS663) return Onibus663.create();
+		if (nome == ONIBUS222) return Onibus222.create();
+		if (nome == ONIBUSC30) return OnibusC30.create();
+		if (nome == ONIBUS761) return Onibus761.create();
+		if (nome == ONIBUS242) return Onibus242.create();
+		if (nome == ONIBUS467) return Onibus467.create();
+		if (nome == ONIBUSD23) return OnibusD23.create();
+		if (nome == ONIBUSC17) return OnibusC17.create();
+		if (nome == ONIBUSB28) return OnibusB28.create();
+		if (nome == ONIBUS714) return Onibus714.create();
+		if (nome == ONIBUS825) return Onibus825.create();
+		if (nome == ONIBUS166) return Onibus166.create();
+		if (nome == ONIBUSC12) return OnibusC12.create();
+		if (nome == ONIBUSA32) return OnibusA32.create();
+		if (nome == ONIBUS336) return Onibus336.create();
+		if (nome == ONIBUS665) return Onibus665.create();
+		if (nome == ONIBUS762) return Onibus762.create();
+		if (nome == ONIBUS860) return Onibus860.create();
+		if (nome == ONIBUS471) return Onibus471.create();
+		if (nome == ONIBUS624) return Onibus624.create();
+		if (nome == ONIBUS184) return Onibus184.create();
+		if (nome == ONIBUS613) return Onibus613.create();
+		if (nome == ONIBUS777) return Onibus777.create();
+		if (nome == ONIBUS652) return Onibus652.create();
+		if (nome == ONIBUS918) return Onibus918.create();
+		if (nome == ONIBUSZ03) return OnibusZ03.create();
+		if (nome == ONIBUS779) return Onibus779.create();
+		if (nome == ONIBUS630) return Onibus630.create();
+		if (nome == ONIBUS690) return Onibus690.create();
+		if (nome == ONIBUSC15) return OnibusC15.create();
+		if (nome == ONIBUS657) return Onibus657.create();
+		if (nome == ONIBUS551) return Onibus551.create();
+		if (nome == ONIBUS536) return Onibus536.create();
 		throw new IllegalArgumentException("Nenhum onibus com o nome " + nome);
-	}
-	
+	}	
 }

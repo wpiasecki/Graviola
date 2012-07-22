@@ -25,4 +25,24 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.mtj.core.nature</nature>
 	</natures>
+	<filteredResources>
+		<filter>
+			<id>1342967611693</id>
+			<name></name>
+			<type>30</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-*/.mtj.tmp/*</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1342967611706</id>
+			<name></name>
+			<type>6</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-*.class</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
 </projectDescription>

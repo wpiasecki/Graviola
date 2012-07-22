@@ -1,10 +1,13 @@
 
 	package br.will.graviola.model.onibus;
 	
-	import br.will.graviola.model.Onibus;
-	import br.will.graviola.model.Ponto;
-	import br.will.graviola.model.TipoDia;
+	import br.will.graviola.model.*;
 	
+	/**
+	 * Código gerado automaticamente
+	 * 
+	 * @author will
+	 */
 	public class OnibusJ15 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
