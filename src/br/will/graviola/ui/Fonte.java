@@ -4,11 +4,9 @@ import javax.microedition.lcdui.Font;
 
 public class Fonte
 {
-	private static int SIZE = Font.SIZE_SMALL;
-	
 	private static Font BOLD = Font.getFont(Font.FACE_SYSTEM, Font.STYLE_BOLD, Font.SIZE_MEDIUM);
-	private static Font ITALIC = Font.getFont(Font.FACE_SYSTEM, Font.STYLE_ITALIC, SIZE);
-	private static Font NORMAL = Font.getFont(Font.FACE_SYSTEM, Font.STYLE_PLAIN, SIZE);
+	private static Font ITALIC = Font.getFont(Font.FACE_SYSTEM, Font.STYLE_ITALIC, Font.SIZE_SMALL);
+	private static Font NORMAL = Font.getFont(Font.FACE_SYSTEM, Font.STYLE_PLAIN, Font.SIZE_SMALL);
 	
 	public static Font bold()
 	{

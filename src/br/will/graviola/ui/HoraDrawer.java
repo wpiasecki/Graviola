@@ -2,8 +2,8 @@ package br.will.graviola.ui;
 
 import javax.microedition.lcdui.Graphics;
 
+import br.will.graviola.model.Ponto;
 import br.will.graviola.service.Drawable;
-import br.will.graviola.service.HoraService;
 
 /**
  * Esta classe concentra duas coisas: 
@@ -25,22 +25,6 @@ public class HoraDrawer
 	private int horasDestacadas = 0;
 	
 	
-	public boolean isProximoHorario(String horario)
-	{
-		if (horasDestacadas >= MAXIMO_HORAS_MARCAVEIS) 
-		{
-			return false;
-		}
-		
-		if ( HoraService.isProximoHorario( horario ) ) 
-		{
-			horasDestacadas++;
-			return true;
-		}
-		return false;
-	}
-	
-	
 	/**
 	 * Lógica de view para dizer a cor do contorno do horário destacado.
 	 * 
@@ -48,7 +32,7 @@ public class HoraDrawer
 	 */
 	public int getCor() 
 	{
-		switch (horasDestacadas)
+		switch (++horasDestacadas)
 		{
 		case 1: return Cor.blueColumbia();
 		case 2: return Cor.blueColumbia2();
@@ -72,13 +56,14 @@ public class HoraDrawer
 	 * @return objeto Drawable
 	 */
 	public Drawable getDrawer(
+			final Ponto ponto,
 			final String horario, 
 			final int x, 
 			final int y, 
 			final int tamanhoHorario, 
 			final int lineHeight) 
 	{
-		final boolean isProximoHorario = isProximoHorario(horario);
+		final boolean isProximoHorario = ponto.getHorariosMarcados().contains(horario);
 		
 		return new Drawable() 
 		{
@@ -92,6 +77,7 @@ public class HoraDrawer
 					g.setColor( oldColor );
 				}
 				
+				g.setFont( Fonte.normal() );
 				g.drawString( horario, x, y, 0 );
 			}
 		};

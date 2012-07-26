@@ -16,6 +16,12 @@ public class HorarioCanvas extends Canvas
 	
 	private boolean upPressed = false;
 	private boolean downPressed = false;
+
+	
+	/*
+	 * Altura de cada linha
+	 */
+	private int lineHeight = 21;
 	
 	
 	/*
@@ -25,7 +31,7 @@ public class HorarioCanvas extends Canvas
 	 * O que está fora do enquadramento não é desenhado ;-).
 	 */
 	private int cameraPosition = 0;
-	private int cameraScroll = 40;
+	private int cameraScroll = lineHeight;
 	private int linesWritten = 0;
 	
 	
@@ -48,12 +54,6 @@ public class HorarioCanvas extends Canvas
 	 * para mais "meio" horário. Cada horário deve ter uns ~70. 
 	 */
 	int tamanhoHorario = 56;
-	
-	
-	/*
-	 * Altura de cada linha
-	 */
-	private int lineHeight = 21;
 	
 	
 	public HorarioCanvas(Onibus onibus) {
@@ -126,10 +126,10 @@ public class HorarioCanvas extends Canvas
 	 * @param y
 	 * @param horaDrawer
 	 */
-	private void writeHorario(String horario, int x, int y, HoraDrawer horaDrawer) 
+	private void writeHorario(Ponto ponto, String horario, int x, int y, HoraDrawer horaDrawer) 
 	{
 		if ( validarPosicaoEscrita(x, y) )
-			write( horaDrawer.getDrawer(horario, x, y, tamanhoHorario, lineHeight), x, y );
+			write( horaDrawer.getDrawer(ponto, horario, x, y, tamanhoHorario, lineHeight), x, y );
 	}
 	
 	
@@ -145,9 +145,21 @@ public class HorarioCanvas extends Canvas
 	}
 	
 	
+	/*
+	 * variáveis para medir performance
+	 */
+//	int contaT = 0;
+//	long somaT = 0;
+//	int quantT = 20;
+	
+	/**
+	 * Desenha a tela com os horários
+	 */
 	protected void paint(Graphics g) 
 	{
 //		long t0 = System.currentTimeMillis();
+		
+		
 		
 		this.g = g;
 		
@@ -207,7 +219,7 @@ public class HorarioCanvas extends Canvas
 					posicaoColuna = 0;
 				}
 				
-				writeHorario( (String) horarios.elementAt(k), posicaoColuna, posicaoLinha, horaDrawer );
+				writeHorario( ponto, (String) horarios.elementAt(k), posicaoColuna, posicaoLinha, horaDrawer );
 				
 				posicaoColuna += tamanhoHorario;
 			}
@@ -226,11 +238,19 @@ public class HorarioCanvas extends Canvas
 		 */
 		this.g = null;
 		
-//		System.out.println(System.currentTimeMillis() - t0);
 		
-		try { Thread.sleep( 100 ); } catch (InterruptedException ie) { throw new RuntimeException(); } 
+//		contaT++;
+//		somaT += System.currentTimeMillis() - t0;
+//		if (contaT % quantT == 0) {
+//			System.out.println("média T para "+quantT+" execuções: " + (somaT / quantT));
+//			somaT = 0;
+//		}
+		
+		
+		try { Thread.sleep( 60 ); } catch (InterruptedException ie) { throw new RuntimeException(); } 
 		
 		repaint();
+		
 	}
 	
 	

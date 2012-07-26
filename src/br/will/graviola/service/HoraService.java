@@ -9,6 +9,17 @@ import br.will.graviola.ui.HoraDrawer;
 
 public class HoraService
 {
+	private Calendar cal;
+	private int horaAtual;
+	private int minutoAtual;
+	
+	public HoraService() 
+	{
+		cal = Calendar.getInstance( TimeZone.getDefault() );
+		horaAtual = cal.get(Calendar.HOUR_OF_DAY);
+		minutoAtual = cal.get(Calendar.MINUTE);
+	}
+	
 	
 	/**
 	 * Valida se o horário passado como parâmetro é maior do que
@@ -17,13 +28,8 @@ public class HoraService
 	 * @param horaText String com a hora (HH:mm)
 	 * @return TRUE, se a hora for maior.
 	 */
-	public static boolean isProximoHorario(String horaText)
+	public boolean isProximoHorario(String horaText)
 	{
-		Calendar cal = Calendar.getInstance( TimeZone.getDefault() );
-		
-		int horaAtual = cal.get(Calendar.HOUR_OF_DAY);
-		int minutoAtual = cal.get(Calendar.MINUTE);
-		
 		int horaBusao = Integer.parseInt(horaText.substring(0, 2));
 		int minutoBusao = Integer.parseInt(horaText.substring(3));
 		
@@ -57,7 +63,7 @@ public class HoraService
 	}
 
 	
-	public static Vector getHorariosMarcados(Ponto ponto)
+	public Vector findProximosHorarios(Ponto ponto)
 	{
 		Vector horariosMarcados = new Vector();
 			
@@ -69,7 +75,7 @@ public class HoraService
 			
 			String horario = (String) ponto.getHorarios().elementAt(k);
 			
-			if ( isProximoHorario(horario) ) 
+			if ( qtdeHorariosMarcados > 0 || isProximoHorario(horario) ) 
 			{
 				qtdeHorariosMarcados++;
 				horariosMarcados.addElement(horario);

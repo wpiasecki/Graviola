@@ -3,7 +3,9 @@ package br.will.graviola.service;
 import java.util.Vector;
 
 import br.will.graviola.model.Onibus;
+import br.will.graviola.model.Ponto;
 import br.will.graviola.model.onibus.*;
+import br.will.graviola.util.StringUtil;
 
 public class HorarioOnibusService
 {
@@ -21,17 +23,8 @@ public class HorarioOnibusService
 		{
 			String linha = (String) linhas.elementAt(i);
 			
-			/*
-			 * o '+1' é para considerar que o substring pega o último índice exclusive.
-			 */
-			for (int inicioLinha = 0; inicioLinha < linha.length() - nomeUpper.length() + 1; inicioLinha++) 
-			{
-				int fimSubstring = inicioLinha + nomeUpper.length();
-				String substring = linha.substring(inicioLinha, fimSubstring);
-				if (nomeUpper.equals(substring)) {
-					linhasEncontradas.addElement(linha);
-					break;
-				}
+			if (StringUtil.contem(nomeUpper, linha)) {
+				linhasEncontradas.addElement(linha);
 			}
 		}
 		return linhasEncontradas;
@@ -1102,7 +1095,28 @@ public class HorarioOnibusService
 	} 
 
 	
-	public static Onibus getByNome(String nome) {
+	public static Onibus getByNome(String nome)
+	{
+		Onibus onibus = create( nome );
+		
+		HoraService service = new HoraService();
+		
+		for (int i = 0; i < onibus.getPontos().size(); i++)
+		{
+			Ponto ponto = (Ponto) onibus.getPontos().elementAt(i);
+			ponto.setHorariosMarcados( service.findProximosHorarios(ponto) );
+			
+//			System.out.println(ponto.getNome());
+//			for (int k = 0; k < ponto.getHorariosMarcados().size(); k++) {
+//				System.out.println(ponto.getHorariosMarcados().elementAt(k));
+//			}
+		}
+		
+		return onibus;
+	}
+	
+	
+	private static Onibus create(String nome) {
 		if (nome == ONIBUSG12) return OnibusG12.create();
 		if (nome == ONIBUS464) return Onibus464.create();
 		if (nome == ONIBUS226) return Onibus226.create();
