@@ -8,18 +8,15 @@ public class Fonte
 	private static Font ITALIC = Font.getFont(Font.FACE_SYSTEM, Font.STYLE_ITALIC, Font.SIZE_SMALL);
 	private static Font NORMAL = Font.getFont(Font.FACE_SYSTEM, Font.STYLE_PLAIN, Font.SIZE_SMALL);
 	
-	public static Font bold()
-	{
+	public static Font bold() {
 		return BOLD;
 	}
-
-	public static Font italic()
-	{
+	
+	public static Font italic() {
 		return ITALIC;
 	}
 
-	public static Font normal()
-	{
+	public static Font normal() {
 		return NORMAL;
 	}
 }

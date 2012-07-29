@@ -17,6 +17,8 @@ import javax.microedition.midlet.MIDletStateChangeException;
 import br.will.graviola.model.DisplayableAlert;
 import br.will.graviola.model.Onibus;
 import br.will.graviola.service.HorarioOnibusService;
+import br.will.graviola.service.ranking.Ranking;
+import br.will.graviola.ui.Fonte;
 import br.will.graviola.ui.HorarioCanvas;
 
 
@@ -31,7 +33,7 @@ public class Graviola extends MIDlet implements CommandListener
 	 * comandos
 	 */
 	private Command voltar = new Command("Voltar", Command.BACK, 1);
-
+	
 	
 	/*
 	 * comandos da lista de linhas
@@ -51,9 +53,12 @@ public class Graviola extends MIDlet implements CommandListener
 	private List list;
 	private int selectedIndex;
 	
+	private Ranking ranking;
+
 	
 	protected void startApp() throws MIDletStateChangeException
 	{
+		ranking = new Ranking();  
 		DisplayableAlert da = criarTelaListaOnibus();
 		da.getDisplayable().setCommandListener( this );
 		display.setCurrent( da.getDisplayable() );
@@ -85,9 +90,12 @@ public class Graviola extends MIDlet implements CommandListener
 		else if (command == selecionar || command.getLabel().equals("")) // selecionar linha de onibus usando o comando ou o botão OK
 		{
 			selectedIndex = list.getSelectedIndex();
-			String onibusSelecionado = list.getString( selectedIndex );
+			String linhaSelecionada = list.getString( selectedIndex );
 			list = null;
-			novoDisplay = criarTelaHorario( onibusSelecionado );
+			
+			ranking.gravar( linhaSelecionada );
+			
+			novoDisplay = criarTelaHorario( linhaSelecionada );
 		} 
 		else if (command == procurar) // ir para tela de pesquisa de linhas
 		{
@@ -119,7 +127,7 @@ public class Graviola extends MIDlet implements CommandListener
 		}
 	}
 	
-
+	
 	/**
 	 * Cria canvas com o horário do onibus selecionado
 	 * 
@@ -163,9 +171,18 @@ public class Graviola extends MIDlet implements CommandListener
 	 */
 	private DisplayableAlert criarTelaListaOnibus() {
 		list = new List("Linha de Ônibus", List.IMPLICIT);
+		
+		Vector linhasMaisUtilizadas = ranking.getLinhasMaisUtilizadas();
+		for (int i = 0; i < linhasMaisUtilizadas.size() ; i++) {
+			list.append( (String) linhasMaisUtilizadas.elementAt(i), null );
+		}
+		
 		Vector linhas = HorarioOnibusService.getLinhasOnibus();
-		for (int i = 0 ; i < linhas.size(); i++) {
-			list.append((String) linhas.elementAt(i), null);
+		
+		for (int i = 0 ; i < linhas.size(); i++) 
+		{
+			String linha = (String) linhas.elementAt(i);
+			list.append(linha, null);
 		}
 		list.setSelectedIndex(selectedIndex, true);
 		
@@ -173,6 +190,10 @@ public class Graviola extends MIDlet implements CommandListener
 		list.addCommand(procurar);
 		list.addCommand(sobre);
 		list.addCommand(sair);
+		
+		for (int i = 0; i < linhasMaisUtilizadas.size(); i++) {
+			list.setFont( i, Fonte.bold() );
+		}
 		
 		return new DisplayableAlert(list);
 	}
@@ -240,6 +261,7 @@ public class Graviola extends MIDlet implements CommandListener
 	
 	
 	protected void destroyApp(boolean arg0) {
+		ranking.close();
 		notifyDestroyed();
 	}
 	
