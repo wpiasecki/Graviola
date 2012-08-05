@@ -29,6 +29,8 @@ import br.will.graviola.ui.HorarioCanvas;
  */
 public class Graviola extends MIDlet implements CommandListener
 {
+	private static final String VERSAO = "1.0";
+	
 	/*
 	 * comandos
 	 */
@@ -151,12 +153,20 @@ public class Graviola extends MIDlet implements CommandListener
 	 */
 	private DisplayableAlert criarTelaAbout() {
 		Form form = new Form("");
-		form.append("-- Graviola --\n");
+		form.append("-- Graviola " + VERSAO + " --\n");
 		form.append("Aplicativo para visualização offline dos horários de");
-		form.append("onibus obtidos do site da URBS.\n");
+		form.append("onibus disponíveis no site da URBS.\n");
 		form.append("\n");
 		form.append("---------------\n");
-		form.append("Will - willpiasecki@ymail.com\n");
+		form.append("Este aplicativo não possui suporte, e os riscos da utilização, " +
+				"incluindo eventuais danos ao aparelho, são de inteira responsabilidade " +
+				"do usuário.\n");
+		form.append("Este aplicativo não coleta informações pessoais (salvo as " +
+				"linhas mais utilizadas para elaboração dos favoritos, restrito ao próprio " +
+				"aparelho) e não efetua conexão com a internet.\n");
+		form.append("---------------\n");
+		form.append("Will\n");
+		form.append("https://github.com/wpiasecki/Graviola/wiki/Graviola\n");
 		form.append("---------------\n");
 		form.append("Curitiba/PR - 2012");
 		form.addCommand(voltar);
