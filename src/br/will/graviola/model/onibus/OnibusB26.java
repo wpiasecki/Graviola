@@ -11,7 +11,7 @@
 	public class OnibusB26 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. EUCALIPTOS");
+		onibus.setNome("B26 - JD. EUCALIPTOS");
 		onibus.setCodigo("B26");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JD.EUCALIPTOS");

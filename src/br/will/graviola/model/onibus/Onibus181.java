@@ -11,7 +11,7 @@
 	public class Onibus181 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MATEUS LEME");
+		onibus.setNome("181 - MATEUS LEME");
 		onibus.setCodigo("181");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO MATEUS LEME");
@@ -105,7 +105,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("BAIRRO MATEUS LEME");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto5.setValidoAPartirDe("12/10/2007");
+		ponto5.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("05:40");
 		ponto5.getHorarios().addElement("06:40");
@@ -124,7 +124,7 @@
 		Ponto ponto6 = new Ponto();
 		ponto6.setNome("PRACA TIRADENTES");
 		ponto6.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto6.setValidoAPartirDe("12/10/2007");
+		ponto6.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto6);
 		ponto6.getHorarios().addElement("06:10");
 		ponto6.getHorarios().addElement("07:10");

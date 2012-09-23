@@ -11,7 +11,7 @@
 	public class OnibusB76 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / SÃO SEBASTIÃO");
+		onibus.setNome("B76 - CTBA / SÃO SEBASTIÃO");
 		onibus.setCodigo("B76");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("JARDIM SAO SEBASTIAO");

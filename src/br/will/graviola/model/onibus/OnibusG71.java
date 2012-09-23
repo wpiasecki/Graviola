@@ -11,7 +11,7 @@
 	public class OnibusG71 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / MANDIRITUBA");
+		onibus.setNome("G71 - CTBA / MANDIRITUBA");
 		onibus.setCodigo("G71");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ALAMEDA DR. MURICY");

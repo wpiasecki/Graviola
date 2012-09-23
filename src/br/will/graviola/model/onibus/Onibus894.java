@@ -11,7 +11,7 @@
 	public class Onibus894 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. 29 DE MARÇO 1");
+		onibus.setNome("894 - E. E. 29 DE MARÇO 1");
 		onibus.setCodigo("894");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO");

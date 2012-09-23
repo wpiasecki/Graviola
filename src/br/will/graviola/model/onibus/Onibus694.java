@@ -11,7 +11,7 @@
 	public class Onibus694 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. BAIRRO NOVO");
+		onibus.setNome("694 - E. E. BAIRRO NOVO");
 		onibus.setCodigo("694");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESCOLA MULTI DISCIPLINAR");

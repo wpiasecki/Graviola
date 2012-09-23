@@ -11,7 +11,7 @@
 	public class OnibusB06 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA/GUARAITUBA(VIA MARACANA)");
+		onibus.setNome("B06 - CTBA/GUARAITUBA(VIA MARACANA)");
 		onibus.setCodigo("B06");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SAO DIMAS");

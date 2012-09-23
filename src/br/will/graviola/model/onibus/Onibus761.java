@@ -11,7 +11,7 @@
 	public class Onibus761 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. IZABEL");
+		onibus.setNome("761 - V. IZABEL");
 		onibus.setCodigo("761");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA IZABEL");

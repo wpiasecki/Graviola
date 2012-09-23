@@ -11,7 +11,7 @@
 	public class Onibus968 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ESPECIAL TROMBINI");
+		onibus.setNome("968 - ESPECIAL TROMBINI");
 		onibus.setCodigo("968");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("RUA BARAO DO CERRO AZUL");

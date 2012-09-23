@@ -11,7 +11,7 @@
 	public class Onibus375 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("SAGRADO CORAÇÃO");
+		onibus.setNome("375 - SAGRADO CORAÇÃO");
 		onibus.setCodigo("375");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA SANTOS ANDRADE");

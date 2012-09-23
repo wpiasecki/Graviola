@@ -11,7 +11,7 @@
 	public class Onibus688 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PINHEIRINHO / ZOOLÓGICO");
+		onibus.setNome("688 - PINHEIRINHO / ZOOLÓGICO");
 		onibus.setCodigo("688");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO PINHEIRINHO/ZOOLOGICO");

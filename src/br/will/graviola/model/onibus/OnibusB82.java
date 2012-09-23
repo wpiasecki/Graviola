@@ -11,7 +11,7 @@
 	public class OnibusB82 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / JD. ANA ROSA");
+		onibus.setNome("B82 - CTBA / JD. ANA ROSA");
 		onibus.setCodigo("B82");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("JARDIM ANA ROSA");

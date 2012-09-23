@@ -11,7 +11,7 @@
 	public class Onibus699 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. ALCINDO FANAYA 1");
+		onibus.setNome("699 - E. E. ALCINDO FANAYA 1");
 		onibus.setCodigo("699");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO - LUAN MULLER 1");

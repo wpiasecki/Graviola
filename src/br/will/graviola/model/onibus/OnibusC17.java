@@ -11,7 +11,7 @@
 	public class OnibusC17 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. MARIA ANTONIETA");
+		onibus.setNome("C17 - V. MARIA ANTONIETA");
 		onibus.setCodigo("C17");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL PINHAIS");

@@ -11,7 +11,7 @@
 	public class OnibusC12 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. NOVA");
+		onibus.setNome("C12 - V. NOVA");
 		onibus.setCodigo("C12");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA NOVA");

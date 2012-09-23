@@ -11,7 +11,7 @@
 	public class OnibusA32 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. PRADO");
+		onibus.setNome("A32 - V. PRADO");
 		onibus.setCodigo("A32");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA PRADO");

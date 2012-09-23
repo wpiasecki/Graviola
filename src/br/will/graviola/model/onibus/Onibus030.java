@@ -11,7 +11,7 @@
 	public class Onibus030 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("INTERBAIRROS III");
+		onibus.setNome("030 - INTERBAIRROS III");
 		onibus.setCodigo("030");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAPAO RASO");

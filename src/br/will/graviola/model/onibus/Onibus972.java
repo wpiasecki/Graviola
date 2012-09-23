@@ -11,7 +11,7 @@
 	public class Onibus972 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. ITÁLIA");
+		onibus.setNome("972 - JD. ITÁLIA");
 		onibus.setCodigo("972");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("RUA NESTOR DE CASTRO");

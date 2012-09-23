@@ -11,7 +11,7 @@
 	public class Onibus608 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. PINHEIRINHO");
+		onibus.setNome("608 - MAD. PINHEIRINHO");
 		onibus.setCodigo("608");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA RUI BARBOSA");

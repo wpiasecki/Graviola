@@ -11,7 +11,7 @@
 	public class OnibusB17 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("STA. HELENA");
+		onibus.setNome("B17 - STA. HELENA");
 		onibus.setCodigo("B17");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SANTA HELENA");

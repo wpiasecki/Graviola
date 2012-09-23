@@ -11,7 +11,7 @@
 	public class OnibusA16 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("GIANNINI");
+		onibus.setNome("A16 - GIANNINI");
 		onibus.setCodigo("A16");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO BOMFIM");

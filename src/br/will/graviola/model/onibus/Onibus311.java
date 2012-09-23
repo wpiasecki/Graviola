@@ -11,7 +11,7 @@
 	public class Onibus311 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ARAGUAIA");
+		onibus.setNome("311 - ARAGUAIA");
 		onibus.setCodigo("311");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO ARAGUAIA");

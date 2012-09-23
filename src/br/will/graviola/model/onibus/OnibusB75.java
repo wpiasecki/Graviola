@@ -11,7 +11,7 @@
 	public class OnibusB75 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / JD. ARAPONGAS");
+		onibus.setNome("B75 - CTBA / JD. ARAPONGAS");
 		onibus.setCodigo("B75");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("JARDIM ARAPONGAS");

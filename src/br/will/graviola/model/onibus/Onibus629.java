@@ -11,7 +11,7 @@
 	public class Onibus629 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ALTO BOQUEIRÃO");
+		onibus.setNome("629 - ALTO BOQUEIRÃO");
 		onibus.setCodigo("629");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO ALTO BOQUEIRAO");

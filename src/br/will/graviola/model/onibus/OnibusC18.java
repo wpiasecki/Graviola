@@ -11,7 +11,7 @@
 	public class OnibusC18 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. TROPICAL");
+		onibus.setNome("C18 - JD. TROPICAL");
 		onibus.setCodigo("C18");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JD.TROPICAL");

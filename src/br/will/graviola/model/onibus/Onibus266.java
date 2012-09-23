@@ -11,7 +11,7 @@
 	public class Onibus266 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ESTRIBO AHÚ");
+		onibus.setNome("266 - ESTRIBO AHÚ");
 		onibus.setCodigo("266");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO ESTRIBO AHU");
@@ -220,7 +220,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("BAIRRO ESTRIBO AHU");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto4.setValidoAPartirDe("12/10/2007");
+		ponto4.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("06:00");
 		ponto4.getHorarios().addElement("06:50");
@@ -246,7 +246,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("TRAVESSA MOREIRA GARCEZ");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto5.setValidoAPartirDe("12/10/2007");
+		ponto5.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("06:25");
 		ponto5.getHorarios().addElement("07:15");

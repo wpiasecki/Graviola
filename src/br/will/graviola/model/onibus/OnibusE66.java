@@ -11,12 +11,12 @@
 	public class OnibusE66 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / INDEPENDÊNCIA");
+		onibus.setNome("E66 - CTBA / INDEPENDÊNCIA");
 		onibus.setCodigo("E66");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JD.INDEPENDENCIA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("06/02/2012");
+		ponto0.setValidoAPartirDe("16/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("04:30");
 		ponto0.getHorarios().addElement("04:57");
@@ -90,7 +90,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL AFONSO PENA");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("06/02/2012");
+		ponto1.setValidoAPartirDe("16/08/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("16:16");
 		ponto1.getHorarios().addElement("16:32");
@@ -99,7 +99,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("TERMINAL GUADALUPE");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("06/02/2012");
+		ponto2.setValidoAPartirDe("16/08/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:10");
 		ponto2.getHorarios().addElement("05:45");
@@ -115,15 +115,9 @@
 		ponto2.getHorarios().addElement("07:43");
 		ponto2.getHorarios().addElement("07:56");
 		ponto2.getHorarios().addElement("08:07");
-		ponto2.getHorarios().addElement("08:14");
-		ponto2.getHorarios().addElement("08:21");
 		ponto2.getHorarios().addElement("08:29");
-		ponto2.getHorarios().addElement("08:40");
-		ponto2.getHorarios().addElement("08:53");
-		ponto2.getHorarios().addElement("09:01");
-		ponto2.getHorarios().addElement("09:08");
-		ponto2.getHorarios().addElement("09:15");
-		ponto2.getHorarios().addElement("09:25");
+		ponto2.getHorarios().addElement("08:51");
+		ponto2.getHorarios().addElement("09:11");
 		ponto2.getHorarios().addElement("09:35");
 		ponto2.getHorarios().addElement("10:07");
 		ponto2.getHorarios().addElement("10:39");

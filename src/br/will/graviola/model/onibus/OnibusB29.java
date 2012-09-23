@@ -11,7 +11,7 @@
 	public class OnibusB29 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ROÇA GRANDE /  APDEC");
+		onibus.setNome("B29 - ROÇA GRANDE /  APDEC");
 		onibus.setCodigo("B29");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("APAE/MARACANA");
@@ -38,7 +38,7 @@
 		ponto1.getHorarios().addElement("17:30");
 		ponto1.getHorarios().addElement("19:25");
 		Ponto ponto2 = new Ponto();
-		ponto2.setNome("APDEC/MARACANA");
+		ponto2.setNome("APDEC");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
 		ponto2.setValidoAPartirDe("23/11/2009");
 		onibus.getPontos().addElement(ponto2);
@@ -110,7 +110,7 @@
 		ponto7.getHorarios().addElement("17:30");
 		ponto7.getHorarios().addElement("19:25");
 		Ponto ponto8 = new Ponto();
-		ponto8.setNome("APDEC/MARACANA");
+		ponto8.setNome("APDEC");
 		ponto8.setTipoDia(TipoDia.getTipoDia("SABADO"));
 		ponto8.setValidoAPartirDe("21/11/2009");
 		onibus.getPontos().addElement(ponto8);
@@ -182,7 +182,7 @@
 		ponto13.getHorarios().addElement("17:30");
 		ponto13.getHorarios().addElement("19:25");
 		Ponto ponto14 = new Ponto();
-		ponto14.setNome("APDEC/MARACANA");
+		ponto14.setNome("APDEC");
 		ponto14.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
 		ponto14.setValidoAPartirDe("22/11/2009");
 		onibus.getPontos().addElement(ponto14);

@@ -11,7 +11,7 @@
 	public class Onibus532 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. PARANAENSE");
+		onibus.setNome("532 - JD. PARANAENSE");
 		onibus.setCodigo("532");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JD. PARANAENSE");

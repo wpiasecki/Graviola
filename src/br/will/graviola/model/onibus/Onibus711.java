@@ -11,7 +11,7 @@
 	public class Onibus711 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ITATIAIA");
+		onibus.setNome("711 - ITATIAIA");
 		onibus.setCodigo("711");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO ITATIAIA");

@@ -11,7 +11,7 @@
 	public class Onibus176 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("NILO PEÇANHA");
+		onibus.setNome("176 - NILO PEÇANHA");
 		onibus.setCodigo("176");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO NILO PECANHA");

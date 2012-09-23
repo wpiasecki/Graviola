@@ -11,7 +11,7 @@
 	public class OnibusB32 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MARACANÃ / STA. CÂNDIDA");
+		onibus.setNome("B32 - MARACANÃ / STA. CÂNDIDA");
 		onibus.setCodigo("B32");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO RIO VERDE");

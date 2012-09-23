@@ -11,7 +11,7 @@
 	public class Onibus495 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. PINHAIS 1");
+		onibus.setNome("495 - E. E. PINHAIS 1");
 		onibus.setCodigo("495");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESCOLA ALTERNATIVA");
@@ -77,7 +77,7 @@
 		onibus.getPontos().addElement(ponto8);
 		ponto8.getHorarios().addElement("17:18");
 		Ponto ponto9 = new Ponto();
-		ponto9.setNome("ESCOLA VIVIAN MARCAL I");
+		ponto9.setNome("ESCOLA VIVIAN MARCAL SEDE");
 		ponto9.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
 		ponto9.setValidoAPartirDe("08/02/2010");
 		onibus.getPontos().addElement(ponto9);

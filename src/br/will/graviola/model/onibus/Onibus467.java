@@ -11,7 +11,7 @@
 	public class Onibus467 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. MACEDO");
+		onibus.setNome("467 - V. MACEDO");
 		onibus.setCodigo("467");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA MACEDO");

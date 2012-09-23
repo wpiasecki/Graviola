@@ -11,12 +11,12 @@
 	public class Onibus643 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("UMBARÁ");
+		onibus.setNome("643 - UMBARÁ");
 		onibus.setCodigo("643");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO UMBARA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("09/07/2012");
+		ponto0.setValidoAPartirDe("08/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:43");
 		ponto0.getHorarios().addElement("06:17");
@@ -42,7 +42,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL PINHEIRINHO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("09/07/2012");
+		ponto1.setValidoAPartirDe("08/08/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("06:18");
 		ponto1.getHorarios().addElement("06:52");
@@ -68,7 +68,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("BAIRRO UMBARA (CONJ.C.BELO)");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("09/07/2012");
+		ponto2.setValidoAPartirDe("08/08/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("04:52");
 		ponto2.getHorarios().addElement("05:26");
@@ -97,13 +97,15 @@
 		ponto2.getHorarios().addElement("18:54");
 		ponto2.getHorarios().addElement("19:28");
 		ponto2.getHorarios().addElement("20:16");
+		ponto2.getHorarios().addElement("20:32");
 		ponto2.getHorarios().addElement("21:20");
+		ponto2.getHorarios().addElement("21:36");
 		ponto2.getHorarios().addElement("22:24");
 		ponto2.getHorarios().addElement("23:30");
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("TERM.PINHEIRINHO (CONJ.C.BELO)");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("09/07/2012");
+		ponto3.setValidoAPartirDe("08/08/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("05:27");
 		ponto3.getHorarios().addElement("06:01");
@@ -132,7 +134,9 @@
 		ponto3.getHorarios().addElement("19:35");
 		ponto3.getHorarios().addElement("20:00");
 		ponto3.getHorarios().addElement("20:48");
+		ponto3.getHorarios().addElement("21:04");
 		ponto3.getHorarios().addElement("21:52");
+		ponto3.getHorarios().addElement("22:08");
 		ponto3.getHorarios().addElement("22:56");
 		ponto3.getHorarios().addElement("00:04");
 		Ponto ponto4 = new Ponto();

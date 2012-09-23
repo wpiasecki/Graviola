@@ -11,7 +11,7 @@
 	public class OnibusC27 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JOAQUINA");
+		onibus.setNome("C27 - JOAQUINA");
 		onibus.setCodigo("C27");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JOAQUINA");

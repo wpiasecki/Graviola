@@ -11,7 +11,7 @@
 	public class OnibusB28 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. MARIA DO ROSÁRIO");
+		onibus.setNome("B28 - V. MARIA DO ROSÁRIO");
 		onibus.setCodigo("B28");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("V.MARIA DO ROSARIO");

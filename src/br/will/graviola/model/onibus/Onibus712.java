@@ -11,7 +11,7 @@
 	public class Onibus712 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. INDEPENDÊNCIA / CIC");
+		onibus.setNome("712 - JD. INDEPENDÊNCIA / CIC");
 		onibus.setCodigo("712");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CIC");

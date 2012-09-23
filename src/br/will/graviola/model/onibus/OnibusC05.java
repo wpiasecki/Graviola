@@ -11,7 +11,7 @@
 	public class OnibusC05 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("DIRETO C. IMBUIA");
+		onibus.setNome("C05 - DIRETO C. IMBUIA");
 		onibus.setCodigo("C05");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAPAO DA IMBUIA");

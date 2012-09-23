@@ -11,7 +11,7 @@
 	public class OnibusB42 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MARACANA / LINHA VERDE");
+		onibus.setNome("B42 - MARACANA / LINHA VERDE");
 		onibus.setCodigo("B42");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL MARACANA");

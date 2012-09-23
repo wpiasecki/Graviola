@@ -11,7 +11,7 @@
 	public class Onibus719 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FAZEND. / CAIUÁ-FRIGORÍF.");
+		onibus.setNome("719 - FAZEND. / CAIUÁ-FRIGORÍF.");
 		onibus.setCodigo("719");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO FRIGORIFICO/TERM.CAIUA");

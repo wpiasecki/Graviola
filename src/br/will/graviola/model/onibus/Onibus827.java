@@ -11,12 +11,12 @@
 	public class Onibus827 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("RIVIERA");
+		onibus.setNome("827 - RIVIERA");
 		onibus.setCodigo("827");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO RIVIERA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("11/04/2011");
+		ponto0.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("04:53");
 		ponto0.getHorarios().addElement("05:37");
@@ -48,7 +48,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL CAMPO COMPRIDO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("11/04/2011");
+		ponto1.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("04:30");
 		ponto1.getHorarios().addElement("05:15");
@@ -80,7 +80,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("BAIRRO RIVIERA");
 		ponto2.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto2.setValidoAPartirDe("04/12/2010");
+		ponto2.setValidoAPartirDe("25/08/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("04:53");
 		ponto2.getHorarios().addElement("05:37");
@@ -112,7 +112,7 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("TERMINAL CAMPO COMPRIDO");
 		ponto3.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto3.setValidoAPartirDe("04/12/2010");
+		ponto3.setValidoAPartirDe("25/08/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("04:30");
 		ponto3.getHorarios().addElement("05:15");
@@ -144,7 +144,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("BAIRRO RIVIERA");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto4.setValidoAPartirDe("05/12/2010");
+		ponto4.setValidoAPartirDe("26/08/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("04:53");
 		ponto4.getHorarios().addElement("05:37");
@@ -176,7 +176,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("TERMINAL CAMPO COMPRIDO");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto5.setValidoAPartirDe("05/12/2010");
+		ponto5.setValidoAPartirDe("26/08/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("04:30");
 		ponto5.getHorarios().addElement("05:15");

@@ -11,7 +11,7 @@
 	public class Onibus471 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. SÃO PAULO");
+		onibus.setNome("471 - V. SÃO PAULO");
 		onibus.setCodigo("471");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA SAO PAULO");

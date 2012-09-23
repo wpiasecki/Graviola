@@ -11,7 +11,7 @@
 	public class Onibus649 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PIRINEUS");
+		onibus.setNome("649 - PIRINEUS");
 		onibus.setCodigo("649");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL PINHEIRINHO");

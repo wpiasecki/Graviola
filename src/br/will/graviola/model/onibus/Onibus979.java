@@ -11,7 +11,7 @@
 	public class Onibus979 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("TURISMO");
+		onibus.setNome("979 - TURISMO");
 		onibus.setCodigo("979");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BOSQUE ALEMAO");

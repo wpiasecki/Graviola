@@ -11,7 +11,7 @@
 	public class OnibusB69 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. CTBA / SÃO DIMAS");
+		onibus.setNome("B69 - MAD. CTBA / SÃO DIMAS");
 		onibus.setCodigo("B69");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL GUADALUPE");

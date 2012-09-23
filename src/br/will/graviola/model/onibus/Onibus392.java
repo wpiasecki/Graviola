@@ -11,7 +11,7 @@
 	public class Onibus392 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. TOMAZ EDISON 4");
+		onibus.setNome("392 - E. E. TOMAZ EDISON 4");
 		onibus.setCodigo("392");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO LINHA TOMAZ EDISON 4");

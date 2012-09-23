@@ -11,7 +11,7 @@
 	public class Onibus762 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. ROSINHA");
+		onibus.setNome("762 - V. ROSINHA");
 		onibus.setCodigo("762");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA ROSINHA");

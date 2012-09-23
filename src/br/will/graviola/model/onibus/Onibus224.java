@@ -11,7 +11,7 @@
 	public class Onibus224 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CASSIOPÉIA");
+		onibus.setNome("224 - CASSIOPÉIA");
 		onibus.setCodigo("224");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL BOA VISTA");

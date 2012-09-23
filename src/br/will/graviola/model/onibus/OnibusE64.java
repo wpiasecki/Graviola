@@ -11,7 +11,7 @@
 	public class OnibusE64 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("EXECUTIVO / AEROPORTO");
+		onibus.setNome("E64 - EXECUTIVO / AEROPORTO");
 		onibus.setCodigo("E64");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("RODOFERROVIARIA");

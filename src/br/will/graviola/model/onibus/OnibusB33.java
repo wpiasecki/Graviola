@@ -11,7 +11,7 @@
 	public class OnibusB33 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("BOCAIÚVA DO SUL");
+		onibus.setNome("B33 - BOCAIÚVA DO SUL");
 		onibus.setCodigo("B33");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BOCAIUVA DO SUL");

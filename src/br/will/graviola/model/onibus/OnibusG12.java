@@ -11,7 +11,7 @@
 	public class OnibusG12 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("A. BRANCA / FAZ. RIO GRANDE");
+		onibus.setNome("G12 - A. BRANCA / FAZ. RIO GRANDE");
 		onibus.setCodigo("G12");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("AREIA BRANCA");

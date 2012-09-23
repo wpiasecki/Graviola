@@ -11,7 +11,7 @@
 	public class Onibus560 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ALFERES POLI");
+		onibus.setNome("560 - ALFERES POLI");
 		onibus.setCodigo("560");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA RUI BARBOSA");

@@ -11,7 +11,7 @@
 	public class Onibus225 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("BOA VISTA / BARREIRINHA");
+		onibus.setNome("225 - BOA VISTA / BARREIRINHA");
 		onibus.setCodigo("225");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL BARREIRINHA");

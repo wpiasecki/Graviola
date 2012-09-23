@@ -11,7 +11,7 @@
 	public class Onibus001 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CIRCULAR CENTRO (HORÁRIO)");
+		onibus.setNome("001 - CIRCULAR CENTRO (HORÁRIO)");
 		onibus.setCodigo("001");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA SANTOS ANDRADE");

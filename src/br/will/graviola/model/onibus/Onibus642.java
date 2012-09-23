@@ -11,12 +11,12 @@
 	public class Onibus642 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("GANCHINHO");
+		onibus.setNome("642 - GANCHINHO");
 		onibus.setCodigo("642");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO GANCHINHO");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("21/06/2012");
+		ponto0.setValidoAPartirDe("10/09/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:00");
 		ponto0.getHorarios().addElement("05:30");
@@ -32,6 +32,7 @@
 		ponto0.getHorarios().addElement("13:20");
 		ponto0.getHorarios().addElement("14:30");
 		ponto0.getHorarios().addElement("15:50");
+		ponto0.getHorarios().addElement("16:30");
 		ponto0.getHorarios().addElement("17:10");
 		ponto0.getHorarios().addElement("17:50");
 		ponto0.getHorarios().addElement("18:30");
@@ -46,7 +47,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL PINHEIRINHO (SAIDA)");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("21/06/2012");
+		ponto1.setValidoAPartirDe("10/09/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:30");
 		ponto1.getHorarios().addElement("06:00");
@@ -60,6 +61,7 @@
 		ponto1.getHorarios().addElement("12:45");
 		ponto1.getHorarios().addElement("13:55");
 		ponto1.getHorarios().addElement("15:10");
+		ponto1.getHorarios().addElement("15:50");
 		ponto1.getHorarios().addElement("16:30");
 		ponto1.getHorarios().addElement("17:10");
 		ponto1.getHorarios().addElement("17:50");

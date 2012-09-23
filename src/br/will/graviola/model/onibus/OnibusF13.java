@@ -11,17 +11,17 @@
 	public class OnibusF13 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ESTADOS");
+		onibus.setNome("F13 - ESTADOS");
 		onibus.setCodigo("F13");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERM.FAZENDA/SUZUKI");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("20/06/2012");
+		ponto0.setValidoAPartirDe("10/09/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("04:30");
-		ponto0.getHorarios().addElement("05:00");
-		ponto0.getHorarios().addElement("05:13");
-		ponto0.getHorarios().addElement("05:25");
+		ponto0.getHorarios().addElement("05:05");
+		ponto0.getHorarios().addElement("05:15");
+		ponto0.getHorarios().addElement("05:27");
 		ponto0.getHorarios().addElement("05:40");
 		ponto0.getHorarios().addElement("05:53");
 		ponto0.getHorarios().addElement("06:05");

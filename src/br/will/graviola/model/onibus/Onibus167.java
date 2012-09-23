@@ -11,7 +11,7 @@
 	public class Onibus167 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FREDOLIN WOLF");
+		onibus.setNome("167 - FREDOLIN WOLF");
 		onibus.setCodigo("167");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("AV MARECHAL FLORIANO");

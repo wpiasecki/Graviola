@@ -1,9 +1,9 @@
+
 package br.will.graviola.service;
 
 import java.util.Vector;
 
-import br.will.graviola.model.Onibus;
-import br.will.graviola.model.Ponto;
+import br.will.graviola.model.*;
 import br.will.graviola.model.onibus.*;
 import br.will.graviola.util.StringUtil;
 
@@ -31,8 +31,7 @@ public class HorarioOnibusService
 		
 		return linhasEncontradas;
 	}
-	
-	
+
 	public static final String ONIBUSG12 = "A. BRANCA / FAZ. RIO GRANDE";
 	public static final String ONIBUS464 = "A. MUNHOZ / J. BOTÂNICO";
 	public static final String ONIBUS226 = "ABAETÉ";
@@ -55,6 +54,8 @@ public class HorarioOnibusService
 	public static final String ONIBUSI32 = "ARAUCARIA / CAMPO LARGO";
 	public static final String ONIBUSH11 = "ARAUCÁRIA / PINHEIRINHO";
 	public static final String ONIBUSH12 = "ARAUCÁRIA / PORTÃO";
+	public static final String ONIBUSH17 = "ARAUCÁRIA/CATANDUVAS";
+	public static final String ONIBUSH16 = "ARAUCARIA/CONTENDA";
 	public static final String ONIBUS823 = "AUGUSTA";
 	public static final String ONIBUS361 = "AUGUSTO STRESSER";
 	public static final String ONIBUS313 = "AVENIDA IRAÍ / C. IMBUIA";
@@ -63,8 +64,8 @@ public class HorarioOnibusService
 	public static final String ONIBUS341 = "B. ALTO / STA. CÂNDIDA";
 	public static final String ONIBUS307 = "B. ALTO / STA. FELICIDADE";
 	public static final String ONIBUS506 = "BAIRRO NOVO";
+	public static final String ONIBUS542 = "BAIRRO NOVO  B";
 	public static final String ONIBUS541 = "BAIRRO NOVO A";
-	public static final String ONIBUS542 = "BAIRRO NOVO B";
 	public static final String ONIBUS547 = "BAIRRO NOVO C";
 	public static final String ONIBUS231 = "BANESTADO / CALIFÓRNIA";
 	public static final String ONIBUS205 = "BARREIRINHA";
@@ -127,6 +128,7 @@ public class HorarioOnibusService
 	public static final String ONIBUSI20 = "COLOMBO / SÃO JOSÉ";
 	public static final String ONIBUSB24 = "COLÔNIA FARIA";
 	public static final String ONIBUS778 = "COTOLENGO";
+	public static final String ONIBUS027 = "C.RASO/C.DO SIQUEIRA";
 	public static final String ONIBUS385 = "CRISTO REI";
 	public static final String ONIBUSC72 = "CTBA  / V. PALMITAL";
 	public static final String ONIBUSE02 = "CTBA / APOLO";
@@ -187,6 +189,7 @@ public class HorarioOnibusService
 	public static final String ONIBUSA77 = "CTBA / TANGUÁ";
 	public static final String ONIBUSP65 = "CTBA / TERRA BOA";
 	public static final String ONIBUSN73 = "CTBA / TIMBÚ";
+	public static final String ONIBUSN75 = "CTBA / TIMBU (RAPIDO)";
 	public static final String ONIBUSE01 = "CTBA / URANO";
 	public static final String ONIBUSA78 = "CTBA / V.  MARTA";
 	public static final String ONIBUSC66 = "CTBA / V. ZUMBI";
@@ -194,34 +197,52 @@ public class HorarioOnibusService
 	public static final String ONIBUSB06 = "CTBA/GUARAITUBA(VIA MARACANA)";
 	public static final String ONIBUSO76 = "CTBA/Q.BARRAS(RAPIDO)";
 	public static final String ONIBUS681 = "DALAGASSA";
+	public static final String ONIBUS340 = "DETRAN / B. ALTO";
 	public static final String ONIBUS380 = "DETRAN / VIC. MACHADO";
 	public static final String ONIBUSC05 = "DIRETO C. IMBUIA";
 	public static final String ONIBUSB31 = "DIRETO CABRAL";
 	public static final String ONIBUS662 = "DOM ÁTICO";
 	public static final String ONIBUS699 = "E. E. ALCINDO FANAYA 1";
 	public static final String ONIBUS795 = "E. E. ALCINDO FANAYA 2";
+	public static final String ONIBUS298 = "E. E. ALCINDO FANAYA 3";
 	public static final String ONIBUS799 = "E. E. ALI BARK 1";
 	public static final String ONIBUS798 = "E. E. ALI BARK 2";
 	public static final String ONIBUS695 = "E. E. ALTO BOQUEIRÃO";
 	public static final String ONIBUS399 = "E. E. APAE 1";
 	public static final String ONIBUS596 = "E. E. APAE 2";
 	public static final String ONIBUS598 = "E. E. APAE 3";
+	public static final String ONIBUS195 = "E. E. APAE 4";
+	public static final String ONIBUS199 = "E. E. APAE 5";
 	public static final String ONIBUS396 = "E. E. APAE 6";
+	public static final String ONIBUS297 = "E. E. ATUBA";
 	public static final String ONIBUS694 = "E. E. BAIRRO NOVO";
+	public static final String ONIBUS194 = "E. E. BARREIRINHA";
+	public static final String ONIBUS198 = "E. E. BOA VISTA";
 	public static final String ONIBUS398 = "E. E. C. IMBUIA";
 	public static final String ONIBUS397 = "E. E. CAJURU";
 	public static final String ONIBUS394 = "E. E. CENTRAU 1";
 	public static final String ONIBUS899 = "E. E. CIC";
 	public static final String ONIBUS697 = "E. E. ECUMÊNICA 1";
 	public static final String ONIBUS897 = "E. E. ECUMÊNICA 2";
+	public static final String ONIBUS898 = "E. E. ECUMÊNICA 3";
+	public static final String ONIBUS299 = "E. E. ECUMÊNICA 4";
+	public static final String ONIBUS295 = "E. E. ECUMÊNICA 5";
 	public static final String ONIBUS599 = "E. E. HELENA ANTIPOFF 1";
 	public static final String ONIBUS497 = "E. E. HELENA ANTIPOFF 2";
+	public static final String ONIBUS197 = "E. E. HELENA ANTIPOFF 3";
 	public static final String ONIBUS499 = "E. E. HELENA ANTIPOFF 4";
+	public static final String ONIBUS995 = "E. E. LUCY REQUIAO 1";
 	public static final String ONIBUS698 = "E. E. NOSSA SRA. DA LUZ";
+	public static final String ONIBUS896 = "E. E. NOVO MUNDO";
+	public static final String ONIBUS997 = "E. E. ORLEANS";
+	public static final String ONIBUS196 = "E. E. PILARZINHO";
 	public static final String ONIBUS495 = "E. E. PINHAIS 1";
 	public static final String ONIBUS498 = "E. E. PINHAIS 2";
 	public static final String ONIBUS696 = "E. E. PINHEIRINHO";
+	public static final String ONIBUS391 = "E. E. SAO FRANCISCO DE ASSIS 1";
 	public static final String ONIBUS597 = "E. E. SÍTIO CERCADO";
+	public static final String ONIBUS296 = "E. E. STA. CÂNDIDA";
+	public static final String ONIBUS996 = "E. E. STA. FELICIDADE";
 	public static final String ONIBUS796 = "E. E. STA. HELENA";
 	public static final String ONIBUS797 = "E. E. STA. QUITÉRIA";
 	public static final String ONIBUS895 = "E. E. TATUQUARA";
@@ -230,9 +251,15 @@ public class HorarioOnibusService
 	public static final String ONIBUS691 = "E. E. TOMAZ EDISON 3";
 	public static final String ONIBUS392 = "E. E. TOMAZ EDISON 4";
 	public static final String ONIBUS692 = "E. E. TOMAZ EDISON 5";
+	public static final String ONIBUS496 = "E. E. UBERABA";
+	public static final String ONIBUS395 = "E. E. V. OFICINAS";
 	public static final String ONIBUS998 = "E. E. VIVIAN MARCAL 1";
 	public static final String ONIBUS894 = "E. E. 29 DE MARÇO 1";
 	public static final String ONIBUS533 = "E. VERÍSSIMO / PANTANAL";
+	public static final String ONIBUS294 = "E.E. ECUMENICA 6";
+	public static final String ONIBUS494 = "E.E. HELENA ANTIPOFF 5";
+	public static final String ONIBUS994 = "E.E. NABIL TACLA 1";
+	public static final String ONIBUS999 = "E.E. VIVIAN MARCAL 2";
 	public static final String ONIBUSC23 = "EMILIANO PERNETA";
 	public static final String ONIBUS465 = "ERASTO  GAERTNER";
 	public static final String ONIBUSX12 = "ESPECIAL BOQUEIRAO";
@@ -263,6 +290,7 @@ public class HorarioOnibusService
 	public static final String ONIBUS821 = "FERNÃO DIAS";
 	public static final String ONIBUS673 = "FORMOSA";
 	public static final String ONIBUS167 = "FREDOLIN WOLF";
+	public static final String ONIBUS716 = "FRIGORIFICO";
 	public static final String ONIBUS639 = "FUTURAMA";
 	public static final String ONIBUS683 = "FUTURAMA / S. CERCADO";
 	public static final String ONIBUS822 = "GABINETO";
@@ -381,6 +409,7 @@ public class HorarioOnibusService
 	public static final String ONIBUSB32 = "MARACANÃ / STA. CÂNDIDA";
 	public static final String ONIBUS633 = "MARIA ANGÉLICA";
 	public static final String ONIBUS522 = "MARINGÁ";
+	public static final String ONIBUS721 = "MÁRIO JORGE";
 	public static final String ONIBUS181 = "MATEUS LEME";
 	public static final String ONIBUS594 = "MENONITAS";
 	public static final String ONIBUS331 = "MERCÚRIO";
@@ -436,6 +465,7 @@ public class HorarioOnibusService
 	public static final String ONIBUSD16 = "PRESÍDIO";
 	public static final String ONIBUS171 = "PRIMAVERA";
 	public static final String ONIBUSC26 = "PRIVÊ";
+	public static final String ONIBUSX16 = "PUC / RODOFERROVIARIA";
 	public static final String ONIBUSE31 = "PUC / SÃO JOSÉ";
 	public static final String ONIBUSI41 = "Q. BARRAS / BOCAIÚVA";
 	public static final String ONIBUSI40 = "Q. BARRAS / PIRAQUARA";
@@ -449,6 +479,7 @@ public class HorarioOnibusService
 	public static final String ONIBUSJ12 = "REBOUÇAS";
 	public static final String ONIBUS219 = "REFORÇO COLINA";
 	public static final String ONIBUSX14 = "REFORÇO HAUER";
+	public static final String ONIBUSX21 = "REFORCO HAUER / IFPR";
 	public static final String ONIBUS539 = "REFORÇO TERMINAL";
 	public static final String ONIBUSB27 = "RIBEIRA / FCO. CORADIN";
 	public static final String ONIBUS684 = "RIO BONITO";
@@ -517,6 +548,7 @@ public class HorarioOnibusService
 	public static final String ONIBUSJ14 = "TIMBOTUVA (EST. NOVA)";
 	public static final String ONIBUSJ13 = "TIMBOTUVA (EST. VELHA)";
 	public static final String ONIBUS214 = "TINGUI";
+	public static final String ONIBUS877 = "TIRADENTES / TUIUTI  BARIGUI";
 	public static final String ONIBUS545 = "TRABALHADOR";
 	public static final String ONIBUS861 = "TRAMONTINA";
 	public static final String ONIBUS321 = "TRINDADE";
@@ -525,6 +557,7 @@ public class HorarioOnibusService
 	public static final String ONIBUS472 = "UBERABA";
 	public static final String ONIBUS615 = "UBERLÂNDIA";
 	public static final String ONIBUS643 = "UMBARÁ";
+	public static final String ONIBUSZ01 = "UNIBRASIL / TUBO DETRAN";
 	public static final String ONIBUS829 = "UNIV.POSITIVO";
 	public static final String ONIBUSC25 = "V. AMÉLIA";
 	public static final String ONIBUS323 = "V. AUTÓDROMO";
@@ -561,10 +594,9 @@ public class HorarioOnibusService
 	public static final String ONIBUS657 = "XAXIM / CAPÃO RASO";
 	public static final String ONIBUS551 = "XAXIM / LINHA VERDE";
 	public static final String ONIBUS536 = "ZOOLÓGICO";
-
 	public static Vector getLinhasOnibus() {
 		Vector linhasOnibus = new Vector();
-	
+
 		linhasOnibus.addElement(ONIBUSG12);
 		linhasOnibus.addElement(ONIBUS464);
 		linhasOnibus.addElement(ONIBUS226);
@@ -587,6 +619,8 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUSI32);
 		linhasOnibus.addElement(ONIBUSH11);
 		linhasOnibus.addElement(ONIBUSH12);
+		linhasOnibus.addElement(ONIBUSH17);
+		linhasOnibus.addElement(ONIBUSH16);
 		linhasOnibus.addElement(ONIBUS823);
 		linhasOnibus.addElement(ONIBUS361);
 		linhasOnibus.addElement(ONIBUS313);
@@ -595,8 +629,8 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUS341);
 		linhasOnibus.addElement(ONIBUS307);
 		linhasOnibus.addElement(ONIBUS506);
-		linhasOnibus.addElement(ONIBUS541);
 		linhasOnibus.addElement(ONIBUS542);
+		linhasOnibus.addElement(ONIBUS541);
 		linhasOnibus.addElement(ONIBUS547);
 		linhasOnibus.addElement(ONIBUS231);
 		linhasOnibus.addElement(ONIBUS205);
@@ -659,6 +693,7 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUSI20);
 		linhasOnibus.addElement(ONIBUSB24);
 		linhasOnibus.addElement(ONIBUS778);
+		linhasOnibus.addElement(ONIBUS027);
 		linhasOnibus.addElement(ONIBUS385);
 		linhasOnibus.addElement(ONIBUSC72);
 		linhasOnibus.addElement(ONIBUSE02);
@@ -719,6 +754,7 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUSA77);
 		linhasOnibus.addElement(ONIBUSP65);
 		linhasOnibus.addElement(ONIBUSN73);
+		linhasOnibus.addElement(ONIBUSN75);
 		linhasOnibus.addElement(ONIBUSE01);
 		linhasOnibus.addElement(ONIBUSA78);
 		linhasOnibus.addElement(ONIBUSC66);
@@ -726,34 +762,52 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUSB06);
 		linhasOnibus.addElement(ONIBUSO76);
 		linhasOnibus.addElement(ONIBUS681);
+		linhasOnibus.addElement(ONIBUS340);
 		linhasOnibus.addElement(ONIBUS380);
 		linhasOnibus.addElement(ONIBUSC05);
 		linhasOnibus.addElement(ONIBUSB31);
 		linhasOnibus.addElement(ONIBUS662);
 		linhasOnibus.addElement(ONIBUS699);
 		linhasOnibus.addElement(ONIBUS795);
+		linhasOnibus.addElement(ONIBUS298);
 		linhasOnibus.addElement(ONIBUS799);
 		linhasOnibus.addElement(ONIBUS798);
 		linhasOnibus.addElement(ONIBUS695);
 		linhasOnibus.addElement(ONIBUS399);
 		linhasOnibus.addElement(ONIBUS596);
 		linhasOnibus.addElement(ONIBUS598);
+		linhasOnibus.addElement(ONIBUS195);
+		linhasOnibus.addElement(ONIBUS199);
 		linhasOnibus.addElement(ONIBUS396);
+		linhasOnibus.addElement(ONIBUS297);
 		linhasOnibus.addElement(ONIBUS694);
+		linhasOnibus.addElement(ONIBUS194);
+		linhasOnibus.addElement(ONIBUS198);
 		linhasOnibus.addElement(ONIBUS398);
 		linhasOnibus.addElement(ONIBUS397);
 		linhasOnibus.addElement(ONIBUS394);
 		linhasOnibus.addElement(ONIBUS899);
 		linhasOnibus.addElement(ONIBUS697);
 		linhasOnibus.addElement(ONIBUS897);
+		linhasOnibus.addElement(ONIBUS898);
+		linhasOnibus.addElement(ONIBUS299);
+		linhasOnibus.addElement(ONIBUS295);
 		linhasOnibus.addElement(ONIBUS599);
 		linhasOnibus.addElement(ONIBUS497);
+		linhasOnibus.addElement(ONIBUS197);
 		linhasOnibus.addElement(ONIBUS499);
+		linhasOnibus.addElement(ONIBUS995);
 		linhasOnibus.addElement(ONIBUS698);
+		linhasOnibus.addElement(ONIBUS896);
+		linhasOnibus.addElement(ONIBUS997);
+		linhasOnibus.addElement(ONIBUS196);
 		linhasOnibus.addElement(ONIBUS495);
 		linhasOnibus.addElement(ONIBUS498);
 		linhasOnibus.addElement(ONIBUS696);
+		linhasOnibus.addElement(ONIBUS391);
 		linhasOnibus.addElement(ONIBUS597);
+		linhasOnibus.addElement(ONIBUS296);
+		linhasOnibus.addElement(ONIBUS996);
 		linhasOnibus.addElement(ONIBUS796);
 		linhasOnibus.addElement(ONIBUS797);
 		linhasOnibus.addElement(ONIBUS895);
@@ -762,9 +816,15 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUS691);
 		linhasOnibus.addElement(ONIBUS392);
 		linhasOnibus.addElement(ONIBUS692);
+		linhasOnibus.addElement(ONIBUS496);
+		linhasOnibus.addElement(ONIBUS395);
 		linhasOnibus.addElement(ONIBUS998);
 		linhasOnibus.addElement(ONIBUS894);
 		linhasOnibus.addElement(ONIBUS533);
+		linhasOnibus.addElement(ONIBUS294);
+		linhasOnibus.addElement(ONIBUS494);
+		linhasOnibus.addElement(ONIBUS994);
+		linhasOnibus.addElement(ONIBUS999);
 		linhasOnibus.addElement(ONIBUSC23);
 		linhasOnibus.addElement(ONIBUS465);
 		linhasOnibus.addElement(ONIBUSX12);
@@ -795,6 +855,7 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUS821);
 		linhasOnibus.addElement(ONIBUS673);
 		linhasOnibus.addElement(ONIBUS167);
+		linhasOnibus.addElement(ONIBUS716);
 		linhasOnibus.addElement(ONIBUS639);
 		linhasOnibus.addElement(ONIBUS683);
 		linhasOnibus.addElement(ONIBUS822);
@@ -913,6 +974,7 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUSB32);
 		linhasOnibus.addElement(ONIBUS633);
 		linhasOnibus.addElement(ONIBUS522);
+		linhasOnibus.addElement(ONIBUS721);
 		linhasOnibus.addElement(ONIBUS181);
 		linhasOnibus.addElement(ONIBUS594);
 		linhasOnibus.addElement(ONIBUS331);
@@ -968,6 +1030,7 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUSD16);
 		linhasOnibus.addElement(ONIBUS171);
 		linhasOnibus.addElement(ONIBUSC26);
+		linhasOnibus.addElement(ONIBUSX16);
 		linhasOnibus.addElement(ONIBUSE31);
 		linhasOnibus.addElement(ONIBUSI41);
 		linhasOnibus.addElement(ONIBUSI40);
@@ -981,6 +1044,7 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUSJ12);
 		linhasOnibus.addElement(ONIBUS219);
 		linhasOnibus.addElement(ONIBUSX14);
+		linhasOnibus.addElement(ONIBUSX21);
 		linhasOnibus.addElement(ONIBUS539);
 		linhasOnibus.addElement(ONIBUSB27);
 		linhasOnibus.addElement(ONIBUS684);
@@ -1049,6 +1113,7 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUSJ14);
 		linhasOnibus.addElement(ONIBUSJ13);
 		linhasOnibus.addElement(ONIBUS214);
+		linhasOnibus.addElement(ONIBUS877);
 		linhasOnibus.addElement(ONIBUS545);
 		linhasOnibus.addElement(ONIBUS861);
 		linhasOnibus.addElement(ONIBUS321);
@@ -1057,6 +1122,7 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUS472);
 		linhasOnibus.addElement(ONIBUS615);
 		linhasOnibus.addElement(ONIBUS643);
+		linhasOnibus.addElement(ONIBUSZ01);
 		linhasOnibus.addElement(ONIBUS829);
 		linhasOnibus.addElement(ONIBUSC25);
 		linhasOnibus.addElement(ONIBUS323);
@@ -1096,7 +1162,6 @@ public class HorarioOnibusService
 		return linhasOnibus;
 	} 
 
-	
 	public static Onibus getByNome(String nome)
 	{
 		Onibus onibus = create( nome );
@@ -1107,18 +1172,14 @@ public class HorarioOnibusService
 		{
 			Ponto ponto = (Ponto) onibus.getPontos().elementAt(i);
 			ponto.setHorariosMarcados( service.findProximosHorarios(ponto) );
-			
-//			System.out.println(ponto.getNome());
-//			for (int k = 0; k < ponto.getHorariosMarcados().size(); k++) {
-//				System.out.println(ponto.getHorariosMarcados().elementAt(k));
-//			}
 		}
 		
 		return onibus;
 	}
 	
-	
-	private static Onibus create(String nome) {
+	public static Onibus create(String nome) 
+	{
+
 		if (nome.equals( ONIBUSG12 )) return OnibusG12.create();
 		if (nome.equals( ONIBUS464 )) return Onibus464.create();
 		if (nome.equals( ONIBUS226 )) return Onibus226.create();
@@ -1141,6 +1202,8 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUSI32 )) return OnibusI32.create();
 		if (nome.equals( ONIBUSH11 )) return OnibusH11.create();
 		if (nome.equals( ONIBUSH12 )) return OnibusH12.create();
+		if (nome.equals( ONIBUSH17 )) return OnibusH17.create();
+		if (nome.equals( ONIBUSH16 )) return OnibusH16.create();
 		if (nome.equals( ONIBUS823 )) return Onibus823.create();
 		if (nome.equals( ONIBUS361 )) return Onibus361.create();
 		if (nome.equals( ONIBUS313 )) return Onibus313.create();
@@ -1149,8 +1212,8 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUS341 )) return Onibus341.create();
 		if (nome.equals( ONIBUS307 )) return Onibus307.create();
 		if (nome.equals( ONIBUS506 )) return Onibus506.create();
-		if (nome.equals( ONIBUS541 )) return Onibus541.create();
 		if (nome.equals( ONIBUS542 )) return Onibus542.create();
+		if (nome.equals( ONIBUS541 )) return Onibus541.create();
 		if (nome.equals( ONIBUS547 )) return Onibus547.create();
 		if (nome.equals( ONIBUS231 )) return Onibus231.create();
 		if (nome.equals( ONIBUS205 )) return Onibus205.create();
@@ -1213,6 +1276,7 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUSI20 )) return OnibusI20.create();
 		if (nome.equals( ONIBUSB24 )) return OnibusB24.create();
 		if (nome.equals( ONIBUS778 )) return Onibus778.create();
+		if (nome.equals( ONIBUS027 )) return Onibus027.create();
 		if (nome.equals( ONIBUS385 )) return Onibus385.create();
 		if (nome.equals( ONIBUSC72 )) return OnibusC72.create();
 		if (nome.equals( ONIBUSE02 )) return OnibusE02.create();
@@ -1273,6 +1337,7 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUSA77 )) return OnibusA77.create();
 		if (nome.equals( ONIBUSP65 )) return OnibusP65.create();
 		if (nome.equals( ONIBUSN73 )) return OnibusN73.create();
+		if (nome.equals( ONIBUSN75 )) return OnibusN75.create();
 		if (nome.equals( ONIBUSE01 )) return OnibusE01.create();
 		if (nome.equals( ONIBUSA78 )) return OnibusA78.create();
 		if (nome.equals( ONIBUSC66 )) return OnibusC66.create();
@@ -1280,34 +1345,52 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUSB06 )) return OnibusB06.create();
 		if (nome.equals( ONIBUSO76 )) return OnibusO76.create();
 		if (nome.equals( ONIBUS681 )) return Onibus681.create();
+		if (nome.equals( ONIBUS340 )) return Onibus340.create();
 		if (nome.equals( ONIBUS380 )) return Onibus380.create();
 		if (nome.equals( ONIBUSC05 )) return OnibusC05.create();
 		if (nome.equals( ONIBUSB31 )) return OnibusB31.create();
 		if (nome.equals( ONIBUS662 )) return Onibus662.create();
 		if (nome.equals( ONIBUS699 )) return Onibus699.create();
 		if (nome.equals( ONIBUS795 )) return Onibus795.create();
+		if (nome.equals( ONIBUS298 )) return Onibus298.create();
 		if (nome.equals( ONIBUS799 )) return Onibus799.create();
 		if (nome.equals( ONIBUS798 )) return Onibus798.create();
 		if (nome.equals( ONIBUS695 )) return Onibus695.create();
 		if (nome.equals( ONIBUS399 )) return Onibus399.create();
 		if (nome.equals( ONIBUS596 )) return Onibus596.create();
 		if (nome.equals( ONIBUS598 )) return Onibus598.create();
+		if (nome.equals( ONIBUS195 )) return Onibus195.create();
+		if (nome.equals( ONIBUS199 )) return Onibus199.create();
 		if (nome.equals( ONIBUS396 )) return Onibus396.create();
+		if (nome.equals( ONIBUS297 )) return Onibus297.create();
 		if (nome.equals( ONIBUS694 )) return Onibus694.create();
+		if (nome.equals( ONIBUS194 )) return Onibus194.create();
+		if (nome.equals( ONIBUS198 )) return Onibus198.create();
 		if (nome.equals( ONIBUS398 )) return Onibus398.create();
 		if (nome.equals( ONIBUS397 )) return Onibus397.create();
 		if (nome.equals( ONIBUS394 )) return Onibus394.create();
 		if (nome.equals( ONIBUS899 )) return Onibus899.create();
 		if (nome.equals( ONIBUS697 )) return Onibus697.create();
 		if (nome.equals( ONIBUS897 )) return Onibus897.create();
+		if (nome.equals( ONIBUS898 )) return Onibus898.create();
+		if (nome.equals( ONIBUS299 )) return Onibus299.create();
+		if (nome.equals( ONIBUS295 )) return Onibus295.create();
 		if (nome.equals( ONIBUS599 )) return Onibus599.create();
 		if (nome.equals( ONIBUS497 )) return Onibus497.create();
+		if (nome.equals( ONIBUS197 )) return Onibus197.create();
 		if (nome.equals( ONIBUS499 )) return Onibus499.create();
+		if (nome.equals( ONIBUS995 )) return Onibus995.create();
 		if (nome.equals( ONIBUS698 )) return Onibus698.create();
+		if (nome.equals( ONIBUS896 )) return Onibus896.create();
+		if (nome.equals( ONIBUS997 )) return Onibus997.create();
+		if (nome.equals( ONIBUS196 )) return Onibus196.create();
 		if (nome.equals( ONIBUS495 )) return Onibus495.create();
 		if (nome.equals( ONIBUS498 )) return Onibus498.create();
 		if (nome.equals( ONIBUS696 )) return Onibus696.create();
+		if (nome.equals( ONIBUS391 )) return Onibus391.create();
 		if (nome.equals( ONIBUS597 )) return Onibus597.create();
+		if (nome.equals( ONIBUS296 )) return Onibus296.create();
+		if (nome.equals( ONIBUS996 )) return Onibus996.create();
 		if (nome.equals( ONIBUS796 )) return Onibus796.create();
 		if (nome.equals( ONIBUS797 )) return Onibus797.create();
 		if (nome.equals( ONIBUS895 )) return Onibus895.create();
@@ -1316,9 +1399,15 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUS691 )) return Onibus691.create();
 		if (nome.equals( ONIBUS392 )) return Onibus392.create();
 		if (nome.equals( ONIBUS692 )) return Onibus692.create();
+		if (nome.equals( ONIBUS496 )) return Onibus496.create();
+		if (nome.equals( ONIBUS395 )) return Onibus395.create();
 		if (nome.equals( ONIBUS998 )) return Onibus998.create();
 		if (nome.equals( ONIBUS894 )) return Onibus894.create();
 		if (nome.equals( ONIBUS533 )) return Onibus533.create();
+		if (nome.equals( ONIBUS294 )) return Onibus294.create();
+		if (nome.equals( ONIBUS494 )) return Onibus494.create();
+		if (nome.equals( ONIBUS994 )) return Onibus994.create();
+		if (nome.equals( ONIBUS999 )) return Onibus999.create();
 		if (nome.equals( ONIBUSC23 )) return OnibusC23.create();
 		if (nome.equals( ONIBUS465 )) return Onibus465.create();
 		if (nome.equals( ONIBUSX12 )) return OnibusX12.create();
@@ -1349,6 +1438,7 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUS821 )) return Onibus821.create();
 		if (nome.equals( ONIBUS673 )) return Onibus673.create();
 		if (nome.equals( ONIBUS167 )) return Onibus167.create();
+		if (nome.equals( ONIBUS716 )) return Onibus716.create();
 		if (nome.equals( ONIBUS639 )) return Onibus639.create();
 		if (nome.equals( ONIBUS683 )) return Onibus683.create();
 		if (nome.equals( ONIBUS822 )) return Onibus822.create();
@@ -1467,6 +1557,7 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUSB32 )) return OnibusB32.create();
 		if (nome.equals( ONIBUS633 )) return Onibus633.create();
 		if (nome.equals( ONIBUS522 )) return Onibus522.create();
+		if (nome.equals( ONIBUS721 )) return Onibus721.create();
 		if (nome.equals( ONIBUS181 )) return Onibus181.create();
 		if (nome.equals( ONIBUS594 )) return Onibus594.create();
 		if (nome.equals( ONIBUS331 )) return Onibus331.create();
@@ -1522,6 +1613,7 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUSD16 )) return OnibusD16.create();
 		if (nome.equals( ONIBUS171 )) return Onibus171.create();
 		if (nome.equals( ONIBUSC26 )) return OnibusC26.create();
+		if (nome.equals( ONIBUSX16 )) return OnibusX16.create();
 		if (nome.equals( ONIBUSE31 )) return OnibusE31.create();
 		if (nome.equals( ONIBUSI41 )) return OnibusI41.create();
 		if (nome.equals( ONIBUSI40 )) return OnibusI40.create();
@@ -1535,6 +1627,7 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUSJ12 )) return OnibusJ12.create();
 		if (nome.equals( ONIBUS219 )) return Onibus219.create();
 		if (nome.equals( ONIBUSX14 )) return OnibusX14.create();
+		if (nome.equals( ONIBUSX21 )) return OnibusX21.create();
 		if (nome.equals( ONIBUS539 )) return Onibus539.create();
 		if (nome.equals( ONIBUSB27 )) return OnibusB27.create();
 		if (nome.equals( ONIBUS684 )) return Onibus684.create();
@@ -1603,6 +1696,7 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUSJ14 )) return OnibusJ14.create();
 		if (nome.equals( ONIBUSJ13 )) return OnibusJ13.create();
 		if (nome.equals( ONIBUS214 )) return Onibus214.create();
+		if (nome.equals( ONIBUS877 )) return Onibus877.create();
 		if (nome.equals( ONIBUS545 )) return Onibus545.create();
 		if (nome.equals( ONIBUS861 )) return Onibus861.create();
 		if (nome.equals( ONIBUS321 )) return Onibus321.create();
@@ -1611,6 +1705,7 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUS472 )) return Onibus472.create();
 		if (nome.equals( ONIBUS615 )) return Onibus615.create();
 		if (nome.equals( ONIBUS643 )) return Onibus643.create();
+		if (nome.equals( ONIBUSZ01 )) return OnibusZ01.create();
 		if (nome.equals( ONIBUS829 )) return Onibus829.create();
 		if (nome.equals( ONIBUSC25 )) return OnibusC25.create();
 		if (nome.equals( ONIBUS323 )) return Onibus323.create();
@@ -1648,5 +1743,5 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUS551 )) return Onibus551.create();
 		if (nome.equals( ONIBUS536 )) return Onibus536.create();
 		throw new IllegalArgumentException("Nenhum onibus com o nome [" + nome + "]");
-	}	
+	}
 }

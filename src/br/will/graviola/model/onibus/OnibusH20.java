@@ -11,7 +11,7 @@
 	public class OnibusH20 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ANGÉLICA / C. RASO");
+		onibus.setNome("H20 - ANGÉLICA / C. RASO");
 		onibus.setCodigo("H20");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL ANGELICA");

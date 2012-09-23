@@ -11,12 +11,12 @@
 	public class Onibus207 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CABRAL / OSÓRIO");
+		onibus.setNome("207 - CABRAL / OSÓRIO");
 		onibus.setCodigo("207");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA OSORIO");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("02/07/2012");
+		ponto0.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("06:05");
 		ponto0.getHorarios().addElement("06:23");
@@ -77,6 +77,7 @@
 		ponto0.getHorarios().addElement("20:57");
 		ponto0.getHorarios().addElement("21:23");
 		ponto0.getHorarios().addElement("21:50");
+		ponto0.getHorarios().addElement("22:12");
 		ponto0.getHorarios().addElement("22:20");
 		ponto0.getHorarios().addElement("22:40");
 		ponto0.getHorarios().addElement("23:05");
@@ -84,7 +85,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL CABRAL");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("02/07/2012");
+		ponto1.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:40");
 		ponto1.getHorarios().addElement("05:57");

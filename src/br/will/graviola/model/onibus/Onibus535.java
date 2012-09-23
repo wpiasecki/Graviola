@@ -11,7 +11,7 @@
 	public class Onibus535 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("OSTERNACK / BOQUEIRÃO");
+		onibus.setNome("535 - OSTERNACK / BOQUEIRÃO");
 		onibus.setCodigo("535");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO OSTERNACK");

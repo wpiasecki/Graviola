@@ -11,7 +11,7 @@
 	public class Onibus692 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. TOMAZ EDISON 5");
+		onibus.setNome("692 - E. E. TOMAZ EDISON 5");
 		onibus.setCodigo("692");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESCOLA TOMAZ EDISON");

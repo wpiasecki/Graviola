@@ -11,7 +11,7 @@
 	public class Onibus301 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PINHAIS / RUI BARBOSA");
+		onibus.setNome("301 - PINHAIS / RUI BARBOSA");
 		onibus.setCodigo("301");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA RUI BARBOSA");

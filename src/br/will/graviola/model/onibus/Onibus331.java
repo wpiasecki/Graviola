@@ -11,7 +11,7 @@
 	public class Onibus331 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MERCÚRIO");
+		onibus.setNome("331 - MERCÚRIO");
 		onibus.setCodigo("331");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO MERCURIO");

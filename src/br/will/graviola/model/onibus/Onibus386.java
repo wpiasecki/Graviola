@@ -11,7 +11,7 @@
 	public class Onibus386 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CAJURU");
+		onibus.setNome("386 - CAJURU");
 		onibus.setCodigo("386");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO CAJURU");

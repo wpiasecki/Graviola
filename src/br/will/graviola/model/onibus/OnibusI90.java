@@ -11,7 +11,7 @@
 	public class OnibusI90 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("T. CACHOEIRA / T. MARACANÃ");
+		onibus.setNome("I90 - T. CACHOEIRA / T. MARACANÃ");
 		onibus.setCodigo("I90");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CACHOEIRA");

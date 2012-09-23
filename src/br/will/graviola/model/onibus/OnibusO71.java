@@ -11,12 +11,12 @@
 	public class OnibusO71 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("BORDA DO CAMPO");
+		onibus.setNome("O71 - BORDA DO CAMPO");
 		onibus.setCodigo("O71");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO BORDA DO CAMPO");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("18/06/2012");
+		ponto0.setValidoAPartirDe("06/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("04:50");
 		ponto0.getHorarios().addElement("05:10");
@@ -60,14 +60,14 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL QUATRO BARRAS");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("18/06/2012");
+		ponto1.setValidoAPartirDe("06/08/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:14");
 		ponto1.getHorarios().addElement("05:35");
 		ponto1.getHorarios().addElement("06:02");
 		ponto1.getHorarios().addElement("06:26");
 		ponto1.getHorarios().addElement("06:50");
-		ponto1.getHorarios().addElement("07:14");
+		ponto1.getHorarios().addElement("07:16");
 		ponto1.getHorarios().addElement("07:38");
 		ponto1.getHorarios().addElement("08:02");
 		ponto1.getHorarios().addElement("08:26");
@@ -102,11 +102,8 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("BAIRRO BORDA DO CAMPO");
 		ponto2.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto2.setValidoAPartirDe("01/09/2007");
+		ponto2.setValidoAPartirDe("11/08/2012");
 		onibus.getPontos().addElement(ponto2);
-		ponto2.getHorarios().addElement("05:00");
-		ponto2.getHorarios().addElement("05:30");
-		ponto2.getHorarios().addElement("06:00");
 		ponto2.getHorarios().addElement("06:30");
 		ponto2.getHorarios().addElement("07:00");
 		ponto2.getHorarios().addElement("07:30");
@@ -129,17 +126,14 @@
 		ponto2.getHorarios().addElement("17:30");
 		ponto2.getHorarios().addElement("18:00");
 		ponto2.getHorarios().addElement("18:30");
+		ponto2.getHorarios().addElement("19:00");
 		ponto2.getHorarios().addElement("19:30");
 		ponto2.getHorarios().addElement("20:30");
-		ponto2.getHorarios().addElement("21:30");
-		ponto2.getHorarios().addElement("22:30");
-		ponto2.getHorarios().addElement("23:30");
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("TERMINAL QUATRO BARRAS");
 		ponto3.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto3.setValidoAPartirDe("01/09/2007");
+		ponto3.setValidoAPartirDe("11/08/2012");
 		onibus.getPontos().addElement(ponto3);
-		ponto3.getHorarios().addElement("05:30");
 		ponto3.getHorarios().addElement("06:00");
 		ponto3.getHorarios().addElement("06:30");
 		ponto3.getHorarios().addElement("07:00");
@@ -165,16 +159,11 @@
 		ponto3.getHorarios().addElement("18:30");
 		ponto3.getHorarios().addElement("19:00");
 		ponto3.getHorarios().addElement("20:00");
-		ponto3.getHorarios().addElement("21:00");
-		ponto3.getHorarios().addElement("22:00");
-		ponto3.getHorarios().addElement("23:00");
-		ponto3.getHorarios().addElement("00:00");
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("BAIRRO BORDA DO CAMPO");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto4.setValidoAPartirDe("02/09/2007");
+		ponto4.setValidoAPartirDe("12/08/2012");
 		onibus.getPontos().addElement(ponto4);
-		ponto4.getHorarios().addElement("05:30");
 		ponto4.getHorarios().addElement("06:30");
 		ponto4.getHorarios().addElement("07:30");
 		ponto4.getHorarios().addElement("08:30");
@@ -190,15 +179,12 @@
 		ponto4.getHorarios().addElement("18:30");
 		ponto4.getHorarios().addElement("19:30");
 		ponto4.getHorarios().addElement("20:30");
-		ponto4.getHorarios().addElement("21:30");
-		ponto4.getHorarios().addElement("22:30");
-		ponto4.getHorarios().addElement("23:30");
+		ponto4.getHorarios().addElement("21:25");
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("TERMINAL QUATRO BARRAS");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto5.setValidoAPartirDe("02/09/2007");
+		ponto5.setValidoAPartirDe("12/08/2012");
 		onibus.getPontos().addElement(ponto5);
-		ponto5.getHorarios().addElement("06:00");
 		ponto5.getHorarios().addElement("07:00");
 		ponto5.getHorarios().addElement("08:00");
 		ponto5.getHorarios().addElement("09:00");
@@ -214,9 +200,6 @@
 		ponto5.getHorarios().addElement("19:00");
 		ponto5.getHorarios().addElement("20:00");
 		ponto5.getHorarios().addElement("21:00");
-		ponto5.getHorarios().addElement("22:00");
-		ponto5.getHorarios().addElement("23:00");
-		ponto5.getHorarios().addElement("00:00");
 		return onibus;
 		}
 	}

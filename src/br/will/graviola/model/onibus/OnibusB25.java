@@ -11,7 +11,7 @@
 	public class OnibusB25 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MARACANÃ / B. ALTO");
+		onibus.setNome("B25 - MARACANÃ / B. ALTO");
 		onibus.setCodigo("B25");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL BAIRRO ALTO");

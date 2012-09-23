@@ -11,7 +11,7 @@
 	public class Onibus622 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("RONDON");
+		onibus.setNome("622 - RONDON");
 		onibus.setCodigo("622");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO RONDON");

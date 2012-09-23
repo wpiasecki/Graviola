@@ -11,10 +11,10 @@
 	public class Onibus542 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("BAIRRO NOVO B");
+		onibus.setNome("542 - BAIRRO NOVO  B");
 		onibus.setCodigo("542");
 		Ponto ponto0 = new Ponto();
-		ponto0.setNome("BAIRRO NOVO \"B\"");
+		ponto0.setNome("BAIRRO NOVO B");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
 		ponto0.setValidoAPartirDe("09/07/2012");
 		onibus.getPontos().addElement(ponto0);
@@ -296,7 +296,7 @@
 		ponto1.getHorarios().addElement("00:05");
 		ponto1.getHorarios().addElement("00:30");
 		Ponto ponto2 = new Ponto();
-		ponto2.setNome("BAIRRO NOVO \"B\"");
+		ponto2.setNome("BAIRRO NOVO B");
 		ponto2.setTipoDia(TipoDia.getTipoDia("SABADO"));
 		ponto2.setValidoAPartirDe("14/07/2012");
 		onibus.getPontos().addElement(ponto2);
@@ -489,7 +489,7 @@
 		ponto3.getHorarios().addElement("23:50");
 		ponto3.getHorarios().addElement("00:10");
 		Ponto ponto4 = new Ponto();
-		ponto4.setNome("BAIRRO NOVO \"B\"");
+		ponto4.setNome("BAIRRO NOVO B");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
 		ponto4.setValidoAPartirDe("15/07/2012");
 		onibus.getPontos().addElement(ponto4);

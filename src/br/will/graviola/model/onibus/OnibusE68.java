@@ -11,7 +11,7 @@
 	public class OnibusE68 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / QUISISANA");
+		onibus.setNome("E68 - CTBA / QUISISANA");
 		onibus.setCodigo("E68");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO QUISISANA");

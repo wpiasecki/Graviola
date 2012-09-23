@@ -11,7 +11,7 @@
 	public class OnibusF03 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FAZENDA (DIRETO)");
+		onibus.setNome("F03 - FAZENDA (DIRETO)");
 		onibus.setCodigo("F03");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL FAZENDA RIO GRANDE");
@@ -137,7 +137,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("TERMINAL FAZENDA RIO GRANDE");
 		ponto2.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto2.setValidoAPartirDe("28/01/2012");
+		ponto2.setValidoAPartirDe("15/09/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:00");
 		ponto2.getHorarios().addElement("05:20");
@@ -163,7 +163,7 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("TERMINAL PINHEIRINHO");
 		ponto3.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto3.setValidoAPartirDe("28/01/2012");
+		ponto3.setValidoAPartirDe("15/09/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("16:10");
 		ponto3.getHorarios().addElement("16:28");

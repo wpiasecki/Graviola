@@ -11,7 +11,7 @@
 	public class OnibusD69 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. CTBA / PIRAQUARA");
+		onibus.setNome("D69 - MAD. CTBA / PIRAQUARA");
 		onibus.setCodigo("D69");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA SANTOS ANDRADE");

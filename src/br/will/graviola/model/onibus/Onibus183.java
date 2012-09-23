@@ -11,7 +11,7 @@
 	public class Onibus183 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. CHAPARRAL");
+		onibus.setNome("183 - JD. CHAPARRAL");
 		onibus.setCodigo("183");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JARDIM CHAPARRAL");

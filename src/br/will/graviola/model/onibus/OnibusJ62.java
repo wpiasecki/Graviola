@@ -11,7 +11,7 @@
 	public class OnibusJ62 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / C. LARGO");
+		onibus.setNome("J62 - CTBA / C. LARGO");
 		onibus.setCodigo("J62");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("FERNANDO MOREIRA");

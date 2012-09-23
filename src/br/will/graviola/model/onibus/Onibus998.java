@@ -11,19 +11,19 @@
 	public class Onibus998 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. VIVIAN MARCAL 1");
+		onibus.setNome("998 - E. E. VIVIAN MARCAL 1");
 		onibus.setCodigo("998");
 		Ponto ponto0 = new Ponto();
-		ponto0.setNome("ESCOLA VIVIAN MARCAL I");
+		ponto0.setNome("ESCOLA VIVIAN MARCAL SEDE");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("23/07/2012");
+		ponto0.setValidoAPartirDe("12/09/2012");
 		onibus.getPontos().addElement(ponto0);
-		ponto0.getHorarios().addElement("10:30");
-		ponto0.getHorarios().addElement("16:40");
+		ponto0.getHorarios().addElement("10:50");
+		ponto0.getHorarios().addElement("16:55");
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("ESCOLA VIVIAN MARCAL-SUB SEDE");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("23/07/2012");
+		ponto1.setValidoAPartirDe("12/09/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("07:55");
 		ponto1.getHorarios().addElement("11:10");
@@ -32,7 +32,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("BAIRRO - VIVIAN MARCAL 1");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("23/07/2012");
+		ponto2.setValidoAPartirDe("12/09/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:50");
 		ponto2.getHorarios().addElement("11:40");

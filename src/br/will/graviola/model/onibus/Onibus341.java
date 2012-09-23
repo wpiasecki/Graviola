@@ -11,7 +11,7 @@
 	public class Onibus341 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("B. ALTO / STA. CÂNDIDA");
+		onibus.setNome("341 - B. ALTO / STA. CÂNDIDA");
 		onibus.setCodigo("341");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL BAIRRO ALTO");

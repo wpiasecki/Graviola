@@ -11,7 +11,7 @@
 	public class Onibus229 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. PENHA / F. NORONHA");
+		onibus.setNome("229 - MAD. PENHA / F. NORONHA");
 		onibus.setCodigo("229");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERM.BOA VISTA-SENT.FER.NORONH");

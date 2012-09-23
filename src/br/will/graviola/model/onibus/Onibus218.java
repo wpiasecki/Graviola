@@ -11,7 +11,7 @@
 	public class Onibus218 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("TAMANDARÉ / CABRAL");
+		onibus.setNome("218 - TAMANDARÉ / CABRAL");
 		onibus.setCodigo("218");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("T.CACHOEIRA (SENT.TAMANDARE)");

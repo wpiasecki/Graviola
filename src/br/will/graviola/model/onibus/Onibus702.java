@@ -11,7 +11,7 @@
 	public class Onibus702 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FAZENDINHA / TAMANDARÉ");
+		onibus.setNome("702 - FAZENDINHA / TAMANDARÉ");
 		onibus.setCodigo("702");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESTACAO TUBO CONS.LAURINDO");

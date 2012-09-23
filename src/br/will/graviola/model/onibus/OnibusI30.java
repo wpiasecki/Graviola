@@ -11,7 +11,7 @@
 	public class OnibusI30 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("C. LARGO / BALSA NOVA");
+		onibus.setNome("I30 - C. LARGO / BALSA NOVA");
 		onibus.setCodigo("I30");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO BALSA NOVA");

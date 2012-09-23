@@ -11,7 +11,7 @@
 	public class Onibus461 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("STA. BARBARA");
+		onibus.setNome("461 - STA. BARBARA");
 		onibus.setCodigo("461");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SANTA BARBARA");

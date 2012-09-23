@@ -11,7 +11,7 @@
 	public class OnibusC64 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. CTBA / PINHAIS");
+		onibus.setNome("C64 - MAD. CTBA / PINHAIS");
 		onibus.setCodigo("C64");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("GUADALUPE/SAIDA");

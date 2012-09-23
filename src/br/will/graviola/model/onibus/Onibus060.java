@@ -11,7 +11,7 @@
 	public class Onibus060 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("INTERBAIRROS VI");
+		onibus.setNome("060 - INTERBAIRROS VI");
 		onibus.setCodigo("060");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAMPO COMPRIDO");

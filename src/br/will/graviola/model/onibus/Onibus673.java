@@ -11,7 +11,7 @@
 	public class Onibus673 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FORMOSA");
+		onibus.setNome("673 - FORMOSA");
 		onibus.setCodigo("673");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO FORMOSA");

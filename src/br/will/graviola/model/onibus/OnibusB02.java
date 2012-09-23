@@ -11,7 +11,7 @@
 	public class OnibusB02 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CABRAL / MARACANÃ");
+		onibus.setNome("B02 - CABRAL / MARACANÃ");
 		onibus.setCodigo("B02");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CABRAL");

@@ -11,7 +11,7 @@
 	public class Onibus270 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FERNANDO DE NORONHA");
+		onibus.setNome("270 - FERNANDO DE NORONHA");
 		onibus.setCodigo("270");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO FERNANDO NORONHA");
@@ -164,7 +164,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("BAIRRO FERNANDO NORONHA");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto4.setValidoAPartirDe("12/10/2007");
+		ponto4.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("06:35");
 		ponto4.getHorarios().addElement("07:45");
@@ -184,7 +184,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("TRAVESSA MOREIRA GARCEZ");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto5.setValidoAPartirDe("12/10/2007");
+		ponto5.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("07:10");
 		ponto5.getHorarios().addElement("08:20");

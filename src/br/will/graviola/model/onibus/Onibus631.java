@@ -11,7 +11,7 @@
 	public class Onibus631 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PIRATINI / BR 476");
+		onibus.setNome("631 - PIRATINI / BR 476");
 		onibus.setCodigo("631");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO PIRATINI");

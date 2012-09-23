@@ -11,7 +11,7 @@
 	public class Onibus663 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. CUBAS");
+		onibus.setNome("663 - V. CUBAS");
 		onibus.setCodigo("663");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA CUBAS");

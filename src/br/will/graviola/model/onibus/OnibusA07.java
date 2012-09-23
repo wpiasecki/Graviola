@@ -11,7 +11,7 @@
 	public class OnibusA07 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / TAMANDARÉ (LAMENHA)");
+		onibus.setNome("A07 - CTBA / TAMANDARÉ (LAMENHA)");
 		onibus.setCodigo("A07");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ITAPERUCU");

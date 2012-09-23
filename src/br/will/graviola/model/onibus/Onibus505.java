@@ -11,7 +11,7 @@
 	public class Onibus505 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("BOQUEIRÃO / C. CÍVICO");
+		onibus.setNome("505 - BOQUEIRÃO / C. CÍVICO");
 		onibus.setCodigo("505");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESTACAO TUBO SECRETARIAS");

@@ -11,12 +11,12 @@
 	public class OnibusG72 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / AREIA BRANCA");
+		onibus.setNome("G72 - CTBA / AREIA BRANCA");
 		onibus.setCodigo("G72");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ALAMEDA DR. MURICY");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("28/09/2011");
+		ponto0.setValidoAPartirDe("30/07/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("06:15");
 		ponto0.getHorarios().addElement("07:15");
@@ -42,7 +42,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("AREIA BRANCA");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("28/09/2011");
+		ponto1.setValidoAPartirDe("30/07/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("04:50");
 		ponto1.getHorarios().addElement("05:05");

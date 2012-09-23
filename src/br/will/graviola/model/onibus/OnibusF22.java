@@ -11,7 +11,7 @@
 	public class OnibusF22 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("NAÇÕES II");
+		onibus.setNome("F22 - NAÇÕES II");
 		onibus.setCodigo("F22");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("T.FAZENDA/NACOES II");

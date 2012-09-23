@@ -11,7 +11,7 @@
 	public class Onibus776 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CARMELA DUTRA");
+		onibus.setNome("776 - CARMELA DUTRA");
 		onibus.setCodigo("776");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO CARMELA DUTRA");

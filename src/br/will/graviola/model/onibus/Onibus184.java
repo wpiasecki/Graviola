@@ -11,7 +11,7 @@
 	public class Onibus184 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. SUIÇA");
+		onibus.setNome("184 - V. SUIÇA");
 		onibus.setCodigo("184");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA SUICA");

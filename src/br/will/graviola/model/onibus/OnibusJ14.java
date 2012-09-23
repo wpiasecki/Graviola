@@ -11,7 +11,7 @@
 	public class OnibusJ14 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("TIMBOTUVA (EST. NOVA)");
+		onibus.setNome("J14 - TIMBOTUVA (EST. NOVA)");
 		onibus.setCodigo("J14");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO TIMBUTUVA (EST.NOVA)");

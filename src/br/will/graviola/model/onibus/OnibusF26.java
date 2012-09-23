@@ -11,7 +11,7 @@
 	public class OnibusF26 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("STA. TEREZINHA / IPE");
+		onibus.setNome("F26 - STA. TEREZINHA / IPE");
 		onibus.setCodigo("F26");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("T.FAZENDA/S.TEREZINHA/IPE");

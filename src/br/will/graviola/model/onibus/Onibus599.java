@@ -11,7 +11,7 @@
 	public class Onibus599 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. HELENA ANTIPOFF 1");
+		onibus.setNome("599 - E. E. HELENA ANTIPOFF 1");
 		onibus.setCodigo("599");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO H.ANTIPOFF-RENASCER BOQ");

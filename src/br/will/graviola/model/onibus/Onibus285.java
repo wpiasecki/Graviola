@@ -11,7 +11,7 @@
 	public class Onibus285 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JUVEVÊ / ÁGUA VERDE");
+		onibus.setNome("285 - JUVEVÊ / ÁGUA VERDE");
 		onibus.setCodigo("285");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("AV MARECHAL FLORIANO");

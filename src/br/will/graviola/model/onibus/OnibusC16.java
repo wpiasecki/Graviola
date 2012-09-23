@@ -11,7 +11,7 @@
 	public class OnibusC16 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. IRAÍ");
+		onibus.setNome("C16 - JD. IRAÍ");
 		onibus.setCodigo("C16");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JARDIM IRAI");

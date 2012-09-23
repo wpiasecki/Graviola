@@ -11,7 +11,7 @@
 	public class OnibusK71 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / ITAPERUÇU");
+		onibus.setNome("K71 - CTBA / ITAPERUÇU");
 		onibus.setCodigo("K71");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("CAPINZAL");

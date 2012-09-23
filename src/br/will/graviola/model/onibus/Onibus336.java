@@ -11,7 +11,7 @@
 	public class Onibus336 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. RENO");
+		onibus.setNome("336 - V. RENO");
 		onibus.setCodigo("336");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CENTENARIO");

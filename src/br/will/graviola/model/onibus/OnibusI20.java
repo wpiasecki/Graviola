@@ -11,7 +11,7 @@
 	public class OnibusI20 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("COLOMBO / SÃO JOSÉ");
+		onibus.setNome("I20 - COLOMBO / SÃO JOSÉ");
 		onibus.setCodigo("I20");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERM.PINHAIS-SENT.AFONSO PENA");

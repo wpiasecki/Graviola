@@ -11,7 +11,7 @@
 	public class Onibus662 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("DOM ÁTICO");
+		onibus.setNome("662 - DOM ÁTICO");
 		onibus.setCodigo("662");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO DOM ATICO");

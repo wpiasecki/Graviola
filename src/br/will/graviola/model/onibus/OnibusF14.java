@@ -11,15 +11,15 @@
 	public class OnibusF14 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("STA. MARIA");
+		onibus.setNome("F14 - STA. MARIA");
 		onibus.setCodigo("F14");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("T.FAZENDA/FINAL R.CTBA.");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("13/04/2012");
+		ponto0.setValidoAPartirDe("24/09/2012");
 		onibus.getPontos().addElement(ponto0);
-		ponto0.getHorarios().addElement("04:30");
-		ponto0.getHorarios().addElement("05:10");
+		ponto0.getHorarios().addElement("04:25");
+		ponto0.getHorarios().addElement("05:00");
 		ponto0.getHorarios().addElement("05:50");
 		ponto0.getHorarios().addElement("06:30");
 		ponto0.getHorarios().addElement("07:10");
@@ -36,7 +36,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERM.FAZENDA/STA.MARIA");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("13/04/2012");
+		ponto1.setValidoAPartirDe("24/09/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("04:50");
 		ponto1.getHorarios().addElement("05:30");
@@ -63,6 +63,7 @@
 		ponto1.getHorarios().addElement("17:50");
 		ponto1.getHorarios().addElement("18:10");
 		ponto1.getHorarios().addElement("18:50");
+		ponto1.getHorarios().addElement("19:30");
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("T.FAZENDA/FINAL R.CTBA.");
 		ponto2.setTipoDia(TipoDia.getTipoDia("SABADO"));

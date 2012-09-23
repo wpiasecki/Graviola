@@ -11,7 +11,7 @@
 	public class OnibusD23 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. MACEDO");
+		onibus.setNome("D23 - V. MACEDO");
 		onibus.setCodigo("D23");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERM.PINHAIS SENT.V.MILITAR");

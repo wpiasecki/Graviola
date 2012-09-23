@@ -11,7 +11,7 @@
 	public class OnibusJ19 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. FERRARIA");
+		onibus.setNome("J19 - MAD. FERRARIA");
 		onibus.setCodigo("J19");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO FERRARIA");

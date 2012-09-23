@@ -11,7 +11,7 @@
 	public class Onibus512 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ITAMARATI");
+		onibus.setNome("512 - ITAMARATI");
 		onibus.setCodigo("512");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO ITAMARATI");

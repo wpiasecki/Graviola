@@ -11,7 +11,7 @@
 	public class Onibus915 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("OURO VERDE / V. BÁDIA");
+		onibus.setNome("915 - OURO VERDE / V. BÁDIA");
 		onibus.setCodigo("915");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO OURO VERDE");

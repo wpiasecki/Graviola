@@ -11,7 +11,7 @@
 	public class OnibusK11 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ITAPERUÇU / TAMANDARÉ");
+		onibus.setNome("K11 - ITAPERUÇU / TAMANDARÉ");
 		onibus.setCodigo("K11");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ITAPERUCU");

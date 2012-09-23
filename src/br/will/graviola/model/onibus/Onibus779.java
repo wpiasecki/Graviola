@@ -11,7 +11,7 @@
 	public class Onibus779 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("VILA VELHA/BURITI");
+		onibus.setNome("779 - VILA VELHA/BURITI");
 		onibus.setCodigo("779");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA VELHA");

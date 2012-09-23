@@ -11,18 +11,18 @@
 	public class Onibus022 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("INTER 2 (HORÁRIO)");
+		onibus.setNome("022 - INTER 2 (HORÁRIO)");
 		onibus.setCodigo("022");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESTACAO TUBO MERCES");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("02/07/2012");
+		ponto0.setValidoAPartirDe("30/07/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("18:00");
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL CABRAL");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("02/07/2012");
+		ponto1.setValidoAPartirDe("30/07/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:57");
 		ponto1.getHorarios().addElement("06:00");
@@ -193,6 +193,8 @@
 		ponto1.getHorarios().addElement("21:42");
 		ponto1.getHorarios().addElement("21:58");
 		ponto1.getHorarios().addElement("22:15");
+		ponto1.getHorarios().addElement("22:25");
+		ponto1.getHorarios().addElement("22:30");
 		ponto1.getHorarios().addElement("22:34");
 		ponto1.getHorarios().addElement("22:48");
 		ponto1.getHorarios().addElement("23:05");
@@ -202,7 +204,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("TERMINAL CAMPINA DO SIQUEIRA");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("02/07/2012");
+		ponto2.setValidoAPartirDe("30/07/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:45");
 		ponto2.getHorarios().addElement("05:55");
@@ -381,7 +383,7 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("TERMINAL CAPAO DA IMBUIA");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("02/07/2012");
+		ponto3.setValidoAPartirDe("30/07/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("05:50");
 		ponto3.getHorarios().addElement("05:58");
@@ -553,6 +555,8 @@
 		ponto3.getHorarios().addElement("22:04");
 		ponto3.getHorarios().addElement("22:20");
 		ponto3.getHorarios().addElement("22:37");
+		ponto3.getHorarios().addElement("22:45");
+		ponto3.getHorarios().addElement("22:51");
 		ponto3.getHorarios().addElement("22:55");
 		ponto3.getHorarios().addElement("23:10");
 		ponto3.getHorarios().addElement("23:27");
@@ -561,7 +565,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("TERMINAL CAPAO RASO");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto4.setValidoAPartirDe("02/07/2012");
+		ponto4.setValidoAPartirDe("30/07/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("05:56");
 		ponto4.getHorarios().addElement("06:00");
@@ -742,7 +746,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("TERMINAL HAUER");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto5.setValidoAPartirDe("02/07/2012");
+		ponto5.setValidoAPartirDe("30/07/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("06:02");
 		ponto5.getHorarios().addElement("06:06");
@@ -916,6 +920,7 @@
 		ponto5.getHorarios().addElement("22:20");
 		ponto5.getHorarios().addElement("22:36");
 		ponto5.getHorarios().addElement("22:53");
+		ponto5.getHorarios().addElement("23:05");
 		ponto5.getHorarios().addElement("23:10");
 		ponto5.getHorarios().addElement("23:26");
 		ponto5.getHorarios().addElement("23:43");
@@ -923,7 +928,7 @@
 		Ponto ponto6 = new Ponto();
 		ponto6.setNome("TERMINAL PORTAO");
 		ponto6.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto6.setValidoAPartirDe("02/07/2012");
+		ponto6.setValidoAPartirDe("30/07/2012");
 		onibus.getPontos().addElement(ponto6);
 		ponto6.getHorarios().addElement("06:00");
 		ponto6.getHorarios().addElement("06:02");

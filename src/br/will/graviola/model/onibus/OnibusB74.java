@@ -11,7 +11,7 @@
 	public class OnibusB74 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / JD. CÉSAR AUGUSTO");
+		onibus.setNome("B74 - CTBA / JD. CÉSAR AUGUSTO");
 		onibus.setCodigo("B74");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("JARDIM CESAR AUGUSTO");

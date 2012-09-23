@@ -11,7 +11,7 @@
 	public class Onibus598 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. APAE 3");
+		onibus.setNome("598 - E. E. APAE 3");
 		onibus.setCodigo("598");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JARDIM DA ORDEM");

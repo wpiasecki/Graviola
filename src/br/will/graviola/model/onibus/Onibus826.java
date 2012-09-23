@@ -11,7 +11,7 @@
 	public class Onibus826 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("C. COMPRIDO / CIC");
+		onibus.setNome("826 - C. COMPRIDO / CIC");
 		onibus.setCodigo("826");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERM.CAIUA SENTIDO TERM.C.COMP");

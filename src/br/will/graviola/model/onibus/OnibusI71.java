@@ -11,7 +11,7 @@
 	public class OnibusI71 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ITAPERUÇU / CAIC");
+		onibus.setNome("I71 - ITAPERUÇU / CAIC");
 		onibus.setCodigo("I71");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("CAIC");

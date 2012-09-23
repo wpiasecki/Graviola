@@ -11,7 +11,7 @@
 	public class Onibus280 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("NOSSA SRA. DE NAZARÉ");
+		onibus.setNome("280 - NOSSA SRA. DE NAZARÉ");
 		onibus.setCodigo("280");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO NOSSA SENHORA DE NAZARE");
@@ -178,7 +178,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("BAIRRO NOSSA SENHORA DE NAZARE");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto4.setValidoAPartirDe("12/10/2007");
+		ponto4.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("05:40");
 		ponto4.getHorarios().addElement("06:30");
@@ -202,7 +202,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("PRACA TIRADENTES");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto5.setValidoAPartirDe("12/10/2007");
+		ponto5.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("06:05");
 		ponto5.getHorarios().addElement("07:00");

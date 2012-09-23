@@ -11,7 +11,7 @@
 	public class Onibus912 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JOSÉ CULPI");
+		onibus.setNome("912 - JOSÉ CULPI");
 		onibus.setCodigo("912");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JOSE CULPI");

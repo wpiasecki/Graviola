@@ -11,7 +11,7 @@
 	public class OnibusP65 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / TERRA BOA");
+		onibus.setNome("P65 - CTBA / TERRA BOA");
 		onibus.setCodigo("P65");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO TERRA BOA");

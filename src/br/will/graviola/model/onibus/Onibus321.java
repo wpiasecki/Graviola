@@ -11,7 +11,7 @@
 	public class Onibus321 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("TRINDADE");
+		onibus.setNome("321 - TRINDADE");
 		onibus.setCodigo("321");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO TRINDADE");

@@ -11,7 +11,7 @@
 	public class OnibusB72 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / COLOMBO (ROD. UVA)");
+		onibus.setNome("B72 - CTBA / COLOMBO (ROD. UVA)");
 		onibus.setCodigo("B72");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("COLOMBO (CAMBARA)");

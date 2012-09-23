@@ -11,7 +11,7 @@
 	public class Onibus393 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("C. IMBUIA / PQ. BARIGUI");
+		onibus.setNome("393 - C. IMBUIA / PQ. BARIGUI");
 		onibus.setCodigo("393");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO CAPAO DA IMBUIA");

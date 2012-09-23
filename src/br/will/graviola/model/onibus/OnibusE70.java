@@ -11,7 +11,7 @@
 	public class OnibusE70 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / PUC");
+		onibus.setNome("E70 - CTBA / PUC");
 		onibus.setCodigo("E70");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("CAMPUS DA PUC");

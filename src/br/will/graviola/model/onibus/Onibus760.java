@@ -11,7 +11,7 @@
 	public class Onibus760 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("STA. QUITÉRIA");
+		onibus.setNome("760 - STA. QUITÉRIA");
 		onibus.setCodigo("760");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SANTA QUITERIA");

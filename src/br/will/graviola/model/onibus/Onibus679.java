@@ -11,7 +11,7 @@
 	public class Onibus679 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. TATUQUARA");
+		onibus.setNome("679 - MAD. TATUQUARA");
 		onibus.setCodigo("679");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL PINHEIRINHO");

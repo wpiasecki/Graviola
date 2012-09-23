@@ -11,7 +11,7 @@
 	public class Onibus212 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("SOLAR");
+		onibus.setNome("212 - SOLAR");
 		onibus.setCodigo("212");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SOLAR");

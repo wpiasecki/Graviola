@@ -11,7 +11,7 @@
 	public class OnibusF05 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FAZENDA / CIC");
+		onibus.setNome("F05 - FAZENDA / CIC");
 		onibus.setCodigo("F05");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CIC");

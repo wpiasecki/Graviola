@@ -11,7 +11,7 @@
 	public class OnibusC23 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("EMILIANO PERNETA");
+		onibus.setNome("C23 - EMILIANO PERNETA");
 		onibus.setCodigo("C23");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL PINHAIS");

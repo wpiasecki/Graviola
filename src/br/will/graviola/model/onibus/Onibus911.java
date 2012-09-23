@@ -11,7 +11,7 @@
 	public class Onibus911 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PASSAÚNA");
+		onibus.setNome("911 - PASSAÚNA");
 		onibus.setCodigo("911");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO PASSAUNA");

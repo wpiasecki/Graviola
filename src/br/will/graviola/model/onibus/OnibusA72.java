@@ -11,7 +11,7 @@
 	public class OnibusA72 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / JD. PARAÍSO");
+		onibus.setNome("A72 - CTBA / JD. PARAÍSO");
 		onibus.setCodigo("A72");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JARDIM PARAISO");

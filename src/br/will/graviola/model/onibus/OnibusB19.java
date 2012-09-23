@@ -11,7 +11,7 @@
 	public class OnibusB19 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MONTE CASTELO");
+		onibus.setNome("B19 - MONTE CASTELO");
 		onibus.setCodigo("B19");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO MONTE CASTELO");

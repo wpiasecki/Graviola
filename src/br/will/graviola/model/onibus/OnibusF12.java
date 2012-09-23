@@ -11,7 +11,7 @@
 	public class OnibusF12 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("IGUAÇU I");
+		onibus.setNome("F12 - IGUAÇU I");
 		onibus.setCodigo("F12");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("T.FAZENDA/IGUACU I");

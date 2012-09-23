@@ -11,7 +11,7 @@
 	public class Onibus619 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("STA. RITA / CIC");
+		onibus.setNome("619 - STA. RITA / CIC");
 		onibus.setCodigo("619");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SANTA RITA");

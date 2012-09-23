@@ -11,7 +11,7 @@
 	public class Onibus541 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("BAIRRO NOVO A");
+		onibus.setNome("541 - BAIRRO NOVO A");
 		onibus.setCodigo("541");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL SITIO CERCADO");

@@ -11,7 +11,7 @@
 	public class OnibusI32 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ARAUCARIA / CAMPO LARGO");
+		onibus.setNome("I32 - ARAUCARIA / CAMPO LARGO");
 		onibus.setCodigo("I32");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAMPO LARGO");

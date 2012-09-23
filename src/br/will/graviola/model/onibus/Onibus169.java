@@ -11,12 +11,12 @@
 	public class Onibus169 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. KOSMOS");
+		onibus.setNome("169 - JD. KOSMOS");
 		onibus.setCodigo("169");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JARDIM KOSMOS");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("26/07/2010");
+		ponto0.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:40");
 		ponto0.getHorarios().addElement("06:03");
@@ -63,7 +63,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("RUA NESTOR DE CASTRO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("26/07/2010");
+		ponto1.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("06:03");
 		ponto1.getHorarios().addElement("06:26");
@@ -110,7 +110,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("BAIRRO JARDIM KOSMOS");
 		ponto2.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto2.setValidoAPartirDe("31/07/2010");
+		ponto2.setValidoAPartirDe("25/08/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("06:00");
 		ponto2.getHorarios().addElement("06:25");
@@ -149,7 +149,7 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("RUA NESTOR DE CASTRO");
 		ponto3.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto3.setValidoAPartirDe("31/07/2010");
+		ponto3.setValidoAPartirDe("25/08/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("06:25");
 		ponto3.getHorarios().addElement("06:50");
@@ -188,7 +188,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("BAIRRO JARDIM KOSMOS");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto4.setValidoAPartirDe("26/09/2010");
+		ponto4.setValidoAPartirDe("26/08/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("06:00");
 		ponto4.getHorarios().addElement("06:30");
@@ -225,7 +225,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("RUA NESTOR DE CASTRO");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto5.setValidoAPartirDe("26/09/2010");
+		ponto5.setValidoAPartirDe("26/08/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("06:30");
 		ponto5.getHorarios().addElement("07:00");

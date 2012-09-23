@@ -11,7 +11,7 @@
 	public class Onibus623 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PARQUE INDUSTRIAL");
+		onibus.setNome("623 - PARQUE INDUSTRIAL");
 		onibus.setCodigo("623");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO PARQUE INDUSTRIAL");

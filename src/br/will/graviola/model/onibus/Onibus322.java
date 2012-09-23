@@ -11,12 +11,12 @@
 	public class Onibus322 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CAMARGO");
+		onibus.setNome("322 - CAMARGO");
 		onibus.setCodigo("322");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CENTENARIO");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("09/07/2012");
+		ponto0.setValidoAPartirDe("17/09/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:00");
 		ponto0.getHorarios().addElement("05:30");
@@ -82,7 +82,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL V.OFICINAS");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("09/07/2012");
+		ponto1.setValidoAPartirDe("17/09/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:15");
 		ponto1.getHorarios().addElement("05:35");
@@ -135,6 +135,7 @@
 		ponto1.getHorarios().addElement("18:54");
 		ponto1.getHorarios().addElement("19:08");
 		ponto1.getHorarios().addElement("19:22");
+		ponto1.getHorarios().addElement("19:39");
 		ponto1.getHorarios().addElement("20:00");
 		ponto1.getHorarios().addElement("20:36");
 		ponto1.getHorarios().addElement("21:12");

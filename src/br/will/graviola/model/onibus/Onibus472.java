@@ -11,7 +11,7 @@
 	public class Onibus472 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("UBERABA");
+		onibus.setNome("472 - UBERABA");
 		onibus.setCodigo("472");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO UBERABA");

@@ -11,7 +11,7 @@
 	public class Onibus666 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("NOVO MUNDO");
+		onibus.setNome("666 - NOVO MUNDO");
 		onibus.setCodigo("666");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO NOVO MUNDO");

@@ -11,7 +11,7 @@
 	public class Onibus385 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CRISTO REI");
+		onibus.setNome("385 - CRISTO REI");
 		onibus.setCodigo("385");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO CRISTO REI");

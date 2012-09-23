@@ -11,7 +11,7 @@
 	public class OnibusE31 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PUC / SÃO JOSÉ");
+		onibus.setNome("E31 - PUC / SÃO JOSÉ");
 		onibus.setCodigo("E31");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PUC (SAO JOSE)");

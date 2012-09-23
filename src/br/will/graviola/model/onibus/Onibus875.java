@@ -11,7 +11,7 @@
 	public class Onibus875 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("BIGORRILHO");
+		onibus.setNome("875 - BIGORRILHO");
 		onibus.setCodigo("875");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO BIGORRILHO");

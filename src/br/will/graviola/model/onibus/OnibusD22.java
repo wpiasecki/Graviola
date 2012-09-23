@@ -11,7 +11,7 @@
 	public class OnibusD22 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("GUARITUBA");
+		onibus.setNome("D22 - GUARITUBA");
 		onibus.setCodigo("D22");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("GUARITUBA");

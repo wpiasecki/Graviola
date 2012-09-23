@@ -11,7 +11,7 @@
 	public class Onibus809 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. CAMPO COMPRIDO");
+		onibus.setNome("809 - MAD. CAMPO COMPRIDO");
 		onibus.setCodigo("809");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESTACAO TUBO CIC NORTE");

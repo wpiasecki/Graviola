@@ -11,7 +11,7 @@
 	public class OnibusE72 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / JD. IZAURA");
+		onibus.setNome("E72 - CTBA / JD. IZAURA");
 		onibus.setCodigo("E72");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JD.IZAURA");

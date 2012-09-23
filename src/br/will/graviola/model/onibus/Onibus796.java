@@ -11,7 +11,7 @@
 	public class Onibus796 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. STA. HELENA");
+		onibus.setNome("796 - E. E. STA. HELENA");
 		onibus.setCodigo("796");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESCOLA NILZA (SEDE)");

@@ -11,7 +11,7 @@
 	public class Onibus861 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("TRAMONTINA");
+		onibus.setNome("861 - TRAMONTINA");
 		onibus.setCodigo("861");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO TRAMONTINA");

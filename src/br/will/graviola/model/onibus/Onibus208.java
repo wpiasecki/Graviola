@@ -11,7 +11,7 @@
 	public class Onibus208 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("AEROPORTO");
+		onibus.setNome("208 - AEROPORTO");
 		onibus.setCodigo("208");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("CENTRO CIVICO");

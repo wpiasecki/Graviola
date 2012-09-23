@@ -11,7 +11,7 @@
 	public class Onibus374 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("HUGO LANGE");
+		onibus.setNome("374 - HUGO LANGE");
 		onibus.setCodigo("374");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA SANTOS ANDRADE");

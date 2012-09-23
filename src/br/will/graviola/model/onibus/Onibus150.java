@@ -11,7 +11,7 @@
 	public class Onibus150 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("C. MÚSICA / V. ALEGRE");
+		onibus.setNome("150 - C. MÚSICA / V. ALEGRE");
 		onibus.setCodigo("150");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("CANAL DA MUSICA");

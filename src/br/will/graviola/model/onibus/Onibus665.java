@@ -11,7 +11,7 @@
 	public class Onibus665 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. REX");
+		onibus.setNome("665 - V. REX");
 		onibus.setCodigo("665");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA REX");

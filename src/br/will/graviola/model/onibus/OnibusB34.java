@@ -11,7 +11,7 @@
 	public class OnibusB34 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("GUARAITUBA / MARACANA");
+		onibus.setNome("B34 - GUARAITUBA / MARACANA");
 		onibus.setCodigo("B34");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL MARACANA");

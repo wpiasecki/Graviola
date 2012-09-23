@@ -11,7 +11,7 @@
 	public class Onibus303 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CENTENÁRIO / C. COMPRIDO");
+		onibus.setNome("303 - CENTENÁRIO / C. COMPRIDO");
 		onibus.setCodigo("303");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESTACAO TUBO EUFRASIO CORREIA");

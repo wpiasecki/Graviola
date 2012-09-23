@@ -11,7 +11,7 @@
 	public class Onibus789 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. CAIUÁ");
+		onibus.setNome("789 - MAD. CAIUÁ");
 		onibus.setCodigo("789");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("RUI BARBOSA/CHEGADA");

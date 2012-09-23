@@ -11,7 +11,7 @@
 	public class Onibus313 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("AVENIDA IRAÍ / C. IMBUIA");
+		onibus.setNome("313 - AVENIDA IRAÍ / C. IMBUIA");
 		onibus.setCodigo("313");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("AVENIDA IRAI");

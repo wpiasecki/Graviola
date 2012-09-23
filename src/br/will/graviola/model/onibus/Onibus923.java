@@ -11,7 +11,7 @@
 	public class Onibus923 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CAMPO MAGRO");
+		onibus.setNome("923 - CAMPO MAGRO");
 		onibus.setCodigo("923");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO CAMPO MAGRO");

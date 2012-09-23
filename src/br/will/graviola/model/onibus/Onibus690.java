@@ -11,7 +11,7 @@
 	public class Onibus690 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V.JULIANA");
+		onibus.setNome("690 - V.JULIANA");
 		onibus.setCodigo("690");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL PINHEIRINHO");

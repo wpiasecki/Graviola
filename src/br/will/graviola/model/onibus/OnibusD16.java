@@ -11,7 +11,7 @@
 	public class OnibusD16 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PRESÍDIO");
+		onibus.setNome("D16 - PRESÍDIO");
 		onibus.setCodigo("D16");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRESIDIO PIRAQUARA");

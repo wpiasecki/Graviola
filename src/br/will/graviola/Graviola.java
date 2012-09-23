@@ -29,7 +29,7 @@ import br.will.graviola.ui.HorarioCanvas;
  */
 public class Graviola extends MIDlet implements CommandListener
 {
-	private static final String VERSAO = "1.0";
+	private static final String VERSAO = "1.1.0";
 	
 	/*
 	 * comandos

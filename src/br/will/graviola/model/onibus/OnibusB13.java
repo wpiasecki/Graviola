@@ -11,7 +11,7 @@
 	public class OnibusB13 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. DAS GRAÇAS");
+		onibus.setNome("B13 - JD. DAS GRAÇAS");
 		onibus.setCodigo("B13");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JARDIM DAS GRACAS");

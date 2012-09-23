@@ -11,7 +11,7 @@
 	public class Onibus860 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. SANDRA");
+		onibus.setNome("860 - V. SANDRA");
 		onibus.setCodigo("860");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA SANDRA");

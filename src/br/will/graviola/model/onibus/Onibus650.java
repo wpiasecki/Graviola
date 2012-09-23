@@ -11,12 +11,12 @@
 	public class Onibus650 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("STA. RITA / PINHEIRINHO");
+		onibus.setNome("650 - STA. RITA / PINHEIRINHO");
 		onibus.setCodigo("650");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SANTA RITA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("26/03/2012");
+		ponto0.setValidoAPartirDe("22/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("04:45");
 		ponto0.getHorarios().addElement("05:02");
@@ -103,7 +103,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL PINHEIRINHO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("26/03/2012");
+		ponto1.setValidoAPartirDe("22/08/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:25");
 		ponto1.getHorarios().addElement("05:36");
@@ -188,14 +188,14 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("T.PINHEIRINHO VIA KRAFT/WHB");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("26/03/2012");
+		ponto2.setValidoAPartirDe("22/08/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:50");
 		ponto2.getHorarios().addElement("06:03");
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("BAIRRO SANTA RITA DIRETO");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("26/03/2012");
+		ponto3.setValidoAPartirDe("22/08/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("05:49");
 		ponto3.getHorarios().addElement("06:01");
@@ -214,7 +214,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("T. PINHEIRINHO VAZIO STA RITA");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto4.setValidoAPartirDe("26/03/2012");
+		ponto4.setValidoAPartirDe("22/08/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("06:14");
 		ponto4.getHorarios().addElement("06:26");
@@ -228,9 +228,8 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("BAIRRO VAZIO T. PINHEIRINHO");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto5.setValidoAPartirDe("26/03/2012");
+		ponto5.setValidoAPartirDe("22/08/2012");
 		onibus.getPontos().addElement(ponto5);
-		ponto5.getHorarios().addElement("17:36");
 		ponto5.getHorarios().addElement("17:50");
 		ponto5.getHorarios().addElement("18:03");
 		ponto5.getHorarios().addElement("18:16");
@@ -241,9 +240,8 @@
 		Ponto ponto6 = new Ponto();
 		ponto6.setNome("T. PINHEIRINHO DIRETO STA RITA");
 		ponto6.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto6.setValidoAPartirDe("26/03/2012");
+		ponto6.setValidoAPartirDe("22/08/2012");
 		onibus.getPontos().addElement(ponto6);
-		ponto6.getHorarios().addElement("17:10");
 		ponto6.getHorarios().addElement("17:24");
 		ponto6.getHorarios().addElement("17:37");
 		ponto6.getHorarios().addElement("17:50");

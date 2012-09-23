@@ -11,7 +11,7 @@
 	public class OnibusB14 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PLANALTO");
+		onibus.setNome("B14 - PLANALTO");
 		onibus.setCodigo("B14");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO PLANALTO");

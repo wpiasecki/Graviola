@@ -11,7 +11,7 @@
 	public class Onibus365 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. SOCIAL / BATEL");
+		onibus.setNome("365 - JD. SOCIAL / BATEL");
 		onibus.setCodigo("365");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO BATEL");

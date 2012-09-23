@@ -11,7 +11,7 @@
 	public class Onibus389 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. TARUMÃ / AUGUSTA");
+		onibus.setNome("389 - MAD. TARUMÃ / AUGUSTA");
 		onibus.setCodigo("389");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("CARLOS GOMES/CHEGADA");

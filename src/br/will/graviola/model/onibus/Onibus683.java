@@ -11,7 +11,7 @@
 	public class Onibus683 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FUTURAMA / S. CERCADO");
+		onibus.setNome("683 - FUTURAMA / S. CERCADO");
 		onibus.setCodigo("683");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL SITIO CERCADO");

@@ -11,7 +11,7 @@
 	public class Onibus697 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. ECUMÊNICA 1");
+		onibus.setNome("697 - E. E. ECUMÊNICA 1");
 		onibus.setCodigo("697");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO - ECUMENICA 1");

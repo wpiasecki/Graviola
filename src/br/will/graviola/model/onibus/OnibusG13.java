@@ -11,7 +11,7 @@
 	public class OnibusG13 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("LG. FERREIRAS / PINHEIRINHO");
+		onibus.setNome("G13 - LG. FERREIRAS / PINHEIRINHO");
 		onibus.setCodigo("G13");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL PINHEIRINHO");

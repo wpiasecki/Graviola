@@ -11,7 +11,7 @@
 	public class Onibus342 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("B. ALTO / BOA VISTA");
+		onibus.setNome("342 - B. ALTO / BOA VISTA");
 		onibus.setCodigo("342");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL BAIRRO ALTO");

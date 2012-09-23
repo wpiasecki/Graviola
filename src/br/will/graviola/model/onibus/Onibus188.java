@@ -11,7 +11,7 @@
 	public class Onibus188 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. PILARZINHO / UBERABA");
+		onibus.setNome("188 - MAD. PILARZINHO / UBERABA");
 		onibus.setCodigo("188");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO M.PILARZINHO");

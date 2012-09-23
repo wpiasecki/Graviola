@@ -11,7 +11,7 @@
 	public class Onibus652 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. VERDE");
+		onibus.setNome("652 - V. VERDE");
 		onibus.setCodigo("652");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA VERDE");

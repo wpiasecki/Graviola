@@ -11,7 +11,7 @@
 	public class OnibusE62 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / PEDRO MORO");
+		onibus.setNome("E62 - CTBA / PEDRO MORO");
 		onibus.setCodigo("E62");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO PEDRO MORO");

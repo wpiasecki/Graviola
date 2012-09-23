@@ -11,7 +11,7 @@
 	public class Onibus674 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("NOSSA SRA. DA LUZ");
+		onibus.setNome("674 - NOSSA SRA. DA LUZ");
 		onibus.setCodigo("674");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO CARBOMAFRA");

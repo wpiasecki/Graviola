@@ -11,7 +11,7 @@
 	public class Onibus551 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("XAXIM / LINHA VERDE");
+		onibus.setNome("551 - XAXIM / LINHA VERDE");
 		onibus.setCodigo("551");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESTACAO TUBO XAXIM-LINHA VERDE");

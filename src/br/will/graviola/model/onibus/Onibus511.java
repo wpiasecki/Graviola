@@ -11,7 +11,7 @@
 	public class Onibus511 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("SÃO FRANCISCO");
+		onibus.setNome("511 - SÃO FRANCISCO");
 		onibus.setCodigo("511");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SAO FRANCISCO");

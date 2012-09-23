@@ -11,7 +11,7 @@
 	public class Onibus624 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. SÃO PEDRO");
+		onibus.setNome("624 - V. SÃO PEDRO");
 		onibus.setCodigo("624");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA SAO PEDRO");

@@ -11,7 +11,7 @@
 	public class Onibus967 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JÚLIO GRAF");
+		onibus.setNome("967 - JÚLIO GRAF");
 		onibus.setCodigo("967");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JULIO GRAF");

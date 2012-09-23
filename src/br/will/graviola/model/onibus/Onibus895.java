@@ -11,7 +11,7 @@
 	public class Onibus895 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. TATUQUARA");
+		onibus.setNome("895 - E. E. TATUQUARA");
 		onibus.setCodigo("895");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO");

@@ -11,7 +11,7 @@
 	public class Onibus636 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("RIO NEGRO");
+		onibus.setNome("636 - RIO NEGRO");
 		onibus.setCodigo("636");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO RIO NEGRO");

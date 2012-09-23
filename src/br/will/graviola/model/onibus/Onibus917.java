@@ -11,7 +11,7 @@
 	public class Onibus917 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. IPÊ");
+		onibus.setNome("917 - JD. IPÊ");
 		onibus.setCodigo("917");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO IPE");

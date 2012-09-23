@@ -11,7 +11,7 @@
 	public class OnibusG73 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / CAMP. DOS PAULAS");
+		onibus.setNome("G73 - CTBA / CAMP. DOS PAULAS");
 		onibus.setCodigo("G73");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ALAMEDA DR. MURICY");

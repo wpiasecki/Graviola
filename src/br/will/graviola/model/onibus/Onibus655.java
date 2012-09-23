@@ -11,7 +11,7 @@
 	public class Onibus655 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. ORDEM");
+		onibus.setNome("655 - JD. ORDEM");
 		onibus.setCodigo("655");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JARDIM DA ORDEM");

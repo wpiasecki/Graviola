@@ -11,7 +11,7 @@
 	public class OnibusD31 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. BELA VISTA");
+		onibus.setNome("D31 - JD. BELA VISTA");
 		onibus.setCodigo("D31");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("JARDIM BELA VISTA");

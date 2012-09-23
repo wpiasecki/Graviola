@@ -11,7 +11,7 @@
 	public class Onibus713 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("STA. AMÉLIA");
+		onibus.setNome("713 - STA. AMÉLIA");
 		onibus.setCodigo("713");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO DA SANTA AMELIA");

@@ -11,7 +11,7 @@
 	public class Onibus338 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CENTENÁRIO / HAUER");
+		onibus.setNome("338 - CENTENÁRIO / HAUER");
 		onibus.setCodigo("338");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO MARUMBI");

@@ -11,7 +11,7 @@
 	public class Onibus523 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("IGUAPE I");
+		onibus.setNome("523 - IGUAPE I");
 		onibus.setCodigo("523");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO IGUAPE - I");

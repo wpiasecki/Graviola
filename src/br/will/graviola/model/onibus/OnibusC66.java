@@ -11,7 +11,7 @@
 	public class OnibusC66 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / V. ZUMBI");
+		onibus.setNome("C66 - CTBA / V. ZUMBI");
 		onibus.setCodigo("C66");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA ZUMBI");

@@ -11,7 +11,7 @@
 	public class Onibus002 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CIRCULAR CENTRO (ANTI-HORÁRIO)");
+		onibus.setNome("002 - CIRCULAR CENTRO (ANTI-HORÁRIO)");
 		onibus.setCodigo("002");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA 19 DE DEZEMBRO");

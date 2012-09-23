@@ -11,7 +11,7 @@
 	public class Onibus040 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("INTERBAIRROS IV");
+		onibus.setNome("040 - INTERBAIRROS IV");
 		onibus.setCodigo("040");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL PINHEIRINHO");

@@ -11,7 +11,7 @@
 	public class OnibusC30 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. GRANDE / V. TARUMÃ");
+		onibus.setNome("C30 - V. GRANDE / V. TARUMÃ");
 		onibus.setCodigo("C30");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VARGEM GRANDE");

@@ -11,7 +11,7 @@
 	public class OnibusE11 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("T. BOQ. / T. AFONSO PENA");
+		onibus.setNome("E11 - T. BOQ. / T. AFONSO PENA");
 		onibus.setCodigo("E11");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL AFONSO PENA");

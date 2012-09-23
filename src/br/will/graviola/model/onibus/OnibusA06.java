@@ -11,7 +11,7 @@
 	public class OnibusA06 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / TAMANDARÉ (MINÉRIOS)");
+		onibus.setNome("A06 - CTBA / TAMANDARÉ (MINÉRIOS)");
 		onibus.setCodigo("A06");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("CAIC");

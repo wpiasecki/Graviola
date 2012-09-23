@@ -11,7 +11,7 @@
 	public class OnibusC72 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA  / V. PALMITAL");
+		onibus.setNome("C72 - CTBA  / V. PALMITAL");
 		onibus.setCodigo("C72");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA PALMITAL");

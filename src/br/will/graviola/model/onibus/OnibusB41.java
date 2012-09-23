@@ -11,7 +11,7 @@
 	public class OnibusB41 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MARACANÃ / C. IMBUIA");
+		onibus.setNome("B41 - MARACANÃ / C. IMBUIA");
 		onibus.setCodigo("B41");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAPAO DA IMBUIA");

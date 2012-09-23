@@ -11,7 +11,7 @@
 	public class Onibus398 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. C. IMBUIA");
+		onibus.setNome("398 - E. E. C. IMBUIA");
 		onibus.setCodigo("398");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESCOLA ALTERNATIVA");

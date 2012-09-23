@@ -11,7 +11,7 @@
 	public class Onibus334 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("AGRÍCOLA");
+		onibus.setNome("334 - AGRÍCOLA");
 		onibus.setCodigo("334");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CENTENARIO");

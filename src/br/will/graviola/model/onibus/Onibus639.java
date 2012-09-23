@@ -11,7 +11,7 @@
 	public class Onibus639 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FUTURAMA");
+		onibus.setNome("639 - FUTURAMA");
 		onibus.setCodigo("639");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO FUTURAMA");

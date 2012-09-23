@@ -11,7 +11,7 @@
 	public class OnibusC25 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("V. AMÉLIA");
+		onibus.setNome("C25 - V. AMÉLIA");
 		onibus.setCodigo("C25");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA AMELIA");

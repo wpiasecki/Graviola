@@ -11,7 +11,7 @@
 	public class Onibus023 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("INTER 2 ( ANTI-HORÁRIO)");
+		onibus.setNome("023 - INTER 2 ( ANTI-HORÁRIO)");
 		onibus.setCodigo("023");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CABRAL");

@@ -11,7 +11,7 @@
 	public class OnibusA17 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("SÃO JORGE");
+		onibus.setNome("A17 - SÃO JORGE");
 		onibus.setCodigo("A17");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SAO JORGE");

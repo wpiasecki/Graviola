@@ -11,7 +11,7 @@
 	public class Onibus805 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / CAMPO LARGO");
+		onibus.setNome("805 - CTBA / CAMPO LARGO");
 		onibus.setCodigo("805");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("COHAB");

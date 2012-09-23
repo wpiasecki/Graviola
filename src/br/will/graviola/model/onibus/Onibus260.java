@@ -11,7 +11,7 @@
 	public class Onibus260 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAL. HERMES / STA. EFIGÊNIA");
+		onibus.setNome("260 - MAL. HERMES / STA. EFIGÊNIA");
 		onibus.setCodigo("260");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("AV MARECHAL FLORIANO");
@@ -147,7 +147,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("AV MARECHAL FLORIANO");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto4.setValidoAPartirDe("12/10/2007");
+		ponto4.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("06:30");
 		ponto4.getHorarios().addElement("07:30");
@@ -170,7 +170,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("BAIRRO MARECHAL HERMES");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto5.setValidoAPartirDe("12/10/2007");
+		ponto5.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("06:00");
 		ponto5.getHorarios().addElement("07:00");

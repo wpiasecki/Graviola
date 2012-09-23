@@ -11,7 +11,7 @@
 	public class OnibusE76 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / POSTO PARIS");
+		onibus.setNome("E76 - CTBA / POSTO PARIS");
 		onibus.setCodigo("E76");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("GUADALUPE (VIA MARINAGE)");

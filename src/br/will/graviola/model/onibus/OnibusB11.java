@@ -11,7 +11,7 @@
 	public class OnibusB11 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MARACANÃ / STA.  CÂNDIDA");
+		onibus.setNome("B11 - MARACANÃ / STA.  CÂNDIDA");
 		onibus.setCodigo("B11");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO ADRIANE");

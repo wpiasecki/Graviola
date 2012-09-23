@@ -11,7 +11,7 @@
 	public class OnibusP64 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / CERNE");
+		onibus.setNome("P64 - CTBA / CERNE");
 		onibus.setCodigo("P64");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO BATEIAS");

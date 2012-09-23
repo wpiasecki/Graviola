@@ -11,7 +11,7 @@
 	public class Onibus378 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("INTERHOSPITAIS");
+		onibus.setNome("378 - INTERHOSPITAIS");
 		onibus.setCodigo("378");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("HOSPITAL EVANGELICO");

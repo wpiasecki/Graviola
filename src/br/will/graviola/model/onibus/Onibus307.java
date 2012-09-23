@@ -11,7 +11,7 @@
 	public class Onibus307 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("B. ALTO / STA. FELICIDADE");
+		onibus.setNome("307 - B. ALTO / STA. FELICIDADE");
 		onibus.setCodigo("307");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESTACAO TUBO NESTOR DE CASTRO");

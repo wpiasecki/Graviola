@@ -11,7 +11,7 @@
 	public class OnibusH11 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ARAUCÁRIA / PINHEIRINHO");
+		onibus.setNome("H11 - ARAUCÁRIA / PINHEIRINHO");
 		onibus.setCodigo("H11");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("KRAFT FOODS");

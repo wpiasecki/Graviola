@@ -11,7 +11,7 @@
 	public class Onibus233 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("OLARIA");
+		onibus.setNome("233 - OLARIA");
 		onibus.setCodigo("233");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL SANTA CANDIDA");

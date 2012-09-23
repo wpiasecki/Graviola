@@ -11,7 +11,7 @@
 	public class Onibus668 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CASA DE CUSTÓDIA");
+		onibus.setNome("668 - CASA DE CUSTÓDIA");
 		onibus.setCodigo("668");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAPAO RASO");

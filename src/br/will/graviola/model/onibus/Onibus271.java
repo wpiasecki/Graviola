@@ -11,7 +11,7 @@
 	public class Onibus271 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("LARANJEIRAS");
+		onibus.setNome("271 - LARANJEIRAS");
 		onibus.setCodigo("271");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO LARANJEIRAS");
@@ -166,7 +166,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("BAIRRO LARANJEIRAS");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto4.setValidoAPartirDe("12/10/2007");
+		ponto4.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("06:00");
 		ponto4.getHorarios().addElement("07:10");
@@ -187,7 +187,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("TRAVESSA MOREIRA GARCEZ");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto5.setValidoAPartirDe("12/10/2007");
+		ponto5.setValidoAPartirDe("23/09/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("06:35");
 		ponto5.getHorarios().addElement("07:45");

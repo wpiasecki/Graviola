@@ -11,7 +11,7 @@
 	public class Onibus644 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PINHEIRINHO / CIC");
+		onibus.setNome("644 - PINHEIRINHO / CIC");
 		onibus.setCodigo("644");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CIC");

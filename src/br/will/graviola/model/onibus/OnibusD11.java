@@ -11,7 +11,7 @@
 	public class OnibusD11 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PLANTA DEODORO");
+		onibus.setNome("D11 - PLANTA DEODORO");
 		onibus.setCodigo("D11");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ILHA DO SAPO");

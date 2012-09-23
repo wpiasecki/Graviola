@@ -11,7 +11,7 @@
 	public class Onibus918 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("VENEZA");
+		onibus.setNome("918 - VENEZA");
 		onibus.setCodigo("918");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VENEZA");

@@ -11,7 +11,7 @@
 	public class Onibus550 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("LIGEIRÃO - PINHEIRINHO / C. GOMES");
+		onibus.setNome("550 - LIGEIRÃO - PINHEIRINHO / C. GOMES");
 		onibus.setCodigo("550");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA CARLOS GOMES");

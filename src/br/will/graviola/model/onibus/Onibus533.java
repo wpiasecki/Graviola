@@ -11,12 +11,12 @@
 	public class Onibus533 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. VERÍSSIMO / PANTANAL");
+		onibus.setNome("533 - E. VERÍSSIMO / PANTANAL");
 		onibus.setCodigo("533");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO ERICO VERISSIMO");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("29/03/2012");
+		ponto0.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:30");
 		ponto0.getHorarios().addElement("05:45");
@@ -56,8 +56,9 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("T.BOQUEIRAO/SENT.E.VERISSIMO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("29/03/2012");
+		ponto1.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto1);
+		ponto1.getHorarios().addElement("05:12");
 		ponto1.getHorarios().addElement("05:40");
 		ponto1.getHorarios().addElement("05:57");
 		ponto1.getHorarios().addElement("06:10");
@@ -96,7 +97,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("T.BOQUEIRAO/SENT.PANTANAL");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("29/03/2012");
+		ponto2.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:50");
 		ponto2.getHorarios().addElement("06:15");
@@ -125,8 +126,9 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("BAIRRO PANTANAL");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("29/03/2012");
+		ponto3.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto3);
+		ponto3.getHorarios().addElement("05:00");
 		ponto3.getHorarios().addElement("05:30");
 		ponto3.getHorarios().addElement("06:00");
 		ponto3.getHorarios().addElement("06:25");

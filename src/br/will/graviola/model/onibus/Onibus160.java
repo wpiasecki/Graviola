@@ -11,7 +11,7 @@
 	public class Onibus160 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. MERCÊS / GUANABARA");
+		onibus.setNome("160 - JD. MERCÊS / GUANABARA");
 		onibus.setCodigo("160");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("AV MARECHAL FLORIANO");

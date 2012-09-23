@@ -11,7 +11,7 @@
 	public class Onibus373 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ALTO TARUMÃ");
+		onibus.setNome("373 - ALTO TARUMÃ");
 		onibus.setCodigo("373");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA CARLOS GOMES");

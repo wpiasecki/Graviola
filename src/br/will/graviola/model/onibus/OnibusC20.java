@@ -11,7 +11,7 @@
 	public class OnibusC20 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. CLÁUDIA");
+		onibus.setNome("C20 - JD. CLÁUDIA");
 		onibus.setCodigo("C20");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JD.CLAUDIA");

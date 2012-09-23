@@ -11,7 +11,7 @@
 	public class OnibusI50 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("Q. BARRAS/T.PAULISTA-HORARIO");
+		onibus.setNome("I50 - Q. BARRAS/T.PAULISTA-HORARIO");
 		onibus.setCodigo("I50");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TREVO DO ATUBA");

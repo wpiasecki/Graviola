@@ -11,7 +11,7 @@
 	public class Onibus610 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("S. CERCADO / C. RASO");
+		onibus.setNome("610 - S. CERCADO / C. RASO");
 		onibus.setCodigo("610");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAPAO RASO");

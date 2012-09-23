@@ -11,7 +11,7 @@
 	public class Onibus231 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("BANESTADO / CALIFÓRNIA");
+		onibus.setNome("231 - BANESTADO / CALIFÓRNIA");
 		onibus.setCodigo("231");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO BANESTADO");

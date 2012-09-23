@@ -11,7 +11,7 @@
 	public class OnibusC26 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PRIVÊ");
+		onibus.setNome("C26 - PRIVÊ");
 		onibus.setCodigo("C26");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO PRIVE");

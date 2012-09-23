@@ -11,15 +11,16 @@
 	public class OnibusF17 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("EUCALIPTOS");
+		onibus.setNome("F17 - EUCALIPTOS");
 		onibus.setCodigo("F17");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERM.FAZENDA/EUCALIPTOS");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("13/07/2009");
+		ponto0.setValidoAPartirDe("17/09/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("04:30");
 		ponto0.getHorarios().addElement("04:55");
+		ponto0.getHorarios().addElement("05:07");
 		ponto0.getHorarios().addElement("05:18");
 		ponto0.getHorarios().addElement("05:30");
 		ponto0.getHorarios().addElement("05:41");

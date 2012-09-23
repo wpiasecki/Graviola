@@ -11,7 +11,7 @@
 	public class OnibusC41 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("B. ALTO / E. PERNETA");
+		onibus.setNome("C41 - B. ALTO / E. PERNETA");
 		onibus.setCodigo("C41");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA PERNETA");

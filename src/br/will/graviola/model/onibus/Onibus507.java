@@ -11,7 +11,7 @@
 	public class Onibus507 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("SÍTIO CERCADO (HORÁRIO)");
+		onibus.setNome("507 - SÍTIO CERCADO (HORÁRIO)");
 		onibus.setCodigo("507");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL BOQUEIRAO");

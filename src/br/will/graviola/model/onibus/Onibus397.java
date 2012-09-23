@@ -11,7 +11,7 @@
 	public class Onibus397 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("E. E. CAJURU");
+		onibus.setNome("397 - E. E. CAJURU");
 		onibus.setCodigo("397");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESCOLA M.JESUS");

@@ -11,7 +11,7 @@
 	public class OnibusA02 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("TAMANDARÉ");
+		onibus.setNome("A02 - TAMANDARÉ");
 		onibus.setCodigo("A02");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESTACAO TUBO PREFEITURA");

@@ -11,7 +11,7 @@
 	public class OnibusB35 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PORTEIRA / PALOMA");
+		onibus.setNome("B35 - PORTEIRA / PALOMA");
 		onibus.setCodigo("B35");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO PALOMA");

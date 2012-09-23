@@ -11,7 +11,7 @@
 	public class Onibus305 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CENTENÁRIO");
+		onibus.setNome("305 - CENTENÁRIO");
 		onibus.setCodigo("305");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("MARECHAL DEODORO");

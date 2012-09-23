@@ -11,7 +11,7 @@
 	public class OnibusD12 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("SÃO CRISTÓVÃO");
+		onibus.setNome("D12 - SÃO CRISTÓVÃO");
 		onibus.setCodigo("D12");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL PIRAQUARA");

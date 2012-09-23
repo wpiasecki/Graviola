@@ -11,7 +11,7 @@
 	public class OnibusB81 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / COLOMBO (GUARACI)");
+		onibus.setNome("B81 - CTBA / COLOMBO (GUARACI)");
 		onibus.setCodigo("B81");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("COLOMBO (GUARACI)");

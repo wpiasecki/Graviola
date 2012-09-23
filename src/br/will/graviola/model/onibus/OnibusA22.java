@@ -11,7 +11,7 @@
 	public class OnibusA22 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("TANGUÁ / TAMANDARÉ");
+		onibus.setNome("A22 - TANGUÁ / TAMANDARÉ");
 		onibus.setCodigo("A22");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO TANGUA");

@@ -11,7 +11,7 @@
 	public class OnibusX19 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ESPECIAL HASDRUBAL BELLEGARD");
+		onibus.setNome("X19 - ESPECIAL HASDRUBAL BELLEGARD");
 		onibus.setCodigo("X19");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL PINHEIRINHO");

@@ -11,7 +11,7 @@
 	public class Onibus615 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("UBERLÂNDIA");
+		onibus.setNome("615 - UBERLÂNDIA");
 		onibus.setCodigo("615");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL PORTAO (CHEGADA)");

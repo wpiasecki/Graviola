@@ -11,12 +11,12 @@
 	public class Onibus371 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("HIGIENÓPOLIS");
+		onibus.setNome("371 - HIGIENÓPOLIS");
 		onibus.setCodigo("371");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA SANTOS ANDRADE");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("14/05/2012");
+		ponto0.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:55");
 		ponto0.getHorarios().addElement("06:05");
@@ -98,7 +98,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL BAIRRO ALTO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("14/05/2012");
+		ponto1.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:25");
 		ponto1.getHorarios().addElement("05:40");

@@ -11,7 +11,7 @@
 	public class Onibus661 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("LINDÓIA");
+		onibus.setNome("661 - LINDÓIA");
 		onibus.setCodigo("661");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO LINDOIA");

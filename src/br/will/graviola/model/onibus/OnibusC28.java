@@ -11,7 +11,7 @@
 	public class OnibusC28 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JACOB MACANHAN");
+		onibus.setNome("C28 - JACOB MACANHAN");
 		onibus.setCodigo("C28");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("JACOB MACANHAN");

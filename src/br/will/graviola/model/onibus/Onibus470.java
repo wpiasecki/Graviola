@@ -11,7 +11,7 @@
 	public class Onibus470 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("GUABIROTUBA");
+		onibus.setNome("470 - GUABIROTUBA");
 		onibus.setCodigo("470");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO GUABIROTUBA");

@@ -11,7 +11,7 @@
 	public class Onibus640 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PALMEIRA");
+		onibus.setNome("640 - PALMEIRA");
 		onibus.setCodigo("640");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO PALMEIRA");

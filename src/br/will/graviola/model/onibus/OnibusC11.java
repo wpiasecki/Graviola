@@ -11,7 +11,7 @@
 	public class OnibusC11 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. HOLANDÊS");
+		onibus.setNome("C11 - JD. HOLANDÊS");
 		onibus.setCodigo("C11");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JD.HOLANDES");

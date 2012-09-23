@@ -11,7 +11,7 @@
 	public class Onibus475 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CANAL BELÉM");
+		onibus.setNome("475 - CANAL BELÉM");
 		onibus.setCodigo("475");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO CANAL BELEM");

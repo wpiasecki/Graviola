@@ -11,7 +11,7 @@
 	public class Onibus335 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CENTENÁRIO / BOQUEIRÃO");
+		onibus.setNome("335 - CENTENÁRIO / BOQUEIRÃO");
 		onibus.setCodigo("335");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL BOQUEIRAO");

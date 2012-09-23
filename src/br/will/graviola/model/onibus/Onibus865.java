@@ -11,7 +11,7 @@
 	public class Onibus865 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("JD. ESPLANADA");
+		onibus.setNome("865 - JD. ESPLANADA");
 		onibus.setCodigo("865");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JARDIM ESPLANADA");

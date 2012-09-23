@@ -11,7 +11,7 @@
 	public class Onibus607 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("COLOMBO / CIC");
+		onibus.setNome("607 - COLOMBO / CIC");
 		onibus.setCodigo("607");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESTACAO TUBO TIRADENTES");

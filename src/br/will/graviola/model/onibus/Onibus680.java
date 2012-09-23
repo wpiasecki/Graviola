@@ -11,12 +11,12 @@
 	public class Onibus680 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("RURBANA");
+		onibus.setNome("680 - RURBANA");
 		onibus.setCodigo("680");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO RURBANA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("13/02/2012");
+		ponto0.setValidoAPartirDe("22/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:30");
 		ponto0.getHorarios().addElement("05:52");
@@ -42,7 +42,6 @@
 		ponto0.getHorarios().addElement("16:03");
 		ponto0.getHorarios().addElement("16:39");
 		ponto0.getHorarios().addElement("17:15");
-		ponto0.getHorarios().addElement("17:39");
 		ponto0.getHorarios().addElement("18:03");
 		ponto0.getHorarios().addElement("18:27");
 		ponto0.getHorarios().addElement("18:51");
@@ -57,7 +56,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL PINHEIRINHO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("13/02/2012");
+		ponto1.setValidoAPartirDe("22/08/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("06:04");
 		ponto1.getHorarios().addElement("06:26");
@@ -80,8 +79,7 @@
 		ponto1.getHorarios().addElement("15:27");
 		ponto1.getHorarios().addElement("16:03");
 		ponto1.getHorarios().addElement("16:39");
-		ponto1.getHorarios().addElement("17:03");
-		ponto1.getHorarios().addElement("17:27");
+		ponto1.getHorarios().addElement("17:15");
 		ponto1.getHorarios().addElement("17:51");
 		ponto1.getHorarios().addElement("18:15");
 		ponto1.getHorarios().addElement("18:39");

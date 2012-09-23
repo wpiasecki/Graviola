@@ -11,7 +11,7 @@
 	public class OnibusJ12 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("REBOUÇAS");
+		onibus.setNome("J12 - REBOUÇAS");
 		onibus.setCodigo("J12");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO REBOUCAS");

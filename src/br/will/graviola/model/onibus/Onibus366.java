@@ -11,7 +11,7 @@
 	public class Onibus366 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ITUPAVA / HOSP. MILITAR");
+		onibus.setNome("366 - ITUPAVA / HOSP. MILITAR");
 		onibus.setCodigo("366");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO ITUPAVA");

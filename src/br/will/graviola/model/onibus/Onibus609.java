@@ -11,7 +11,7 @@
 	public class Onibus609 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. CIC");
+		onibus.setNome("609 - MAD. CIC");
 		onibus.setCodigo("609");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA RUI BARBOSA (CHEGADA)");

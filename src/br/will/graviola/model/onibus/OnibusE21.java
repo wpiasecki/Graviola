@@ -11,7 +11,7 @@
 	public class OnibusE21 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("T. BOQ. / T. CENTRAL");
+		onibus.setNome("E21 - T. BOQ. / T. CENTRAL");
 		onibus.setCodigo("E21");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL BOQUEIRAO");

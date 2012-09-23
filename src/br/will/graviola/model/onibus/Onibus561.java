@@ -11,7 +11,7 @@
 	public class Onibus561 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("GUILHERMINA");
+		onibus.setNome("561 - GUILHERMINA");
 		onibus.setCodigo("561");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO GUILHERMINA");

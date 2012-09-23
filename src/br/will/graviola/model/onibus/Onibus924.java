@@ -11,7 +11,7 @@
 	public class Onibus924 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("STA. FELICIDADE / STA. CÂNDIDA");
+		onibus.setNome("924 - STA. FELICIDADE / STA. CÂNDIDA");
 		onibus.setCodigo("924");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO ROCIO");

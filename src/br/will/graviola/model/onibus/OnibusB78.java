@@ -11,7 +11,7 @@
 	public class OnibusB78 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / JD. SÃO GABRIEL");
+		onibus.setNome("B78 - CTBA / JD. SÃO GABRIEL");
 		onibus.setCodigo("B78");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("JARDIM SAO GABRIEL");

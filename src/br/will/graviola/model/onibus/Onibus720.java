@@ -11,7 +11,7 @@
 	public class Onibus720 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FAZENDINHA / C. COMPRIDO");
+		onibus.setNome("720 - FAZENDINHA / C. COMPRIDO");
 		onibus.setCodigo("720");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAMPO COMPRIDO");

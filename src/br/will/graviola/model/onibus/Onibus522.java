@@ -11,7 +11,7 @@
 	public class Onibus522 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MARINGÁ");
+		onibus.setNome("522 - MARINGÁ");
 		onibus.setCodigo("522");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO MARINGA");

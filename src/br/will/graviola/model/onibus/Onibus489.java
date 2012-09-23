@@ -11,7 +11,7 @@
 	public class Onibus489 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. PETRÓPOLIS / SOLITUDE");
+		onibus.setNome("489 - MAD. PETRÓPOLIS / SOLITUDE");
 		onibus.setCodigo("489");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SOLITUDE");

@@ -11,7 +11,7 @@
 	public class OnibusB79 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / ROÇA GRANDE");
+		onibus.setNome("B79 - CTBA / ROÇA GRANDE");
 		onibus.setCodigo("B79");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("FABRICA FATO");

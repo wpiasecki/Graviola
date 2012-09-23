@@ -11,7 +11,7 @@
 	public class Onibus989 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. STA. FELICIDADE");
+		onibus.setNome("989 - MAD. STA. FELICIDADE");
 		onibus.setCodigo("989");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("RUI BARBOSA/CHEGADA");

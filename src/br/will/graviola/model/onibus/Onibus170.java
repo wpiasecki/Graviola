@@ -11,7 +11,7 @@
 	public class Onibus170 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("BRACATINGA");
+		onibus.setNome("170 - BRACATINGA");
 		onibus.setCodigo("170");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO BRACATINGA");
@@ -276,7 +276,7 @@
 		Ponto ponto6 = new Ponto();
 		ponto6.setNome("BAIRRO BRACATINGA");
 		ponto6.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto6.setValidoAPartirDe("22/03/2009");
+		ponto6.setValidoAPartirDe("26/08/2012");
 		onibus.getPontos().addElement(ponto6);
 		ponto6.getHorarios().addElement("05:45");
 		ponto6.getHorarios().addElement("06:21");
@@ -317,7 +317,7 @@
 		Ponto ponto7 = new Ponto();
 		ponto7.setNome("RUA NESTOR DE CASTRO");
 		ponto7.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto7.setValidoAPartirDe("22/03/2009");
+		ponto7.setValidoAPartirDe("26/08/2012");
 		onibus.getPontos().addElement(ponto7);
 		ponto7.getHorarios().addElement("06:12");
 		ponto7.getHorarios().addElement("06:48");

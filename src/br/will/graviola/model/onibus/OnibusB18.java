@@ -11,7 +11,7 @@
 	public class OnibusB18 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ROSEIRA");
+		onibus.setNome("B18 - ROSEIRA");
 		onibus.setCodigo("B18");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO ROSEIRA");

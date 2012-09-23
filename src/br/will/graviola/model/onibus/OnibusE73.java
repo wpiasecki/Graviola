@@ -11,7 +11,7 @@
 	public class OnibusE73 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / JD. CRUZEIRO");
+		onibus.setNome("E73 - CTBA / JD. CRUZEIRO");
 		onibus.setCodigo("E73");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL GUADALUPE");

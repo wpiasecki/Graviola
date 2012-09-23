@@ -11,7 +11,7 @@
 	public class OnibusX12 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("ESPECIAL BOQUEIRAO");
+		onibus.setNome("X12 - ESPECIAL BOQUEIRAO");
 		onibus.setCodigo("X12");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL BOQUEIRAO");

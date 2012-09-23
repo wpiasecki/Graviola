@@ -11,7 +11,7 @@
 	public class Onibus534 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PARIGOT DE SOUZA");
+		onibus.setNome("534 - PARIGOT DE SOUZA");
 		onibus.setCodigo("534");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL BOQUEIRAO");

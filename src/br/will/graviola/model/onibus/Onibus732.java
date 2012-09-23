@@ -11,7 +11,7 @@
 	public class Onibus732 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CAIUA / C.COMPRIDO");
+		onibus.setNome("732 - CAIUA / C.COMPRIDO");
 		onibus.setCodigo("732");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAIUA");

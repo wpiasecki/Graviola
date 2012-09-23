@@ -11,7 +11,7 @@
 	public class OnibusB27 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("RIBEIRA / FCO. CORADIN");
+		onibus.setNome("B27 - RIBEIRA / FCO. CORADIN");
 		onibus.setCodigo("B27");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL GUARAITUBA");

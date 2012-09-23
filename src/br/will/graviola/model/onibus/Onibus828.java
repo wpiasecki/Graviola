@@ -11,7 +11,7 @@
 	public class Onibus828 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("C. COMPRIDO / C. RASO");
+		onibus.setNome("828 - C. COMPRIDO / C. RASO");
 		onibus.setCodigo("828");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("T.FAZENDINHA SENT.T.C.COMPRIDO");

@@ -11,7 +11,7 @@
 	public class Onibus718 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PORTO BELO");
+		onibus.setNome("718 - PORTO BELO");
 		onibus.setCodigo("718");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL FAZENDINHA");

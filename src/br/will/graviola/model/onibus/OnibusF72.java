@@ -11,7 +11,7 @@
 	public class OnibusF72 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FAZ. RIO GRANDE / MANDIRITUBA");
+		onibus.setNome("F72 - FAZ. RIO GRANDE / MANDIRITUBA");
 		onibus.setCodigo("F72");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("MANDIRITUBA");

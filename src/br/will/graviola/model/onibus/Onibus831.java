@@ -11,7 +11,7 @@
 	public class Onibus831 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FAZENDINHA / C.RASO");
+		onibus.setNome("831 - FAZENDINHA / C.RASO");
 		onibus.setCodigo("831");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAPAO RASO");

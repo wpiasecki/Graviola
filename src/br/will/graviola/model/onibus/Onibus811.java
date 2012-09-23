@@ -11,12 +11,12 @@
 	public class Onibus811 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("SATURNO");
+		onibus.setNome("811 - SATURNO");
 		onibus.setCodigo("811");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SATURNO");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("13/02/2012");
+		ponto0.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:30");
 		ponto0.getHorarios().addElement("05:45");
@@ -73,13 +73,13 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("FACULDADE ESPIRITA");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("13/02/2012");
+		ponto1.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("22:24");
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("TERMINAL CAMPINA DO SIQUEIRA");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("13/02/2012");
+		ponto2.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:53");
 		ponto2.getHorarios().addElement("06:08");

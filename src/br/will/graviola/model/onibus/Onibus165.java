@@ -11,12 +11,12 @@
 	public class Onibus165 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("RAQUEL PRADO / PUC");
+		onibus.setNome("165 - RAQUEL PRADO / PUC");
 		onibus.setCodigo("165");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("AV MARECHAL FLORIANO");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("21/11/2011");
+		ponto0.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("06:13");
 		ponto0.getHorarios().addElement("06:33");
@@ -65,7 +65,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("BAIRRO RAQUEL PRADO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("21/11/2011");
+		ponto1.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:20");
 		ponto1.getHorarios().addElement("05:43");
@@ -73,7 +73,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("PONT.UNIVERSIDADE CATOLICA");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("21/11/2011");
+		ponto2.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:55");
 		ponto2.getHorarios().addElement("06:18");
@@ -122,7 +122,7 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("RUA JOSE LOUREIRO");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("21/11/2011");
+		ponto3.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("05:37");
 		ponto3.getHorarios().addElement("06:00");
@@ -171,7 +171,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("PRACA DA BANDEIRA (R.BARROZO)");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto4.setValidoAPartirDe("21/11/2011");
+		ponto4.setValidoAPartirDe("27/08/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("05:22");
 		ponto4.getHorarios().addElement("05:45");

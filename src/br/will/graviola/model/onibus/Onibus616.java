@@ -11,7 +11,7 @@
 	public class Onibus616 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("PORTAO / STA. BERNADETHE - L. VERDE");
+		onibus.setNome("616 - PORTAO / STA. BERNADETHE - L. VERDE");
 		onibus.setCodigo("616");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERM.PORTAO-SENT.STA.BERNADETH");

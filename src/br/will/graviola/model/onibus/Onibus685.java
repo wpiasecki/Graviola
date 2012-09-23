@@ -11,7 +11,7 @@
 	public class Onibus685 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("RIO BONITO / CIC");
+		onibus.setNome("685 - RIO BONITO / CIC");
 		onibus.setCodigo("685");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CIC");

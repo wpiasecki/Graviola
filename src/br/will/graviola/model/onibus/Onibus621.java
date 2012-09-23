@@ -11,7 +11,7 @@
 	public class Onibus621 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("FANNY");
+		onibus.setNome("621 - FANNY");
 		onibus.setCodigo("621");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAPAO RASO");

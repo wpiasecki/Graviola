@@ -11,7 +11,7 @@
 	public class Onibus380 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("DETRAN / VIC. MACHADO");
+		onibus.setNome("380 - DETRAN / VIC. MACHADO");
 		onibus.setCodigo("380");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO DETRAN");

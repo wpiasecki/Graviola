@@ -11,7 +11,7 @@
 	public class Onibus778 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("COTOLENGO");
+		onibus.setNome("778 - COTOLENGO");
 		onibus.setCodigo("778");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA RUI BARBOSA");

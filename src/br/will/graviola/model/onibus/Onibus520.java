@@ -11,7 +11,7 @@
 	public class Onibus520 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("LD OSTERNACK / S. CERCADO");
+		onibus.setNome("520 - LD OSTERNACK / S. CERCADO");
 		onibus.setCodigo("520");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESTACAO TUBO OSTERNACK");

@@ -11,7 +11,7 @@
 	public class OnibusE05 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / SÃO JOSÉ");
+		onibus.setNome("E05 - CTBA / SÃO JOSÉ");
 		onibus.setCodigo("E05");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO PEDRO MORO");

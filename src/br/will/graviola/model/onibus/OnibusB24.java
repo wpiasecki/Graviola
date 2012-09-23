@@ -11,7 +11,7 @@
 	public class OnibusB24 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("COLÔNIA FARIA");
+		onibus.setNome("B24 - COLÔNIA FARIA");
 		onibus.setCodigo("B24");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO COLONIA FARIA");

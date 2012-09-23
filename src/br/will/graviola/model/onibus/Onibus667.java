@@ -11,7 +11,7 @@
 	public class Onibus667 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("TERMINAL CIC");
+		onibus.setNome("667 - TERMINAL CIC");
 		onibus.setCodigo("667");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CAPAO RASO");

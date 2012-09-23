@@ -11,7 +11,7 @@
 	public class OnibusE67 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("CTBA / BRAGA");
+		onibus.setNome("E67 - CTBA / BRAGA");
 		onibus.setCodigo("E67");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO POSTO CONSUL");

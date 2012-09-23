@@ -11,7 +11,7 @@
 	public class Onibus641 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("LUIZ NICHELE");
+		onibus.setNome("641 - LUIZ NICHELE");
 		onibus.setCodigo("641");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO LUIZ NICHELE");

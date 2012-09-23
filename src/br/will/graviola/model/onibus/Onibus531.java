@@ -11,7 +11,7 @@
 	public class Onibus531 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("STA. INÊS");
+		onibus.setNome("531 - STA. INÊS");
 		onibus.setCodigo("531");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SANTA INES");

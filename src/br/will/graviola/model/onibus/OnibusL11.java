@@ -11,7 +11,7 @@
 	public class OnibusL11 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("R. BRANCO / TAMANDARÉ");
+		onibus.setNome("L11 - R. BRANCO / TAMANDARÉ");
 		onibus.setCodigo("L11");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("CAIC");

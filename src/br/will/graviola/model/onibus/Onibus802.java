@@ -11,7 +11,7 @@
 	public class Onibus802 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("MAD. CAMPO COMPRIDO");
+		onibus.setNome("802 - MAD. CAMPO COMPRIDO");
 		onibus.setCodigo("802");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("PRACA RUI BARBOSA");

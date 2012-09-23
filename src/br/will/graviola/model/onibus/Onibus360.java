@@ -11,7 +11,7 @@
 	public class Onibus360 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("NOVENA");
+		onibus.setNome("360 - NOVENA");
 		onibus.setCodigo("360");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO NOVENA");

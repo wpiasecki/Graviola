@@ -11,7 +11,7 @@
 	public class Onibus243 {
 		public static Onibus create() {
 		Onibus onibus = new Onibus();
-		onibus.setNome("STA. TEREZINHA");
+		onibus.setNome("243 - STA. TEREZINHA");
 		onibus.setCodigo("243");
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SANTA TEREZINHA");
