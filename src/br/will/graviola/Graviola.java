@@ -29,7 +29,7 @@ import br.will.graviola.ui.HorarioCanvas;
  */
 public class Graviola extends MIDlet implements CommandListener
 {
-	private static final String VERSAO = "1.1.0";
+	private static final String VERSAO = "1.2.0";
 	
 	/*
 	 * comandos
@@ -56,6 +56,8 @@ public class Graviola extends MIDlet implements CommandListener
 	private int selectedIndex;
 	
 	private Ranking ranking;
+	
+	private DisplayableAlert ultimaTelaMostrada;
 
 	
 	protected void startApp() throws MIDletStateChangeException
@@ -87,7 +89,12 @@ public class Graviola extends MIDlet implements CommandListener
 		} 
 		else if (command == voltar) // voltar para listagem de onibus
 		{
-			novoDisplay = criarTelaListaOnibus();
+			if (ultimaTelaMostrada != null) {
+				novoDisplay = ultimaTelaMostrada;
+				ultimaTelaMostrada = null;
+			} else {
+				novoDisplay = criarTelaListaOnibus();
+			}
 		} 
 		else if (command == selecionar || command.getLabel().equals("")) // selecionar linha de onibus usando o comando ou o botão OK
 		{
@@ -109,6 +116,11 @@ public class Graviola extends MIDlet implements CommandListener
 			String pesquisadoPeloUsuario = ( (TextField) form.get(0) ).getString();
 			
 			novoDisplay = criarTelaResultadoPesquisaLinha( pesquisadoPeloUsuario );
+			
+			if (novoDisplay.getAlert() == null)
+			{
+				ultimaTelaMostrada = novoDisplay;
+			}
 		}
 		
 		

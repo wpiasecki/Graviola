@@ -104,7 +104,7 @@ code += """
 
 new File("./graviola/HorarioOnibusService.java").write code
 
-System.exit 0
+//System.exit 0
 
 
 

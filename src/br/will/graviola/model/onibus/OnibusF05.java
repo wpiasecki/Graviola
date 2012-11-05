@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CIC");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("13/02/2012");
+		ponto0.setValidoAPartirDe("10/10/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:30");
 		ponto0.getHorarios().addElement("05:52");
@@ -25,7 +25,7 @@
 		ponto0.getHorarios().addElement("06:40");
 		ponto0.getHorarios().addElement("06:56");
 		ponto0.getHorarios().addElement("07:12");
-		ponto0.getHorarios().addElement("07:28");
+		ponto0.getHorarios().addElement("07:32");
 		ponto0.getHorarios().addElement("07:44");
 		ponto0.getHorarios().addElement("08:27");
 		ponto0.getHorarios().addElement("08:48");
@@ -65,7 +65,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL FAZENDA RIO GRANDE");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("13/02/2012");
+		ponto1.setValidoAPartirDe("10/10/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:00");
 		ponto1.getHorarios().addElement("05:10");
@@ -73,13 +73,14 @@
 		ponto1.getHorarios().addElement("05:40");
 		ponto1.getHorarios().addElement("06:00");
 		ponto1.getHorarios().addElement("06:15");
-		ponto1.getHorarios().addElement("06:30");
-		ponto1.getHorarios().addElement("06:46");
+		ponto1.getHorarios().addElement("06:27");
+		ponto1.getHorarios().addElement("06:39");
+		ponto1.getHorarios().addElement("06:50");
 		ponto1.getHorarios().addElement("07:02");
 		ponto1.getHorarios().addElement("07:21");
 		ponto1.getHorarios().addElement("07:39");
 		ponto1.getHorarios().addElement("07:57");
-		ponto1.getHorarios().addElement("08:06");
+		ponto1.getHorarios().addElement("08:10");
 		ponto1.getHorarios().addElement("08:26");
 		ponto1.getHorarios().addElement("09:30");
 		ponto1.getHorarios().addElement("10:55");
@@ -115,7 +116,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("EMPRESA KRAFT");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("13/02/2012");
+		ponto2.setValidoAPartirDe("10/10/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("06:33");
 		ponto2.getHorarios().addElement("14:50");
@@ -123,7 +124,7 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("T.FAZ. GRALHA AZUL+JD.PALMEIRA");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("13/02/2012");
+		ponto3.setValidoAPartirDe("10/10/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("05:05");
 		ponto3.getHorarios().addElement("05:35");

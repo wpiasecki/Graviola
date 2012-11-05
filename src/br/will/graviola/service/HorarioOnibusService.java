@@ -64,8 +64,8 @@ public class HorarioOnibusService
 	public static final String ONIBUS341 = "B. ALTO / STA. CÂNDIDA";
 	public static final String ONIBUS307 = "B. ALTO / STA. FELICIDADE";
 	public static final String ONIBUS506 = "BAIRRO NOVO";
-	public static final String ONIBUS542 = "BAIRRO NOVO  B";
 	public static final String ONIBUS541 = "BAIRRO NOVO A";
+	public static final String ONIBUS542 = "BAIRRO NOVO B";
 	public static final String ONIBUS547 = "BAIRRO NOVO C";
 	public static final String ONIBUS231 = "BANESTADO / CALIFÓRNIA";
 	public static final String ONIBUS205 = "BARREIRINHA";
@@ -443,6 +443,7 @@ public class HorarioOnibusService
 	public static final String ONIBUSC03 = "PINHAIS / GUADALUPE";
 	public static final String ONIBUSD14 = "PINHAIS / PIRAQUARA";
 	public static final String ONIBUS301 = "PINHAIS / RUI BARBOSA";
+	public static final String ONIBUSC01 = "PINHAIS/C.IMBUIA";
 	public static final String ONIBUS603 = "PINHEIRINHO";
 	public static final String ONIBUS638 = "PINHEIRINHO";
 	public static final String ONIBUS644 = "PINHEIRINHO / CIC";
@@ -538,7 +539,6 @@ public class HorarioOnibusService
 	public static final String ONIBUSC04 = "T. C. IMBUIA / T. PINHAIS";
 	public static final String ONIBUS806 = "T. C. LARGO / CAMP. SIQUEIRA";
 	public static final String ONIBUSI90 = "T. CACHOEIRA / T. MARACANÃ";
-	public static final String ONIBUSA02 = "TAMANDARÉ";
 	public static final String ONIBUS105 = "TAMANDARÉ / CABRAL";
 	public static final String ONIBUS218 = "TAMANDARÉ / CABRAL";
 	public static final String ONIBUSI91 = "TAMANDARÉ / COLOMBO";
@@ -629,8 +629,8 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUS341);
 		linhasOnibus.addElement(ONIBUS307);
 		linhasOnibus.addElement(ONIBUS506);
-		linhasOnibus.addElement(ONIBUS542);
 		linhasOnibus.addElement(ONIBUS541);
+		linhasOnibus.addElement(ONIBUS542);
 		linhasOnibus.addElement(ONIBUS547);
 		linhasOnibus.addElement(ONIBUS231);
 		linhasOnibus.addElement(ONIBUS205);
@@ -1008,6 +1008,7 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUSC03);
 		linhasOnibus.addElement(ONIBUSD14);
 		linhasOnibus.addElement(ONIBUS301);
+		linhasOnibus.addElement(ONIBUSC01);
 		linhasOnibus.addElement(ONIBUS603);
 		linhasOnibus.addElement(ONIBUS638);
 		linhasOnibus.addElement(ONIBUS644);
@@ -1103,7 +1104,6 @@ public class HorarioOnibusService
 		linhasOnibus.addElement(ONIBUSC04);
 		linhasOnibus.addElement(ONIBUS806);
 		linhasOnibus.addElement(ONIBUSI90);
-		linhasOnibus.addElement(ONIBUSA02);
 		linhasOnibus.addElement(ONIBUS105);
 		linhasOnibus.addElement(ONIBUS218);
 		linhasOnibus.addElement(ONIBUSI91);
@@ -1212,8 +1212,8 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUS341 )) return Onibus341.create();
 		if (nome.equals( ONIBUS307 )) return Onibus307.create();
 		if (nome.equals( ONIBUS506 )) return Onibus506.create();
-		if (nome.equals( ONIBUS542 )) return Onibus542.create();
 		if (nome.equals( ONIBUS541 )) return Onibus541.create();
+		if (nome.equals( ONIBUS542 )) return Onibus542.create();
 		if (nome.equals( ONIBUS547 )) return Onibus547.create();
 		if (nome.equals( ONIBUS231 )) return Onibus231.create();
 		if (nome.equals( ONIBUS205 )) return Onibus205.create();
@@ -1591,6 +1591,7 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUSC03 )) return OnibusC03.create();
 		if (nome.equals( ONIBUSD14 )) return OnibusD14.create();
 		if (nome.equals( ONIBUS301 )) return Onibus301.create();
+		if (nome.equals( ONIBUSC01 )) return OnibusC01.create();
 		if (nome.equals( ONIBUS603 )) return Onibus603.create();
 		if (nome.equals( ONIBUS638 )) return Onibus638.create();
 		if (nome.equals( ONIBUS644 )) return Onibus644.create();
@@ -1686,7 +1687,6 @@ public class HorarioOnibusService
 		if (nome.equals( ONIBUSC04 )) return OnibusC04.create();
 		if (nome.equals( ONIBUS806 )) return Onibus806.create();
 		if (nome.equals( ONIBUSI90 )) return OnibusI90.create();
-		if (nome.equals( ONIBUSA02 )) return OnibusA02.create();
 		if (nome.equals( ONIBUS105 )) return Onibus105.create();
 		if (nome.equals( ONIBUS218 )) return Onibus218.create();
 		if (nome.equals( ONIBUSI91 )) return OnibusI91.create();

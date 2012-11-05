@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("GUARITUBA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("25/06/2012");
+		ponto0.setValidoAPartirDe("29/10/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:00");
 		ponto0.getHorarios().addElement("05:20");
@@ -29,6 +29,7 @@
 		ponto0.getHorarios().addElement("06:20");
 		ponto0.getHorarios().addElement("06:28");
 		ponto0.getHorarios().addElement("06:36");
+		ponto0.getHorarios().addElement("06:40");
 		ponto0.getHorarios().addElement("06:44");
 		ponto0.getHorarios().addElement("06:51");
 		ponto0.getHorarios().addElement("06:58");
@@ -80,7 +81,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL PINHAIS");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("25/06/2012");
+		ponto1.setValidoAPartirDe("29/10/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:25");
 		ponto1.getHorarios().addElement("05:47");

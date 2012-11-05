@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CENTENARIO");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("02/04/2012");
+		ponto0.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:10");
 		ponto0.getHorarios().addElement("05:26");
@@ -88,13 +88,13 @@
 		ponto0.getHorarios().addElement("22:52");
 		ponto0.getHorarios().addElement("23:12");
 		ponto0.getHorarios().addElement("23:30");
-		ponto0.getHorarios().addElement("23:50");
+		ponto0.getHorarios().addElement("23:55");
 		ponto0.getHorarios().addElement("00:10");
-		ponto0.getHorarios().addElement("00:30");
+		ponto0.getHorarios().addElement("00:35");
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("VILA RENO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("02/04/2012");
+		ponto1.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("04:50");
 		ponto1.getHorarios().addElement("05:05");
@@ -170,7 +170,7 @@
 		ponto1.getHorarios().addElement("23:12");
 		ponto1.getHorarios().addElement("23:30");
 		ponto1.getHorarios().addElement("23:50");
-		ponto1.getHorarios().addElement("00:10");
+		ponto1.getHorarios().addElement("00:13");
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("TERMINAL CENTENARIO");
 		ponto2.setTipoDia(TipoDia.getTipoDia("SABADO"));

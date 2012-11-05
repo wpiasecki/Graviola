@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CABRAL");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("06/02/2012");
+		ponto0.setValidoAPartirDe("01/11/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:37");
 		ponto0.getHorarios().addElement("05:45");
@@ -162,7 +162,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL GUARAITUBA");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("06/02/2012");
+		ponto1.setValidoAPartirDe("01/11/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:15");
 		ponto1.getHorarios().addElement("05:23");
@@ -310,7 +310,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("TERMINAL CABRAL");
 		ponto2.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto2.setValidoAPartirDe("31/12/2009");
+		ponto2.setValidoAPartirDe("03/11/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:44");
 		ponto2.getHorarios().addElement("05:56");
@@ -407,7 +407,7 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("TERMINAL GUARAITUBA");
 		ponto3.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto3.setValidoAPartirDe("31/12/2009");
+		ponto3.setValidoAPartirDe("03/11/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("05:20");
 		ponto3.getHorarios().addElement("05:30");
@@ -506,7 +506,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("TERMINAL CABRAL");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto4.setValidoAPartirDe("07/12/2008");
+		ponto4.setValidoAPartirDe("04/11/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("05:54");
 		ponto4.getHorarios().addElement("06:10");
@@ -580,7 +580,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("TERMINAL GUARAITUBA");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto5.setValidoAPartirDe("07/12/2008");
+		ponto5.setValidoAPartirDe("04/11/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("05:30");
 		ponto5.getHorarios().addElement("05:46");

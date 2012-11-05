@@ -148,7 +148,7 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("T.FAZENDA/GRALHA AZUL");
 		ponto3.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto3.setValidoAPartirDe("31/03/2012");
+		ponto3.setValidoAPartirDe("03/11/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("04:30");
 		ponto3.getHorarios().addElement("05:08");
@@ -163,8 +163,11 @@
 		ponto3.getHorarios().addElement("08:18");
 		ponto3.getHorarios().addElement("08:56");
 		ponto3.getHorarios().addElement("09:38");
+		ponto3.getHorarios().addElement("09:59");
 		ponto3.getHorarios().addElement("10:20");
+		ponto3.getHorarios().addElement("10:41");
 		ponto3.getHorarios().addElement("11:02");
+		ponto3.getHorarios().addElement("11:23");
 		ponto3.getHorarios().addElement("11:44");
 		ponto3.getHorarios().addElement("12:26");
 		ponto3.getHorarios().addElement("13:08");
@@ -181,6 +184,7 @@
 		ponto3.getHorarios().addElement("18:47");
 		ponto3.getHorarios().addElement("19:08");
 		ponto3.getHorarios().addElement("19:30");
+		ponto3.getHorarios().addElement("19:51");
 		ponto3.getHorarios().addElement("20:13");
 		ponto3.getHorarios().addElement("20:58");
 		ponto3.getHorarios().addElement("21:36");

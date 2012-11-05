@@ -235,7 +235,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("ESTACAO TUBO CARLOS GOMES");
 		ponto5.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto5.setValidoAPartirDe("22/09/2012");
+		ponto5.setValidoAPartirDe("20/10/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("05:55");
 		ponto5.getHorarios().addElement("06:22");
@@ -258,8 +258,8 @@
 		ponto5.getHorarios().addElement("11:27");
 		ponto5.getHorarios().addElement("11:47");
 		ponto5.getHorarios().addElement("12:08");
+		ponto5.getHorarios().addElement("12:27");
 		ponto5.getHorarios().addElement("12:45");
-		ponto5.getHorarios().addElement("12:57");
 		ponto5.getHorarios().addElement("13:03");
 		ponto5.getHorarios().addElement("13:24");
 		ponto5.getHorarios().addElement("13:45");
@@ -293,7 +293,7 @@
 		Ponto ponto6 = new Ponto();
 		ponto6.setNome("TERMINAL FAZENDA RIO GRANDE");
 		ponto6.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto6.setValidoAPartirDe("22/09/2012");
+		ponto6.setValidoAPartirDe("20/10/2012");
 		onibus.getPontos().addElement(ponto6);
 		ponto6.getHorarios().addElement("05:10");
 		ponto6.getHorarios().addElement("05:40");

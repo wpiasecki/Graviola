@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL MARACANA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("06/02/2012");
+		ponto0.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("17:30");
 		ponto0.getHorarios().addElement("17:40");
@@ -35,7 +35,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL GUARAITUBA");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("06/02/2012");
+		ponto1.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("06:00");
 		ponto1.getHorarios().addElement("06:10");

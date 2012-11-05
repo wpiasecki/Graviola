@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("ESTACAO TUBO OSTERNACK");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("20/08/2012");
+		ponto0.setValidoAPartirDe("23/10/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:45");
 		ponto0.getHorarios().addElement("05:58");
@@ -121,7 +121,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("ESTACAO TUBO WESTPHALEN/B.NOVO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("20/08/2012");
+		ponto1.setValidoAPartirDe("23/10/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("06:27");
 		ponto1.getHorarios().addElement("06:44");
@@ -226,11 +226,11 @@
 		ponto1.getHorarios().addElement("23:12");
 		ponto1.getHorarios().addElement("23:29");
 		ponto1.getHorarios().addElement("23:45");
-		ponto1.getHorarios().addElement("00:00");
+		ponto1.getHorarios().addElement("00:08");
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("TERMINAL SITIO CERCADO");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("20/08/2012");
+		ponto2.setValidoAPartirDe("23/10/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:51");
 		ponto2.getHorarios().addElement("06:04");
@@ -336,11 +336,11 @@
 		ponto2.getHorarios().addElement("22:41");
 		ponto2.getHorarios().addElement("22:57");
 		ponto2.getHorarios().addElement("23:13");
-		ponto2.getHorarios().addElement("23:28");
+		ponto2.getHorarios().addElement("23:30");
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("TERM.S.CERCADO(SENT.OSTERNACK)");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("20/08/2012");
+		ponto3.setValidoAPartirDe("23/10/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("06:58");
 		ponto3.getHorarios().addElement("07:15");
@@ -445,7 +445,7 @@
 		ponto3.getHorarios().addElement("23:47");
 		ponto3.getHorarios().addElement("00:03");
 		ponto3.getHorarios().addElement("00:18");
-		ponto3.getHorarios().addElement("00:33");
+		ponto3.getHorarios().addElement("00:35");
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("ESTACAO TUBO OSTERNACK");
 		ponto4.setTipoDia(TipoDia.getTipoDia("SABADO"));

@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO VILA NOVA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("13/10/2009");
+		ponto0.setValidoAPartirDe("29/10/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:05");
 		ponto0.getHorarios().addElement("05:20");
@@ -85,7 +85,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL PINHAIS");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("13/10/2009");
+		ponto1.setValidoAPartirDe("29/10/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:27");
 		ponto1.getHorarios().addElement("05:47");
@@ -93,7 +93,6 @@
 		ponto1.getHorarios().addElement("06:12");
 		ponto1.getHorarios().addElement("06:22");
 		ponto1.getHorarios().addElement("06:31");
-		ponto1.getHorarios().addElement("06:40");
 		ponto1.getHorarios().addElement("06:49");
 		ponto1.getHorarios().addElement("06:57");
 		ponto1.getHorarios().addElement("07:06");

@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO QUARTEL GENERAL");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("08/08/2011");
+		ponto0.setValidoAPartirDe("01/10/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:10");
 		ponto0.getHorarios().addElement("05:40");
@@ -54,11 +54,10 @@
 		ponto0.getHorarios().addElement("22:20");
 		ponto0.getHorarios().addElement("23:00");
 		ponto0.getHorarios().addElement("23:30");
-		ponto0.getHorarios().addElement("00:00");
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL PINHEIRINHO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("08/08/2011");
+		ponto1.setValidoAPartirDe("01/10/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:25");
 		ponto1.getHorarios().addElement("05:57");
@@ -96,7 +95,6 @@
 		ponto1.getHorarios().addElement("22:40");
 		ponto1.getHorarios().addElement("23:15");
 		ponto1.getHorarios().addElement("23:45");
-		ponto1.getHorarios().addElement("00:15");
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("BAIRRO QUARTEL GENERAL");
 		ponto2.setTipoDia(TipoDia.getTipoDia("SABADO"));

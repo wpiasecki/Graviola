@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("CACHIMBA/OLARIA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("22/08/2012");
+		ponto0.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:30");
 		ponto0.getHorarios().addElement("06:12");
@@ -36,6 +36,7 @@
 		ponto0.getHorarios().addElement("15:11");
 		ponto0.getHorarios().addElement("15:53");
 		ponto0.getHorarios().addElement("16:34");
+		ponto0.getHorarios().addElement("16:56");
 		ponto0.getHorarios().addElement("17:19");
 		ponto0.getHorarios().addElement("17:40");
 		ponto0.getHorarios().addElement("18:02");
@@ -53,7 +54,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL PINHEIRINHO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("22/08/2012");
+		ponto1.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("06:13");
 		ponto1.getHorarios().addElement("06:55");
@@ -70,9 +71,10 @@
 		ponto1.getHorarios().addElement("14:31");
 		ponto1.getHorarios().addElement("15:13");
 		ponto1.getHorarios().addElement("15:54");
+		ponto1.getHorarios().addElement("16:15");
 		ponto1.getHorarios().addElement("16:36");
 		ponto1.getHorarios().addElement("16:58");
-		ponto1.getHorarios().addElement("17:15");
+		ponto1.getHorarios().addElement("17:21");
 		ponto1.getHorarios().addElement("17:42");
 		ponto1.getHorarios().addElement("18:04");
 		ponto1.getHorarios().addElement("18:25");

@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL PINHEIRINHO");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("27/08/2012");
+		ponto0.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:22");
 		ponto0.getHorarios().addElement("05:37");
@@ -65,10 +65,11 @@
 		ponto0.getHorarios().addElement("15:39");
 		ponto0.getHorarios().addElement("15:56");
 		ponto0.getHorarios().addElement("16:13");
-		ponto0.getHorarios().addElement("16:30");
-		ponto0.getHorarios().addElement("16:47");
-		ponto0.getHorarios().addElement("17:04");
-		ponto0.getHorarios().addElement("17:21");
+		ponto0.getHorarios().addElement("16:27");
+		ponto0.getHorarios().addElement("16:41");
+		ponto0.getHorarios().addElement("16:55");
+		ponto0.getHorarios().addElement("17:09");
+		ponto0.getHorarios().addElement("17:23");
 		ponto0.getHorarios().addElement("17:37");
 		ponto0.getHorarios().addElement("17:51");
 		ponto0.getHorarios().addElement("18:05");
@@ -98,7 +99,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("BAIRRO RIO BONITO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("27/08/2012");
+		ponto1.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("04:45");
 		ponto1.getHorarios().addElement("05:00");
@@ -167,6 +168,7 @@
 		ponto1.getHorarios().addElement("16:24");
 		ponto1.getHorarios().addElement("16:40");
 		ponto1.getHorarios().addElement("16:55");
+		ponto1.getHorarios().addElement("17:10");
 		ponto1.getHorarios().addElement("17:25");
 		ponto1.getHorarios().addElement("17:39");
 		ponto1.getHorarios().addElement("17:53");
@@ -193,12 +195,12 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("BAIRRO RIO BONITO (RECOLHE)");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("27/08/2012");
+		ponto2.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto2);
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("T.PINHEIRINHO / BAIRRO -SEMI-D");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("27/08/2012");
+		ponto3.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("17:00");
 		ponto3.getHorarios().addElement("17:15");
@@ -215,7 +217,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("BAIRRO VAZIO / T. PINHEIRINHO");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto4.setValidoAPartirDe("27/08/2012");
+		ponto4.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("17:32");
 		ponto4.getHorarios().addElement("17:47");
@@ -228,7 +230,7 @@
 		Ponto ponto5 = new Ponto();
 		ponto5.setNome("TERM/BAIRRO-SD-VAZIO MANHA");
 		ponto5.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto5.setValidoAPartirDe("27/08/2012");
+		ponto5.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto5);
 		ponto5.getHorarios().addElement("05:57");
 		ponto5.getHorarios().addElement("06:04");
@@ -242,7 +244,7 @@
 		Ponto ponto6 = new Ponto();
 		ponto6.setNome("RIO BONITO - SD - RECOLHE");
 		ponto6.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto6.setValidoAPartirDe("27/08/2012");
+		ponto6.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto6);
 		Ponto ponto7 = new Ponto();
 		ponto7.setNome("TERMINAL PINHEIRINHO");

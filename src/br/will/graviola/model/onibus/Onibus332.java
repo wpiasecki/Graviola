@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL CENTENARIO");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("30/07/2012");
+		ponto0.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("04:50");
 		ponto0.getHorarios().addElement("05:10");
@@ -121,7 +121,7 @@
 		ponto0.getHorarios().addElement("23:22");
 		ponto0.getHorarios().addElement("23:46");
 		ponto0.getHorarios().addElement("00:10");
-		ponto0.getHorarios().addElement("00:40");
+		ponto0.getHorarios().addElement("00:35");
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL CENTENARIO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("SABADO"));

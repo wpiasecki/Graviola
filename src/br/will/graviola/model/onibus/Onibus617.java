@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JARDIM LUDOVICA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("22/08/2012");
+		ponto0.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("04:45");
 		ponto0.getHorarios().addElement("05:00");
@@ -56,9 +56,11 @@
 		ponto0.getHorarios().addElement("15:33");
 		ponto0.getHorarios().addElement("16:07");
 		ponto0.getHorarios().addElement("16:41");
+		ponto0.getHorarios().addElement("16:53");
 		ponto0.getHorarios().addElement("17:04");
 		ponto0.getHorarios().addElement("17:15");
 		ponto0.getHorarios().addElement("17:27");
+		ponto0.getHorarios().addElement("17:38");
 		ponto0.getHorarios().addElement("17:49");
 		ponto0.getHorarios().addElement("18:01");
 		ponto0.getHorarios().addElement("18:12");
@@ -80,7 +82,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL PINHEIRINHO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("22/08/2012");
+		ponto1.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:15");
 		ponto1.getHorarios().addElement("05:30");
@@ -114,11 +116,13 @@
 		ponto1.getHorarios().addElement("15:01");
 		ponto1.getHorarios().addElement("15:35");
 		ponto1.getHorarios().addElement("16:09");
+		ponto1.getHorarios().addElement("16:21");
 		ponto1.getHorarios().addElement("16:32");
 		ponto1.getHorarios().addElement("16:43");
-		ponto1.getHorarios().addElement("16:58");
-		ponto1.getHorarios().addElement("17:15");
-		ponto1.getHorarios().addElement("17:27");
+		ponto1.getHorarios().addElement("16:55");
+		ponto1.getHorarios().addElement("17:06");
+		ponto1.getHorarios().addElement("17:17");
+		ponto1.getHorarios().addElement("17:29");
 		ponto1.getHorarios().addElement("17:40");
 		ponto1.getHorarios().addElement("17:51");
 		ponto1.getHorarios().addElement("18:03");

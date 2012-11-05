@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO POMPEIA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("22/08/2012");
+		ponto0.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("04:50");
 		ponto0.getHorarios().addElement("04:59");
@@ -78,7 +78,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL PINHEIRINHO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("22/08/2012");
+		ponto1.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:34");
 		ponto1.getHorarios().addElement("06:10");
@@ -89,7 +89,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("BAIRRO VIVENDAS JANAINA");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("22/08/2012");
+		ponto2.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("04:45");
 		ponto2.getHorarios().addElement("05:03");
@@ -127,6 +127,7 @@
 		ponto2.getHorarios().addElement("16:31");
 		ponto2.getHorarios().addElement("16:56");
 		ponto2.getHorarios().addElement("17:20");
+		ponto2.getHorarios().addElement("17:35");
 		ponto2.getHorarios().addElement("17:50");
 		ponto2.getHorarios().addElement("18:05");
 		ponto2.getHorarios().addElement("18:20");
@@ -145,7 +146,7 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("T.PINHEIRINHO - VIV.JANAINA");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("22/08/2012");
+		ponto3.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("05:25");
 		ponto3.getHorarios().addElement("05:43");
@@ -179,8 +180,9 @@
 		ponto3.getHorarios().addElement("15:55");
 		ponto3.getHorarios().addElement("16:19");
 		ponto3.getHorarios().addElement("16:44");
-		ponto3.getHorarios().addElement("17:09");
-		ponto3.getHorarios().addElement("17:26");
+		ponto3.getHorarios().addElement("16:58");
+		ponto3.getHorarios().addElement("17:13");
+		ponto3.getHorarios().addElement("17:28");
 		ponto3.getHorarios().addElement("17:43");
 		ponto3.getHorarios().addElement("17:58");
 		ponto3.getHorarios().addElement("18:13");

@@ -243,7 +243,7 @@
 		Ponto ponto10 = new Ponto();
 		ponto10.setNome("BAIRRO EUGENIA MARIA");
 		ponto10.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto10.setValidoAPartirDe("02/09/2012");
+		ponto10.setValidoAPartirDe("28/10/2012");
 		onibus.getPontos().addElement(ponto10);
 		ponto10.getHorarios().addElement("05:35");
 		ponto10.getHorarios().addElement("06:25");
@@ -273,7 +273,7 @@
 		Ponto ponto11 = new Ponto();
 		ponto11.setNome("TERMINAL GUADALUPE");
 		ponto11.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto11.setValidoAPartirDe("02/09/2012");
+		ponto11.setValidoAPartirDe("28/10/2012");
 		onibus.getPontos().addElement(ponto11);
 		ponto11.getHorarios().addElement("06:25");
 		ponto11.getHorarios().addElement("07:15");
@@ -298,17 +298,17 @@
 		ponto11.getHorarios().addElement("20:03");
 		ponto11.getHorarios().addElement("20:53");
 		ponto11.getHorarios().addElement("21:43");
-		ponto11.getHorarios().addElement("22:13");
+		ponto11.getHorarios().addElement("22:43");
 		ponto11.getHorarios().addElement("23:33");
 		Ponto ponto12 = new Ponto();
 		ponto12.setNome("TERMINAL JD.PAULISTA");
 		ponto12.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto12.setValidoAPartirDe("02/09/2012");
+		ponto12.setValidoAPartirDe("28/10/2012");
 		onibus.getPontos().addElement(ponto12);
 		Ponto ponto13 = new Ponto();
 		ponto13.setNome("EUGENIA MARIA SENT.T.PAULISTA");
 		ponto13.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto13.setValidoAPartirDe("02/09/2012");
+		ponto13.setValidoAPartirDe("28/10/2012");
 		onibus.getPontos().addElement(ponto13);
 		ponto13.getHorarios().addElement("20:22");
 		ponto13.getHorarios().addElement("23:03");

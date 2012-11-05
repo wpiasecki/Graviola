@@ -317,7 +317,7 @@
 		Ponto ponto7 = new Ponto();
 		ponto7.setNome("BAIRRO BARIGUI");
 		ponto7.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto7.setValidoAPartirDe("25/08/2012");
+		ponto7.setValidoAPartirDe("20/10/2012");
 		onibus.getPontos().addElement(ponto7);
 		ponto7.getHorarios().addElement("06:19");
 		ponto7.getHorarios().addElement("07:11");
@@ -348,7 +348,7 @@
 		Ponto ponto8 = new Ponto();
 		ponto8.setNome("BAIRRO RUA XV");
 		ponto8.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto8.setValidoAPartirDe("25/08/2012");
+		ponto8.setValidoAPartirDe("20/10/2012");
 		onibus.getPontos().addElement(ponto8);
 		ponto8.getHorarios().addElement("05:40");
 		ponto8.getHorarios().addElement("06:32");
@@ -379,7 +379,7 @@
 		Ponto ponto9 = new Ponto();
 		ponto9.setNome("PRACA CARLOS GOMES");
 		ponto9.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto9.setValidoAPartirDe("25/08/2012");
+		ponto9.setValidoAPartirDe("20/10/2012");
 		onibus.getPontos().addElement(ponto9);
 		ponto9.getHorarios().addElement("06:45");
 		ponto9.getHorarios().addElement("07:11");
@@ -424,7 +424,7 @@
 		Ponto ponto10 = new Ponto();
 		ponto10.setNome("PRACA ZACARIAS");
 		ponto10.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto10.setValidoAPartirDe("25/08/2012");
+		ponto10.setValidoAPartirDe("20/10/2012");
 		onibus.getPontos().addElement(ponto10);
 		ponto10.getHorarios().addElement("05:53");
 		ponto10.getHorarios().addElement("06:45");
@@ -455,7 +455,7 @@
 		Ponto ponto11 = new Ponto();
 		ponto11.setNome("RUA PAULO GORSKI");
 		ponto11.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto11.setValidoAPartirDe("25/08/2012");
+		ponto11.setValidoAPartirDe("20/10/2012");
 		onibus.getPontos().addElement(ponto11);
 		ponto11.getHorarios().addElement("06:45");
 		ponto11.getHorarios().addElement("08:02");
@@ -474,7 +474,7 @@
 		Ponto ponto12 = new Ponto();
 		ponto12.setNome("ZACARIAS-SENTIDO PAULO GORSKI");
 		ponto12.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto12.setValidoAPartirDe("25/08/2012");
+		ponto12.setValidoAPartirDe("20/10/2012");
 		onibus.getPontos().addElement(ponto12);
 		ponto12.getHorarios().addElement("06:19");
 		ponto12.getHorarios().addElement("07:36");
@@ -493,7 +493,7 @@
 		Ponto ponto13 = new Ponto();
 		ponto13.setNome("RUA XV SENT.PAULO GORSKI");
 		ponto13.setTipoDia(TipoDia.getTipoDia("SABADO"));
-		ponto13.setValidoAPartirDe("25/08/2012");
+		ponto13.setValidoAPartirDe("20/10/2012");
 		onibus.getPontos().addElement(ponto13);
 		ponto13.getHorarios().addElement("06:06");
 		ponto13.getHorarios().addElement("07:23");
@@ -512,7 +512,7 @@
 		Ponto ponto14 = new Ponto();
 		ponto14.setNome("BAIRRO BARIGUI");
 		ponto14.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto14.setValidoAPartirDe("12/02/2012");
+		ponto14.setValidoAPartirDe("21/10/2012");
 		onibus.getPontos().addElement(ponto14);
 		ponto14.getHorarios().addElement("07:10");
 		ponto14.getHorarios().addElement("08:20");
@@ -532,7 +532,7 @@
 		Ponto ponto15 = new Ponto();
 		ponto15.setNome("BAIRRO RUA XV");
 		ponto15.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto15.setValidoAPartirDe("12/02/2012");
+		ponto15.setValidoAPartirDe("21/10/2012");
 		onibus.getPontos().addElement(ponto15);
 		ponto15.getHorarios().addElement("06:35");
 		ponto15.getHorarios().addElement("07:45");
@@ -552,7 +552,7 @@
 		Ponto ponto16 = new Ponto();
 		ponto16.setNome("PRACA CARLOS GOMES");
 		ponto16.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto16.setValidoAPartirDe("12/02/2012");
+		ponto16.setValidoAPartirDe("21/10/2012");
 		onibus.getPontos().addElement(ponto16);
 		ponto16.getHorarios().addElement("07:00");
 		ponto16.getHorarios().addElement("07:35");
@@ -588,7 +588,7 @@
 		Ponto ponto17 = new Ponto();
 		ponto17.setNome("PRACA ZACARIAS");
 		ponto17.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto17.setValidoAPartirDe("12/02/2012");
+		ponto17.setValidoAPartirDe("21/10/2012");
 		onibus.getPontos().addElement(ponto17);
 		ponto17.getHorarios().addElement("06:45");
 		ponto17.getHorarios().addElement("07:55");
@@ -608,7 +608,7 @@
 		Ponto ponto18 = new Ponto();
 		ponto18.setNome("RUA PAULO GORSKI");
 		ponto18.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto18.setValidoAPartirDe("12/02/2012");
+		ponto18.setValidoAPartirDe("21/10/2012");
 		onibus.getPontos().addElement(ponto18);
 		ponto18.getHorarios().addElement("06:35");
 		ponto18.getHorarios().addElement("07:45");
@@ -629,7 +629,7 @@
 		Ponto ponto19 = new Ponto();
 		ponto19.setNome("ZACARIAS-SENTIDO PAULO GORSKI");
 		ponto19.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto19.setValidoAPartirDe("12/02/2012");
+		ponto19.setValidoAPartirDe("21/10/2012");
 		onibus.getPontos().addElement(ponto19);
 		ponto19.getHorarios().addElement("06:10");
 		ponto19.getHorarios().addElement("07:20");
@@ -650,7 +650,7 @@
 		Ponto ponto20 = new Ponto();
 		ponto20.setNome("RUA XV SENT.PAULO GORSKI");
 		ponto20.setTipoDia(TipoDia.getTipoDia("DOMINGO"));
-		ponto20.setValidoAPartirDe("12/02/2012");
+		ponto20.setValidoAPartirDe("21/10/2012");
 		onibus.getPontos().addElement(ponto20);
 		ponto20.getHorarios().addElement("06:00");
 		ponto20.getHorarios().addElement("07:10");

@@ -16,12 +16,12 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO SAO DIMAS");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("01/11/2011");
+		ponto0.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto0);
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("TERMINAL GUADALUPE");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("01/11/2011");
+		ponto1.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("05:10");
 		ponto1.getHorarios().addElement("05:45");
@@ -125,7 +125,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("TERMINAL GUARAITUBA");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("01/11/2011");
+		ponto2.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:10");
 		ponto2.getHorarios().addElement("05:20");
@@ -226,7 +226,7 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("TER.MARACANA SENT TER.GUARAITU");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("01/11/2011");
+		ponto3.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("05:03");
 		ponto3.getHorarios().addElement("05:13");

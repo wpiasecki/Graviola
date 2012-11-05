@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("BAIRRO JD.IPE");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("03/10/2011");
+		ponto0.setValidoAPartirDe("10/10/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:15");
 		ponto0.getHorarios().addElement("05:45");
@@ -26,7 +26,6 @@
 		ponto0.getHorarios().addElement("07:10");
 		ponto0.getHorarios().addElement("07:30");
 		ponto0.getHorarios().addElement("07:55");
-		ponto0.getHorarios().addElement("12:00");
 		ponto0.getHorarios().addElement("13:15");
 		ponto0.getHorarios().addElement("13:40");
 		ponto0.getHorarios().addElement("14:45");
@@ -35,7 +34,7 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("GUADALUPE (VIA ARAGUARI)");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("03/10/2011");
+		ponto1.setValidoAPartirDe("10/10/2012");
 		onibus.getPontos().addElement(ponto1);
 		ponto1.getHorarios().addElement("06:20");
 		ponto1.getHorarios().addElement("06:40");
@@ -47,8 +46,8 @@
 		ponto1.getHorarios().addElement("09:00");
 		ponto1.getHorarios().addElement("09:30");
 		ponto1.getHorarios().addElement("10:00");
-		ponto1.getHorarios().addElement("10:25");
-		ponto1.getHorarios().addElement("10:50");
+		ponto1.getHorarios().addElement("10:30");
+		ponto1.getHorarios().addElement("11:00");
 		ponto1.getHorarios().addElement("11:30");
 		ponto1.getHorarios().addElement("11:45");
 		ponto1.getHorarios().addElement("12:00");
@@ -85,7 +84,7 @@
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("JD. IPE (VIA ARAGUARI)");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("03/10/2011");
+		ponto2.setValidoAPartirDe("10/10/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("05:35");
 		ponto2.getHorarios().addElement("05:55");
@@ -104,8 +103,8 @@
 		ponto2.getHorarios().addElement("09:50");
 		ponto2.getHorarios().addElement("10:25");
 		ponto2.getHorarios().addElement("10:50");
-		ponto2.getHorarios().addElement("11:15");
-		ponto2.getHorarios().addElement("11:40");
+		ponto2.getHorarios().addElement("11:20");
+		ponto2.getHorarios().addElement("11:50");
 		ponto2.getHorarios().addElement("12:20");
 		ponto2.getHorarios().addElement("12:30");
 		ponto2.getHorarios().addElement("12:45");
@@ -132,13 +131,12 @@
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("TERMINAL GUADALUPE");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("03/10/2011");
+		ponto3.setValidoAPartirDe("10/10/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("06:00");
 		ponto3.getHorarios().addElement("06:25");
 		ponto3.getHorarios().addElement("06:50");
 		ponto3.getHorarios().addElement("07:10");
-		ponto3.getHorarios().addElement("11:10");
 		ponto3.getHorarios().addElement("12:30");
 		ponto3.getHorarios().addElement("13:00");
 		ponto3.getHorarios().addElement("14:00");

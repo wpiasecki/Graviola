@@ -16,7 +16,7 @@
 		Ponto ponto0 = new Ponto();
 		ponto0.setNome("TERMINAL MARACANA");
 		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("19/03/2012");
+		ponto0.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto0);
 		ponto0.getHorarios().addElement("05:30");
 		ponto0.getHorarios().addElement("05:39");
@@ -59,6 +59,7 @@
 		ponto0.getHorarios().addElement("18:10");
 		ponto0.getHorarios().addElement("18:21");
 		ponto0.getHorarios().addElement("18:32");
+		ponto0.getHorarios().addElement("18:40");
 		ponto0.getHorarios().addElement("18:43");
 		ponto0.getHorarios().addElement("18:54");
 		ponto0.getHorarios().addElement("19:04");
@@ -71,18 +72,18 @@
 		Ponto ponto1 = new Ponto();
 		ponto1.setNome("V.MARIA DO ROSARIO");
 		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("19/03/2012");
+		ponto1.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto1);
 		Ponto ponto2 = new Ponto();
 		ponto2.setNome("TERMINAL GUARAITUBA");
 		ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto2.setValidoAPartirDe("19/03/2012");
+		ponto2.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto2);
 		ponto2.getHorarios().addElement("19:22");
 		Ponto ponto3 = new Ponto();
 		ponto3.setNome("ESTACAO TUBO FANNY-LINHA VERDE");
 		ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto3.setValidoAPartirDe("19/03/2012");
+		ponto3.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto3);
 		ponto3.getHorarios().addElement("05:44");
 		ponto3.getHorarios().addElement("06:05");
@@ -140,7 +141,7 @@
 		Ponto ponto4 = new Ponto();
 		ponto4.setNome("BR476/AV.SAL.FILHO");
 		ponto4.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto4.setValidoAPartirDe("19/03/2012");
+		ponto4.setValidoAPartirDe("05/11/2012");
 		onibus.getPontos().addElement(ponto4);
 		ponto4.getHorarios().addElement("18:00");
 		Ponto ponto5 = new Ponto();
