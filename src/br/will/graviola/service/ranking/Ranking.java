@@ -15,8 +15,17 @@ public class Ranking implements Runnable
 	private Vector linhasMaisUtilizadas;
 	private static RecordFacade recordFacade;
 	
+	private static Ranking instance;
 	
-	public Ranking()  
+	public static Ranking getRanking() 
+	{
+		if (instance == null) {
+			instance = new Ranking();
+		} 
+		return instance;
+	}
+	
+	private Ranking()  
 	{
 		try {
 			recordFacade = new RecordFacade();

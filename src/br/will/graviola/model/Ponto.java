@@ -60,6 +60,14 @@ public class Ponto
 		this.horariosMarcados = horariosMarcados;
 	}
 	
+	public String getNomeFormatado()
+	{
+		if (tipoDia.getSigla().equals("")) {
+			return nome;
+		} else {
+			return "(" + tipoDia.getSigla() + ") " + nome;
+		}
+	}
 	
 
 }

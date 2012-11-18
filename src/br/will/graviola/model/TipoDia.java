@@ -4,19 +4,21 @@ public class TipoDia
 {
 	private String nome;
 	private String descricao;
+	private String sigla;
 	
-	private TipoDia(String nome, String descricao) {
+	private TipoDia(String nome, String descricao, String sigla) {
 		this.nome = nome;
 		this.descricao = descricao;
+		this.sigla = sigla;
 	}
 	
 	public static TipoDia getTipoDia(String descricao) {
 		if (descricao.equals("SABADO")) {
-			return new TipoDia("SABADO", SABADO);
+			return new TipoDia("SABADO", SABADO, "Sáb");
 		} else if (descricao.equals("DOMINGO")) {
-			return new TipoDia("DOMINGO", DOMINGO);
+			return new TipoDia("DOMINGO", DOMINGO, "Dom");
 		} else if (descricao.equals("DIA_UTIL")) {
-			return new TipoDia("DIA_UTIL", DIA_UTIL);
+			return new TipoDia("DIA_UTIL", DIA_UTIL, "");
 		}
 		throw new IllegalArgumentException("Nenhum Tipo Dia para descricao " + descricao);
 	}
@@ -33,6 +35,11 @@ public class TipoDia
 	public String getDescricao()
 	{
 		return descricao;
+	}
+	
+	public String getSigla() 
+	{
+		return sigla;
 	}
 	
 	

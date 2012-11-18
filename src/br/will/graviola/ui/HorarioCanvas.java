@@ -14,6 +14,7 @@ public class HorarioCanvas extends Canvas
 	
 	private boolean upPressed = false;
 	private boolean downPressed = false;
+	
 
 	private CanvasWriter canvasWriter;
 	
@@ -39,12 +40,20 @@ public class HorarioCanvas extends Canvas
 	private int cameraScroll = 0;
 	private int linesWritten = 0;
 	
+	private String pontoSelecionado;
 	
-	public HorarioCanvas(Onibus onibus) 
+	
+	public HorarioCanvas(Onibus onibus, String pontoSelecionado) 
 	{
 		this.onibus = onibus;
 		this.canvasWriter = new CanvasWriter(this);
 		cameraScroll = canvasWriter.lineHeight;
+		this.pontoSelecionado = pontoSelecionado;
+	}
+	
+	
+	public HorarioCanvas(Onibus onibus) {
+		this(onibus, null);
 	}
 	
 	
@@ -94,6 +103,13 @@ public class HorarioCanvas extends Canvas
 		for (int i = 0; i < pontos.size(); i++ ) 
 		{
 			Ponto ponto = (Ponto) pontos.elementAt(i);
+			
+			if (pontoSelecionado != null && 
+					ponto.getNomeFormatado().equals(pontoSelecionado)) 
+			{
+				this.cameraPosition = canvasWriter.posicaoLinha * -1;
+				pontoSelecionado = null;
+			}
 			
 			canvasWriter.writeln();
 			canvasWriter.writeln(" "+ponto.getNome()+" ("+ponto.getTipoDia().getDescricao()+")", Fonte.italic());
@@ -173,5 +189,6 @@ public class HorarioCanvas extends Canvas
 		downPressed = false;
 //		repaint();
 	}
+	
 	
 }
