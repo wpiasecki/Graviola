@@ -1,8 +1,17 @@
 Graviola
 ========
 
-Projeto em J2ME com os horários de onibus, offline, da cidade de Curitiba/PR. Informações parseadas do site usando Groovy.
+Graviola é um software em Java para celulares mais antigos, como Nokia, LG e Samsung, para visualizar os horários de ônibus da cidade de Curitiba/PR.
 
+A atualização do software é offline, cada nova versão deve ser baixada para o celular através de um computador.
+
+A base de dados do software é o próprio software, para fins de performance. 
+
+Informações parseadas do site da URBS usando Groovy.
+
+Versão atual: 1.3.1 (2012-11-25)
+
+- base de dados atualizada
 
 Versão atual: 1.3 (2012-11-18)
 
