@@ -6,7 +6,8 @@ public class Onibus
 {
 	private String nome;
 	private String codigo;
-	private Vector pontos = new Vector(); // para objetos do tipo br.will.graviola.Ponto
+	protected Vector pontos = new Vector(); // para objetos do tipo br.will.graviola.Ponto
+	protected Vector nomesPontos = new Vector();
 	
 	public String getNome()
 	{
@@ -32,5 +33,14 @@ public class Onibus
 	{
 		this.pontos = pontos;
 	}
+	public Vector getNomesPontos()
+	{
+		return nomesPontos;
+	}
+	public void setNomesPontos(Vector nomesPontos)
+	{
+		this.nomesPontos = nomesPontos;
+	}
+	
 	
 }

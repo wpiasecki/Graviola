@@ -16,17 +16,16 @@ import br.will.graviola.ui.Fonte;
  * 
  * @return list
  */
-public class ListaOnibusForm extends UIHandler
+public class ListaOnibusForm extends Tela
 {
 	private int selectedIndex;
 	
-	public ListaOnibusForm(UIHandler parent)
+	public ListaOnibusForm(Tela parent)
 	{
 		super(parent);
-		
 	}
 
-	public UIHandler dispatch(Command command)
+	public Tela dispatch(Command command)
 	{
 		if (command == Comando.selecionar || command.getLabel().equals("")) // selecionar linha de onibus usando o comando ou o botão OK
 		{
@@ -39,9 +38,13 @@ public class ListaOnibusForm extends UIHandler
 			
 			return new HorarioForm(this, linhaSelecionada);
 		} 
-		else if (command == Comando.procurar) // ir para tela de pesquisa de linhas
+		else if (command == Comando.pesquisarLinha) // ir para tela de pesquisa de linhas
 		{
-			return new PesquisaForm(this);
+			return new PesquisaLinhaForm(this);
+		}
+		else if (command == Comando.pesquisarPonto) // ir para tela de pesquisa de linhas
+		{
+			return new PesquisaPontoForm(this);
 		}
 		else if (command == Comando.sobre) // sobre o software
 		{
@@ -75,7 +78,8 @@ public class ListaOnibusForm extends UIHandler
 		list.setSelectedIndex(selectedIndex, true);
 		
 		list.addCommand(Comando.selecionar);
-		list.addCommand(Comando.procurar);
+		list.addCommand(Comando.pesquisarLinha);
+//		list.addCommand(Comando.pesquisarPonto);
 		list.addCommand(Comando.sobre);
 		list.addCommand(Comando.sair);
 		

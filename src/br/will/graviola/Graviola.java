@@ -10,7 +10,7 @@ import javax.microedition.midlet.MIDletStateChangeException;
 import br.will.graviola.model.DisplayableAlert;
 import br.will.graviola.service.ranking.Ranking;
 import br.will.graviola.ui.tela.ListaOnibusForm;
-import br.will.graviola.ui.tela.UIHandler;
+import br.will.graviola.ui.tela.Tela;
 
 
 /**
@@ -20,11 +20,11 @@ import br.will.graviola.ui.tela.UIHandler;
  */
 public class Graviola extends MIDlet implements CommandListener
 {
-	public static final String VERSAO = "1.3.0";
+	public static final String VERSAO = "1.3.1";
 	
 	private Display display = Display.getDisplay(this);
 	
-	private UIHandler current;
+	private Tela current;
 
 	
 	protected void startApp() throws MIDletStateChangeException

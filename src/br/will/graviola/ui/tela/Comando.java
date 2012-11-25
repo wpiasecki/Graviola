@@ -18,6 +18,8 @@ public class Comando
 	 * comandos da pesquisa por nome da linha
 	 */
 	static Command pesquisar = new Command("Pesquisar", Command.OK, 1);
+	static Command pesquisarLinha = new Command("Pesquisar Linhas", Command.OK, 1);
+	static Command pesquisarPonto = new Command("Pesquisar Pontos", Command.OK, 1);
 	
 	
 	/*

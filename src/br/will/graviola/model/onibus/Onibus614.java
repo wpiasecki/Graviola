@@ -1,73 +1,158 @@
 
-	package br.will.graviola.model.onibus;
+	  package br.will.graviola.model.onibus;
 	
-	import br.will.graviola.model.*;
+	  import br.will.graviola.model.*;
 	
-	/**
-	 * Código gerado automaticamente
-	 * 
-	 * @author will
-	 */
-	public class Onibus614 {
-		public static Onibus create() {
-		Onibus onibus = new Onibus();
-		onibus.setNome("614 - FAZENDINHA / PUC");
-		onibus.setCodigo("614");
-		Ponto ponto0 = new Ponto();
-		ponto0.setNome("PONT.UNIVERSIDADE CATOLICA");
-		ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto0.setValidoAPartirDe("23/07/2012");
-		onibus.getPontos().addElement(ponto0);
-		ponto0.getHorarios().addElement("07:08");
-		ponto0.getHorarios().addElement("07:16");
-		ponto0.getHorarios().addElement("07:24");
-		ponto0.getHorarios().addElement("07:33");
-		ponto0.getHorarios().addElement("07:42");
-		ponto0.getHorarios().addElement("11:30");
-		ponto0.getHorarios().addElement("11:45");
-		ponto0.getHorarios().addElement("12:10");
-		ponto0.getHorarios().addElement("12:34");
-		ponto0.getHorarios().addElement("12:51");
-		ponto0.getHorarios().addElement("13:24");
-		ponto0.getHorarios().addElement("17:05");
-		ponto0.getHorarios().addElement("17:15");
-		ponto0.getHorarios().addElement("17:24");
-		ponto0.getHorarios().addElement("17:43");
-		ponto0.getHorarios().addElement("18:17");
-		ponto0.getHorarios().addElement("18:27");
-		ponto0.getHorarios().addElement("18:37");
-		ponto0.getHorarios().addElement("21:56");
-		ponto0.getHorarios().addElement("22:16");
-		ponto0.getHorarios().addElement("22:36");
-		ponto0.getHorarios().addElement("22:58");
-		Ponto ponto1 = new Ponto();
-		ponto1.setNome("TERMINAL FAZENDINHA");
-		ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
-		ponto1.setValidoAPartirDe("23/07/2012");
-		onibus.getPontos().addElement(ponto1);
-		ponto1.getHorarios().addElement("06:33");
-		ponto1.getHorarios().addElement("06:41");
-		ponto1.getHorarios().addElement("06:49");
-		ponto1.getHorarios().addElement("06:58");
-		ponto1.getHorarios().addElement("07:07");
-		ponto1.getHorarios().addElement("07:16");
-		ponto1.getHorarios().addElement("07:24");
-		ponto1.getHorarios().addElement("07:38");
-		ponto1.getHorarios().addElement("07:42");
-		ponto1.getHorarios().addElement("07:51");
-		ponto1.getHorarios().addElement("08:00");
-		ponto1.getHorarios().addElement("08:08");
-		ponto1.getHorarios().addElement("12:04");
-		ponto1.getHorarios().addElement("12:21");
-		ponto1.getHorarios().addElement("12:54");
-		ponto1.getHorarios().addElement("13:11");
-		ponto1.getHorarios().addElement("13:27");
-		ponto1.getHorarios().addElement("17:42");
-		ponto1.getHorarios().addElement("17:52");
-		ponto1.getHorarios().addElement("18:01");
-		ponto1.getHorarios().addElement("18:20");
-		ponto1.getHorarios().addElement("18:57");
-		ponto1.getHorarios().addElement("22:27");
-		return onibus;
-		}
-	}
+	  /**
+	   * Código gerado automaticamente
+	   * 
+	   * @author will
+	   */
+	  public class Onibus614 {
+		  public static Onibus create() {
+		  Onibus onibus = new Onibus();
+		  onibus.setNome("614 - FAZENDINHA / PUC");
+		  onibus.setCodigo("614");
+		  Ponto ponto0 = new Ponto();
+		  ponto0.setNome("PONT.UNIVERSIDADE CATOLICA");
+		  ponto0.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto0.setValidoAPartirDe("23/07/2012");
+		  onibus.getPontos().addElement(ponto0);
+		  ponto0.getHorarios().addElement("07:08");
+		  ponto0.getHorarios().addElement("07:16");
+		  ponto0.getHorarios().addElement("07:24");
+		  ponto0.getHorarios().addElement("07:33");
+		  ponto0.getHorarios().addElement("07:42");
+		  ponto0.getHorarios().addElement("11:30");
+		  ponto0.getHorarios().addElement("11:45");
+		  ponto0.getHorarios().addElement("12:10");
+		  ponto0.getHorarios().addElement("12:34");
+		  ponto0.getHorarios().addElement("12:51");
+		  ponto0.getHorarios().addElement("13:24");
+		  ponto0.getHorarios().addElement("17:05");
+		  ponto0.getHorarios().addElement("17:15");
+		  ponto0.getHorarios().addElement("17:24");
+		  ponto0.getHorarios().addElement("17:43");
+		  ponto0.getHorarios().addElement("18:17");
+		  ponto0.getHorarios().addElement("18:27");
+		  ponto0.getHorarios().addElement("18:37");
+		  ponto0.getHorarios().addElement("21:56");
+		  ponto0.getHorarios().addElement("22:16");
+		  ponto0.getHorarios().addElement("22:36");
+		  ponto0.getHorarios().addElement("22:58");
+		  Ponto ponto1 = new Ponto();
+		  ponto1.setNome("TERMINAL FAZENDINHA");
+		  ponto1.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto1.setValidoAPartirDe("23/07/2012");
+		  onibus.getPontos().addElement(ponto1);
+		  ponto1.getHorarios().addElement("06:33");
+		  ponto1.getHorarios().addElement("06:41");
+		  ponto1.getHorarios().addElement("06:49");
+		  ponto1.getHorarios().addElement("06:58");
+		  ponto1.getHorarios().addElement("07:07");
+		  ponto1.getHorarios().addElement("07:16");
+		  ponto1.getHorarios().addElement("07:24");
+		  ponto1.getHorarios().addElement("07:38");
+		  ponto1.getHorarios().addElement("07:42");
+		  ponto1.getHorarios().addElement("07:51");
+		  ponto1.getHorarios().addElement("08:00");
+		  ponto1.getHorarios().addElement("08:08");
+		  ponto1.getHorarios().addElement("12:04");
+		  ponto1.getHorarios().addElement("12:21");
+		  ponto1.getHorarios().addElement("12:54");
+		  ponto1.getHorarios().addElement("13:11");
+		  ponto1.getHorarios().addElement("13:27");
+		  ponto1.getHorarios().addElement("17:42");
+		  ponto1.getHorarios().addElement("17:52");
+		  ponto1.getHorarios().addElement("18:01");
+		  ponto1.getHorarios().addElement("18:20");
+		  ponto1.getHorarios().addElement("18:57");
+		  ponto1.getHorarios().addElement("22:27");
+		  Ponto ponto2 = new Ponto();
+		  ponto2.setNome("BAIRRO SANTA RITA");
+		  ponto2.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto2.setValidoAPartirDe("10/12/2012");
+		  onibus.getPontos().addElement(ponto2);
+		  ponto2.getHorarios().addElement("06:19");
+		  Ponto ponto3 = new Ponto();
+		  ponto3.setNome("PONT.UNIVERSIDADE CATOLICA");
+		  ponto3.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto3.setValidoAPartirDe("10/12/2012");
+		  onibus.getPontos().addElement(ponto3);
+		  ponto3.getHorarios().addElement("07:08");
+		  ponto3.getHorarios().addElement("07:16");
+		  ponto3.getHorarios().addElement("07:24");
+		  ponto3.getHorarios().addElement("07:33");
+		  ponto3.getHorarios().addElement("07:42");
+		  ponto3.getHorarios().addElement("17:05");
+		  ponto3.getHorarios().addElement("17:15");
+		  ponto3.getHorarios().addElement("17:24");
+		  ponto3.getHorarios().addElement("18:17");
+		  ponto3.getHorarios().addElement("18:27");
+		  ponto3.getHorarios().addElement("18:37");
+		  Ponto ponto4 = new Ponto();
+		  ponto4.setNome("TERMINAL CIC");
+		  ponto4.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto4.setValidoAPartirDe("10/12/2012");
+		  onibus.getPontos().addElement(ponto4);
+		  ponto4.getHorarios().addElement("06:48");
+		  ponto4.getHorarios().addElement("06:53");
+		  Ponto ponto5 = new Ponto();
+		  ponto5.setNome("TERMINAL FAZENDINHA");
+		  ponto5.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto5.setValidoAPartirDe("10/12/2012");
+		  onibus.getPontos().addElement(ponto5);
+		  ponto5.getHorarios().addElement("06:33");
+		  ponto5.getHorarios().addElement("06:41");
+		  ponto5.getHorarios().addElement("06:49");
+		  ponto5.getHorarios().addElement("06:58");
+		  ponto5.getHorarios().addElement("07:07");
+		  ponto5.getHorarios().addElement("07:16");
+		  ponto5.getHorarios().addElement("07:24");
+		  ponto5.getHorarios().addElement("07:38");
+		  ponto5.getHorarios().addElement("07:42");
+		  ponto5.getHorarios().addElement("07:51");
+		  ponto5.getHorarios().addElement("08:00");
+		  ponto5.getHorarios().addElement("08:08");
+		  ponto5.getHorarios().addElement("17:42");
+		  ponto5.getHorarios().addElement("17:52");
+		  ponto5.getHorarios().addElement("18:01");
+		  ponto5.getHorarios().addElement("18:57");
+		  Ponto ponto6 = new Ponto();
+		  ponto6.setNome("TERMINAL PINHEIRINHO");
+		  ponto6.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto6.setValidoAPartirDe("10/12/2012");
+		  onibus.getPontos().addElement(ponto6);
+		  ponto6.getHorarios().addElement("06:55");
+		  Ponto ponto7 = new Ponto();
+		  ponto7.setNome("EMPRESA KRAFT");
+		  ponto7.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto7.setValidoAPartirDe("10/12/2012");
+		  onibus.getPontos().addElement(ponto7);
+		  ponto7.getHorarios().addElement("06:35");
+		  Ponto ponto8 = new Ponto();
+		  ponto8.setNome("BAIRRO RIO BONITO");
+		  ponto8.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto8.setValidoAPartirDe("10/12/2012");
+		  onibus.getPontos().addElement(ponto8);
+		  ponto8.getHorarios().addElement("06:24");
+		  Ponto ponto9 = new Ponto();
+		  ponto9.setNome("T.S.CERCADO SENT.FAZENDINHA");
+		  ponto9.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto9.setValidoAPartirDe("10/12/2012");
+		  onibus.getPontos().addElement(ponto9);
+		  ponto9.getHorarios().addElement("06:12");
+		  Ponto ponto10 = new Ponto();
+		  ponto10.setNome("TERMINAL CIC");
+		  ponto10.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto10.setValidoAPartirDe("17/12/2012");
+		  onibus.getPontos().addElement(ponto10);
+		  Ponto ponto11 = new Ponto();
+		  ponto11.setNome("EMPRESA KRAFT");
+		  ponto11.setTipoDia(TipoDia.getTipoDia("DIA_UTIL"));
+		  ponto11.setValidoAPartirDe("17/12/2012");
+		  onibus.getPontos().addElement(ponto11);
+		  ponto11.getHorarios().addElement("06:35");
+		  return onibus;
+		  }
+	  }

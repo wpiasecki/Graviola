@@ -35,6 +35,82 @@ public class HorarioOnibusService
 		
 		return linhasEncontradas;
 	}
+
+	/**
+	 * Verifica em cada linha se o algum ponto contém a string
+	 * digitada
+	 * 
+	 * Isto não vai ser nada performático.
+	 * 
+	 * @param queryPonto String para pesquisar
+	 * @return lista de pontos
+	 */
+	public static Vector findPontosByNome(String queryPonto, Vector linhas)
+	{
+		Vector pontosEncontrados = new Vector();
+		String pontoUpper = queryPonto.toUpperCase();
+		
+		for (int i = 0; i < linhas.size(); i++) 
+		{
+			String linha = (String) linhas.elementAt(i);
+			
+			Onibus onibus = getByNome(linha);
+			
+			for (int k = 0; k < onibus.getPontos().size(); k++) 
+			{
+				Ponto ponto = (Ponto) onibus.getPontos().elementAt(k);
+				
+				if (StringUtil.contem(pontoUpper, ponto.getNome()) && 
+						!pontosEncontrados.contains(ponto.getNome())) 
+				{
+					pontosEncontrados.addElement(ponto.getNome());
+				}
+			}
+		}
+		
+		return pontosEncontrados;
+	}
+	
+	
+	public static Vector findPontosByNome(String queryPonto)
+	{
+		return findPontosByNome(queryPonto, getLinhasOnibus());
+	}
+	
+	
+	public static Vector findOnibusByPonto(String nomePonto, Vector linhas)
+	{
+		Vector pontosEncontrados = new Vector();
+		String pontoUpper = nomePonto.toUpperCase();
+		
+		for (int i = 0; i < linhas.size(); i++) 
+		{
+			String linha = (String) linhas.elementAt(i);
+			
+			Onibus onibus = getByNome(linha);
+			
+			for (int k = 0; k < onibus.getPontos().size(); k++) 
+			{
+				Ponto ponto = (Ponto) onibus.getPontos().elementAt(k);
+				
+				if (StringUtil.contem(pontoUpper, ponto.getNome()) && 
+						!pontosEncontrados.contains(ponto.getNome())) 
+				{
+					pontosEncontrados.addElement(linha);
+					break;
+				}
+			}
+		}
+		
+		return pontosEncontrados;
+	}
+	
+	
+	public static Vector findOnibusByPonto(String nomePonto) 
+	{
+		return findOnibusByPonto(nomePonto, getLinhasOnibus());
+	}
+
 '''
 
 /*
@@ -92,8 +168,7 @@ code += """
 
 horariosOnibus.Onibus.each { onibus ->
 	code += """
-		if (nome.equals( ONIBUS${onibus.codigo} )) return Onibus${onibus.codigo}.create();"""
-	
+			if (nome.equals( ONIBUS${onibus.codigo} )) return Onibus${onibus.codigo}.create();"""
 }
 code += """
 		throw new IllegalArgumentException("Nenhum onibus com o nome [" + nome + "]");
@@ -111,48 +186,192 @@ new File("./graviola/HorarioOnibusService.java").write code
 /*
  * Geração dos objetos de modelo
  */
-println "--> escrevendo arquivos de código fonte em 3 segundos..."; Thread.sleep(3000); println "escrevendo..."
- 
-def replaceQuote = { s -> print s; def replaced = s.toString().replaceAll('\"', "'"); println "; replaced=$replaced"; replaced }
+println "--> escrevendo arquivos de código fonte em 1 segundo..."; Thread.sleep(1000); println "escrevendo..."
 
-horariosOnibus.Onibus.each { onibus ->
+def replaceQuote = { s -> s.toString().replaceAll('\"', "'") }
+
+
+def criarLinhasEstaticas = {
+  horariosOnibus.Onibus.each { onibus ->
 	
-	def j2meCode = """
-	package br.will.graviola.model.onibus;
+	  def j2meCode = """
+	  package br.will.graviola.model.onibus;
 	
-	import br.will.graviola.model.*;
+	  import br.will.graviola.model.*;
 	
-	/**
-	 * Código gerado automaticamente
-	 * 
-	 * @author will
-	 */
-	public class Onibus${onibus.codigo} {
-		public static Onibus create() {
-		Onibus onibus = new Onibus();
-		onibus.setNome("${onibus.nome}");
-		onibus.setCodigo("${onibus.codigo}");"""
+	  /**
+	   * Código gerado automaticamente
+	   * 
+	   * @author will
+	   */
+	  public class Onibus${onibus.codigo} {
+		  public static Onibus create() {
+		  Onibus onibus = new Onibus();
+		  onibus.setNome("${onibus.nome}");
+		  onibus.setCodigo("${onibus.codigo}");"""
 		
-	onibus.pontos.Ponto.eachWithIndex { ponto, i ->
+	  onibus.pontos.Ponto.eachWithIndex { ponto, i ->
 	
-		j2meCode += """
-		Ponto ponto$i = new Ponto();
-		ponto${i}.setNome("${replaceQuote( ponto.nome )}");
-		ponto${i}.setTipoDia(TipoDia.getTipoDia("${ponto.tipoDia}"));
-		ponto${i}.setValidoAPartirDe("${ponto.validoAPartirDe}");
-		onibus.getPontos().addElement(ponto${i});"""
+		  j2meCode += """
+		  Ponto ponto$i = new Ponto();
+		  ponto${i}.setNome("${replaceQuote( ponto.nome )}");
+		  ponto${i}.setTipoDia(TipoDia.getTipoDia("${ponto.tipoDia}"));
+		  ponto${i}.setValidoAPartirDe("${ponto.validoAPartirDe}");
+		  onibus.getPontos().addElement(ponto${i});"""
 		
-		ponto.horarios.Horario.each { horario ->
-			j2meCode += """
-		ponto${i}.getHorarios().addElement("${horario.text()[0..4]}");"""
-		}
-	}
+		  ponto.horarios.Horario.each { horario ->
+			  j2meCode += """
+		  ponto${i}.getHorarios().addElement("${horario.text()[0..4]}");"""
+		  }
+	  }
 	
-	j2meCode += """
-		return onibus;
-		}
-	}"""
+	  j2meCode += """
+		  return onibus;
+		  }
+	  }"""
 	
-	new File("./graviola/onibus/Onibus${onibus.codigo}.java").write j2meCode
+	  new File("./graviola/onibus/Onibus${onibus.codigo}.java").write j2meCode
+  }
 }
+
+
+def criarLinhasHeranca = {
+  horariosOnibus.Onibus.each { onibus ->
+	
+	  def j2meCode = """
+  package br.will.graviola.model.onibus;
+	
+  import br.will.graviola.model.*;
+  import java.util.Vector;
+	
+  /**
+   * Código gerado automaticamente
+   * 
+   * @author will
+   */
+  public class Onibus${onibus.codigo} extends Onibus {
+	  public Onibus${onibus.codigo}() {
+		  setNome("${onibus.nome.toString()[6..-1]}");
+		  setCodigo("${onibus.codigo}");"""
+	  j2meCode += """
+	  }
+  """
+
+
+    j2meCode += """
+    public Vector getNomesPontos() {
+      if (nomesPontos.size() == 0) {"""
+	  onibus.pontos.Ponto.collect { it.nome }.unique().each { nomePonto ->
+	    j2meCode += """
+        nomesPontos.addElement("${replaceQuote nomePonto}");"""
+	  }
+	  j2meCode += """
+	    }
+	    return nomesPontos;
+	  }
+  """
+	
+	  j2meCode += """
+	  public Vector getPontos() {
+	    if (pontos.size() == 0) {"""
+	    
+   	onibus.pontos.Ponto.eachWithIndex { ponto, i ->
+   	  j2meCode += """
+		    Ponto ponto$i = new Ponto();
+		    ponto${i}.setNome("${replaceQuote( ponto.nome )}");
+		    ponto${i}.setTipoDia(TipoDia.getTipoDia("${ponto.tipoDia}"));
+		    ponto${i}.setValidoAPartirDe("${ponto.validoAPartirDe}");
+		    pontos.addElement(ponto${i});"""
+	
+		  ponto.horarios.Horario.each { horario ->
+		    j2meCode += """
+		    ponto${i}.getHorarios().addElement("${horario.text()[0..4]}");"""
+		  }
+
+	  }
+	  j2meCode += """
+	    }
+	    return pontos;
+    }
+  }"""
+	
+	  new File("./graviola/onibus/Onibus${onibus.codigo}.java").write j2meCode
+  }
+}
+
+
+def criarLinhasInterface = {
+  horariosOnibus.Onibus.each { onibus ->
+	
+	  def j2meCode = """
+  package br.will.graviola.model.onibus;
+	
+  import br.will.graviola.model.*;
+  import java.util.Vector;
+	
+  /**
+   * Código gerado automaticamente
+   * 
+   * @author will
+   */
+  public class Onibus${onibus.codigo} implements Onibus {
+  
+    private String nome;
+    private String codigo;
+    private Vector nomesPontos = new Vector();
+    private Vector pontos = new Vector();
+    
+	  public Onibus${onibus.codigo}() {
+		  nome = "${onibus.nome.toString()[6..-1]}";
+		  codigo = "${onibus.codigo}";"""
+	  j2meCode += """
+	  }
+	  
+	  public String getNome() { return nome; }
+	  public String getCodigo() { return codigo; }
+  """
+
+
+    j2meCode += """
+    public Vector getNomesPontos() {
+      if (nomesPontos.size() == 0) {"""
+	  onibus.pontos.Ponto.collect { it.nome }.unique().each { nomePonto ->
+	    j2meCode += """
+        nomesPontos.addElement("${replaceQuote nomePonto}");"""
+	  }
+	  j2meCode += """
+	    }
+	    return nomesPontos;
+	  }
+  """
+	
+	  j2meCode += """
+	  public Vector getPontos() {
+	    if (pontos.size() == 0) {"""
+	    
+   	onibus.pontos.Ponto.eachWithIndex { ponto, i ->
+   	  j2meCode += """
+		    Ponto ponto$i = new Ponto();
+		    ponto${i}.setNome("${replaceQuote( ponto.nome )}");
+		    ponto${i}.setTipoDia(TipoDia.getTipoDia("${ponto.tipoDia}"));
+		    ponto${i}.setValidoAPartirDe("${ponto.validoAPartirDe}");
+		    pontos.addElement(ponto${i});"""
+	
+		  ponto.horarios.Horario.each { horario ->
+		    j2meCode += """
+		    ponto${i}.getHorarios().addElement("${horario.text()[0..4]}");"""
+		  }
+
+	  }
+	  j2meCode += """
+	    }
+	    return pontos;
+    }
+  }"""
+	
+	  new File("./graviola/onibus/Onibus${onibus.codigo}.java").write j2meCode
+  }
+}
+
+criarLinhasEstaticas()
 

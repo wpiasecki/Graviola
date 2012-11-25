@@ -6,14 +6,14 @@ import javax.microedition.lcdui.Form;
 import br.will.graviola.Graviola;
 import br.will.graviola.model.DisplayableAlert;
 
-public class AboutForm extends UIHandler
+public class AboutForm extends Tela
 {
-	public AboutForm(UIHandler parent)
+	public AboutForm(Tela parent)
 	{
 		super(parent);
 	}
 
-	public UIHandler dispatch(Command command)
+	public Tela dispatch(Command command)
 	{
 		if (command == Comando.voltar) 
 		{

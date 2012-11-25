@@ -7,7 +7,7 @@ public class Ponto
 	private String nome;
 	private TipoDia tipoDia;
 	private String validoAPartirDe;
-	private Vector horarios = new Vector(); // para objetos do tipo java.util.Date
+	private Vector horarios = new Vector();
 	private Vector horariosMarcados;
 
 	public String getNome()
@@ -69,5 +69,4 @@ public class Ponto
 		}
 	}
 	
-
 }

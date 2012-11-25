@@ -15,19 +15,19 @@ import br.will.graviola.ui.HorarioCanvas;
  * @param nome
  * @return
  */
-public class HorarioForm extends UIHandler
+public class HorarioForm extends Tela
 {
 	private String pontoSelecionado;
 	private Onibus onibus;
 
-	public HorarioForm(UIHandler parent, String linha)
+	public HorarioForm(Tela parent, String linha)
 	{
 		super(parent);
 		onibus = HorarioOnibusService.getByNome( linha );
 	}
 	
 
-	public UIHandler dispatch(Command command)
+	public Tela dispatch(Command command)
 	{
 		if (command == Comando.voltar) 
 		{

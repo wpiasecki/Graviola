@@ -15,18 +15,18 @@ import br.will.graviola.model.Ponto;
  * @author will
  *
  */
-public class PontoForm extends UIHandler
+public class PontoForm extends Tela
 {
 	private Onibus onibus;
 
-	public PontoForm(UIHandler parent, Onibus onibus)
+	public PontoForm(Tela parent, Onibus onibus)
 	{
 		super(parent);
 		this.onibus = onibus;
 	}
 	
 
-	public UIHandler dispatch(Command command)
+	public Tela dispatch(Command command)
 	{
 		if (command == Comando.voltar) 
 		{
