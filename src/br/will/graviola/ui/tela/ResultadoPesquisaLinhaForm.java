@@ -25,12 +25,22 @@ public class ResultadoPesquisaLinhaForm extends Tela
 {
 	private String pesquisadoPeloUsuario;
 	private FonteDeDados fonteDeDados;
+	private int selectedIndex;
 	
-	public ResultadoPesquisaLinhaForm(Tela parent, String pesquisadoPeloUsuario, FonteDeDados dataSource)
+	/**
+	 * Construtora padrão. Recebe uma fonte de dados, que pode ser uma
+	 * pesquisa por linhas a partir de uma string ou a partir de pontos 
+	 * 
+	 * @param parent tela pai
+	 * @param pesquisadoPeloUsuario string que o usuário pesquisou ou
+	 * o nome do ponto usado para apresentar as linhas
+	 * @param fonteDeDados fonte dos dados da pesquisa
+	 */
+	public ResultadoPesquisaLinhaForm(Tela parent, String pesquisadoPeloUsuario, FonteDeDados fonteDeDados)
 	{
 		super(parent);
 		this.pesquisadoPeloUsuario = pesquisadoPeloUsuario;
-		this.fonteDeDados = dataSource;
+		this.fonteDeDados = fonteDeDados;
 	}
 	
 	
@@ -39,17 +49,27 @@ public class ResultadoPesquisaLinhaForm extends Tela
 		if (command == Comando.selecionar || command.getLabel().equals("")) // selecionar linha de onibus usando o comando ou o botão OK
 		{
 			List list = (List) getCurrent().getDisplayable();
-			int selectedIndex = list.getSelectedIndex();
+			selectedIndex = list.getSelectedIndex();
 			String linhaSelecionada = list.getString( selectedIndex );
 			list = null;
 			
-			Ranking.getRanking().gravar( linhaSelecionada );
+			Ranking.instance().gravar( linhaSelecionada );
 			
 			return new HorarioForm(this, linhaSelecionada);
 		} 
 		else if (command == Comando.voltar) 
 		{
-			return getParent().dispatch(command);
+			Tela pai = getParent();
+			
+			/*
+			 * Esta condicional horrível é para não retornar para formulários de 
+			 * pesquisa, mas sim sempre voltar para listagens.
+			 */
+			if (pai.getClass() == PesquisaLinhaForm.class || pai.getClass() == PesquisaPontoForm.class) {
+				return pai.dispatch(command);
+			} else {
+				return pai;
+			}
 		}
 		
 		throw new IllegalArgumentException(
@@ -86,6 +106,8 @@ public class ResultadoPesquisaLinhaForm extends Tela
 
 			list.addCommand(Comando.selecionar);
 			list.addCommand(Comando.voltar);
+			
+			list.setSelectedIndex(selectedIndex, true);
 		}
 		
 		setCurrent(da);

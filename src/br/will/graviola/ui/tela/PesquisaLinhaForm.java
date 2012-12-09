@@ -8,11 +8,11 @@ import javax.microedition.lcdui.TextField;
 
 import br.will.graviola.model.DisplayableAlert;
 import br.will.graviola.service.FonteDeDados;
-import br.will.graviola.service.HorarioOnibusService;
+import br.will.graviola.service.OnibusService;
 
 
 /**
- * Cria o formulário de pesquisa
+ * Cria o formulário de pesquisa por linhas
  * 
  * @return form
  */
@@ -35,9 +35,13 @@ public class PesquisaLinhaForm extends Tela
 			final String pesquisadoPeloUsuario = ( (TextField) form.get(0) ).getString();
 			
 			
+			/*
+			 * "Closure" para definir como a ResultadoPesquisaLinhaForm
+			 * deve obter os dados
+			 */
 			FonteDeDados fonte = new FonteDeDados() {
 				public Vector get() {
-					return HorarioOnibusService.findLinhasByNome(pesquisadoPeloUsuario);
+					return OnibusService.instance().pesquisarOnibusByNome(pesquisadoPeloUsuario);
 				}
 			};
 			

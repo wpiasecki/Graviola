@@ -161,7 +161,7 @@ public class HorarioCanvas extends Canvas
 //		}
 		
 		
-		try { Thread.sleep( 60 ); } catch (InterruptedException ie) { throw new RuntimeException(); } 
+		try { Thread.sleep( 50 ); } catch (InterruptedException ie) { throw new RuntimeException(); } 
 		
 		repaint();
 		

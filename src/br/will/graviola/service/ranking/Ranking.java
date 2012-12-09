@@ -17,7 +17,7 @@ public class Ranking implements Runnable
 	
 	private static Ranking instance;
 	
-	public static Ranking getRanking() 
+	public static Ranking instance() 
 	{
 		if (instance == null) {
 			instance = new Ranking();

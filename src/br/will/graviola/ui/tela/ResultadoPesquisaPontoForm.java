@@ -9,34 +9,46 @@ import javax.microedition.lcdui.List;
 
 import br.will.graviola.model.DisplayableAlert;
 import br.will.graviola.service.FonteDeDados;
-import br.will.graviola.service.HorarioOnibusService;
+import br.will.graviola.service.OnibusService;
 
+/**
+ * Apresenta o resultado da pesquisa de pontos efetuada pelo usuário
+ * 
+ * @author will
+ *
+ */
 public class ResultadoPesquisaPontoForm extends Tela
 {
 	private String nomePonto;
+	private int selectedIndex;
 	
 	public ResultadoPesquisaPontoForm(Tela parent, String nomePonto)
 	{
 		super(parent);
 		this.nomePonto = nomePonto;
 	}
+	
 
 	public Tela dispatch(Command command)
 	{
 		if (command == Comando.voltar)
 		{
-			return getParent();
+			return getParent().dispatch(command);
 		}
-		else if (command == Comando.selecionar)
+		else if (command == Comando.selecionar || command.getLabel().equals(""))
 		{
 			List list = (List) getCurrent().getDisplayable();
-			int selectedIndex = list.getSelectedIndex();
+			selectedIndex = list.getSelectedIndex();
 			final String ponto = list.getString(selectedIndex);
 			
 			
+			/*
+			 * "Closure" para definir como a ResultadoPesquisaLinhaForm
+			 * deve obter os dados
+			 */
 			FonteDeDados fonte = new FonteDeDados() {
 				public Vector get() {
-					return HorarioOnibusService.findPontosByNome(ponto);
+					return OnibusService.instance().pesquisarOnibusByPonto(ponto);
 				}
 			};
 			
@@ -53,7 +65,7 @@ public class ResultadoPesquisaPontoForm extends Tela
 	{
 		List list = new List("Resultado da pesquisa por pontos", List.IMPLICIT);
 		
-		Vector pontos = HorarioOnibusService.findPontosByNome(nomePonto);
+		Vector pontos = OnibusService.instance().pesquisarPontosByNome(nomePonto);
 		
 		DisplayableAlert da = new DisplayableAlert(list);
 		
@@ -67,12 +79,14 @@ public class ResultadoPesquisaPontoForm extends Tela
 			list.addCommand(Comando.voltar);
 			list.addCommand(Comando.selecionar);
 			
+			list.setSelectedIndex(selectedIndex, true);
+			
 			setCurrent(da);
 			return getCurrent();
 		}
 		else 
 		{
-			String mensagemAlerta = "Nenhumo ponto encontrado com o texto '" + nomePonto + "'. \n"
+			String mensagemAlerta = "Nenhum ponto encontrado com o texto '" + nomePonto + "'. \n"
 					+ "Atenção: o sistema considera acentuação.";
 			Alert alert = new Alert("Nenhum ponto encontrado", mensagemAlerta, null, AlertType.INFO);
 

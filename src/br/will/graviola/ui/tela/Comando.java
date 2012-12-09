@@ -8,7 +8,7 @@ public class Comando
 	 * comandos da lista de linhas
 	 */
 	static Command selecionar = new Command("Selecionar", Command.OK, 1);
-	static Command sair = new Command("Sair", Command.EXIT, 2);
+	public static Command sair = new Command("Sair", Command.EXIT, 2);
 	static Command procurar = new Command("Procurar", Command.ITEM, 3);
 	static Command sobre = new Command("Sobre", Command.HELP, 4);
 	static Command voltar = new Command("Voltar", Command.BACK, 1);

@@ -9,6 +9,8 @@ import javax.microedition.midlet.MIDletStateChangeException;
 
 import br.will.graviola.model.DisplayableAlert;
 import br.will.graviola.service.ranking.Ranking;
+import br.will.graviola.ui.tela.AguardeForm;
+import br.will.graviola.ui.tela.Comando;
 import br.will.graviola.ui.tela.ListaOnibusForm;
 import br.will.graviola.ui.tela.Tela;
 
@@ -20,15 +22,18 @@ import br.will.graviola.ui.tela.Tela;
  */
 public class Graviola extends MIDlet implements CommandListener
 {
-	public static final String VERSAO = "1.3.1";
+	public static final String VERSAO = "1.4b2";
 	
 	private Display display = Display.getDisplay(this);
 	
 	private Tela current;
 
+	private Displayable aguarde = new AguardeForm(null).getDisplayable().getDisplayable();
 	
 	protected void startApp() throws MIDletStateChangeException
 	{
+		display.setCurrent(aguarde);
+		
 		current = new ListaOnibusForm(null);
 		
 		DisplayableAlert da = current.getDisplayable();
@@ -38,48 +43,60 @@ public class Graviola extends MIDlet implements CommandListener
 	
 	
 	/**
-	 * Controla o fluxo de telas de acordo com os comandos que o usuário 
-	 * fizer. 
-	 * Se continuar horrivel desse jeito vai ter que ir para uma classe à 
-	 * parte.
+	 * Controla o fluxo de telas de acordo com os comandos que o 
+	 * usuário fizer. 
+	 * 
+	 * Cada execução pode demorar e por isso é chamada uma tela de 
+	 * aguarde com uma thread para disparar a tela certa quando 
+	 * finalizar o carregamento
 	 */
-	public void commandAction(Command command, Displayable displayable)
+	public void commandAction(final Command command, final Displayable displayable)
 	{
-		current = current.dispatch(command);
-		
-		if (current == null) 
+		if (command == Comando.sair)
 		{
 			destroyApp( false );
 		}
 		else
 		{
-			DisplayableAlert novoDisplay = current.getDisplayable();
+			display.setCurrent(aguarde);
 			
 			/*
-			 * cada método "iniciar...()" retorna um displayable. Aqui setamos o
-			 * command listener como esta classe e o Displayable como atual no
-			 * display. 
+			 * Carregamento assíncrono, como não sabemos como a pesquisa pode
+			 * demorar de um celular para outro.
+			 * 
+			 * Só que este troço em TODAS AS TELAS tá enchendo o saco.
 			 */
-			if (novoDisplay != null) 
+			Runnable r = new Runnable() 
 			{
-				novoDisplay.getDisplayable().setCommandListener(this); 
-				
-				if (novoDisplay.getAlert() != null) 
+				public void run()
 				{
-					display.setCurrent(novoDisplay.getAlert(), novoDisplay.getDisplayable());
-				} 
-				else 
-				{
-					display.setCurrent(novoDisplay.getDisplayable());
+					current = current.dispatch(command);
+					
+					DisplayableAlert novoDisplay = current.getDisplayable();
+					
+					novoDisplay.getDisplayable().setCommandListener(Graviola.this); 
+					
+					if (novoDisplay.getAlert() != null) 
+					{
+						display.setCurrent(novoDisplay.getAlert(), novoDisplay.getDisplayable());
+					} 
+					else 
+					{
+						display.setCurrent(novoDisplay.getDisplayable());
+					}
+					
 				}
-			}
+			};
+			
+			Thread t = new Thread(r);
+			t.start();
 		}
 	}
 	
 	
 	protected void destroyApp(boolean arg0) 
 	{
-		Ranking.getRanking().close();
+		Ranking.instance().close();
 		notifyDestroyed();
 	}
 	

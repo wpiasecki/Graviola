@@ -6,7 +6,7 @@ import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.List;
 
 import br.will.graviola.model.DisplayableAlert;
-import br.will.graviola.service.HorarioOnibusService;
+import br.will.graviola.service.OnibusService;
 import br.will.graviola.service.ranking.Ranking;
 import br.will.graviola.ui.Fonte;
 
@@ -32,9 +32,9 @@ public class ListaOnibusForm extends Tela
 			List list = (List) getCurrent().getDisplayable();
 			selectedIndex = list.getSelectedIndex();
 			String linhaSelecionada = list.getString( selectedIndex );
-			list = null;
+			setCurrent(null);
 			
-			Ranking.getRanking().gravar( linhaSelecionada );
+			Ranking.instance().gravar( linhaSelecionada );
 			
 			return new HorarioForm(this, linhaSelecionada);
 		} 
@@ -54,6 +54,10 @@ public class ListaOnibusForm extends Tela
 		{
 			return null;
 		}
+		else if (command == Comando.pontos)
+		{
+			return new ListaPontoForm(this);
+		}
 		
 		throw new IllegalArgumentException(
 				"Tela ListOnibusForm não sabe como lidar com o comando " + command + " ("+command.getLabel()+")");
@@ -61,31 +65,30 @@ public class ListaOnibusForm extends Tela
 
 	public DisplayableAlert getDisplayable()
 	{
-		List list = new List("Linha de Ônibus", List.IMPLICIT);
+		final List list = new List("Linha de Ônibus", List.IMPLICIT);
 		
-		Vector linhasMaisUtilizadas = Ranking.getRanking().getLinhasMaisUtilizadas();
+		Vector linhasMaisUtilizadas = Ranking.instance().getLinhasMaisUtilizadas();
 		for (int i = 0; i < linhasMaisUtilizadas.size() ; i++) {
 			list.append( (String) linhasMaisUtilizadas.elementAt(i), null );
 		}
 		
-		Vector linhas = HorarioOnibusService.getLinhasOnibus();
-		
-		for (int i = 0 ; i < linhas.size(); i++) 
-		{
-			String linha = (String) linhas.elementAt(i);
-			list.append(linha, null);
+		Vector linhas = OnibusService.instance().getLinhas();
+		for (int i = 0 ; i < linhas.size(); i++) {
+			list.append((String) linhas.elementAt(i), null);
 		}
-		list.setSelectedIndex(selectedIndex, true);
 		
 		list.addCommand(Comando.selecionar);
 		list.addCommand(Comando.pesquisarLinha);
-//		list.addCommand(Comando.pesquisarPonto);
+		list.addCommand(Comando.pesquisarPonto);
 		list.addCommand(Comando.sobre);
 		list.addCommand(Comando.sair);
+		list.addCommand(Comando.pontos);
 		
 		for (int i = 0; i < linhasMaisUtilizadas.size(); i++) {
 			list.setFont( i, Fonte.bold() );
 		}
+		
+		list.setSelectedIndex(selectedIndex, true);
 		
 		setCurrent(new DisplayableAlert(list));
 		

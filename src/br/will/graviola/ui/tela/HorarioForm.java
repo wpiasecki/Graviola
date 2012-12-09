@@ -4,7 +4,7 @@ import javax.microedition.lcdui.Command;
 
 import br.will.graviola.model.DisplayableAlert;
 import br.will.graviola.model.Onibus;
-import br.will.graviola.service.HorarioOnibusService;
+import br.will.graviola.service.OnibusService;
 import br.will.graviola.ui.HorarioCanvas;
 
 /**
@@ -23,7 +23,7 @@ public class HorarioForm extends Tela
 	public HorarioForm(Tela parent, String linha)
 	{
 		super(parent);
-		onibus = HorarioOnibusService.getByNome( linha );
+		onibus = OnibusService.instance().getOnibus( linha );
 	}
 	
 

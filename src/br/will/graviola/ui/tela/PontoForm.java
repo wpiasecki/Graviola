@@ -10,7 +10,7 @@ import br.will.graviola.model.Onibus;
 import br.will.graviola.model.Ponto;
 
 /**
- * Tela para apresentar as listagem de pontos de uma linha
+ * Tela para apresentar a lista de pontos de uma linha
  * 
  * @author will
  *

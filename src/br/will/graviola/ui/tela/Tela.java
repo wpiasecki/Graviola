@@ -13,7 +13,7 @@ import br.will.graviola.model.DisplayableAlert;
  * chamadas para os filhos
  * - cada filho pode retornar o controle da tela para o pai
  * 
- * Considerando as classes que temos, a árvore está assim:
+ * Considerando as classes que temos, a árvore está assim (1.4b):
  * 
  * ListaOnibusForm
  *      | 
@@ -22,6 +22,14 @@ import br.will.graviola.model.DisplayableAlert;
  *      +-- PesquisaForm --+-- ResultadoPesquisaForm -- HorarioForm -- PontoForm
  *      |
  *      +-- AboutForm
+ *      |
+ *      +-- ListaPontoForm --+-- PesquisaPontoForm
+ *                           |              |
+ *                           +-- ResultadoPesquisaPontoForm
+ *                                          |
+ *                                          +-- ResultadoPesquisaLinhaForm
+ *                                                          |
+ *                                                          +-- HorarioForm -- PontoForm
  * 
  * É possível que cada classe salve a tela que desenhou dentro da
  * sua propriedade 'current'. Isto pode ocupar bastante memória, 
@@ -37,7 +45,7 @@ public abstract class Tela
 	
 	
 	/**
-	 * Cria um novo UIHandler
+	 * Cria uma nova tela com referência para a tela pai
 	 * 
 	 * @param parent o objeto que criou esta classe
 	 */
@@ -49,7 +57,7 @@ public abstract class Tela
 	/**
 	 * Retorna o pai que criou este objeto
 	 * 
-	 * @return UIHandler pai
+	 * @return Tela pai
 	 */
 	protected Tela getParent()
 	{
@@ -70,9 +78,9 @@ public abstract class Tela
 
 	
 	/**
-	 * Seta a tela que foi feita pelo objeto. Isto permite que
-	 * o objeto seja alterado posteriormente, sem precisar ser
-	 * gerado novamente, mas pode ocupar bastante memória.
+	 * Seta a tela que foi feita pelo objeto. Isto permite que o objeto 
+	 * seja alterado posteriormente, sem precisar ser gerado novamente, 
+	 * mas pode ocupar bastante memória.
 	 * 
 	 * @param current objeto DisplayableAlert
 	 */
@@ -83,7 +91,7 @@ public abstract class Tela
 
 	
 	/**
-	 * Permite que o objeto responda a um comando passado.
+	 * Permite que o objeto responda a um comando.
 	 * Este é o cerne da organização dos objetos; uma classe filha
 	 * pode retornar uma classe neta ou retornar o controle
 	 * para a classe pai. 
@@ -92,14 +100,15 @@ public abstract class Tela
 	 * 
 	 * @param command comando que deve ser interpretado pelo
 	 * objeto
-	 * @return objeto UIHandler. Pode ser o mesmo objeto,
+	 * @return objeto de classe Tela. Pode ser o mesmo objeto,
 	 * classe pai ou classe filha
 	 */
 	public abstract Tela dispatch(Command command);
 
 	
 	/**
-	 * Obtém a tela que é feita por este objeto
+	 * Obtém a tela que é feita por este objeto. A maior parte das
+	 * telas gera o displayable do zero, a cada chamada de método.
 	 * 
 	 * @return objeto DisplayableAlert
 	 */
