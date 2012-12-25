@@ -63,36 +63,47 @@ public class ListaOnibusForm extends Tela
 				"Tela ListOnibusForm não sabe como lidar com o comando " + command + " ("+command.getLabel()+")");
 	}
 
-	public DisplayableAlert getDisplayable()
+	public DisplayableAlert getDisplayableAlert()
 	{
-		final List list = new List("Linha de Ônibus", List.IMPLICIT);
-		
-		Vector linhasMaisUtilizadas = Ranking.instance().getLinhasMaisUtilizadas();
-		for (int i = 0; i < linhasMaisUtilizadas.size() ; i++) {
-			list.append( (String) linhasMaisUtilizadas.elementAt(i), null );
+		/*
+		 * se a lista já foi carregada, ela precisa ficar na memória
+		 * para buscar a linha selecionada pelo usuário.
+		 */
+		if (getCurrent() == null)  
+		{
+			final List list = new List("Linha de Ônibus", List.IMPLICIT);
+			
+			Vector linhasMaisUtilizadas = Ranking.instance().getLinhasMaisUtilizadas();
+			for (int i = 0; i < linhasMaisUtilizadas.size() ; i++) {
+				list.append( (String) linhasMaisUtilizadas.elementAt(i), null );
+			}
+			
+			Vector linhas = OnibusService.instance().getLinhas();
+			for (int i = 0 ; i < linhas.size(); i++) {
+				list.append((String) linhas.elementAt(i), null);
+			}
+			
+			list.addCommand(Comando.selecionar);
+			list.addCommand(Comando.pesquisarLinha);
+			list.addCommand(Comando.pesquisarPonto);
+			list.addCommand(Comando.sobre);
+			list.addCommand(Comando.sair);
+			list.addCommand(Comando.pontos);
+			
+			for (int i = 0; i < linhasMaisUtilizadas.size(); i++) {
+				list.setFont( i, Fonte.bold() );
+			}
+			
+			list.setSelectedIndex(selectedIndex, true);
+			
+			setCurrent(new DisplayableAlert(list));
 		}
-		
-		Vector linhas = OnibusService.instance().getLinhas();
-		for (int i = 0 ; i < linhas.size(); i++) {
-			list.append((String) linhas.elementAt(i), null);
-		}
-		
-		list.addCommand(Comando.selecionar);
-		list.addCommand(Comando.pesquisarLinha);
-		list.addCommand(Comando.pesquisarPonto);
-		list.addCommand(Comando.sobre);
-		list.addCommand(Comando.sair);
-		list.addCommand(Comando.pontos);
-		
-		for (int i = 0; i < linhasMaisUtilizadas.size(); i++) {
-			list.setFont( i, Fonte.bold() );
-		}
-		
-		list.setSelectedIndex(selectedIndex, true);
-		
-		setCurrent(new DisplayableAlert(list));
-		
 		return getCurrent();
+	}
+
+	public boolean mustWait()
+	{
+		return getCurrent() == null;
 	}
 
 }

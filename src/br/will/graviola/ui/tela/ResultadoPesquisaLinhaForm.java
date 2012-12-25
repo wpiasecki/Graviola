@@ -77,12 +77,10 @@ public class ResultadoPesquisaLinhaForm extends Tela
 	}
 	
 
-	public DisplayableAlert getDisplayable()
+	public DisplayableAlert getDisplayableAlert()
 	{
 		Vector linhasEncontradas = fonteDeDados.get();
 
-		DisplayableAlert da = null;
-		
 		/*
 		 * tratamento para quando não encontramos linha com os parâmetros inseridos
 		 * pelo usuário
@@ -93,11 +91,12 @@ public class ResultadoPesquisaLinhaForm extends Tela
 					+ "Atenção: o sistema considera acentuação.";
 			Alert alert = new Alert("Nenhuma linha encontrada", mensagemAlerta, null, AlertType.INFO);
 
-			da = new DisplayableAlert(getParent().getCurrent().getDisplayable(), alert);
-		} else
+			return new DisplayableAlert(getParent(), alert);
+		} 
+		else
 		{
 			List list = new List("Resultado da Pesquisa", List.IMPLICIT);
-			da = new DisplayableAlert(list);
+			list.addCommand(Comando.voltar);
 
 			for (int i = 0; i < linhasEncontradas.size(); i++)
 			{
@@ -105,14 +104,19 @@ public class ResultadoPesquisaLinhaForm extends Tela
 			}
 
 			list.addCommand(Comando.selecionar);
-			list.addCommand(Comando.voltar);
 			
 			list.setSelectedIndex(selectedIndex, true);
+			
+			setCurrent( new DisplayableAlert(list) );
+			
+			return getCurrent();
 		}
-		
-		setCurrent(da);
-		
-		return getCurrent();
+	}
+
+
+	public boolean mustWait()
+	{
+		return true;
 	}
 
 }

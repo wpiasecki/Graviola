@@ -1,5 +1,6 @@
 package br.will.graviola;
 
+import javax.microedition.lcdui.Alert;
 import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.CommandListener;
 import javax.microedition.lcdui.Display;
@@ -22,21 +23,24 @@ import br.will.graviola.ui.tela.Tela;
  */
 public class Graviola extends MIDlet implements CommandListener
 {
-	public static final String VERSAO = "1.4b2";
+	public static final String VERSAO = "1.5";
 	
 	private Display display = Display.getDisplay(this);
 	
 	private Tela current;
 
-	private Displayable aguarde = new AguardeForm(null).getDisplayable().getDisplayable();
+	private Displayable aguarde = new AguardeForm(null).getDisplayableAlert().getDisplayable();
 	
 	protected void startApp() throws MIDletStateChangeException
 	{
 		display.setCurrent(aguarde);
 		
+		/*
+		 * raíz da árvore de telas
+		 */
 		current = new ListaOnibusForm(null);
 		
-		DisplayableAlert da = current.getDisplayable();
+		DisplayableAlert da = current.getDisplayableAlert();
 		da.getDisplayable().setCommandListener( this );
 		display.setCurrent( da.getDisplayable() );
 	}
@@ -58,39 +62,88 @@ public class Graviola extends MIDlet implements CommandListener
 		}
 		else
 		{
-			display.setCurrent(aguarde);
+			current = current.dispatch(command);
 			
-			/*
-			 * Carregamento assíncrono, como não sabemos como a pesquisa pode
-			 * demorar de um celular para outro.
-			 * 
-			 * Só que este troço em TODAS AS TELAS tá enchendo o saco.
-			 */
-			Runnable r = new Runnable() 
+			if (current.mustWait()) 
 			{
-				public void run()
-				{
-					current = current.dispatch(command);
-					
-					DisplayableAlert novoDisplay = current.getDisplayable();
-					
-					novoDisplay.getDisplayable().setCommandListener(Graviola.this); 
-					
-					if (novoDisplay.getAlert() != null) 
-					{
-						display.setCurrent(novoDisplay.getAlert(), novoDisplay.getDisplayable());
-					} 
-					else 
-					{
-						display.setCurrent(novoDisplay.getDisplayable());
-					}
-					
-				}
-			};
-			
-			Thread t = new Thread(r);
-			t.start();
+				display.setCurrent(aguarde);
+				
+				displayAsync(command);
+			}
+			else
+			{
+				display(command);
+			}
 		}
+	}
+	
+	
+	/**
+	 * Configura a tela atual como o resultado do despacho do 
+	 * comando enviado pelo usuário para a tela.
+	 * 
+	 * @param command
+	 */
+	private void display(Command command)
+	{
+		DisplayableAlert novoDisplay = current.getDisplayableAlert();
+		
+		Alert alert = novoDisplay.getAlert();
+		Displayable displayable;
+		
+		/*
+		 * FIXME: Este modelo permite que uma tela retorne uma nova tela. Porém,
+		 * se a nova tela retornar também um Alert, o alert vai ser engolido,
+		 * sendo mostrado só o da primeira tela. Pode ser necessário 
+		 * enfileirar as mensagens
+		 */
+		if (novoDisplay.getTela() != null)
+		{
+			current = novoDisplay.getTela();
+			displayable = current.getDisplayableAlert().getDisplayable();
+		}
+		else
+		{
+			displayable = novoDisplay.getDisplayable();
+		}
+		
+		displayable.setCommandListener( Graviola.this );
+		
+		if (alert != null) 
+		{
+			display.setCurrent(alert, displayable);
+		}
+		else 
+		{
+			display.setCurrent(displayable);
+		}
+	}
+	
+	
+	/**
+	 * Configura a tela atual como o resultado do despacho do
+	 * comando enviado pelo usuário para a tela. Pode ser
+	 * usado de forma assíncrona, quando a tela pode demorar
+	 * para carregar, como uma pesquisa
+	 * 
+	 * @param command
+	 */
+	private void displayAsync(final Command command)
+	{
+		/*
+		 * Carregamento assíncrono, como não sabemos como a pesquisa pode
+		 * demorar de um celular para outro.
+		 */
+		Runnable r = new Runnable() 
+		{
+			public void run()
+			{
+				display(command);
+			}
+		};
+		
+		Thread t = new Thread(r);
+		t.start();
 	}
 	
 	

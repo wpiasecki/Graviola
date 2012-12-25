@@ -40,10 +40,11 @@ public class HorarioCanvas extends Canvas
 	private int cameraScroll = 0;
 	private int linesWritten = 0;
 	
-	private String pontoSelecionado;
+	private int pontoSelecionado;
 	
+	private int distanciaEntreTelaERolagem = 6;
 	
-	public HorarioCanvas(Onibus onibus, String pontoSelecionado) 
+	public HorarioCanvas(Onibus onibus, int pontoSelecionado) 
 	{
 		this.onibus = onibus;
 		this.canvasWriter = new CanvasWriter(this);
@@ -53,7 +54,7 @@ public class HorarioCanvas extends Canvas
 	
 	
 	public HorarioCanvas(Onibus onibus) {
-		this(onibus, null);
+		this(onibus, -1);
 	}
 	
 	
@@ -75,13 +76,14 @@ public class HorarioCanvas extends Canvas
 		
 		width = g.getClipWidth();
 		height = g.getClipHeight();
-		int quantosHorariosCabemNaLinha = width / tamanhoHorario;
+		int quantosHorariosCabemNaLinha = (width - distanciaEntreTelaERolagem) / tamanhoHorario ;
 		
+		int posicaoPontoSelecionado = -1;
 		
 		/*
-		 * Não posso scrollar pra cima se a posição da camera for menor 
+		 * Não devemos scrollar pra cima se a posição da camera for menor 
 		 * que zero.
-		 * Não posso scrollar pra baixo se a posição da camera mais a 
+		 * Não devemos scrollar pra baixo se a posição da camera mais a 
 		 * altura da tela é maior ou igual ao módulo da quantidade de linhas
 		 * (posições) escritas.
 		 */
@@ -104,11 +106,10 @@ public class HorarioCanvas extends Canvas
 		{
 			Ponto ponto = (Ponto) pontos.elementAt(i);
 			
-			if (pontoSelecionado != null && 
-					ponto.getNomeFormatado().equals(pontoSelecionado)) 
+			if (pontoSelecionado != -1 && i == pontoSelecionado) 
 			{
-				this.cameraPosition = canvasWriter.posicaoLinha * -1;
-				pontoSelecionado = null;
+				posicaoPontoSelecionado = canvasWriter.posicaoLinha;
+				pontoSelecionado = -1;
 			}
 			
 			canvasWriter.writeln();
@@ -147,11 +148,19 @@ public class HorarioCanvas extends Canvas
 		 * a posicao da linha começa no negativo, por isso precisamos acrescentar 
 		 * a posição da camera * -1
 		 * 
-		 * TODO: Tem um lineHeight sendo subtraído porque em algum lugar tá sendo
+		 * FIXME: Tem um lineHeight sendo subtraído porque em algum lugar tá sendo
 		 * escrita uma linha a mais.
 		 */
-		linesWritten = (canvasWriter.posicaoLinha - cameraPosition - canvasWriter.lineHeight) * -1;
+		if (linesWritten == 0)
+		{
+			//linesWritten = (canvasWriter.posicaoLinha - cameraPosition - canvasWriter.lineHeight) * -1;
+			linesWritten = canvasWriter.posicaoLinha * -1;
+		}
 		
+		if (posicaoPontoSelecionado != -1)
+			cameraPosition = posicionarCanvas(canvasWriter, height, posicaoPontoSelecionado);
+		
+		desenharBarraDeRolagem(g);
 		
 //		contaT++;
 //		somaT += System.currentTimeMillis() - t0;
@@ -165,6 +174,94 @@ public class HorarioCanvas extends Canvas
 		
 		repaint();
 		
+	}
+	
+	
+	/**
+	 * Desenha a barra de rolagem
+	 * 
+	 * @param g objeto Graphics
+	 */
+//	int index = 1;
+	private void desenharBarraDeRolagem(Graphics g)
+	{
+		int alturaDoCanvas = linesWritten * -1;
+		int alturaDaTela = g.getClipHeight();
+		
+		//if (alturaDaTela >= alturaDoCanvas) return;
+		
+		int larguraDaTela = g.getClipWidth();
+		
+		int tamanhoBarraDeRolagem = (int) Math.max( (alturaDaTela * alturaDaTela / alturaDoCanvas), 8 );
+		int camera = cameraPosition * -1;
+		int alturaNominal = alturaDaTela - tamanhoBarraDeRolagem;
+		
+		/*
+		 * Cálculo do ponto inicial da barra de rolagem:
+		 * - A altura da camera define a posição Y da barra de rolagem 
+		 * proporcional à tela;
+		 * - O ponto inicial da barra de rolagem deve ser calculado em relação 
+		 * à tela MENOS o tamanho da própria barra;
+		 * - A proporção da posição da câmera em relação ao canvas deve ser 
+		 * considerada com o canvas descontando a altura de uma tela, assim,
+		 * tendo um canvas com altura 1200, uma tela de 200 e uma barra de
+		 * rolagem de altura 20, a posição final da câmera será no máximo 1000, 
+		 * e esta posição já deve ser contada como 100% da tela scrollada.
+		 * Portanto, estando em 1000, o cálculo de proporção deve utilizar
+		 * um canvas de altura 1020 e uma tela de altura 180;
+		 * 
+		 * Ex.: para um canvas de altura 1386, uma tela de 291, uma barra de
+		 * rolagem de 61, e a câmera na posição 1113, a equação será a seguinte:
+		 * 1113 × (291 − 61) ÷ (1386 − 291 + 21) == 229
+		 * 
+		 * Há um erro de um pixel em boa parte das telas. Isso deve vir do
+		 * arredondamento. Dada a natureza de pontos flutuantes no J2ME, melhor
+		 * deixar assim.
+		 * 
+		 * Não sei porque tem que adicionar uma linha na altura da tela. Acho 
+		 * que a altura do canvas já está somada sem necessidade em algum outro 
+		 * lugar.
+		 */
+		int posicaoYBarraDeRolagem = 
+				(camera * alturaNominal) / (alturaDoCanvas - alturaDaTela + canvasWriter.lineHeight);
+		
+		int posicaoXBarraDeRolagem = larguraDaTela - distanciaEntreTelaERolagem;
+		
+		int corAntiga = g.getColor();
+		
+		g.setColor(Cor.preto());
+		
+		g.fillRoundRect(
+				posicaoXBarraDeRolagem, 
+				posicaoYBarraDeRolagem, 
+				4, // largura
+				tamanhoBarraDeRolagem, 
+				4, 4); // raio das bordas
+		
+		g.setColor(corAntiga);
+		
+//		if (++index % 30 == 0)
+//		System.out.println("camera="+camera+
+//				"; posicaoY="+posicaoYBarraDeRolagem+
+//				"; alturaCanvas="+alturaDoCanvas+
+//				"; alturaTela="+alturaDaTela+
+//				"; tamanhoBarra="+tamanhoBarraDeRolagem
+//				);
+	}
+	
+	
+	/**
+	 * Posiciona o canvas em um determinado ponto
+	 */
+	private int posicionarCanvas(CanvasWriter writer, int alturaTela, int posicaoPontoSelecionado)
+	{
+		int posicao = (posicaoPontoSelecionado * -1) - writer.lineHeight;
+		
+		if (posicao - alturaTela < linesWritten) {
+			posicao -= posicao - alturaTela - linesWritten + writer.lineHeight;
+		}
+		
+		return posicao;
 	}
 	
 	

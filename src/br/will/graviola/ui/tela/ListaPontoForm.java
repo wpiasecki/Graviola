@@ -53,7 +53,7 @@ public class ListaPontoForm extends Tela
 				"Tela ListPontoForm não sabe como lidar com o comando " + command + " ("+command.getLabel()+")");
 	}
 
-	public DisplayableAlert getDisplayable()
+	public DisplayableAlert getDisplayableAlert()
 	{
 		List list = new List("Pontos", List.IMPLICIT);
 		list.addCommand(Comando.pesquisar);
@@ -69,6 +69,11 @@ public class ListaPontoForm extends Tela
 		
 		setCurrent(new DisplayableAlert(list));
 		return getCurrent();
+	}
+
+	public boolean mustWait()
+	{
+		return true;
 	}
 
 }

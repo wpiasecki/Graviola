@@ -24,7 +24,7 @@ public class AboutForm extends Tela
 				"Tela AboutForm não sabe como lidar com o comando " + command + " ("+command.getLabel()+")");
 	}
 
-	public DisplayableAlert getDisplayable()
+	public DisplayableAlert getDisplayableAlert()
 	{
 		Form form = new Form("");
 		form.append("-- Graviola " + Graviola.VERSAO + " --\n");
@@ -45,6 +45,11 @@ public class AboutForm extends Tela
 		form.append("Curitiba/PR - 2012");
 		form.addCommand(Comando.voltar);
 		return new DisplayableAlert(form);
+	}
+
+	public boolean mustWait()
+	{
+		return false;
 	}
 
 }

@@ -52,7 +52,6 @@ public class ResultadoPesquisaPontoForm extends Tela
 				}
 			};
 			
-			
 			return new ResultadoPesquisaLinhaForm(this, ponto, fonte);
 		}
 		
@@ -61,40 +60,51 @@ public class ResultadoPesquisaPontoForm extends Tela
 	}
 	
 
-	public DisplayableAlert getDisplayable()
+	public DisplayableAlert getDisplayableAlert()
 	{
-		List list = new List("Resultado da pesquisa por pontos", List.IMPLICIT);
-		
-		Vector pontos = OnibusService.instance().pesquisarPontosByNome(nomePonto);
-		
-		DisplayableAlert da = new DisplayableAlert(list);
-		
-		if (pontos.size() > 0)
+		if (getCurrent() != null) 
 		{
-			for (int i = 0; i < pontos.size(); i++)
-			{
-				list.append((String) pontos.elementAt(i), null);
-			}
-			
-			list.addCommand(Comando.voltar);
-			list.addCommand(Comando.selecionar);
-			
-			list.setSelectedIndex(selectedIndex, true);
-			
-			setCurrent(da);
 			return getCurrent();
 		}
-		else 
+		else
 		{
-			String mensagemAlerta = "Nenhum ponto encontrado com o texto '" + nomePonto + "'. \n"
-					+ "Atenção: o sistema considera acentuação.";
-			Alert alert = new Alert("Nenhum ponto encontrado", mensagemAlerta, null, AlertType.INFO);
-
-			da = new DisplayableAlert(getParent().getCurrent().getDisplayable(), alert);
+			Vector pontos = OnibusService.instance().pesquisarPontosByNome(nomePonto);
+			
+			List list = new List("Resultado da pesquisa por pontos", List.IMPLICIT);
+			list.addCommand(Comando.voltar);
+			
+			if (pontos.size() > 0)
+			{
+				for (int i = 0; i < pontos.size(); i++)
+				{
+					list.append((String) pontos.elementAt(i), null);
+				}
+				
+				list.addCommand(Comando.selecionar);
+				
+				list.setSelectedIndex(selectedIndex, true);
+				
+				setCurrent(new DisplayableAlert(list));
+				
+				return getCurrent();
+			}
+			else 
+			{
+				String mensagemAlerta = "Nenhum ponto encontrado com o texto '" + nomePonto + "'. \n"
+						+ "Atenção: o sistema considera acentuação.";
+				Alert alert = new Alert("Nenhum ponto encontrado", mensagemAlerta, null, AlertType.INFO);
+	
+				return new DisplayableAlert(getParent(), alert);
+			}
+			
 		}
 		
-		return da;
-		
+	}
+
+
+	public boolean mustWait()
+	{
+		return true;
 	}
 
 }

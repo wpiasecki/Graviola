@@ -18,11 +18,13 @@ import br.will.graviola.model.Ponto;
 public class PontoForm extends Tela
 {
 	private Onibus onibus;
+	private int pontoSelecionado;
 
-	public PontoForm(Tela parent, Onibus onibus)
+	public PontoForm(Tela parent, Onibus onibus, int pontoSelecionado)
 	{
 		super(parent);
 		this.onibus = onibus;
+		this.pontoSelecionado = pontoSelecionado;
 	}
 	
 
@@ -35,14 +37,13 @@ public class PontoForm extends Tela
 		else 
 		{
 			List list = (List) getCurrent().getDisplayable();
-			String ponto = list.getString( list.getSelectedIndex() );
-			((HorarioForm)getParent()).setPontoSelecionado(ponto);
+			((HorarioForm)getParent()).setPontoSelecionado(list.getSelectedIndex());
 			return getParent();
 		}
 	}
 
 	
-	public DisplayableAlert getDisplayable()
+	public DisplayableAlert getDisplayableAlert()
 	{
 		List list = new List("Pontos da linha " + onibus.getNome(), List.IMPLICIT);
 		Vector pontos = onibus.getPontos();
@@ -51,6 +52,7 @@ public class PontoForm extends Tela
 			Ponto ponto = (Ponto) pontos.elementAt(i);
 			list.append(ponto.getNomeFormatado(), null);
 		}
+		if (pontoSelecionado != -1) { list.setSelectedIndex(pontoSelecionado, true); }
 		
 		list.addCommand(Comando.selecionar);
 		list.addCommand(Comando.voltar);
@@ -58,6 +60,12 @@ public class PontoForm extends Tela
 		setCurrent(new DisplayableAlert(list));
 		
 		return getCurrent();
+	}
+
+
+	public boolean mustWait()
+	{
+		return false;
 	}
 
 }

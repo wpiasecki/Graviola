@@ -6,6 +6,12 @@ import javax.microedition.lcdui.TextField;
 
 import br.will.graviola.model.DisplayableAlert;
 
+/**
+ * Apresenta o formulário de pesquisa por pontos
+ * 
+ * @author will
+ *
+ */
 public class PesquisaPontoForm extends Tela
 {
 
@@ -34,7 +40,7 @@ public class PesquisaPontoForm extends Tela
 	}
 
 	
-	public DisplayableAlert getDisplayable()
+	public DisplayableAlert getDisplayableAlert()
 	{
 		TextField text = new TextField("Pesquisar por linhas cujos pontos possuam:", "", 100, TextField.ANY);
 		Form form = new Form("Pesquisar linha");
@@ -43,6 +49,12 @@ public class PesquisaPontoForm extends Tela
 		form.append(text);
 		setCurrent(new DisplayableAlert(form));
 		return getCurrent();
+	}
+
+	
+	public boolean mustWait()
+	{
+		return false;
 	}
 
 }

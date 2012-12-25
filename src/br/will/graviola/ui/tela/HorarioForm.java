@@ -17,7 +17,7 @@ import br.will.graviola.ui.HorarioCanvas;
  */
 public class HorarioForm extends Tela
 {
-	private String pontoSelecionado;
+	private int pontoSelecionado = -1;
 	private Onibus onibus;
 
 	public HorarioForm(Tela parent, String linha)
@@ -35,9 +35,7 @@ public class HorarioForm extends Tela
 		}
 		else if (command == Comando.pontos)
 		{
-			pontoSelecionado = command.getLabel();
-			
-			return new PontoForm(this, onibus);
+			return new PontoForm(this, onibus, pontoSelecionado);
 		}
 		
 		throw new IllegalArgumentException(
@@ -45,19 +43,23 @@ public class HorarioForm extends Tela
 	}
 	
 	
-	public DisplayableAlert getDisplayable()
+	public DisplayableAlert getDisplayableAlert()
 	{
 		HorarioCanvas canvas = new HorarioCanvas(onibus, pontoSelecionado);
-		this.pontoSelecionado = null;
 		canvas.addCommand( Comando.voltar );
-		
 		canvas.addCommand( Comando.pontos );
 		
 		return new DisplayableAlert(canvas);
 	}
 	
-	void setPontoSelecionado(String ponto) {
+	void setPontoSelecionado(int ponto) {
 		pontoSelecionado = ponto;
+	}
+
+
+	public boolean mustWait()
+	{
+		return false;
 	}
 	
 }

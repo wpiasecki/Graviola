@@ -112,5 +112,16 @@ public abstract class Tela
 	 * 
 	 * @return objeto DisplayableAlert
 	 */
-	public abstract DisplayableAlert getDisplayable();
+	public abstract DisplayableAlert getDisplayableAlert();
+	
+	
+	/**
+	 * Verifica se a MIDlet deve apresentar uma tela de "aguarde"
+	 * para o usuário. Deve ser utilizado ao carregar telas pesadas,
+	 * como pesquisas.
+	 * 
+	 * @return Se TRUE, a midlet apresentará uma tela de "aguarde".
+	 * Caso contrário, só invocará o "getDisplayable()" direto.
+	 */
+	public abstract boolean mustWait();
 }

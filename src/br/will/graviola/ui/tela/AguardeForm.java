@@ -17,11 +17,16 @@ public class AguardeForm extends Tela
 		return this;
 	}
 
-	public DisplayableAlert getDisplayable()
+	public DisplayableAlert getDisplayableAlert()
 	{
 		Form form = new Form("Aguarde");
 		form.append("Por favor, aguarde...");
 		return new DisplayableAlert(form);
+	}
+
+	public boolean mustWait()
+	{
+		return false;
 	}
 
 }

@@ -6,6 +6,13 @@ import javax.microedition.lcdui.Graphics;
 import br.will.graviola.model.Ponto;
 import br.will.graviola.service.Drawable;
 
+/**
+ * Esta classe concentra lógica para escrever na tela tratando
+ * para não escrever fora dela.
+ * 
+ * @author will
+ *
+ */
 public class CanvasWriter
 {
 	private HorarioCanvas horarioCanvas;
