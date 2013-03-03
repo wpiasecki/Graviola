@@ -3,7 +3,7 @@ Graviola
 
 Graviola é um software em Java para celulares como Nokia, LG, Samsung (sem ser Android) entre outros, para visualizar os horários de ônibus da cidade de Curitiba/PR. 
 
-O Graviola ainda não possui suporte para touchscreen nem para BlackBerry. Mas está na lista, aguarde as próximas versões :-).
+O Graviola ainda não possui suporte para BlackBerry. Mas está na lista, aguarde as próximas versões :-).
 
 Não é possível utilizá-lo no Android ou em iPhone.
 
@@ -14,10 +14,16 @@ O Graviola conta com os seguintes recursos:
 * pesquisa de linhas por nome e por ponto/terminal;
 * pesquisa de pontos/terminais por nome;
 * navegação pelos pontos de parada das linhas;
+* suporte para touch screen;
 
-Não é necessário ter uma conexão com a internet. O Graviola pode ser atualizado a partir do computador.
+Não é necessário ter uma conexão com a internet. O Graviola deve ser atualizado a partir do computador.
 
 Informações de onibus obtidas do site da URBS usando script Groovy. Desenvolvido em Java ME.
+
+Versão 1.6 (2013-03-03)
+
+- suporte para touchscreen;
+- base atualizada
 
 Versão 1.5 (2012-12-25)
 
