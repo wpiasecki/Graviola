@@ -3,6 +3,8 @@ package br.will.graviola.util;
 import java.io.DataInputStream;
 import java.io.IOException;
 
+import javax.microedition.lcdui.Image;
+
 /**
  * Classe para abstrair algumas complexidades em lidar com 
  * stream. A utilização desta classe é para trabalhar com strings
@@ -263,6 +265,11 @@ public class StreamUtil
 		{
 			skip(stream, bytes - bytesSkiped);
 		}
+	}
+	
+	public static Image image(String fileName) throws IOException 
+	{
+		return Image.createImage(StreamUtil.class.getResourceAsStream(fileName));
 	}
 	
 }

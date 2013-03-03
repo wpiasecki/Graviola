@@ -5,8 +5,11 @@ import java.util.Vector;
 import javax.microedition.lcdui.Canvas;
 import javax.microedition.lcdui.Graphics;
 
+import br.will.graviola.Graviola;
 import br.will.graviola.model.Onibus;
 import br.will.graviola.model.Ponto;
+import br.will.graviola.ui.effect.Touch;
+import br.will.graviola.ui.tela.Comando;
 
 public class HorarioCanvas extends Canvas
 {
@@ -18,11 +21,16 @@ public class HorarioCanvas extends Canvas
 
 	private CanvasWriter canvasWriter;
 	
+	
 	/*
 	 * meu nokia c3 tem 310 de width e cabem 4 horários com uma folga 
-	 * para mais "meio" horário. Cada horário deve ter uns ~70. 
+	 * para mais "meio" horário. Cada horário deve ter uns ~70.
+	 * 
+	 * Substituído pelo valor do Graphics.font. 
 	 */
-	int tamanhoHorario = 56;
+//	int tamanhoHorario = 56;
+	int tamanhoHorario = -1;
+	
 	
 	/*
 	 * Dimensões da tela, obtido do graphics 
@@ -44,12 +52,19 @@ public class HorarioCanvas extends Canvas
 	
 	private int distanciaEntreTelaERolagem = 6;
 	
+	/*
+	 * Objeto para controle do touch screen
+	 */
+	private Touch touch;
+	
+	
+	
 	public HorarioCanvas(Onibus onibus, int pontoSelecionado) 
 	{
 		this.onibus = onibus;
 		this.canvasWriter = new CanvasWriter(this);
-		cameraScroll = canvasWriter.lineHeight;
 		this.pontoSelecionado = pontoSelecionado;
+		touch = new Touch();
 	}
 	
 	
@@ -65,6 +80,7 @@ public class HorarioCanvas extends Canvas
 //	long somaT = 0;
 //	int quantT = 20;
 	
+	
 	/**
 	 * Desenha a tela com os horários
 	 */
@@ -73,6 +89,13 @@ public class HorarioCanvas extends Canvas
 //		long t0 = System.currentTimeMillis();
 		
 		canvasWriter.prepare( g, cameraPosition );
+		
+		cameraScroll = canvasWriter.lineHeight;
+		
+		
+		if (tamanhoHorario == -1) 
+			tamanhoHorario = g.getFont().charWidth('m') * 3;
+		
 		
 		width = g.getClipWidth();
 		height = g.getClipHeight();
@@ -87,7 +110,7 @@ public class HorarioCanvas extends Canvas
 		 * altura da tela é maior ou igual ao módulo da quantidade de linhas
 		 * (posições) escritas.
 		 */
-		if (downPressed && cameraPosition - height >= linesWritten) {
+		if (downPressed && cameraPosition - height > (linesWritten - cameraScroll)) {
 			cameraPosition -= cameraScroll;
 		}
 		
@@ -161,6 +184,8 @@ public class HorarioCanvas extends Canvas
 			cameraPosition = posicionarCanvas(canvasWriter, height, posicaoPontoSelecionado);
 		
 		desenharBarraDeRolagem(g);
+		
+		touch.desenhar(g);
 		
 //		contaT++;
 //		somaT += System.currentTimeMillis() - t0;
@@ -276,7 +301,6 @@ public class HorarioCanvas extends Canvas
 			downPressed = true;
 			break;
 		}
-//		repaint();
 	}
 	
 	
@@ -284,8 +308,28 @@ public class HorarioCanvas extends Canvas
 	{
 		upPressed = false;
 		downPressed = false;
-//		repaint();
 	}
 	
+	
+	protected void pointerPressed(int x, int y) 
+	{
+		switch (touch.press(width, height, x, y)) {
+		case Touch.SUBIR: upPressed = true; break;
+		case Touch.DESCER: downPressed = true; break;
+		
+		/*
+		 * Usado para simular um comando do usuário.
+		 * TODO: Ficou uma droga; furou toda a abstração :-(
+		 */
+		case Touch.PONTOS: Graviola.instance().commandAction(Comando.pontos, null); break;
+		}
+	}
+	
+	
+	protected void pointerReleased(int x, int y) 
+	{
+		upPressed = false;
+		downPressed = false;
+	}
 	
 }

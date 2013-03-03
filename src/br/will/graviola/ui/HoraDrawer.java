@@ -73,7 +73,7 @@ public class HoraDrawer
 				{
 					int oldColor = g.getColor();
 					g.setColor( HoraDrawer.this.getCor() );
-					g.drawRoundRect( x - 4, y, tamanhoHorario - 8, lineHeight - 2, 8, 8 );
+					g.drawRoundRect( x - 3, y - 2, tamanhoHorario, lineHeight - 2, 8, 8 );
 					g.setColor( oldColor );
 				}
 				

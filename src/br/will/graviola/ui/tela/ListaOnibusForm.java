@@ -58,11 +58,17 @@ public class ListaOnibusForm extends Tela
 		{
 			return new ListaPontoForm(this);
 		}
+		else if (command == Comando.mapa)
+		{
+			setCurrent(null); // lista de onibus + mapa, em memoria = OOM
+			return new MapaForm(this);
+		}
 		
 		throw new IllegalArgumentException(
 				"Tela ListOnibusForm não sabe como lidar com o comando " + command + " ("+command.getLabel()+")");
 	}
 
+	
 	public DisplayableAlert getDisplayableAlert()
 	{
 		/*
@@ -89,6 +95,7 @@ public class ListaOnibusForm extends Tela
 			list.addCommand(Comando.sobre);
 			list.addCommand(Comando.sair);
 			list.addCommand(Comando.pontos);
+//			list.addCommand(Comando.mapa);
 			
 			for (int i = 0; i < linhasMaisUtilizadas.size(); i++) {
 				list.setFont( i, Fonte.bold() );

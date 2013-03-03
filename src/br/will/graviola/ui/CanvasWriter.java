@@ -19,9 +19,12 @@ public class CanvasWriter
 
 	
 	/*
-	 * Altura de cada linha
+	 * Altura de cada linha.
+	 * 
+	 * Substituído pelo valor obtido do Graphics.font
 	 */
-	int lineHeight = 21;
+//	int lineHeight = 21;
+	int lineHeight;
 	
 	
 	int posicaoLinha;
@@ -159,7 +162,8 @@ public class CanvasWriter
 	public void prepare(Graphics g, int cameraPosition)
 	{
 		this.g = g;
-		this.posicaoLinha = cameraPosition;
+		posicaoLinha = cameraPosition;
+		lineHeight = g.getFont().getHeight() + 2;
 	}
 	
 	

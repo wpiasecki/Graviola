@@ -17,13 +17,23 @@ import br.will.graviola.ui.tela.Tela;
 
 
 /**
- * Graviola MIDlet. 
+ * Graviola MIDlet. Captura os comandos e repassa para a tela atual, 
+ * que tem a responsabilidade de tratar.
+ * 
+ * TODO: implementar tratamento para dispositivos com pouca memória:
+ * - capturar OutOfMemoryError;
+ * - gravar configuração de dispositivo de baixa memória
+ * em RMS diferente do ranking (graviolaRanking)
+ * - iniciar o aplicativo usando a tela inicial LowMemoryPesquisaLinhaForm
+ * (que só habilita algumas telas)
+ * 
+ * TODO: blackberry
  * 
  * @author will
  */
 public class Graviola extends MIDlet implements CommandListener
 {
-	public static final String VERSAO = "1.5";
+	public static final String VERSAO = "1.6";
 	
 	private Display display = Display.getDisplay(this);
 	
@@ -31,14 +41,24 @@ public class Graviola extends MIDlet implements CommandListener
 
 	private Displayable aguarde = new AguardeForm(null).getDisplayableAlert().getDisplayable();
 	
+	/**
+	 * Usado pelo touchscreen para despachar o acesso a
+	 * tela de pontos. Ficou uma droga por causa disso
+	 */
+	static Graviola instance;
+	public static Graviola instance() { return instance; }
+	
 	protected void startApp() throws MIDletStateChangeException
 	{
+		instance = this;
+		
 		display.setCurrent(aguarde);
 		
 		/*
 		 * raíz da árvore de telas
 		 */
 		current = new ListaOnibusForm(null);
+//		current = new LowMemoryPesquisaLinhaForm(null);
 		
 		DisplayableAlert da = current.getDisplayableAlert();
 		da.getDisplayable().setCommandListener( this );
