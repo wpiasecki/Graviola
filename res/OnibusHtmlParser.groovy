@@ -3,9 +3,9 @@ import java.sql.Time
 import java.text.SimpleDateFormat
 
 class OnibusHtmlParser {
-  def urbsUrl
-  def qtdeLinhas
-	def contaLinhas = 0
+    def urbsUrl
+    def qtdeLinhas
+    def contaLinhas = 0
   
   def nekoParser = { 
     def neko = new org.cyberneko.html.parsers.SAXParser()
@@ -26,7 +26,7 @@ class OnibusHtmlParser {
     def onibusList = []
     def t0 = curr()
 	
-	  def onibus = new Onibus(codigo:codigoOnibus)
+	  def onibus = new Onibus(codigo : codigoOnibus)
 	  onibusList << onibus
 	
 	  def urlBusao = urbsUrl + "/$codigoOnibus"
@@ -45,7 +45,7 @@ class OnibusHtmlParser {
 	    it.getClass() != String && it.@class == "clearfix margin-big-top width96"
 	  }
 	  
-	  onibus.nome = nomeBusaoDiv.H2.text()
+	  onibus.nome = nomeBusaoDiv.H2.text()[6..-1]
 	  
 	  def pontoHorarioDivs = mainDiv.breadthFirst().findAll { 
 		  it.getClass() != String && it.@class == 'bg-white round-bl-60 width96 margin-medium-top clearfix' 
@@ -54,7 +54,7 @@ class OnibusHtmlParser {
 	  def timeFormat = new SimpleDateFormat('HH:mm')
 	  pontoHorarioDivs.each { pontoHorarioDiv ->
 		  def nomePonto = pontoHorarioDiv.DIV.H3.text().replace( 'Ponto: ', '' )
-		  def dataTipoDia = pontoHorarioDiv.DIV.P.text().replace( 'Válido a partir de: ', '' )
+		  def dataTipoDia = pontoHorarioDiv.DIV.P.text().trim().replace( 'Válido a partir de: ', '' )[0..9]
 		  def tipoDia = TipoDia.findByDescricao( pontoHorarioDiv.DIV.P.B.text() )
 		  def validoAPartirDe = dataTipoDia.trim() // dateFormat.parse( dataTipoDia[0] )
 		  def horarios = []

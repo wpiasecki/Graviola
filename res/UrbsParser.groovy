@@ -1,7 +1,7 @@
 /**
  * Script para parsear os horarios de onibus disponíveis no site da urbs, 
  * jogá-los nas classes de modelo definidas, e processá-las usando XStream
- * O site da urbs é parseado usando a própria URL do Java suavizada com 
+ * O site da urbs é parseado usando a própria URL do Java normalizada com 
  * NekoHtml.
  * 
  * Validar com amostras:

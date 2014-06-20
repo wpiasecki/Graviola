@@ -33,7 +33,7 @@ class UrbsJsParser {
 		def onibusParser = new OnibusHtmlParser(urbsUrl: urbsUrl, qtdeLinhas: linhas.size())
 		
 		def onibusList = linhas.inject([]) { list, linha ->
-			list << onibusParser.obterHorarioDaPagina(linha[0..2])
+			list << onibusParser.obterHorarioDaPagina(linha.value[0..2])
 		}
 		
 		onibusParser.writeXml onibusList.flatten()
