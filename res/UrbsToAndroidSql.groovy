@@ -28,13 +28,13 @@ out.withWriter { w ->
     def idHorario = 1
     
     HorarioOnibus.Onibus.each { onibus ->
-        w.write "INSERT INTO linha(id, nome, codigo) VALUES ($idOnibus, '${onibus.nome.text()}', '${onibus.codigo.text()}');\n"
+        w.write "INSERT INTO linha(_id, nome, codigo) VALUES ($idOnibus, '${onibus.nome.text()}', '${onibus.codigo.text()}');\n"
         
         onibus.pontos.Ponto.each { ponto ->
-            w.write """INSERT INTO ponto(id, nome, tipo_dia, valido_a_partir_de, linha_id) VALUES ($idPonto, '${ponto.nome}', ${getTipoDia(ponto.tipoDia.text())}, ${formatDate(ponto.validoAPartirDe.text())}, $idOnibus);\n"""
+            w.write """INSERT INTO ponto(_id, nome, tipo_dia, valido_a_partir_de, linha_id) VALUES ($idPonto, '${ponto.nome}', ${getTipoDia(ponto.tipoDia.text())}, ${formatDate(ponto.validoAPartirDe.text())}, $idOnibus);\n"""
             
             ponto.horarios.Horario.each { horario ->
-                w.write "INSERT INTO horario(id, hora, ponto_id) VALUES ($idHorario, '${horario.text()[0..4]}', $idPonto);\n"
+                w.write "INSERT INTO horario(_id, hora, ponto_id) VALUES ($idHorario, '${horario.text()[0..4]}', $idPonto);\n"
                 idHorario++
             }
             
