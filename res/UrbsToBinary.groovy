@@ -8,8 +8,8 @@ def writeLinhasFile = {
   linhasTxt = [HorariosOnibus.Onibus.size()]
 
   HorariosOnibus.Onibus.each { onibus ->
-    linhasTxt << onibus.nome.text()[6..-1]
-    linhasTxt << onibus.nome.text()[0..2]
+    linhasTxt << onibus.nome.text()
+    linhasTxt << onibus.codigo.text()
     linhasTxt << onibus.pontos.Ponto.size()
     
     onibus.pontos.Ponto.each { ponto ->
@@ -41,7 +41,7 @@ def writePontosFile = {
   pontosMap = pontos.inject([:]) { mapa, ponto ->
     Set nomesLinhas = HorariosOnibus.Onibus.findAll { onibus ->
       onibus.pontos.Ponto.nome*.text().contains ponto
-    }.collect { it.nome.text()[6..-1] }
+    }.collect { it.nome.text() }
     
     mapa[ponto] = nomesLinhas
     mapa

@@ -1,6 +1,8 @@
 import com.thoughtworks.xstream.XStream
 import java.sql.Time
 import java.text.SimpleDateFormat
+@Grab('net.sourceforge.nekohtml:nekohtml:1.9.22')
+import org.cyberneko.html.parsers.SAXParser
 
 class OnibusHtmlParser {
     def urbsUrl
